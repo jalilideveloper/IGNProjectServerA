@@ -391,7 +391,7 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="SecondryPass" Type="nvarchar" MaxLength="50" />
     <Property Name="UserLinkPage" Type="nvarchar" MaxLength="900" />
-    <Property Name="PersonelImageUrl" Type="nvarchar" MaxLength="1000" />
+    <Property Name="UserTypeIDelImageUrl" Type="nvarchar" MaxLength="1000" />
     <Property Name="RegisterDate" Type="nvarchar" MaxLength="50" />
     <Property Name="NationalityID" Type="nvarchar" MaxLength="50" />
     <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
@@ -1137,7 +1137,7 @@
     <Parameter Name="Password" Type="nvarchar" Mode="In" />
     <Parameter Name="SecondryPass" Type="nvarchar" Mode="In" />
     <Parameter Name="UserLinkPage" Type="nvarchar" Mode="In" />
-    <Parameter Name="PersonelImageUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserTypeIDelImageUrl" Type="nvarchar" Mode="In" />
     <Parameter Name="RegisterDate" Type="nvarchar" Mode="In" />
     <Parameter Name="NationalityID" Type="nvarchar" Mode="In" />
     <Parameter Name="PostalCode" Type="nvarchar" Mode="In" />

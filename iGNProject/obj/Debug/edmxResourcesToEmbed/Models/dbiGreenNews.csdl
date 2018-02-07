@@ -360,7 +360,7 @@
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="SecondryPass" Mode="In" Type="String" />
       <Parameter Name="UserLinkPage" Mode="In" Type="String" />
-      <Parameter Name="PersonelImageUrl" Mode="In" Type="String" />
+      <Parameter Name="UserTypeIDelImageUrl" Mode="In" Type="String" />
       <Parameter Name="RegisterDate" Mode="In" Type="String" />
       <Parameter Name="NationalityID" Mode="In" Type="String" />
       <Parameter Name="PostalCode" Mode="In" Type="String" />
@@ -717,7 +717,7 @@
     <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="SecondryPass" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="UserLinkPage" Nullable="true" MaxLength="900" />
-    <Property Type="String" Name="PersonelImageUrl" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="UserTypeIDelImageUrl" Nullable="true" MaxLength="1000" />
     <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="NationalityID" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
@@ -1026,7 +1026,7 @@
     <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="SecondryPass" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="UserLinkPage" Nullable="true" MaxLength="900" />
-    <Property Type="String" Name="PersonelImageUrl" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="UserTypeIDelImageUrl" Nullable="true" MaxLength="1000" />
     <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="NationalityID" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
@@ -1751,7 +1751,7 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="UserTypeIDelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

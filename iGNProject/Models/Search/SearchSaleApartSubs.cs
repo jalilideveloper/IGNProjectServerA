@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace IGN.Models.Search
+namespace iGNProject.Models.Search
 {
     public class SearchSaleApartSubs
     {
@@ -23,7 +23,7 @@ namespace IGN.Models.Search
         public int UntillArea { get; set; }
         public int FromArea { get; set; }
         public int Countryside { get; set; }
-        public int Person { get; set; }
+        public int UserTypeID { get; set; }
         public int Kind { get; set; }
         public int UntillInfrastructure { get; set; }
         public int FromInfrastructure { get; set; }

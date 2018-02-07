@@ -15,7 +15,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
           <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
-          <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
           <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
           <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
           <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
@@ -465,7 +465,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
           <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
-          <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
           <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
           <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
           <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
@@ -1320,7 +1320,7 @@
           <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
           <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
           <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-          <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
           <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
           <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
           <ScalarProperty Name="Password" ColumnName="Password" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace IGN.Models.Search
+namespace iGNProject.Models.Search
 {
     public class SearchSaleLandSubs
     {
@@ -14,7 +14,7 @@ namespace IGN.Models.Search
         public bool HasImage { get; set; }
         public bool HasFast { get; set; }
         public int Countryside { get; set; }
-        public int Person { get; set; }
+        public int UserTypeID { get; set; }
         public int Kind { get; set; }
         public int KindTotalPrice { get; set; }
         public int UntillTotalPrice { get; set; }

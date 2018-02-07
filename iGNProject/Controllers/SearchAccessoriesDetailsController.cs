@@ -1,4 +1,4 @@
-﻿using IGN.Models.Search;
+﻿using iGNProject.Models.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,7 @@ namespace iGNProject.Controllers
         // POST: api/SearchAccessoriesDetails
         public IHttpActionResult Post(SearchAccessoriesDetails value)
         {
-            return "s";
+            return null;
         }
 
         // PUT: api/SearchAccessoriesDetails/5

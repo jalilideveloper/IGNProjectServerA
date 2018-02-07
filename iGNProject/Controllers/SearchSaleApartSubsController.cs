@@ -1,4 +1,4 @@
-﻿using IGN.Models.Search;
+﻿using iGNProject.Models.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +25,13 @@ namespace iGNProject.Controllers
         // POST: api/SearchSaleApartSubs
         public IHttpActionResult Post(SearchSaleApartSubs value)
         {
+            return null;
         }
 
         // PUT: api/SearchSaleApartSubs/5
         public void Put(int id, [FromBody]string value)
         {
+           
         }
 
         // DELETE: api/SearchSaleApartSubs/5

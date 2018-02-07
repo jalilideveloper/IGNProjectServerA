@@ -1,4 +1,4 @@
-﻿using IGN.Models.Search;
+﻿using iGNProject.Models.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +25,7 @@ namespace iGNProject.Controllers
         // POST: api/SearchCarRidings
         public IHttpActionResult Post(SearchCarRidings value)
         {
+            return null;
         }
 
         // PUT: api/SearchCarRidings/5

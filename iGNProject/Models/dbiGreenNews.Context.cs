@@ -1243,7 +1243,7 @@ namespace iGNProject.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUploadAdsFile", adsIDParameter, fileAddressParameter, isDeletedParameter);
         }
     
-        public virtual int sp_Add_tblUsers(string userName, string firstName, string lastname, string email, string tell, string mobile, string address, string password, string secondryPass, string userLinkPage, string personelImageUrl, string registerDate, string nationalityID, string postalCode, string bussinessFieldID, string birthDate, string nickName, Nullable<int> languageID, Nullable<byte> userType, Nullable<int> locationID, Nullable<bool> isDeleted)
+        public virtual int sp_Add_tblUsers(string userName, string firstName, string lastname, string email, string tell, string mobile, string address, string password, string secondryPass, string userLinkPage, string UserTypeIDelImageUrl, string registerDate, string nationalityID, string postalCode, string bussinessFieldID, string birthDate, string nickName, Nullable<int> languageID, Nullable<byte> userType, Nullable<int> locationID, Nullable<bool> isDeleted)
         {
             var userNameParameter = userName != null ?
                 new ObjectParameter("UserName", userName) :
@@ -1285,9 +1285,9 @@ namespace iGNProject.Models
                 new ObjectParameter("UserLinkPage", userLinkPage) :
                 new ObjectParameter("UserLinkPage", typeof(string));
     
-            var personelImageUrlParameter = personelImageUrl != null ?
-                new ObjectParameter("PersonelImageUrl", personelImageUrl) :
-                new ObjectParameter("PersonelImageUrl", typeof(string));
+            var UserTypeIDelImageUrlParameter = UserTypeIDelImageUrl != null ?
+                new ObjectParameter("UserTypeIDelImageUrl", UserTypeIDelImageUrl) :
+                new ObjectParameter("UserTypeIDelImageUrl", typeof(string));
     
             var registerDateParameter = registerDate != null ?
                 new ObjectParameter("RegisterDate", registerDate) :
@@ -1329,7 +1329,7 @@ namespace iGNProject.Models
                 new ObjectParameter("IsDeleted", isDeleted) :
                 new ObjectParameter("IsDeleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUsers", userNameParameter, firstNameParameter, lastnameParameter, emailParameter, tellParameter, mobileParameter, addressParameter, passwordParameter, secondryPassParameter, userLinkPageParameter, personelImageUrlParameter, registerDateParameter, nationalityIDParameter, postalCodeParameter, bussinessFieldIDParameter, birthDateParameter, nickNameParameter, languageIDParameter, userTypeParameter, locationIDParameter, isDeletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUsers", userNameParameter, firstNameParameter, lastnameParameter, emailParameter, tellParameter, mobileParameter, addressParameter, passwordParameter, secondryPassParameter, userLinkPageParameter, UserTypeIDelImageUrlParameter, registerDateParameter, nationalityIDParameter, postalCodeParameter, bussinessFieldIDParameter, birthDateParameter, nickNameParameter, languageIDParameter, userTypeParameter, locationIDParameter, isDeletedParameter);
         }
     
         public virtual int sp_Add_tblUserWallPages(Nullable<int> userID, Nullable<int> pagePrivacyID, Nullable<long> pageRate, Nullable<bool> block, Nullable<bool> confrim, Nullable<bool> registerDate, string title, string telegramLink, string facebookLink, string twitterLink, string googlePlusLink, string description, Nullable<int> friendCount, string pageImageUrl, Nullable<int> locationID, Nullable<bool> isDeleted)

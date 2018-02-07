@@ -1,4 +1,4 @@
-﻿using IGN.Models.Search;
+﻿using iGNProject.Models.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,31 +8,32 @@ using System.Web.Http;
 
 namespace iGNProject.Controllers
 {
-    public class SearchPersonalEntertainmentsController : ApiController
+    public class SearchUserTypeIDalEntertainmentsController : ApiController
     {
-        // GET: api/SearchPersonalEntertainments
+        // GET: api/SearchUserTypeIDalEntertainments
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/SearchPersonalEntertainments/5
+        // GET: api/SearchUserTypeIDalEntertainments/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/SearchPersonalEntertainments
+        // POST: api/SearchUserTypeIDalEntertainments
         public IHttpActionResult Post(SearchPersonalEntertainments value)
         {
+            return null;
         }
 
-        // PUT: api/SearchPersonalEntertainments/5
+        // PUT: api/SearchUserTypeIDalEntertainments/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/SearchPersonalEntertainments/5
+        // DELETE: api/SearchUserTypeIDalEntertainments/5
         public void Delete(int id)
         {
         }
