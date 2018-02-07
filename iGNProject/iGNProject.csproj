@@ -213,6 +213,7 @@
     <Compile Include="Controllers\ProvincesController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tblPriceTypesController.cs" />
     <Compile Include="Controllers\tblPrivacyTypesController.cs" />
     <Compile Include="Controllers\tblRegionsController.cs" />
@@ -394,6 +395,32 @@
     <Compile Include="Models\LatestNewsOrderByViewNumber_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Search\SearchAccessoriesDetails.cs" />
+    <Compile Include="Models\Search\SearchAllAgahis.cs" />
+    <Compile Include="Models\Search\SearchBoatsAccessoriess.cs" />
+    <Compile Include="Models\Search\SearchCarBoatAccs.cs" />
+    <Compile Include="Models\Search\SearchCarHeavys.cs" />
+    <Compile Include="Models\Search\SearchCarRidings.cs" />
+    <Compile Include="Models\Search\SearchCases.cs" />
+    <Compile Include="Models\Search\SearchElectronicss.cs" />
+    <Compile Include="Models\Search\SearchLapTops.cs" />
+    <Compile Include="Models\Search\SearchMobileTablets.cs" />
+    <Compile Include="Models\Search\SearchMotorAccessoriess.cs" />
+    <Compile Include="Models\Search\SearchMotorcycles.cs" />
+    <Compile Include="Models\Search\SearchPersonalEntertainments.cs" />
+    <Compile Include="Models\Search\SearchRentHomes.cs" />
+    <Compile Include="Models\Search\SearchRentHouseSubs.cs" />
+    <Compile Include="Models\Search\SearchRentOffices.cs" />
+    <Compile Include="Models\Search\SearchRentOfficeSubs.cs" />
+    <Compile Include="Models\Search\SearchSaleApartSubs.cs" />
+    <Compile Include="Models\Search\SearchSaleHomes.cs" />
+    <Compile Include="Models\Search\SearchSaleLandSubs.cs" />
+    <Compile Include="Models\Search\SearchSaleOffices.cs" />
+    <Compile Include="Models\Search\SearchSaleOfficeSubs.cs" />
+    <Compile Include="Models\Search\SearchServicesEmployments.cs" />
+    <Compile Include="Models\Search\SearchServicesHouses.cs" />
+    <Compile Include="Models\Search\SearchServicesHouseSubs.cs" />
+    <Compile Include="Models\Search\SearchVehicleAccessoriess.cs" />
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
