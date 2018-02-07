@@ -22,7 +22,6 @@ namespace iGNProject.Models.Search
         public int MeasureCPU { get; set; }
         public int MeasureHard { get; set; }
         public int MeasureGraphic { get; set; }
-
         public bool HasUSB3 { get; set; }
         public bool HasDVDRW { get; set; }
         public bool HasSpeaker { get; set; }
