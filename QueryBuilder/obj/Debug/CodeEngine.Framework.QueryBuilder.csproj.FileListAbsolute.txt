@@ -1,0 +1,10 @@
+C:\Users\Administrator\Downloads\DemoProject\QueryBuilder\bin\Debug\CodeEngine.Framework.QueryBuilder.dll
+C:\Users\Administrator\Downloads\DemoProject\QueryBuilder\bin\Debug\CodeEngine.Framework.QueryBuilder.pdb
+C:\Users\Administrator\Downloads\DemoProject\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\DemoProject\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.dll
+C:\Users\Administrator\Downloads\DemoProject\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.pdb
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\bin\Debug\CodeEngine.Framework.QueryBuilder.dll
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\bin\Debug\CodeEngine.Framework.QueryBuilder.pdb
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.csprojResolveAssemblyReference.cache
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.dll
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Debug\CodeEngine.Framework.QueryBuilder.pdb

@@ -1,4 +1,6 @@
-﻿using iGNProject.Models.Search;
+﻿using CodeEngine.Framework.QueryBuilder;
+using CodeEngine.Framework.QueryBuilder.Enums;
+using iGNProject.Models.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,19 @@ namespace iGNProject.Controllers
         // POST: api/SearchAccessoriesDetails
         public IHttpActionResult Post(SearchAccessoriesDetails value)
         {
+            SelectQueryBuilder query = new SelectQueryBuilder();
+            query.SelectFromTable("Orders");
+
+            query.AddJoin(JoinType.InnerJoin,
+                          "Customers", "CustomerID",
+                          Comparison.Equals,
+                          "Orders", "CustomerID");
+
+            query.AddWhere("Customers.City", Comparison.Equals, "London");
+            
+
+
+
             return null;
         }
 

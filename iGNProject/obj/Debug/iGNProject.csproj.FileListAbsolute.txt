@@ -236,3 +236,5 @@ D:\ProjectAM\IGNProjectServerA\iGNProject\bin\zh-Hant\System.Spatial.resources.d
 D:\ProjectAM\IGNProjectServerA\iGNProject\obj\Debug\iGNProject.csprojResolveAssemblyReference.cache
 D:\ProjectAM\IGNProjectServerA\iGNProject\obj\Debug\iGNProject.dll
 D:\ProjectAM\IGNProjectServerA\iGNProject\obj\Debug\iGNProject.pdb
+D:\ProjectAM\IGNProjectServerA\iGNProject\bin\CodeEngine.Framework.QueryBuilder.dll
+D:\ProjectAM\IGNProjectServerA\iGNProject\bin\CodeEngine.Framework.QueryBuilder.pdb
