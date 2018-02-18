@@ -1,0 +1,1339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBEWDiGNModelStoreContainer" CdmEntityContainer="DBEWDiGNEntities">
+    <FunctionImportMapping FunctionImportName="CheckUserPass" FunctionName="DBEWDiGNModel.Store.CheckUserPass">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.CheckUserPass_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
+          <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCategories" FunctionName="DBEWDiGNModel.Store.GetAllCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllCategories_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllNews" FunctionName="DBEWDiGNModel.Store.GetAllNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllNews_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllNewsForCompareWithNewNews" FunctionName="DBEWDiGNModel.Store.GetAllNewsForCompareWithNewNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllNewsForCompareWithNewNews_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PubDate" ColumnName="PubDate" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="MagazineName" ColumnName="MagazineName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllRecentNewsTopView" FunctionName="DBEWDiGNModel.Store.GetAllRecentNewsTopView">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllRecentNewsTopView_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllRecord" FunctionName="DBEWDiGNModel.Store.GetAllRecord" />
+    <FunctionImportMapping FunctionImportName="GetAllRssCategory" FunctionName="DBEWDiGNModel.Store.GetAllRssCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllRssCategory_Result">
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="RssUrl" ColumnName="RssUrl" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="RssTypeID" ColumnName="RssTypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdAdsLocation" FunctionName="DBEWDiGNModel.Store.GetByIdAdsLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdAdsLocation_Result">
+          <ScalarProperty Name="AdsLocID" ColumnName="AdsLocID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdAdsSchedules" FunctionName="DBEWDiGNModel.Store.GetByIdAdsSchedules">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdAdsSchedules_Result">
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DailyDaysID" ColumnName="DailyDaysID" />
+          <ScalarProperty Name="UploadAdsFileID" ColumnName="UploadAdsFileID" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdBlockTag" FunctionName="DBEWDiGNModel.Store.GetByIdBlockTag">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdBlockTag_Result">
+          <ScalarProperty Name="BlockKeyID" ColumnName="BlockKeyID" />
+          <ScalarProperty Name="BlockKeywords" ColumnName="BlockKeywords" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdCategories" FunctionName="DBEWDiGNModel.Store.GetByIdCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdCategories_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdComments" FunctionName="DBEWDiGNModel.Store.GetByIdComments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdComments_Result">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdDailyDays" FunctionName="DBEWDiGNModel.Store.GetByIdDailyDays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdDailyDays_Result">
+          <ScalarProperty Name="DailyDaysID" ColumnName="DailyDaysID" />
+          <ScalarProperty Name="DayID" ColumnName="DayID" />
+          <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdDays" FunctionName="DBEWDiGNModel.Store.GetByIdDays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdDays_Result">
+          <ScalarProperty Name="DayID" ColumnName="DayID" />
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdFavoritePageNews" FunctionName="DBEWDiGNModel.Store.GetByIdFavoritePageNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdFavoritePageNews_Result">
+          <ScalarProperty Name="FavoritesCategoryNewsID" ColumnName="FavoritesCategoryNewsID" />
+          <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
+          <ScalarProperty Name="CategoryIDNews" ColumnName="CategoryIDNews" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdHashTag" FunctionName="DBEWDiGNModel.Store.GetByIdHashTag">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashTag_Result">
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdHashtagAds" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagAds">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagAds_Result">
+          <ScalarProperty Name="HashtagAdsID" ColumnName="HashtagAdsID" />
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagLinkestan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagLinkestan_Result">
+          <ScalarProperty Name="HtagLinkID" ColumnName="HtagLinkID" />
+          <ScalarProperty Name="LinkestanID" ColumnName="LinkestanID" />
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdHashtagNews" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagNews_Result">
+          <ScalarProperty Name="HashTagNewsID" ColumnName="HashTagNewsID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdHashtagPagePost" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagPagePost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagPagePost_Result">
+          <ScalarProperty Name="HashtagPagePostID" ColumnName="HashtagPagePostID" />
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="PagePostID" ColumnName="PagePostID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdIpAddress" FunctionName="DBEWDiGNModel.Store.GetByIdIpAddress">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdIpAddress_Result">
+          <ScalarProperty Name="IpAddressID" ColumnName="IpAddressID" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="DateRegister" ColumnName="DateRegister" />
+          <ScalarProperty Name="BrowserName" ColumnName="BrowserName" />
+          <ScalarProperty Name="WindowsName" ColumnName="WindowsName" />
+          <ScalarProperty Name="BrowserVersion" ColumnName="BrowserVersion" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdLanguages" FunctionName="DBEWDiGNModel.Store.GetByIdLanguages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLanguages_Result">
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Lnaguage" ColumnName="Lnaguage" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdLinkestan" FunctionName="DBEWDiGNModel.Store.GetByIdLinkestan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLinkestan_Result">
+          <ScalarProperty Name="LikestanID" ColumnName="LikestanID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="LinkName" ColumnName="LinkName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdLocations" FunctionName="DBEWDiGNModel.Store.GetByIdLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLocations_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="NeighbourhoodID" ColumnName="NeighbourhoodID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdMenu" FunctionName="DBEWDiGNModel.Store.GetByIdMenu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdMenu_Result">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdNews" FunctionName="DBEWDiGNModel.Store.GetByIdNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdNews_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdNewsLocation" FunctionName="DBEWDiGNModel.Store.GetByIdNewsLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdNewsLocation_Result">
+          <ScalarProperty Name="NewsLocationID" ColumnName="NewsLocationID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdPageFreinds" FunctionName="DBEWDiGNModel.Store.GetByIdPageFreinds">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPageFreinds_Result">
+          <ScalarProperty Name="PageFreindID" ColumnName="PageFreindID" />
+          <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Invited" ColumnName="Invited" />
+          <ScalarProperty Name="Confrim" ColumnName="Confrim" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdPagePost" FunctionName="DBEWDiGNModel.Store.GetByIdPagePost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePost_Result">
+          <ScalarProperty Name="PagePostId" ColumnName="PagePostId" />
+          <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="UnLike" ColumnName="UnLike" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdPagePostLocations" FunctionName="DBEWDiGNModel.Store.GetByIdPagePostLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePostLocations_Result">
+          <ScalarProperty Name="PagePostLocID" ColumnName="PagePostLocID" />
+          <ScalarProperty Name="PagePostID" ColumnName="PagePostID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdPagePrivacyType" FunctionName="DBEWDiGNModel.Store.GetByIdPagePrivacyType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePrivacyType_Result">
+          <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
+          <ScalarProperty Name="PrivacyType" ColumnName="PrivacyType" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdRateUsers" FunctionName="DBEWDiGNModel.Store.GetByIdRateUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdRateUsers_Result">
+          <ScalarProperty Name="UserRateID" ColumnName="UserRateID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PostCount" ColumnName="PostCount" />
+          <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
+          <ScalarProperty Name="UnLikesCount" ColumnName="UnLikesCount" />
+          <ScalarProperty Name="CommentsCount" ColumnName="CommentsCount" />
+          <ScalarProperty Name="SaveImageCount" ColumnName="SaveImageCount" />
+          <ScalarProperty Name="ShareFileCount" ColumnName="ShareFileCount" />
+          <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
+          <ScalarProperty Name="SpamCount" ColumnName="SpamCount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdRss" FunctionName="DBEWDiGNModel.Store.GetByIdRss">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdRss_Result">
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="RssUrl" ColumnName="RssUrl" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="RssTypeID" ColumnName="RssTypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdSearchedKeyword" FunctionName="DBEWDiGNModel.Store.GetByIdSearchedKeyword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdSearchedKeyword_Result">
+          <ScalarProperty Name="SearchedKeyID" ColumnName="SearchedKeyID" />
+          <ScalarProperty Name="SearchedKeyword" ColumnName="SearchedKeyword" />
+          <ScalarProperty Name="CountSearched" ColumnName="CountSearched" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="MountYear" ColumnName="MountYear" />
+          <ScalarProperty Name="LastUpdateInMount" ColumnName="LastUpdateInMount" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdTimes" FunctionName="DBEWDiGNModel.Store.GetByIdTimes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdTimes_Result">
+          <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdUploadAdsFile" FunctionName="DBEWDiGNModel.Store.GetByIdUploadAdsFile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUploadAdsFile_Result">
+          <ScalarProperty Name="UploadAdsFileID" ColumnName="UploadAdsFileID" />
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="FileAddress" ColumnName="FileAddress" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdUsers" FunctionName="DBEWDiGNModel.Store.GetByIdUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUsers_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
+          <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByIdUserWallPages" FunctionName="DBEWDiGNModel.Store.GetByIdUserWallPages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUserWallPages_Result">
+          <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
+          <ScalarProperty Name="PageRate" ColumnName="PageRate" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Confrim" ColumnName="Confrim" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TelegramLink" ColumnName="TelegramLink" />
+          <ScalarProperty Name="FacebookLink" ColumnName="FacebookLink" />
+          <ScalarProperty Name="TwitterLink" ColumnName="TwitterLink" />
+          <ScalarProperty Name="GooglePlusLink" ColumnName="GooglePlusLink" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
+          <ScalarProperty Name="PageImageUrl" ColumnName="PageImageUrl" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetByNameCategories" FunctionName="DBEWDiGNModel.Store.GetByNameCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByNameCategories_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetLatestNewsOrderByDate" FunctionName="DBEWDiGNModel.Store.GetLatestNewsOrderByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsOrderByDate_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetLatestNewsOrderByDateByRssID" FunctionName="DBEWDiGNModel.Store.GetLatestNewsOrderByDateByRssID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsOrderByDateByRssID_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PubDate" ColumnName="PubDate" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNewsOrderByDate" FunctionName="DBEWDiGNModel.Store.GetNewsOrderByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetNewsOrderByDate_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetToNewsEachCategory" FunctionName="DBEWDiGNModel.Store.GetToNewsEachCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetToNewsEachCategory_Result">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTopNewsByCategoryName" FunctionName="DBEWDiGNModel.Store.GetTopNewsByCategoryName" />
+    <FunctionImportMapping FunctionImportName="GetTopViewNews" FunctionName="DBEWDiGNModel.Store.GetTopViewNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTopViewNews_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LatestNewsOrderByPublishDate" FunctionName="DBEWDiGNModel.Store.LatestNewsOrderByPublishDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.LatestNewsOrderByPublishDate_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LatestNewsOrderByViewNumber" FunctionName="DBEWDiGNModel.Store.LatestNewsOrderByViewNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.LatestNewsOrderByViewNumber_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Add_tblAdsLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblAdsLocations" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblAdsSchedules" FunctionName="DBEWDiGNModel.Store.sp_Add_tblAdsSchedules" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblBlockTag" FunctionName="DBEWDiGNModel.Store.sp_Add_tblBlockTag" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblCategories" FunctionName="DBEWDiGNModel.Store.sp_Add_tblCategories" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblComments" FunctionName="DBEWDiGNModel.Store.sp_Add_tblComments" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblDailyDays" FunctionName="DBEWDiGNModel.Store.sp_Add_tblDailyDays" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblDays" FunctionName="DBEWDiGNModel.Store.sp_Add_tblDays" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblFavoritePageNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblFavoritePageNews" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblHashTag" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashTag" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagAds" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagAds" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagLinkestan" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagNews" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagPagePost" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagPagePost" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblIpAddress" FunctionName="DBEWDiGNModel.Store.sp_Add_tblIpAddress" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblLanguages" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLanguages" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblLinkestan" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLinkestan" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLocations" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblMenu" FunctionName="DBEWDiGNModel.Store.sp_Add_tblMenu" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblNews" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblNewsLocation" FunctionName="DBEWDiGNModel.Store.sp_Add_tblNewsLocation" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblPageFreinds" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPageFreinds" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblPagePost" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPagePost" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblPagePostLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPagePostLocations" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblPrivacyType" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPrivacyType" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblRateUsers" FunctionName="DBEWDiGNModel.Store.sp_Add_tblRateUsers" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblRss" FunctionName="DBEWDiGNModel.Store.sp_Add_tblRss" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblSearchedKeyword" FunctionName="DBEWDiGNModel.Store.sp_Add_tblSearchedKeyword" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblTimes" FunctionName="DBEWDiGNModel.Store.sp_Add_tblTimes" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblUploadAdsFile" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUploadAdsFile" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblUsers" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUsers" />
+    <FunctionImportMapping FunctionImportName="sp_Add_tblUserWallPages" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUserWallPages" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBEWDiGNModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBEWDiGNModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblAdsLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblAdsLocations" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblAdsSchedules" FunctionName="DBEWDiGNModel.Store.sp_DeltblAdsSchedules" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblBlockTag" FunctionName="DBEWDiGNModel.Store.sp_DeltblBlockTag" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblCategories" FunctionName="DBEWDiGNModel.Store.sp_DeltblCategories" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblComments" FunctionName="DBEWDiGNModel.Store.sp_DeltblComments" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblDailyDays" FunctionName="DBEWDiGNModel.Store.sp_DeltblDailyDays" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblDays" FunctionName="DBEWDiGNModel.Store.sp_DeltblDays" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblFavoritePageNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblFavoritePageNews" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblHashTag" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashTag" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblHashtagAds" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagAds" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagLinkestan" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblHashtagNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagNews" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblHashtagPagePost" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagPagePost" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblLanguages" FunctionName="DBEWDiGNModel.Store.sp_DeltblLanguages" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblLinkestan" FunctionName="DBEWDiGNModel.Store.sp_DeltblLinkestan" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblLocations" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblMenu" FunctionName="DBEWDiGNModel.Store.sp_DeltblMenu" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblNews" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblNewsLocation" FunctionName="DBEWDiGNModel.Store.sp_DeltblNewsLocation" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblPageFreinds" FunctionName="DBEWDiGNModel.Store.sp_DeltblPageFreinds" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblPagePost" FunctionName="DBEWDiGNModel.Store.sp_DeltblPagePost" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblPagePostLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblPagePostLocations" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblPrivacyType" FunctionName="DBEWDiGNModel.Store.sp_DeltblPrivacyType" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblRateUsers" FunctionName="DBEWDiGNModel.Store.sp_DeltblRateUsers" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblRss" FunctionName="DBEWDiGNModel.Store.sp_DeltblRss" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblSearchedKeyword" FunctionName="DBEWDiGNModel.Store.sp_DeltblSearchedKeyword" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblTimes" FunctionName="DBEWDiGNModel.Store.sp_DeltblTimes" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblUploadAdsFile" FunctionName="DBEWDiGNModel.Store.sp_DeltblUploadAdsFile" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblUsers" FunctionName="DBEWDiGNModel.Store.sp_DeltblUsers" />
+    <FunctionImportMapping FunctionImportName="sp_DeltblUserWallPages" FunctionName="DBEWDiGNModel.Store.sp_DeltblUserWallPages" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBEWDiGNModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBEWDiGNModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBEWDiGNModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBEWDiGNModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateOrAdd_tblHashTag" FunctionName="DBEWDiGNModel.Store.sp_UpdateOrAdd_tblHashTag" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBEWDiGNModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="spgo_GetPageNumbers" FunctionName="DBEWDiGNModel.Store.spgo_GetPageNumbers" />
+    <FunctionImportMapping FunctionImportName="SyndicatorTopNewsCategoryID" FunctionName="DBEWDiGNModel.Store.SyndicatorTopNewsCategoryID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.SyndicatorTopNewsCategoryID_Result">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllWallPagesByUserID" FunctionName="DBEWDiGNModel.Store.GetAllWallPagesByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllWallPagesByUserID_Result">
+          <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
+          <ScalarProperty Name="PageRate" ColumnName="PageRate" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Confrim" ColumnName="Confrim" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TelegramLink" ColumnName="TelegramLink" />
+          <ScalarProperty Name="FacebookLink" ColumnName="FacebookLink" />
+          <ScalarProperty Name="TwitterLink" ColumnName="TwitterLink" />
+          <ScalarProperty Name="GooglePlusLink" ColumnName="GooglePlusLink" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
+          <ScalarProperty Name="PageImageUrl" ColumnName="PageImageUrl" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllTop10News" FunctionName="DBEWDiGNModel.Store.GetAllTop10News">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllTop10News_Result">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPageCountWithTagName" FunctionName="DBEWDiGNModel.Store.GetPageCountWithTagName" />
+    <FunctionImportMapping FunctionImportName="GetLatestNewsByTagNameOrderByDate" FunctionName="DBEWDiGNModel.Store.GetLatestNewsByTagNameOrderByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsByTagNameOrderByDate_Result">
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RssName" ColumnName="RssName" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RssID" ColumnName="RssID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTopNewsSlider" FunctionName="DBEWDiGNModel.Store.GetTopNewsSlider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTopNewsSlider_Result">
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="rssname" ColumnName="rssname" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Unlike" ColumnName="Unlike" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTop200HashTagDayWeekMonthYear" FunctionName="DBEWDiGNModel.Store.GetTop200HashTagDayWeekMonthYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTop200HashTagDayWeekMonthYear_Result">
+          <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
+          <ScalarProperty Name="repcount" ColumnName="repcount" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ResetCountTblHashTagAndArchived" FunctionName="DBEWDiGNModel.Store.ResetCountTblHashTagAndArchived" />
+    <FunctionImportMapping FunctionImportName="GetCountSearchedKeyInDayMonthYear_Ago" FunctionName="DBEWDiGNModel.Store.GetCountSearchedKeyInDayMonthYear_Ago">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetCountSearchedKeyInDayMonthYear_Ago_Result">
+          <ScalarProperty Name="DAY_1" ColumnName="DAY 1" />
+          <ScalarProperty Name="DAY_2" ColumnName="DAY 2" />
+          <ScalarProperty Name="DAY_3" ColumnName="DAY 3" />
+          <ScalarProperty Name="DAY_4" ColumnName="DAY 4" />
+          <ScalarProperty Name="DAY_5" ColumnName="DAY 5" />
+          <ScalarProperty Name="DAY_6" ColumnName="DAY 6" />
+          <ScalarProperty Name="DAY_7" ColumnName="DAY 7" />
+          <ScalarProperty Name="DAY_8" ColumnName="DAY 8" />
+          <ScalarProperty Name="DAY_9" ColumnName="DAY 9" />
+          <ScalarProperty Name="DAY_10" ColumnName="DAY 10" />
+          <ScalarProperty Name="DAY_11" ColumnName="DAY 11" />
+          <ScalarProperty Name="DAY_12" ColumnName="DAY 12" />
+          <ScalarProperty Name="DAY_13" ColumnName="DAY 13" />
+          <ScalarProperty Name="DAY_14" ColumnName="DAY 14" />
+          <ScalarProperty Name="DAY_15" ColumnName="DAY 15" />
+          <ScalarProperty Name="DAY_16" ColumnName="DAY 16" />
+          <ScalarProperty Name="DAY_17" ColumnName="DAY 17" />
+          <ScalarProperty Name="DAY_18" ColumnName="DAY 18" />
+          <ScalarProperty Name="DAY_19" ColumnName="DAY 19" />
+          <ScalarProperty Name="DAY_20" ColumnName="DAY 20" />
+          <ScalarProperty Name="DAY_21" ColumnName="DAY 21" />
+          <ScalarProperty Name="DAY_22" ColumnName="DAY 22" />
+          <ScalarProperty Name="DAY_23" ColumnName="DAY 23" />
+          <ScalarProperty Name="DAY_24" ColumnName="DAY 24" />
+          <ScalarProperty Name="DAY_25" ColumnName="DAY 25" />
+          <ScalarProperty Name="DAY_26" ColumnName="DAY 26" />
+          <ScalarProperty Name="DAY_27" ColumnName="DAY 27" />
+          <ScalarProperty Name="DAY_28" ColumnName="DAY 28" />
+          <ScalarProperty Name="DAY_29" ColumnName="DAY 29" />
+          <ScalarProperty Name="DAY_30" ColumnName="DAY 30" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHashtagIDByTagName" FunctionName="DBEWDiGNModel.Store.GetHashtagIDByTagName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetHashtagIDByTagName_Result">
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllLinkestans" FunctionName="DBEWDiGNModel.Store.GetAllLinkestans">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllLinkestans_Result">
+          <ScalarProperty Name="LikestanID" ColumnName="LikestanID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="LinkName" ColumnName="LinkName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="DateRegister" ColumnName="DateRegister" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahi">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
+        <MappingFragment StoreEntitySet="tblAgahi">
+          <ScalarProperty Name="SpecialAgahi" ColumnName="SpecialAgahi" />
+          <ScalarProperty Name="OnTime" ColumnName="OnTime" />
+          <ScalarProperty Name="Chatable" ColumnName="Chatable" />
+          <ScalarProperty Name="HasImage" ColumnName="HasImage" />
+          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="AgahiStatus" ColumnName="AgahiStatus" />
+          <ScalarProperty Name="AdminAgreeDate" ColumnName="AdminAgreeDate" />
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NewOrUsed" ColumnName="NewOrUsed" />
+          <ScalarProperty Name="AgahiTitle" ColumnName="AgahiTitle" />
+          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
+          <ScalarProperty Name="CategoryAgahiID" ColumnName="CategoryAgahiID" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiBrandMobileCopmuter">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiBrandMobileCopmuter">
+        <MappingFragment StoreEntitySet="tblAgahiBrandMobileCopmuter">
+          <ScalarProperty Name="Labtop" ColumnName="Labtop" />
+          <ScalarProperty Name="AllinOne" ColumnName="AllinOne" />
+          <ScalarProperty Name="Computer" ColumnName="Computer" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiCarDetails">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCarDetails">
+        <MappingFragment StoreEntitySet="tblAgahiCarDetails">
+          <ScalarProperty Name="BiRang" ColumnName="BiRang" />
+          <ScalarProperty Name="RokeshTypeID" ColumnName="RokeshTypeID" />
+          <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
+          <ScalarProperty Name="ChanMaheID" ColumnName="ChanMaheID" />
+          <ScalarProperty Name="Mahane" ColumnName="Mahane" />
+          <ScalarProperty Name="PishPardakht" ColumnName="PishPardakht" />
+          <ScalarProperty Name="SopapID" ColumnName="SopapID" />
+          <ScalarProperty Name="SandaliBarghi" ColumnName="SandaliBarghi" />
+          <ScalarProperty Name="Remote" ColumnName="Remote" />
+          <ScalarProperty Name="SunRoof" ColumnName="SunRoof" />
+          <ScalarProperty Name="DandehNumber" ColumnName="DandehNumber" />
+          <ScalarProperty Name="AirBagNumber" ColumnName="AirBagNumber" />
+          <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
+          <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
+          <ScalarProperty Name="RangeDakheliID" ColumnName="RangeDakheliID" />
+          <ScalarProperty Name="RangeKharegiID" ColumnName="RangeKharegiID" />
+          <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
+          <ScalarProperty Name="GirboxAuto" ColumnName="GirboxAuto" />
+          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+          <ScalarProperty Name="karkardDaghigh" ColumnName="karkardDaghigh" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="AgahiDetailCar" ColumnName="AgahiDetailCar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiCategories">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCategories">
+        <MappingFragment StoreEntitySet="tblAgahiCategories">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="AgahiCategoryName" ColumnName="AgahiCategoryName" />
+          <ScalarProperty Name="AgahiCategoryID" ColumnName="AgahiCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiFavorite">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiFavorite">
+        <MappingFragment StoreEntitySet="tblAgahiFavorite">
+          <ScalarProperty Name="IsDeteled" ColumnName="IsDeteled" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FavoriteAgahiID" ColumnName="FavoriteAgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiGalleries">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiGalleries">
+        <MappingFragment StoreEntitySet="tblAgahiGalleries">
+          <ScalarProperty Name="ImageAddress" ColumnName="ImageAddress" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiHomeDetail">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiHomeDetail">
+        <MappingFragment StoreEntitySet="tblAgahiHomeDetail">
+          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
+          <ScalarProperty Name="Mablaghevam" ColumnName="Mablaghevam" />
+          <ScalarProperty Name="Vam" ColumnName="Vam" />
+          <ScalarProperty Name="TakBarg" ColumnName="TakBarg" />
+          <ScalarProperty Name="Varaseiye" ColumnName="Varaseiye" />
+          <ScalarProperty Name="Badansazi" ColumnName="Badansazi" />
+          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
+          <ScalarProperty Name="MohavateBaziKodak" ColumnName="MohavateBaziKodak" />
+          <ScalarProperty Name="Labi" ColumnName="Labi" />
+          <ScalarProperty Name="Alachigh" ColumnName="Alachigh" />
+          <ScalarProperty Name="Barbikio" ColumnName="Barbikio" />
+          <ScalarProperty Name="Chiler" ColumnName="Chiler" />
+          <ScalarProperty Name="Roofgarden" ColumnName="Roofgarden" />
+          <ScalarProperty Name="Khabmaster" ColumnName="Khabmaster" />
+          <ScalarProperty Name="Jakozi" ColumnName="Jakozi" />
+          <ScalarProperty Name="Sona" ColumnName="Sona" />
+          <ScalarProperty Name="NSEWID" ColumnName="NSEWID" />
+          <ScalarProperty Name="Hayat" ColumnName="Hayat" />
+          <ScalarProperty Name="Zirzamin" ColumnName="Zirzamin" />
+          <ScalarProperty Name="Estakhr" ColumnName="Estakhr" />
+          <ScalarProperty Name="Balkon" ColumnName="Balkon" />
+          <ScalarProperty Name="MantagheID" ColumnName="MantagheID" />
+          <ScalarProperty Name="MablagheMahane" ColumnName="MablagheMahane" />
+          <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
+          <ScalarProperty Name="Zirbana" ColumnName="Zirbana" />
+          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
+          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
+          <ScalarProperty Name="Tabaghe" ColumnName="Tabaghe" />
+          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+          <ScalarProperty Name="ServiceKhareji" ColumnName="ServiceKhareji" />
+          <ScalarProperty Name="ServiceIrani" ColumnName="ServiceIrani" />
+          <ScalarProperty Name="OtaghKhab" ColumnName="OtaghKhab" />
+          <ScalarProperty Name="Asansor" ColumnName="Asansor" />
+          <ScalarProperty Name="Parking" ColumnName="Parking" />
+          <ScalarProperty Name="CodeMelk" ColumnName="CodeMelk" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="AgahiDetailHomeID" ColumnName="AgahiDetailHomeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiMobCompDetails">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiMobCompDetails">
+        <MappingFragment StoreEntitySet="tblAgahiMobCompDetails">
+          <ScalarProperty Name="USB3" ColumnName="USB3" />
+          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
+          <ScalarProperty Name="AntiWater" ColumnName="AntiWater" />
+          <ScalarProperty Name="Waranty" ColumnName="Waranty" />
+          <ScalarProperty Name="Garanti" ColumnName="Garanti" />
+          <ScalarProperty Name="AllinOne" ColumnName="AllinOne" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="LabTop" ColumnName="LabTop" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="DisplaySize" ColumnName="DisplaySize" />
+          <ScalarProperty Name="Touch" ColumnName="Touch" />
+          <ScalarProperty Name="Four4K" ColumnName="Four4K" />
+          <ScalarProperty Name="LED" ColumnName="LED" />
+          <ScalarProperty Name="LCD" ColumnName="LCD" />
+          <ScalarProperty Name="Graphic" ColumnName="Graphic" />
+          <ScalarProperty Name="Cpu" ColumnName="Cpu" />
+          <ScalarProperty Name="Ram" ColumnName="Ram" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="AgahiMobCopID" ColumnName="AgahiMobCopID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiPlans">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiPlans">
+        <MappingFragment StoreEntitySet="tblAgahiPlans">
+          <ScalarProperty Name="NumberDayShow" ColumnName="NumberDayShow" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiRang">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiRang">
+        <MappingFragment StoreEntitySet="tblAgahiRang">
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="AgahiRangID" ColumnName="AgahiRangID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiService">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiService">
+        <MappingFragment StoreEntitySet="tblAgahiService">
+          <ScalarProperty Name="AgahiServiceType" ColumnName="AgahiServiceType" />
+          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblArchiveHashTags">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblArchiveHashTags">
+        <MappingFragment StoreEntitySet="tblArchiveHashTags">
+          <ScalarProperty Name="RepCount" ColumnName="RepCount" />
+          <ScalarProperty Name="CalculateDate" ColumnName="CalculateDate" />
+          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
+          <ScalarProperty Name="ArchiveHashtagID" ColumnName="ArchiveHashtagID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarBodyStatus">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarBodyStatus">
+        <MappingFragment StoreEntitySet="tblCarBodyStatus">
+          <ScalarProperty Name="NiazBeSafkari" ColumnName="NiazBeSafkari" />
+          <ScalarProperty Name="OtaghTaviz" ColumnName="OtaghTaviz" />
+          <ScalarProperty Name="SaghfRang" ColumnName="SaghfRang" />
+          <ScalarProperty Name="SandoghRang" ColumnName="SandoghRang" />
+          <ScalarProperty Name="KaputRang" ColumnName="KaputRang" />
+          <ScalarProperty Name="KhatoKhash" ColumnName="KhatoKhash" />
+          <ScalarProperty Name="ShasiJolo" ColumnName="ShasiJolo" />
+          <ScalarProperty Name="ShasiAghab" ColumnName="ShasiAghab" />
+          <ScalarProperty Name="Chapiye" ColumnName="Chapiye" />
+          <ScalarProperty Name="DorRang" ColumnName="DorRang" />
+          <ScalarProperty Name="ThreeLakeRang" ColumnName="ThreeLakeRang" />
+          <ScalarProperty Name="TwoLakeRang" ColumnName="TwoLakeRang" />
+          <ScalarProperty Name="OneLakeRang" ColumnName="OneLakeRang" />
+          <ScalarProperty Name="AgahiDetailCar" ColumnName="AgahiDetailCar" />
+          <ScalarProperty Name="CarBodyStatusID" ColumnName="CarBodyStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarMotorHajme">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarMotorHajme">
+        <MappingFragment StoreEntitySet="tblCarMotorHajme">
+          <ScalarProperty Name="HajmCC" ColumnName="HajmCC" />
+          <ScalarProperty Name="HamjName" ColumnName="HamjName" />
+          <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarSokht">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSokht">
+        <MappingFragment StoreEntitySet="tblCarSokht">
+          <ScalarProperty Name="SokhName" ColumnName="SokhName" />
+          <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarSopapMotor">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSopapMotor">
+        <MappingFragment StoreEntitySet="tblCarSopapMotor">
+          <ScalarProperty Name="SopapNumber" ColumnName="SopapNumber" />
+          <ScalarProperty Name="SopapName" ColumnName="SopapName" />
+          <ScalarProperty Name="SopapID" ColumnName="SopapID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarTip">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarTip">
+        <MappingFragment StoreEntitySet="tblCarTip">
+          <ScalarProperty Name="TipName" ColumnName="TipName" />
+          <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCity">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCountry">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCountry">
+        <MappingFragment StoreEntitySet="tblCountry">
+          <ScalarProperty Name="GeoRegionID" ColumnName="GeoRegionID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGeoRegion">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblGeoRegion">
+        <MappingFragment StoreEntitySet="tblGeoRegion">
+          <ScalarProperty Name="GeoTitle" ColumnName="GeoTitle" />
+          <ScalarProperty Name="GeoRegionID" ColumnName="GeoRegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeGarmayeshType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGarmayeshType">
+        <MappingFragment StoreEntitySet="tblHomeGarmayeshType">
+          <ScalarProperty Name="GarmayeshType" ColumnName="GarmayeshType" />
+          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeGharardad">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGharardad">
+        <MappingFragment StoreEntitySet="tblHomeGharardad">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeJenesKafID">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeJenesKafID">
+        <MappingFragment StoreEntitySet="tblHomeJenesKafID">
+          <ScalarProperty Name="JeneskafName" ColumnName="JeneskafName" />
+          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeMantagheID">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeMantagheID">
+        <MappingFragment StoreEntitySet="tblHomeMantagheID">
+          <ScalarProperty Name="MantagheNumber" ColumnName="MantagheNumber" />
+          <ScalarProperty Name="MantagheID" ColumnName="MantagheID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeMelkType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeMelkType">
+        <MappingFragment StoreEntitySet="tblHomeMelkType">
+          <ScalarProperty Name="MelkType" ColumnName="MelkType" />
+          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeNSEWID">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeNSEWID">
+        <MappingFragment StoreEntitySet="tblHomeNSEWID">
+          <ScalarProperty Name="NSEWName" ColumnName="NSEWName" />
+          <ScalarProperty Name="NSEWID" ColumnName="NSEWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJeansBadane">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblJeansBadane">
+        <MappingFragment StoreEntitySet="tblJeansBadane">
+          <ScalarProperty Name="JeansBadaneType" ColumnName="JeansBadaneType" />
+          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNeighbourhoodRange">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblNeighbourhoodRange">
+        <MappingFragment StoreEntitySet="tblNeighbourhoodRange">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="NeighbourhoodRangeName" ColumnName="NeighbourhoodRangeName" />
+          <ScalarProperty Name="NeighbourhoodRangeID" ColumnName="NeighbourhoodRangeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPriceType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblPriceType">
+        <MappingFragment StoreEntitySet="tblPriceType">
+          <ScalarProperty Name="PriceTypeName" ColumnName="PriceTypeName" />
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPrivacyType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblPrivacyType">
+        <MappingFragment StoreEntitySet="tblPrivacyType">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PrivacyType" ColumnName="PrivacyType" />
+          <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProvince">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblProvince">
+        <MappingFragment StoreEntitySet="tblProvince">
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRegions">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblRegions">
+        <MappingFragment StoreEntitySet="tblRegions">
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLoginLog">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserLoginLog">
+        <MappingFragment StoreEntitySet="tblUserLoginLog">
+          <ScalarProperty Name="IsCheckPassed" ColumnName="IsCheckPassed" />
+          <ScalarProperty Name="DateLogin" ColumnName="DateLogin" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+          <ScalarProperty Name="SMSCodeSent" ColumnName="SMSCodeSent" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserLoginLogID" ColumnName="UserLoginLogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUsers">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
+          <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
+          <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

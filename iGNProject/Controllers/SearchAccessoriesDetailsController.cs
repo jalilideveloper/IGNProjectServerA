@@ -27,6 +27,7 @@ namespace iGNProject.Controllers
         // POST: api/SearchAccessoriesDetails
         public IHttpActionResult Post(SearchAccessoriesDetails value)
         {
+
             SelectQueryBuilder query = new SelectQueryBuilder();
             query.SelectFromTable("Orders");
 
@@ -36,7 +37,7 @@ namespace iGNProject.Controllers
                           "Orders", "CustomerID");
 
             query.AddWhere("Customers.City", Comparison.Equals, "London");
-            
+
 
 
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd6d8a4dacf04fffb781fa4d7a86f5fc" Name="Diagram1">
+        <EntityTypeShape EntityType="DBEWDiGNModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahi" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiBrandMobileCopmuter" Width="1.5" PointX="5.25" PointY="19.875" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCarDetails" Width="1.5" PointX="13.5" PointY="11.625" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCategories" Width="1.5" PointX="3" PointY="21.5" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiFavorite" Width="1.5" PointX="7.5" PointY="30.25" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiGalleries" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiHomeDetail" Width="1.5" PointX="10.5" PointY="10.25" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiMobCompDetails" Width="1.5" PointX="7.5" PointY="12.375" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiPlans" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiRang" Width="1.5" PointX="11.25" PointY="4.5" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiService" Width="1.5" PointX="3" PointY="24.25" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblArchiveHashTags" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCarBodyStatus" Width="1.5" PointX="15.75" PointY="13" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCarMotorHajme" Width="1.5" PointX="11.25" PointY="26" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCarSokht" Width="1.5" PointX="11.25" PointY="23.625" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCarSopapMotor" Width="1.5" PointX="11.25" PointY="21.125" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCarTip" Width="1.5" PointX="11.25" PointY="7.25" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCity" Width="1.5" PointX="0.75" PointY="14" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblCountry" Width="1.5" PointX="8" PointY="0.875" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblGeoRegion" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeGarmayeshType" Width="1.5" PointX="8.25" PointY="23.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeGharardad" Width="1.5" PointX="8.25" PointY="26" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeJenesKafID" Width="1.5" PointX="8.25" PointY="19" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeMantagheID" Width="1.5" PointX="8.25" PointY="8.375" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeMelkType" Width="1.5" PointX="8.25" PointY="5.625" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblHomeNSEWID" Width="1.5" PointX="8.25" PointY="21.375" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblJeansBadane" Width="1.5" PointX="5.25" PointY="8.5" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblNeighbourhoodRange" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblPriceType" Width="1.5" PointX="3" PointY="16.875" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblPrivacyType" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblProvince" Width="1.5" PointX="3" PointY="19.25" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblRegions" Width="1.5" PointX="3" PointY="14" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblUserLoginLog" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblUsers" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblProvince" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblRegions" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMantagheID" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblRegions_tblCity" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

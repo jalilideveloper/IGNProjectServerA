@@ -1,0 +1,1448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBEWDiGNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblAgahi">
+    <Key>
+      <PropertyRef Name="AgahiID" />
+    </Key>
+    <Property Name="AgahiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryAgahiID" Type="int" />
+    <Property Name="AgahiServiceID" Type="int" />
+    <Property Name="AgahiTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewOrUsed" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="RegisterDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AdminUserID" Type="int" />
+    <Property Name="AdminAgreeDate" Type="datetime" />
+    <Property Name="AgahiStatus" Type="tinyint" />
+    <Property Name="Location" Type="geography" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="ProvinceID" Type="int" />
+    <Property Name="RegionID" Type="int" />
+    <Property Name="Tell" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriceTypeID" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PlanShowAgahiID" Type="int" />
+    <Property Name="HasImage" Type="bit" />
+    <Property Name="Chatable" Type="nvarchar" MaxLength="900" />
+    <Property Name="OnTime" Type="nvarchar" MaxLength="100" />
+    <Property Name="SpecialAgahi" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblAgahiBrandMobileCopmuter">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParrentID" Type="int" />
+    <Property Name="Mobile" Type="bit" />
+    <Property Name="Computer" Type="bit" />
+    <Property Name="AllinOne" Type="bit" />
+    <Property Name="Labtop" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblAgahiCarDetails">
+    <Key>
+      <PropertyRef Name="AgahiDetailCar" />
+    </Key>
+    <Property Name="AgahiDetailCar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiID" Type="int" />
+    <Property Name="karkardDaghigh" Type="nvarchar" MaxLength="50" />
+    <Property Name="SaleSakht" Type="int" />
+    <Property Name="GirboxAuto" Type="bit" />
+    <Property Name="SokhtID" Type="int" />
+    <Property Name="RangeKharegiID" Type="int" />
+    <Property Name="RangeDakheliID" Type="int" />
+    <Property Name="CarTipID" Type="int" />
+    <Property Name="MotorHajmID" Type="int" />
+    <Property Name="AirBagNumber" Type="int" />
+    <Property Name="DandehNumber" Type="int" />
+    <Property Name="SunRoof" Type="bit" />
+    <Property Name="Remote" Type="bit" />
+    <Property Name="SandaliBarghi" Type="bit" />
+    <Property Name="SopapID" Type="int" />
+    <Property Name="PishPardakht" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Mahane" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ChanMaheID" Type="int" />
+    <Property Name="MablagheKole" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="RokeshTypeID" Type="int" />
+    <Property Name="BiRang" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblAgahiCategories">
+    <Key>
+      <PropertyRef Name="AgahiCategoryID" />
+    </Key>
+    <Property Name="AgahiCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiCategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParrentID" Type="int" />
+    <Property Name="Priority" Type="int" />
+  </EntityType>
+  <EntityType Name="tblAgahiFavorite">
+    <Key>
+      <PropertyRef Name="FavoriteAgahiID" />
+    </Key>
+    <Property Name="FavoriteAgahiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AgahiID" Type="int" />
+    <Property Name="IsDeteled" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblAgahiGalleries">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+    </Key>
+    <Property Name="GalleryID" Type="int" Nullable="false" />
+    <Property Name="AgahiID" Type="int" />
+    <Property Name="ImageAddress" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="tblAgahiHomeDetail">
+    <Key>
+      <PropertyRef Name="AgahiDetailHomeID" />
+    </Key>
+    <Property Name="AgahiDetailHomeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiID" Type="int" Nullable="false" />
+    <Property Name="CodeMelk" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parking" Type="bit" />
+    <Property Name="Asansor" Type="bit" />
+    <Property Name="OtaghKhab" Type="int" />
+    <Property Name="ServiceIrani" Type="int" />
+    <Property Name="ServiceKhareji" Type="int" />
+    <Property Name="SaleSakht" Type="int" />
+    <Property Name="Tabaghe" Type="int" />
+    <Property Name="MelkTypeID" Type="int" />
+    <Property Name="GharardadTypeID" Type="int" />
+    <Property Name="Zirbana" Type="int" />
+    <Property Name="MablagheKole" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MablagheMahane" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MantagheID" Type="int" />
+    <Property Name="Balkon" Type="bit" />
+    <Property Name="Estakhr" Type="bit" />
+    <Property Name="Zirzamin" Type="bit" />
+    <Property Name="Hayat" Type="bit" />
+    <Property Name="NSEWID" Type="int" />
+    <Property Name="Sona" Type="bit" />
+    <Property Name="Jakozi" Type="bit" />
+    <Property Name="Khabmaster" Type="bit" />
+    <Property Name="Roofgarden" Type="bit" />
+    <Property Name="Chiler" Type="bit" />
+    <Property Name="Barbikio" Type="bit" />
+    <Property Name="Alachigh" Type="bit" />
+    <Property Name="Labi" Type="bit" />
+    <Property Name="MohavateBaziKodak" Type="bit" />
+    <Property Name="JeneskafID" Type="int" />
+    <Property Name="Badansazi" Type="bit" />
+    <Property Name="Varaseiye" Type="bit" />
+    <Property Name="TakBarg" Type="bit" />
+    <Property Name="Vam" Type="bit" />
+    <Property Name="Mablaghevam" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="GarmayeshTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblAgahiMobCompDetails">
+    <Key>
+      <PropertyRef Name="AgahiMobCopID" />
+    </Key>
+    <Property Name="AgahiMobCopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiID" Type="int" />
+    <Property Name="Ram" Type="int" />
+    <Property Name="Cpu" Type="int" />
+    <Property Name="Graphic" Type="int" />
+    <Property Name="LCD" Type="bit" />
+    <Property Name="LED" Type="bit" />
+    <Property Name="Four4K" Type="bit" />
+    <Property Name="Touch" Type="bit" />
+    <Property Name="DisplaySize" Type="float" />
+    <Property Name="BrandID" Type="int" />
+    <Property Name="LabTop" Type="bit" />
+    <Property Name="Mobile" Type="bit" />
+    <Property Name="AllinOne" Type="bit" />
+    <Property Name="Garanti" Type="bit" />
+    <Property Name="Waranty" Type="bit" />
+    <Property Name="AntiWater" Type="bit" />
+    <Property Name="JeansBadaneID" Type="int" />
+    <Property Name="USB3" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblAgahiPlans">
+    <Key>
+      <PropertyRef Name="PlanShowAgahiID" />
+    </Key>
+    <Property Name="PlanShowAgahiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberDayShow" Type="int" />
+  </EntityType>
+  <EntityType Name="tblAgahiRang">
+    <Key>
+      <PropertyRef Name="AgahiRangID" />
+    </Key>
+    <Property Name="AgahiRangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ColorName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAgahiService">
+    <Key>
+      <PropertyRef Name="AgahiServiceID" />
+    </Key>
+    <Property Name="AgahiServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiServiceType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblArchiveHashTags">
+    <Key>
+      <PropertyRef Name="ArchiveHashtagID" />
+    </Key>
+    <Property Name="ArchiveHashtagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HashtagID" Type="int" />
+    <Property Name="CalculateDate" Type="datetime" />
+    <Property Name="RepCount" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCarBodyStatus">
+    <Key>
+      <PropertyRef Name="CarBodyStatusID" />
+    </Key>
+    <Property Name="CarBodyStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiDetailCar" Type="int" Nullable="false" />
+    <Property Name="OneLakeRang" Type="bit" />
+    <Property Name="TwoLakeRang" Type="bit" />
+    <Property Name="ThreeLakeRang" Type="bit" />
+    <Property Name="DorRang" Type="bit" />
+    <Property Name="Chapiye" Type="bit" />
+    <Property Name="ShasiAghab" Type="bit" />
+    <Property Name="ShasiJolo" Type="bit" />
+    <Property Name="KhatoKhash" Type="bit" />
+    <Property Name="KaputRang" Type="bit" />
+    <Property Name="SandoghRang" Type="bit" />
+    <Property Name="SaghfRang" Type="bit" />
+    <Property Name="OtaghTaviz" Type="bit" />
+    <Property Name="NiazBeSafkari" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblCarMotorHajme">
+    <Key>
+      <PropertyRef Name="MotorHajmID" />
+    </Key>
+    <Property Name="MotorHajmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HamjName" Type="nvarchar" MaxLength="50" />
+    <Property Name="HajmCC" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCarSokht">
+    <Key>
+      <PropertyRef Name="SokhtID" />
+    </Key>
+    <Property Name="SokhtID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SokhName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCarSopapMotor">
+    <Key>
+      <PropertyRef Name="SopapID" />
+    </Key>
+    <Property Name="SopapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SopapName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SopapNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCarTip">
+    <Key>
+      <PropertyRef Name="CarTipID" />
+    </Key>
+    <Property Name="CarTipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCity">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinceId" Type="int" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCountry">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GeoRegionID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblGeoRegion">
+    <Key>
+      <PropertyRef Name="GeoRegionID" />
+    </Key>
+    <Property Name="GeoRegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GeoTitle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeGarmayeshType">
+    <Key>
+      <PropertyRef Name="GarmayeshTypeID" />
+    </Key>
+    <Property Name="GarmayeshTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GarmayeshType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeGharardad">
+    <Key>
+      <PropertyRef Name="GharardadTypeID" />
+    </Key>
+    <Property Name="GharardadTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeJenesKafID">
+    <Key>
+      <PropertyRef Name="JeneskafID" />
+    </Key>
+    <Property Name="JeneskafID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JeneskafName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeMantagheID">
+    <Key>
+      <PropertyRef Name="MantagheID" />
+    </Key>
+    <Property Name="MantagheID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MantagheNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeMelkType">
+    <Key>
+      <PropertyRef Name="MelkTypeID" />
+    </Key>
+    <Property Name="MelkTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MelkType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblHomeNSEWID">
+    <Key>
+      <PropertyRef Name="NSEWID" />
+    </Key>
+    <Property Name="NSEWID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NSEWName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblJeansBadane">
+    <Key>
+      <PropertyRef Name="JeansBadaneID" />
+    </Key>
+    <Property Name="JeansBadaneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JeansBadaneType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblNeighbourhoodRange">
+    <Key>
+      <PropertyRef Name="NeighbourhoodRangeID" />
+    </Key>
+    <Property Name="NeighbourhoodRangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NeighbourhoodRangeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProvinceID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPriceType">
+    <Key>
+      <PropertyRef Name="PriceTypeID" />
+    </Key>
+    <Property Name="PriceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceTypeName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblPrivacyType">
+    <Key>
+      <PropertyRef Name="PrivacyTypeID" />
+    </Key>
+    <Property Name="PrivacyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrivacyType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblProvince">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblRegions">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="RegionName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblUserLoginLog">
+    <Key>
+      <PropertyRef Name="UserLoginLogID" />
+    </Key>
+    <Property Name="UserLoginLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="SMSCodeSent" Type="nvarchar" MaxLength="8" />
+    <Property Name="DateSent" Type="datetime" />
+    <Property Name="DateLogin" Type="datetime" Nullable="false" />
+    <Property Name="IsCheckPassed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tell" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="900" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondryPass" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserLinkPage" Type="nvarchar" MaxLength="900" />
+    <Property Name="UserTypeIDelImageUrl" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RegisterDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="NationalityID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="BussinessFieldID" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="UserType" Type="tinyint" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <Association Name="FK_tblAgahi_tblAgahiCategories">
+    <End Role="tblAgahiCategories" Type="Self.tblAgahiCategories" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiCategories">
+        <PropertyRef Name="AgahiCategoryID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="CategoryAgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblAgahiPlans">
+    <End Role="tblAgahiPlans" Type="Self.tblAgahiPlans" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiPlans">
+        <PropertyRef Name="PlanShowAgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="PlanShowAgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblAgahiService">
+    <End Role="tblAgahiService" Type="Self.tblAgahiService" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiService">
+        <PropertyRef Name="AgahiServiceID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="AgahiServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblPriceType">
+    <End Role="tblPriceType" Type="Self.tblPriceType" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPriceType">
+        <PropertyRef Name="PriceTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="PriceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblProvince">
+    <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProvince">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblRegions">
+    <End Role="tblRegions" Type="Self.tblRegions" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRegions">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblAgahiRang">
+    <End Role="tblAgahiRang" Type="Self.tblAgahiRang" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiRang">
+        <PropertyRef Name="AgahiRangID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="RangeKharegiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblAgahiRang1">
+    <End Role="tblAgahiRang" Type="Self.tblAgahiRang" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiRang">
+        <PropertyRef Name="AgahiRangID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="RangeDakheliID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
+    <End Role="tblCarMotorHajme" Type="Self.tblCarMotorHajme" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarMotorHajme">
+        <PropertyRef Name="MotorHajmID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="MotorHajmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarSokht">
+    <End Role="tblCarSokht" Type="Self.tblCarSokht" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarSokht">
+        <PropertyRef Name="SokhtID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="SokhtID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarSopapMotor">
+    <End Role="tblCarSopapMotor" Type="Self.tblCarSopapMotor" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarSopapMotor">
+        <PropertyRef Name="SopapID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="SopapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarTip">
+    <End Role="tblCarTip" Type="Self.tblCarTip" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarTip">
+        <PropertyRef Name="CarTipID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarTipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType">
+    <End Role="tblHomeGarmayeshType" Type="Self.tblHomeGarmayeshType" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeGarmayeshType">
+        <PropertyRef Name="GarmayeshTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="GarmayeshTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeGharardad">
+    <End Role="tblHomeGharardad" Type="Self.tblHomeGharardad" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeGharardad">
+        <PropertyRef Name="GharardadTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="GharardadTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeJenesKafID">
+    <End Role="tblHomeJenesKafID" Type="Self.tblHomeJenesKafID" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeJenesKafID">
+        <PropertyRef Name="JeneskafID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="JeneskafID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeMantagheID">
+    <End Role="tblHomeMantagheID" Type="Self.tblHomeMantagheID" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeMantagheID">
+        <PropertyRef Name="MantagheID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="MantagheID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeMelkType">
+    <End Role="tblHomeMelkType" Type="Self.tblHomeMelkType" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeMelkType">
+        <PropertyRef Name="MelkTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="MelkTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeNSEWID">
+    <End Role="tblHomeNSEWID" Type="Self.tblHomeNSEWID" Multiplicity="0..1" />
+    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeNSEWID">
+        <PropertyRef Name="NSEWID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="NSEWID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiFavorite_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblAgahiFavorite" Type="Self.tblAgahiFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiFavorite">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblAgahiMobCompDetails" Type="Self.tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
+    <End Role="tblAgahiBrandMobileCopmuter" Type="Self.tblAgahiBrandMobileCopmuter" Multiplicity="0..1" />
+    <End Role="tblAgahiMobCompDetails" Type="Self.tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiBrandMobileCopmuter">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblJeansBadane">
+    <End Role="tblJeansBadane" Type="Self.tblJeansBadane" Multiplicity="0..1" />
+    <End Role="tblAgahiMobCompDetails" Type="Self.tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJeansBadane">
+        <PropertyRef Name="JeansBadaneID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="JeansBadaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCarBodyStatus_tblAgahiCarDetails">
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="1" />
+    <End Role="tblCarBodyStatus" Type="Self.tblCarBodyStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiCarDetails">
+        <PropertyRef Name="AgahiDetailCar" />
+      </Principal>
+      <Dependent Role="tblCarBodyStatus">
+        <PropertyRef Name="AgahiDetailCar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCarDetails_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCountry_tblGeoRegion">
+    <End Role="tblGeoRegion" Type="Self.tblGeoRegion" Multiplicity="0..1" />
+    <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGeoRegion">
+        <PropertyRef Name="GeoRegionID" />
+      </Principal>
+      <Dependent Role="tblCountry">
+        <PropertyRef Name="GeoRegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblRegions_tblCity">
+    <End Role="tblCity" Type="Self.tblCity" Multiplicity="0..1" />
+    <End Role="tblRegions" Type="Self.tblRegions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tblRegions">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserLoginLog_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblUserLoginLog" Type="Self.tblUserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserLoginLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CheckUserPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetAllCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllLinkestans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="langID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="langID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllNewsForCompareWithNewNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RssID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllRecentNewsTopView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllRssCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTop10News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="langID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAllWallPagesByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdAdsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="adsLocID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="adsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlockKeyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CommentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DailyDaysID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DayID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagAdsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HtagLinkID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashTagNewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagPagePostID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdIpAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IpAddressID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LikestanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsLocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageFreindID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PagePostId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PagePostLocID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdPagePrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PrivacyTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserRateID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RssID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchedKeyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TimeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByIdUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserWallPageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetByNameCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryName" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCountSearchedKeyInDayMonthYear_Ago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InputKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="whichDWM" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetHashtagIDByTagName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InputName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetLatestNewsByTagNameOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Startpageid" Type="int" Mode="In" />
+    <Parameter Name="languageID" Type="int" Mode="In" />
+    <Parameter Name="TagName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetLatestNewsOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Startpageid" Type="int" Mode="In" />
+    <Parameter Name="languageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetLatestNewsOrderByDateByRssID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RssID" Type="int" Mode="In" />
+    <Parameter Name="startpageid" Type="int" Mode="In" />
+    <Parameter Name="lanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetNewsOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="startpageid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPageCountWithTagName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TagName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetToNewsEachCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategroyID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTop200HashTagDayWeekMonthYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="whichDWM" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetTopNewsByCategoryName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTopNewsSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategroyID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTopViewNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LatestNewsOrderByPublishDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="langID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LatestNewsOrderByViewNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ResetCountTblHashTagAndArchived" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Add_tblAdsLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="AdsID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="DailyDaysID" Type="int" Mode="In" />
+    <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
+    <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="IsArchive" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlockKeywords" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ParrentID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="Comments" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="NewsID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DayID" Type="int" Mode="In" />
+    <Parameter Name="TimeID" Type="int" Mode="In" />
+    <Parameter Name="AdsID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DayName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
+    <Parameter Name="UserWallPageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryIDNews" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="Priority" Type="int" Mode="In" />
+    <Parameter Name="Counter" Type="int" Mode="In" />
+    <Parameter Name="languageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+    <Parameter Name="AdsID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LinkestanID" Type="int" Mode="In" />
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="languageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsID" Type="int" Mode="In" />
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="languageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PagePostID" Type="int" Mode="In" />
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblIpAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BrowserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="BrowserVersion" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateRegister" Type="datetime" Mode="In" />
+    <Parameter Name="IpAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="WindowsName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lnaguage" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="LinkName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateRegister" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrentLication" Type="geography" Mode="In" />
+    <Parameter Name="CountryID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="NeighbourhoodID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="ParrentID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PublishDate" Type="datetime" Mode="In" />
+    <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
+    <Parameter Name="ImageUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="ViewNumber" Type="bigint" Mode="In" />
+    <Parameter Name="Link" Type="nvarchar" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="RssID" Type="int" Mode="In" />
+    <Parameter Name="LikeCount" Type="int" Mode="In" />
+    <Parameter Name="Unlike" Type="int" Mode="In" />
+    <Parameter Name="Likes" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="categoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserWallPageID" Type="int" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="Invited" Type="bit" Mode="In" />
+    <Parameter Name="Confrim" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserWallPageID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="UnLike" Type="int" Mode="In" />
+    <Parameter Name="Likes" Type="int" Mode="In" />
+    <Parameter Name="Visit" Type="int" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="PagePostID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblPrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PrivacyType" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="PostCount" Type="int" Mode="In" />
+    <Parameter Name="LikesCount" Type="int" Mode="In" />
+    <Parameter Name="UnLikesCount" Type="int" Mode="In" />
+    <Parameter Name="CommentsCount" Type="int" Mode="In" />
+    <Parameter Name="SaveImageCount" Type="int" Mode="In" />
+    <Parameter Name="ShareFileCount" Type="int" Mode="In" />
+    <Parameter Name="FriendCount" Type="int" Mode="In" />
+    <Parameter Name="SpamCount" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RssUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchedKeyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountSearched" Type="int" Mode="In" />
+    <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
+    <Parameter Name="MountYear" Type="datetime" Mode="In" />
+    <Parameter Name="LastUpdateInMount" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartTime" Type="time" Mode="In" />
+    <Parameter Name="EndTime" Type="time" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="int" Mode="In" />
+    <Parameter Name="FileAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lastname" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tell" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="SecondryPass" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserLinkPage" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserTypeIDelImageUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegisterDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="NationalityID" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="BussinessFieldID" Type="nvarchar" Mode="In" />
+    <Parameter Name="BirthDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="NickName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="UserType" Type="tinyint" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Add_tblUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="PagePrivacyID" Type="int" Mode="In" />
+    <Parameter Name="PageRate" Type="bigint" Mode="In" />
+    <Parameter Name="Block" Type="bit" Mode="In" />
+    <Parameter Name="Confrim" Type="bit" Mode="In" />
+    <Parameter Name="RegisterDate" Type="bit" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelegramLink" Type="nvarchar" Mode="In" />
+    <Parameter Name="FacebookLink" Type="nvarchar" Mode="In" />
+    <Parameter Name="TwitterLink" Type="nvarchar" Mode="In" />
+    <Parameter Name="GooglePlusLink" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="FriendCount" Type="int" Mode="In" />
+    <Parameter Name="PageImageUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblAdsLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsLocaID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlockKeyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CommentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DailyDaysID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DayID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagAdsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HtagLinkID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashTagNewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="HashtagPagePostID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LinkestanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewsLocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageFreindID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PagePostId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PagePostLocID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblPrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PrivacyTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserRateID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RssID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchedKeyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TimeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeltblUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserWallPageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateOrAdd_tblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InputKey" Type="nvarchar" Mode="In" />
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgo_GetPageNumbers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SyndicatorTopNewsCategoryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DBEWDiGNModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahi" EntityType="Self.tblAgahi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiBrandMobileCopmuter" EntityType="Self.tblAgahiBrandMobileCopmuter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiCarDetails" EntityType="Self.tblAgahiCarDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiCategories" EntityType="Self.tblAgahiCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiFavorite" EntityType="Self.tblAgahiFavorite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiGalleries" EntityType="Self.tblAgahiGalleries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiHomeDetail" EntityType="Self.tblAgahiHomeDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiMobCompDetails" EntityType="Self.tblAgahiMobCompDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiPlans" EntityType="Self.tblAgahiPlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiRang" EntityType="Self.tblAgahiRang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiService" EntityType="Self.tblAgahiService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblArchiveHashTags" EntityType="Self.tblArchiveHashTags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarBodyStatus" EntityType="Self.tblCarBodyStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarMotorHajme" EntityType="Self.tblCarMotorHajme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarSokht" EntityType="Self.tblCarSokht" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarSopapMotor" EntityType="Self.tblCarSopapMotor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarTip" EntityType="Self.tblCarTip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCountry" EntityType="Self.tblCountry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGeoRegion" EntityType="Self.tblGeoRegion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeGarmayeshType" EntityType="Self.tblHomeGarmayeshType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeGharardad" EntityType="Self.tblHomeGharardad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeJenesKafID" EntityType="Self.tblHomeJenesKafID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeMantagheID" EntityType="Self.tblHomeMantagheID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeMelkType" EntityType="Self.tblHomeMelkType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHomeNSEWID" EntityType="Self.tblHomeNSEWID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblJeansBadane" EntityType="Self.tblJeansBadane" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNeighbourhoodRange" EntityType="Self.tblNeighbourhoodRange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPriceType" EntityType="Self.tblPriceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPrivacyType" EntityType="Self.tblPrivacyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProvince" EntityType="Self.tblProvince" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRegions" EntityType="Self.tblRegions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserLoginLog" EntityType="Self.tblUserLoginLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="Self.FK_tblAgahi_tblAgahiCategories">
+      <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiPlans" Association="Self.FK_tblAgahi_tblAgahiPlans">
+      <End Role="tblAgahiPlans" EntitySet="tblAgahiPlans" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiService" Association="Self.FK_tblAgahi_tblAgahiService">
+      <End Role="tblAgahiService" EntitySet="tblAgahiService" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="Self.FK_tblAgahi_tblPriceType">
+      <End Role="tblPriceType" EntitySet="tblPriceType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblProvince" Association="Self.FK_tblAgahi_tblProvince">
+      <End Role="tblProvince" EntitySet="tblProvince" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblRegions" Association="Self.FK_tblAgahi_tblRegions">
+      <End Role="tblRegions" EntitySet="tblRegions" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang" Association="Self.FK_tblAgahiCarDetails_tblAgahiRang">
+      <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang1" Association="Self.FK_tblAgahiCarDetails_tblAgahiRang1">
+      <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="Self.FK_tblAgahiCarDetails_tblCarMotorHajme">
+      <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="Self.FK_tblAgahiCarDetails_tblCarSokht">
+      <End Role="tblCarSokht" EntitySet="tblCarSokht" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSopapMotor" Association="Self.FK_tblAgahiCarDetails_tblCarSopapMotor">
+      <End Role="tblCarSopapMotor" EntitySet="tblCarSopapMotor" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarTip" Association="Self.FK_tblAgahiCarDetails_tblCarTip">
+      <End Role="tblCarTip" EntitySet="tblCarTip" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="Self.FK_tblAgahiDetailHome_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType" Association="Self.FK_tblAgahiDetailHome_tblHomeGarmayeshType">
+      <End Role="tblHomeGarmayeshType" EntitySet="tblHomeGarmayeshType" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGharardad" Association="Self.FK_tblAgahiDetailHome_tblHomeGharardad">
+      <End Role="tblHomeGharardad" EntitySet="tblHomeGharardad" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeJenesKafID" Association="Self.FK_tblAgahiDetailHome_tblHomeJenesKafID">
+      <End Role="tblHomeJenesKafID" EntitySet="tblHomeJenesKafID" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMantagheID" Association="Self.FK_tblAgahiDetailHome_tblHomeMantagheID">
+      <End Role="tblHomeMantagheID" EntitySet="tblHomeMantagheID" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMelkType" Association="Self.FK_tblAgahiDetailHome_tblHomeMelkType">
+      <End Role="tblHomeMelkType" EntitySet="tblHomeMelkType" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeNSEWID" Association="Self.FK_tblAgahiDetailHome_tblHomeNSEWID">
+      <End Role="tblHomeNSEWID" EntitySet="tblHomeNSEWID" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="Self.FK_tblAgahiFavorite_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="Self.FK_tblAgahiMobCompDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" Association="Self.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
+      <End Role="tblAgahiBrandMobileCopmuter" EntitySet="tblAgahiBrandMobileCopmuter" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblJeansBadane" Association="Self.FK_tblAgahiMobCompDetails_tblJeansBadane">
+      <End Role="tblJeansBadane" EntitySet="tblJeansBadane" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCarBodyStatus_tblAgahiCarDetails" Association="Self.FK_tblCarBodyStatus_tblAgahiCarDetails">
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="Self.FK_tblCarDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCountry_tblGeoRegion" Association="Self.FK_tblCountry_tblGeoRegion">
+      <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
+      <End Role="tblCountry" EntitySet="tblCountry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblRegions_tblCity" Association="Self.FK_tblRegions_tblCity">
+      <End Role="tblCity" EntitySet="tblCity" />
+      <End Role="tblRegions" EntitySet="tblRegions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserLoginLog_tblUsers" Association="Self.FK_tblUserLoginLog_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserLoginLog" EntitySet="tblUserLoginLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

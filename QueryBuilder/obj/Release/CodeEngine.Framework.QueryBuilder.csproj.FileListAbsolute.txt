@@ -1,0 +1,5 @@
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\bin\Release\CodeEngine.Framework.QueryBuilder.dll
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\bin\Release\CodeEngine.Framework.QueryBuilder.pdb
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Release\CodeEngine.Framework.QueryBuilder.csprojResolveAssemblyReference.cache
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Release\CodeEngine.Framework.QueryBuilder.dll
+D:\ProjectAM\IGNProjectServerA\QueryBuilder\obj\Release\CodeEngine.Framework.QueryBuilder.pdb
