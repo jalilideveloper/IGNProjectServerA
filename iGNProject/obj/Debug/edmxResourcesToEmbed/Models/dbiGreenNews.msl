@@ -1044,5 +1044,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblCarBodyStatus">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarBodyStatus">
+        <MappingFragment StoreEntitySet="tblCarBodyStatus">
+          <ScalarProperty Name="NiazBeSafkari" ColumnName="NiazBeSafkari" />
+          <ScalarProperty Name="OtaghTaviz" ColumnName="OtaghTaviz" />
+          <ScalarProperty Name="SaghfRang" ColumnName="SaghfRang" />
+          <ScalarProperty Name="SandoghRang" ColumnName="SandoghRang" />
+          <ScalarProperty Name="KaputRang" ColumnName="KaputRang" />
+          <ScalarProperty Name="KhatoKhash" ColumnName="KhatoKhash" />
+          <ScalarProperty Name="ShasiJolo" ColumnName="ShasiJolo" />
+          <ScalarProperty Name="ShasiAghab" ColumnName="ShasiAghab" />
+          <ScalarProperty Name="Chapiye" ColumnName="Chapiye" />
+          <ScalarProperty Name="DorRang" ColumnName="DorRang" />
+          <ScalarProperty Name="ThreeLakeRang" ColumnName="ThreeLakeRang" />
+          <ScalarProperty Name="TwoLakeRang" ColumnName="TwoLakeRang" />
+          <ScalarProperty Name="OneLakeRang" ColumnName="OneLakeRang" />
+          <ScalarProperty Name="CarBodyStatusID" ColumnName="CarBodyStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

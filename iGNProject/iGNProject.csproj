@@ -238,6 +238,7 @@
     <Compile Include="Controllers\SearchServicesHousesController.cs" />
     <Compile Include="Controllers\SearchServicesHouseSubsController.cs" />
     <Compile Include="Controllers\SearchVehicleAccessoriessController.cs" />
+    <Compile Include="Controllers\CarColorsController.cs" />
     <Compile Include="Controllers\tblPriceTypesController.cs" />
     <Compile Include="Controllers\tblPrivacyTypesController.cs" />
     <Compile Include="Controllers\tblRegionsController.cs" />

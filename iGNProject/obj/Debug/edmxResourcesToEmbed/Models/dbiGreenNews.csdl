@@ -876,6 +876,15 @@
       <End Role="tblCarTip" EntitySet="tblCarTip" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
+    <EntitySet Name="tblCarBodyStatus" EntityType="DBEWDiGNModel.tblCarBodyStatus" />
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarBodyStatus" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus">
+      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCountry_tblGeoRegion" Association="DBEWDiGNModel.FK_tblCountry_tblGeoRegion">
+      <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
+      <End Role="tblCountry" EntitySet="tblCountry" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="CheckUserPass_Result">
     <Property Type="Int32" Name="UserID" Nullable="false" />
@@ -1766,6 +1775,7 @@
     <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GeoRegionID" Type="Int32" />
+    <NavigationProperty Name="tblGeoRegion" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblCountry" ToRole="tblGeoRegion" />
   </EntityType>
   <EntityType Name="tblGeoRegion">
     <Key>
@@ -1773,6 +1783,7 @@
     </Key>
     <Property Name="GeoRegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GeoTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblGeoRegion" ToRole="tblCountry" />
   </EntityType>
   <EntityType Name="tblHomeGarmayeshType">
     <Key>
@@ -2634,6 +2645,7 @@
     <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
     <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
     <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
+    <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
   </EntityType>
   <EntityType Name="tblCarColors">
     <Key>
@@ -2725,6 +2737,50 @@
       </Principal>
       <Dependent Role="tblAgahiCarDetails">
         <PropertyRef Name="CarTipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblCarBodyStatus">
+    <Key>
+      <PropertyRef Name="CarBodyStatusID" />
+    </Key>
+    <Property Name="CarBodyStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OneLakeRang" Type="Boolean" />
+    <Property Name="TwoLakeRang" Type="Boolean" />
+    <Property Name="ThreeLakeRang" Type="Boolean" />
+    <Property Name="DorRang" Type="Boolean" />
+    <Property Name="Chapiye" Type="Boolean" />
+    <Property Name="ShasiAghab" Type="Boolean" />
+    <Property Name="ShasiJolo" Type="Boolean" />
+    <Property Name="KhatoKhash" Type="Boolean" />
+    <Property Name="KaputRang" Type="Boolean" />
+    <Property Name="SandoghRang" Type="Boolean" />
+    <Property Name="SaghfRang" Type="Boolean" />
+    <Property Name="OtaghTaviz" Type="Boolean" />
+    <Property Name="NiazBeSafkari" Type="Boolean" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblCarBodyStatus" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <Association Name="FK_tblAgahiCarDetails_tblCarBodyStatus">
+    <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarBodyStatus">
+        <PropertyRef Name="CarBodyStatusID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarBodyStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCountry_tblGeoRegion">
+    <End Type="DBEWDiGNModel.tblGeoRegion" Role="tblGeoRegion" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblCountry" Role="tblCountry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGeoRegion">
+        <PropertyRef Name="GeoRegionID" />
+      </Principal>
+      <Dependent Role="tblCountry">
+        <PropertyRef Name="GeoRegionID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

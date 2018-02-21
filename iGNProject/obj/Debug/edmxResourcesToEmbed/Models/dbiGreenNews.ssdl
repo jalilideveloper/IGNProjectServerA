@@ -222,6 +222,25 @@
     <Property Name="BrandTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="BrandTypeName" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="tblCarBodyStatus">
+    <Key>
+      <PropertyRef Name="CarBodyStatusID" />
+    </Key>
+    <Property Name="CarBodyStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OneLakeRang" Type="bit" />
+    <Property Name="TwoLakeRang" Type="bit" />
+    <Property Name="ThreeLakeRang" Type="bit" />
+    <Property Name="DorRang" Type="bit" />
+    <Property Name="Chapiye" Type="bit" />
+    <Property Name="ShasiAghab" Type="bit" />
+    <Property Name="ShasiJolo" Type="bit" />
+    <Property Name="KhatoKhash" Type="bit" />
+    <Property Name="KaputRang" Type="bit" />
+    <Property Name="SandoghRang" Type="bit" />
+    <Property Name="SaghfRang" Type="bit" />
+    <Property Name="OtaghTaviz" Type="bit" />
+    <Property Name="NiazBeSafkari" Type="bit" />
+  </EntityType>
   <EntityType Name="tblCarChassis">
     <Key>
       <PropertyRef Name="CarChassisTypeID" />
@@ -522,6 +541,18 @@
       </Principal>
       <Dependent Role="tblAgahi">
         <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarBodyStatus">
+    <End Role="tblCarBodyStatus" Type="Self.tblCarBodyStatus" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarBodyStatus">
+        <PropertyRef Name="CarBodyStatusID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarBodyStatusID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -992,6 +1023,7 @@
     <EntitySet Name="tblArchiveHashTags" EntityType="Self.tblArchiveHashTags" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBrands" EntityType="Self.tblBrands" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBrandType" EntityType="Self.tblBrandType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCarBodyStatus" EntityType="Self.tblCarBodyStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCarChassis" EntityType="Self.tblCarChassis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCarColors" EntityType="Self.tblCarColors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCarConditions" EntityType="Self.tblCarConditions" Schema="dbo" store:Type="Tables" />
@@ -1043,6 +1075,10 @@
     <AssociationSet Name="FK_tblAgahi_tblRegions" Association="Self.FK_tblAgahi_tblRegions">
       <End Role="tblRegions" EntitySet="tblRegions" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarBodyStatus" Association="Self.FK_tblAgahiCarDetails_tblCarBodyStatus">
+      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarColors" Association="Self.FK_tblAgahiCarDetails_tblCarColors">
       <End Role="tblCarColors" EntitySet="tblCarColors" />
