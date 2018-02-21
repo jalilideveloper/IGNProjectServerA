@@ -187,7 +187,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AgahiBrandMobileCopmutersController.cs" />
     <Compile Include="Controllers\AgahiCarDetailsController.cs" />
     <Compile Include="Controllers\AgahiCategoriesController.cs" />
     <Compile Include="Controllers\AgahiFavoritesController.cs" />
@@ -195,9 +194,9 @@
     <Compile Include="Controllers\AgahiHomeDetailsController.cs" />
     <Compile Include="Controllers\AgahiMobCompDetailsController.cs" />
     <Compile Include="Controllers\AgahiPlansController.cs" />
-    <Compile Include="Controllers\AgahiRangsController.cs" />
     <Compile Include="Controllers\AgahisController.cs" />
     <Compile Include="Controllers\AgahiServicesController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CarBodyStatusController.cs" />
     <Compile Include="Controllers\CarMotorHajmesController.cs" />
     <Compile Include="Controllers\CarSokhtsController.cs" />
@@ -453,6 +452,42 @@
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_SearchAccessoriesDetails_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchAllAgahis_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchBoatsAccessoriess_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchCarBoatAccs_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchCarHeavys_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchCarRidings_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchElectronicss_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchPersonalEntertainments_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchServicesEmployments_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchServicesHouseSubs_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchServicesHouses_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SearchVehicleAccessoriess_Result.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SyndicatorTopNewsCategoryID_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
@@ -460,9 +495,6 @@
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAgahi.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblAgahiBrandMobileCopmuter.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAgahiCarDetails.cs">
@@ -486,9 +518,6 @@
     <Compile Include="Models\tblAgahiPlans.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblAgahiRang.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblAgahiService.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
@@ -505,6 +534,9 @@
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCarChassis.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCarColors.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCarConditions.cs">

@@ -29,18 +29,21 @@ namespace iGNProject.Models
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tblAgahi> tblAgahi { get; set; }
-        public virtual DbSet<tblAgahiBrandMobileCopmuter> tblAgahiBrandMobileCopmuter { get; set; }
         public virtual DbSet<tblAgahiCategories> tblAgahiCategories { get; set; }
         public virtual DbSet<tblAgahiFavorite> tblAgahiFavorite { get; set; }
         public virtual DbSet<tblAgahiGalleries> tblAgahiGalleries { get; set; }
         public virtual DbSet<tblAgahiHomeDetail> tblAgahiHomeDetail { get; set; }
         public virtual DbSet<tblAgahiMobCompDetails> tblAgahiMobCompDetails { get; set; }
         public virtual DbSet<tblAgahiPlans> tblAgahiPlans { get; set; }
-        public virtual DbSet<tblAgahiRang> tblAgahiRang { get; set; }
         public virtual DbSet<tblAgahiService> tblAgahiService { get; set; }
         public virtual DbSet<tblArchiveHashTags> tblArchiveHashTags { get; set; }
-        public virtual DbSet<tblCarBodyStatus> tblCarBodyStatus { get; set; }
+        public virtual DbSet<tblBrands> tblBrands { get; set; }
+        public virtual DbSet<tblBrandType> tblBrandType { get; set; }
+        public virtual DbSet<tblCarChassis> tblCarChassis { get; set; }
+        public virtual DbSet<tblCarConditions> tblCarConditions { get; set; }
+        public virtual DbSet<tblCarCrash> tblCarCrash { get; set; }
         public virtual DbSet<tblCarMotorHajme> tblCarMotorHajme { get; set; }
+        public virtual DbSet<tblCarPelak> tblCarPelak { get; set; }
         public virtual DbSet<tblCarSokht> tblCarSokht { get; set; }
         public virtual DbSet<tblCarSopapMotor> tblCarSopapMotor { get; set; }
         public virtual DbSet<tblCarTip> tblCarTip { get; set; }
@@ -60,16 +63,12 @@ namespace iGNProject.Models
         public virtual DbSet<tblProvince> tblProvince { get; set; }
         public virtual DbSet<tblRegions> tblRegions { get; set; }
         public virtual DbSet<tblUserLoginLog> tblUserLoginLog { get; set; }
-        public virtual DbSet<tblBrands> tblBrands { get; set; }
-        public virtual DbSet<tblBrandType> tblBrandType { get; set; }
-        public virtual DbSet<tblCarChassis> tblCarChassis { get; set; }
-        public virtual DbSet<tblCarConditions> tblCarConditions { get; set; }
-        public virtual DbSet<tblCarCrash> tblCarCrash { get; set; }
-        public virtual DbSet<tblCarPelak> tblCarPelak { get; set; }
+        public virtual DbSet<tblUsers> tblUsers { get; set; }
         public virtual DbSet<tblUserType> tblUserType { get; set; }
         public virtual DbSet<tblVam> tblVam { get; set; }
         public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
-        public virtual DbSet<tblUsers> tblUsers { get; set; }
+        public virtual DbSet<tblCarColors> tblCarColors { get; set; }
+        public virtual DbSet<tblCarBodyStatus> tblCarBodyStatus { get; set; }
     
         public virtual ObjectResult<CheckUserPass_Result> CheckUserPass(string userName, string password)
         {
@@ -1937,6 +1936,679 @@ namespace iGNProject.Models
                 new ObjectParameter("langID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllLinkestans_Result>("GetAllLinkestans", langIDParameter);
+        }
+    
+        public virtual int sp_DynamicSearchQuery(string sqlCommand)
+        {
+            var sqlCommandParameter = sqlCommand != null ?
+                new ObjectParameter("sqlCommand", sqlCommand) :
+                new ObjectParameter("sqlCommand", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DynamicSearchQuery", sqlCommandParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchAccessoriesDetails_Result> sp_SearchAccessoriesDetails(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchAccessoriesDetails_Result>("sp_SearchAccessoriesDetails", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchAllAgahis_Result> sp_SearchAllAgahis(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchAllAgahis_Result>("sp_SearchAllAgahis", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchBoatsAccessoriess_Result> sp_SearchBoatsAccessoriess(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchBoatsAccessoriess_Result>("sp_SearchBoatsAccessoriess", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchCarBoatAccs_Result> sp_SearchCarBoatAccs(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchCarBoatAccs_Result>("sp_SearchCarBoatAccs", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchCarHeavys_Result> sp_SearchCarHeavys(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<decimal> untillMonthlyInstallment, Nullable<decimal> fromMonthlyInstallment, Nullable<int> uNumberMonthlyInstallment, Nullable<int> fNumberMonthlyInstallment, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice, Nullable<int> untillYear, Nullable<int> fromYear, Nullable<int> brandID, Nullable<int> kind, Nullable<int> untillCarFunction, Nullable<int> fromCarFunction, Nullable<int> kindConditionID, Nullable<int> kindChassisID, Nullable<int> kindDiff, Nullable<int> kindColorOut, Nullable<int> kindColorIn, Nullable<int> kindModelTip, Nullable<bool> kindGearbox, Nullable<int> kindFuel, Nullable<int> kindCrash, Nullable<int> kindPelak, Nullable<bool> hasSunroof, Nullable<bool> hasAlarm, Nullable<bool> hasSound)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var untillMonthlyInstallmentParameter = untillMonthlyInstallment.HasValue ?
+                new ObjectParameter("UntillMonthlyInstallment", untillMonthlyInstallment) :
+                new ObjectParameter("UntillMonthlyInstallment", typeof(decimal));
+    
+            var fromMonthlyInstallmentParameter = fromMonthlyInstallment.HasValue ?
+                new ObjectParameter("FromMonthlyInstallment", fromMonthlyInstallment) :
+                new ObjectParameter("FromMonthlyInstallment", typeof(decimal));
+    
+            var uNumberMonthlyInstallmentParameter = uNumberMonthlyInstallment.HasValue ?
+                new ObjectParameter("UNumberMonthlyInstallment", uNumberMonthlyInstallment) :
+                new ObjectParameter("UNumberMonthlyInstallment", typeof(int));
+    
+            var fNumberMonthlyInstallmentParameter = fNumberMonthlyInstallment.HasValue ?
+                new ObjectParameter("FNumberMonthlyInstallment", fNumberMonthlyInstallment) :
+                new ObjectParameter("FNumberMonthlyInstallment", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            var untillYearParameter = untillYear.HasValue ?
+                new ObjectParameter("UntillYear", untillYear) :
+                new ObjectParameter("UntillYear", typeof(int));
+    
+            var fromYearParameter = fromYear.HasValue ?
+                new ObjectParameter("FromYear", fromYear) :
+                new ObjectParameter("FromYear", typeof(int));
+    
+            var brandIDParameter = brandID.HasValue ?
+                new ObjectParameter("BrandID", brandID) :
+                new ObjectParameter("BrandID", typeof(int));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var untillCarFunctionParameter = untillCarFunction.HasValue ?
+                new ObjectParameter("UntillCarFunction", untillCarFunction) :
+                new ObjectParameter("UntillCarFunction", typeof(int));
+    
+            var fromCarFunctionParameter = fromCarFunction.HasValue ?
+                new ObjectParameter("FromCarFunction", fromCarFunction) :
+                new ObjectParameter("FromCarFunction", typeof(int));
+    
+            var kindConditionIDParameter = kindConditionID.HasValue ?
+                new ObjectParameter("KindConditionID", kindConditionID) :
+                new ObjectParameter("KindConditionID", typeof(int));
+    
+            var kindChassisIDParameter = kindChassisID.HasValue ?
+                new ObjectParameter("KindChassisID", kindChassisID) :
+                new ObjectParameter("KindChassisID", typeof(int));
+    
+            var kindDiffParameter = kindDiff.HasValue ?
+                new ObjectParameter("KindDiff", kindDiff) :
+                new ObjectParameter("KindDiff", typeof(int));
+    
+            var kindColorOutParameter = kindColorOut.HasValue ?
+                new ObjectParameter("KindColorOut", kindColorOut) :
+                new ObjectParameter("KindColorOut", typeof(int));
+    
+            var kindColorInParameter = kindColorIn.HasValue ?
+                new ObjectParameter("KindColorIn", kindColorIn) :
+                new ObjectParameter("KindColorIn", typeof(int));
+    
+            var kindModelTipParameter = kindModelTip.HasValue ?
+                new ObjectParameter("KindModelTip", kindModelTip) :
+                new ObjectParameter("KindModelTip", typeof(int));
+    
+            var kindGearboxParameter = kindGearbox.HasValue ?
+                new ObjectParameter("KindGearbox", kindGearbox) :
+                new ObjectParameter("KindGearbox", typeof(bool));
+    
+            var kindFuelParameter = kindFuel.HasValue ?
+                new ObjectParameter("KindFuel", kindFuel) :
+                new ObjectParameter("KindFuel", typeof(int));
+    
+            var kindCrashParameter = kindCrash.HasValue ?
+                new ObjectParameter("KindCrash", kindCrash) :
+                new ObjectParameter("KindCrash", typeof(int));
+    
+            var kindPelakParameter = kindPelak.HasValue ?
+                new ObjectParameter("KindPelak", kindPelak) :
+                new ObjectParameter("KindPelak", typeof(int));
+    
+            var hasSunroofParameter = hasSunroof.HasValue ?
+                new ObjectParameter("HasSunroof", hasSunroof) :
+                new ObjectParameter("HasSunroof", typeof(bool));
+    
+            var hasAlarmParameter = hasAlarm.HasValue ?
+                new ObjectParameter("HasAlarm", hasAlarm) :
+                new ObjectParameter("HasAlarm", typeof(bool));
+    
+            var hasSoundParameter = hasSound.HasValue ?
+                new ObjectParameter("HasSound", hasSound) :
+                new ObjectParameter("HasSound", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchCarHeavys_Result>("sp_SearchCarHeavys", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, untillMonthlyInstallmentParameter, fromMonthlyInstallmentParameter, uNumberMonthlyInstallmentParameter, fNumberMonthlyInstallmentParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter, untillYearParameter, fromYearParameter, brandIDParameter, kindParameter, untillCarFunctionParameter, fromCarFunctionParameter, kindConditionIDParameter, kindChassisIDParameter, kindDiffParameter, kindColorOutParameter, kindColorInParameter, kindModelTipParameter, kindGearboxParameter, kindFuelParameter, kindCrashParameter, kindPelakParameter, hasSunroofParameter, hasAlarmParameter, hasSoundParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchCarRidings_Result> sp_SearchCarRidings(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<decimal> untillMonthlyInstallment, Nullable<decimal> fromMonthlyInstallment, Nullable<int> uNumberMonthlyInstallment, Nullable<int> fNumberMonthlyInstallment, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice, Nullable<int> untillYear, Nullable<int> fromYear, Nullable<int> brandID, Nullable<int> kind, Nullable<int> untillCarFunction, Nullable<int> fromCarFunction, Nullable<int> kindConditionID, Nullable<int> kindChassisID, Nullable<int> kindDiff, Nullable<int> kindColorOut, Nullable<int> kindColorIn, Nullable<int> kindModelTip, Nullable<bool> kindGearbox, Nullable<int> kindFuel, Nullable<int> kindCrash, Nullable<int> kindPelak, Nullable<bool> hasSunroof, Nullable<bool> hasAlarm, Nullable<bool> hasSound)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var untillMonthlyInstallmentParameter = untillMonthlyInstallment.HasValue ?
+                new ObjectParameter("UntillMonthlyInstallment", untillMonthlyInstallment) :
+                new ObjectParameter("UntillMonthlyInstallment", typeof(decimal));
+    
+            var fromMonthlyInstallmentParameter = fromMonthlyInstallment.HasValue ?
+                new ObjectParameter("FromMonthlyInstallment", fromMonthlyInstallment) :
+                new ObjectParameter("FromMonthlyInstallment", typeof(decimal));
+    
+            var uNumberMonthlyInstallmentParameter = uNumberMonthlyInstallment.HasValue ?
+                new ObjectParameter("UNumberMonthlyInstallment", uNumberMonthlyInstallment) :
+                new ObjectParameter("UNumberMonthlyInstallment", typeof(int));
+    
+            var fNumberMonthlyInstallmentParameter = fNumberMonthlyInstallment.HasValue ?
+                new ObjectParameter("FNumberMonthlyInstallment", fNumberMonthlyInstallment) :
+                new ObjectParameter("FNumberMonthlyInstallment", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            var untillYearParameter = untillYear.HasValue ?
+                new ObjectParameter("UntillYear", untillYear) :
+                new ObjectParameter("UntillYear", typeof(int));
+    
+            var fromYearParameter = fromYear.HasValue ?
+                new ObjectParameter("FromYear", fromYear) :
+                new ObjectParameter("FromYear", typeof(int));
+    
+            var brandIDParameter = brandID.HasValue ?
+                new ObjectParameter("BrandID", brandID) :
+                new ObjectParameter("BrandID", typeof(int));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var untillCarFunctionParameter = untillCarFunction.HasValue ?
+                new ObjectParameter("UntillCarFunction", untillCarFunction) :
+                new ObjectParameter("UntillCarFunction", typeof(int));
+    
+            var fromCarFunctionParameter = fromCarFunction.HasValue ?
+                new ObjectParameter("FromCarFunction", fromCarFunction) :
+                new ObjectParameter("FromCarFunction", typeof(int));
+    
+            var kindConditionIDParameter = kindConditionID.HasValue ?
+                new ObjectParameter("KindConditionID", kindConditionID) :
+                new ObjectParameter("KindConditionID", typeof(int));
+    
+            var kindChassisIDParameter = kindChassisID.HasValue ?
+                new ObjectParameter("KindChassisID", kindChassisID) :
+                new ObjectParameter("KindChassisID", typeof(int));
+    
+            var kindDiffParameter = kindDiff.HasValue ?
+                new ObjectParameter("KindDiff", kindDiff) :
+                new ObjectParameter("KindDiff", typeof(int));
+    
+            var kindColorOutParameter = kindColorOut.HasValue ?
+                new ObjectParameter("KindColorOut", kindColorOut) :
+                new ObjectParameter("KindColorOut", typeof(int));
+    
+            var kindColorInParameter = kindColorIn.HasValue ?
+                new ObjectParameter("KindColorIn", kindColorIn) :
+                new ObjectParameter("KindColorIn", typeof(int));
+    
+            var kindModelTipParameter = kindModelTip.HasValue ?
+                new ObjectParameter("KindModelTip", kindModelTip) :
+                new ObjectParameter("KindModelTip", typeof(int));
+    
+            var kindGearboxParameter = kindGearbox.HasValue ?
+                new ObjectParameter("KindGearbox", kindGearbox) :
+                new ObjectParameter("KindGearbox", typeof(bool));
+    
+            var kindFuelParameter = kindFuel.HasValue ?
+                new ObjectParameter("KindFuel", kindFuel) :
+                new ObjectParameter("KindFuel", typeof(int));
+    
+            var kindCrashParameter = kindCrash.HasValue ?
+                new ObjectParameter("KindCrash", kindCrash) :
+                new ObjectParameter("KindCrash", typeof(int));
+    
+            var kindPelakParameter = kindPelak.HasValue ?
+                new ObjectParameter("KindPelak", kindPelak) :
+                new ObjectParameter("KindPelak", typeof(int));
+    
+            var hasSunroofParameter = hasSunroof.HasValue ?
+                new ObjectParameter("HasSunroof", hasSunroof) :
+                new ObjectParameter("HasSunroof", typeof(bool));
+    
+            var hasAlarmParameter = hasAlarm.HasValue ?
+                new ObjectParameter("HasAlarm", hasAlarm) :
+                new ObjectParameter("HasAlarm", typeof(bool));
+    
+            var hasSoundParameter = hasSound.HasValue ?
+                new ObjectParameter("HasSound", hasSound) :
+                new ObjectParameter("HasSound", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchCarRidings_Result>("sp_SearchCarRidings", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, untillMonthlyInstallmentParameter, fromMonthlyInstallmentParameter, uNumberMonthlyInstallmentParameter, fNumberMonthlyInstallmentParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter, untillYearParameter, fromYearParameter, brandIDParameter, kindParameter, untillCarFunctionParameter, fromCarFunctionParameter, kindConditionIDParameter, kindChassisIDParameter, kindDiffParameter, kindColorOutParameter, kindColorInParameter, kindModelTipParameter, kindGearboxParameter, kindFuelParameter, kindCrashParameter, kindPelakParameter, hasSunroofParameter, hasAlarmParameter, hasSoundParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchElectronicss_Result> sp_SearchElectronicss(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchElectronicss_Result>("sp_SearchElectronicss", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchPersonalEntertainments_Result> sp_SearchPersonalEntertainments(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchPersonalEntertainments_Result>("sp_SearchPersonalEntertainments", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchServicesEmployments_Result> sp_SearchServicesEmployments(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchServicesEmployments_Result>("sp_SearchServicesEmployments", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchServicesHouses_Result> sp_SearchServicesHouses(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> userTypeID)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var userTypeIDParameter = userTypeID.HasValue ?
+                new ObjectParameter("UserTypeID", userTypeID) :
+                new ObjectParameter("UserTypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchServicesHouses_Result>("sp_SearchServicesHouses", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, userTypeIDParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchServicesHouseSubs_Result> sp_SearchServicesHouseSubs(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> userTypeID)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var userTypeIDParameter = userTypeID.HasValue ?
+                new ObjectParameter("UserTypeID", userTypeID) :
+                new ObjectParameter("UserTypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchServicesHouseSubs_Result>("sp_SearchServicesHouseSubs", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, userTypeIDParameter);
+        }
+    
+        public virtual ObjectResult<sp_SearchVehicleAccessoriess_Result> sp_SearchVehicleAccessoriess(Nullable<int> categoryID, string searchInput, Nullable<int> shahrSelectID, string mahaleSelect, Nullable<bool> hasImage, Nullable<bool> hasFast, Nullable<int> kind, Nullable<int> kindTotalPrice, Nullable<int> untillTotalPrice, Nullable<int> fromTotalPrice)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var searchInputParameter = searchInput != null ?
+                new ObjectParameter("SearchInput", searchInput) :
+                new ObjectParameter("SearchInput", typeof(string));
+    
+            var shahrSelectIDParameter = shahrSelectID.HasValue ?
+                new ObjectParameter("ShahrSelectID", shahrSelectID) :
+                new ObjectParameter("ShahrSelectID", typeof(int));
+    
+            var mahaleSelectParameter = mahaleSelect != null ?
+                new ObjectParameter("MahaleSelect", mahaleSelect) :
+                new ObjectParameter("MahaleSelect", typeof(string));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var hasFastParameter = hasFast.HasValue ?
+                new ObjectParameter("HasFast", hasFast) :
+                new ObjectParameter("HasFast", typeof(bool));
+    
+            var kindParameter = kind.HasValue ?
+                new ObjectParameter("Kind", kind) :
+                new ObjectParameter("Kind", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var untillTotalPriceParameter = untillTotalPrice.HasValue ?
+                new ObjectParameter("UntillTotalPrice", untillTotalPrice) :
+                new ObjectParameter("UntillTotalPrice", typeof(int));
+    
+            var fromTotalPriceParameter = fromTotalPrice.HasValue ?
+                new ObjectParameter("FromTotalPrice", fromTotalPrice) :
+                new ObjectParameter("FromTotalPrice", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchVehicleAccessoriess_Result>("sp_SearchVehicleAccessoriess", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
         }
     }
 }

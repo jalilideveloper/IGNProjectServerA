@@ -44,7 +44,6 @@ namespace iGNProject.Models
         public Nullable<int> CameraMgeaPixel { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
-        public virtual tblAgahiBrandMobileCopmuter tblAgahiBrandMobileCopmuter { get; set; }
         public virtual tblJeansBadane tblJeansBadane { get; set; }
     }
 }

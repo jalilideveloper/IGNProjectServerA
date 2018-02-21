@@ -19,7 +19,7 @@ namespace iGNProject.Controllers
         // GET: api/AgahiCarDetails
         public IHttpActionResult GettblAgahiCarDetails()
         {
-            return Json(db.tblAgahiCarDetails.Select(p=>  new { AgahiDetailCar = p.AgahiDetailCar , AgahiID  =p.AgahiID, AirBagNumber = p.AirBagNumber, BiRang = p.BiRang, CarTipID = p.CarTipID, ChanMaheID = p.ChanMaheID,
+            return Json(db.tblAgahiCarDetails.Select(p=>  new { AgahiDetailCar = p.AgahiDetailCarID , AgahiID  =p.AgahiID, AirBagNumber = p.AirBagNumber, CarTipID = p.CarTipID, ChanMaheID = p.ChanMaheID,
                 DandehNumber = p.DandehNumber, GirboxAuto = p.GirboxAuto, karkardDaghigh = p.karkardDaghigh, MablagheKole = p.MablagheKole, Mahane = p.Mahane, MotorHajmID = p.MotorHajmID,
                 PishPardakht  = p.PishPardakht, RangeDakheliID = p.RangeDakheliID, RangeKharegiID = p.RangeKharegiID, Remote = p.Remote, RokeshTypeID = p.RokeshTypeID, SaleSakht = p.SaleSakht,
                 SandaliBarghi = p.SandaliBarghi, SokhtID = p.SokhtID, SopapID = p.SopapID, SunRoof = p.SunRoof}).ToList());
@@ -29,11 +29,10 @@ namespace iGNProject.Controllers
         [ResponseType(typeof(tblAgahiCarDetails))]
         public IHttpActionResult GettblAgahiCarDetails(int id)
         {
-            var tblAgahiCarDetails = db.tblAgahiCarDetails.Where(i=> i.AgahiDetailCar == id).Select(p => new {
-                AgahiDetailCar = p.AgahiDetailCar,
+            var tblAgahiCarDetails = db.tblAgahiCarDetails.Where(i=> i.AgahiDetailCarID == id).Select(p => new {
+                AgahiDetailCar = p.AgahiDetailCarID,
                 AgahiID = p.AgahiID,
                 AirBagNumber = p.AirBagNumber,
-                BiRang = p.BiRang,
                 CarTipID = p.CarTipID,
                 ChanMaheID = p.ChanMaheID,
                 DandehNumber = p.DandehNumber,
@@ -70,7 +69,7 @@ namespace iGNProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != tblAgahiCarDetails.AgahiDetailCar)
+            if (id != tblAgahiCarDetails.AgahiDetailCarID)
             {
                 return BadRequest();
             }
@@ -108,7 +107,7 @@ namespace iGNProject.Controllers
             db.tblAgahiCarDetails.Add(tblAgahiCarDetails);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = tblAgahiCarDetails.AgahiDetailCar }, tblAgahiCarDetails);
+            return CreatedAtRoute("DefaultApi", new { id = tblAgahiCarDetails.AgahiDetailCarID }, tblAgahiCarDetails);
         }
 
         // DELETE: api/AgahiCarDetails/5
@@ -138,7 +137,7 @@ namespace iGNProject.Controllers
 
         private bool tblAgahiCarDetailsExists(int id)
         {
-            return db.tblAgahiCarDetails.Count(e => e.AgahiDetailCar == id) > 0;
+            return db.tblAgahiCarDetails.Count(e => e.AgahiDetailCarID == id) > 0;
         }
     }
 }

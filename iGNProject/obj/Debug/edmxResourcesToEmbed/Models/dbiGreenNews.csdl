@@ -559,19 +559,21 @@
     </FunctionImport>
     <EntitySet Name="sysdiagrams" EntityType="DBEWDiGNModel.sysdiagrams" />
     <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
-    <EntitySet Name="tblAgahiBrandMobileCopmuter" EntityType="DBEWDiGNModel.tblAgahiBrandMobileCopmuter" />
-    <EntitySet Name="tblAgahiCarDetails" EntityType="DBEWDiGNModel.tblAgahiCarDetails" />
     <EntitySet Name="tblAgahiCategories" EntityType="DBEWDiGNModel.tblAgahiCategories" />
     <EntitySet Name="tblAgahiFavorite" EntityType="DBEWDiGNModel.tblAgahiFavorite" />
     <EntitySet Name="tblAgahiGalleries" EntityType="DBEWDiGNModel.tblAgahiGalleries" />
     <EntitySet Name="tblAgahiHomeDetail" EntityType="DBEWDiGNModel.tblAgahiHomeDetail" />
     <EntitySet Name="tblAgahiMobCompDetails" EntityType="DBEWDiGNModel.tblAgahiMobCompDetails" />
     <EntitySet Name="tblAgahiPlans" EntityType="DBEWDiGNModel.tblAgahiPlans" />
-    <EntitySet Name="tblAgahiRang" EntityType="DBEWDiGNModel.tblAgahiRang" />
     <EntitySet Name="tblAgahiService" EntityType="DBEWDiGNModel.tblAgahiService" />
     <EntitySet Name="tblArchiveHashTags" EntityType="DBEWDiGNModel.tblArchiveHashTags" />
-    <EntitySet Name="tblCarBodyStatus" EntityType="DBEWDiGNModel.tblCarBodyStatus" />
+    <EntitySet Name="tblBrands" EntityType="DBEWDiGNModel.tblBrands" />
+    <EntitySet Name="tblBrandType" EntityType="DBEWDiGNModel.tblBrandType" />
+    <EntitySet Name="tblCarChassis" EntityType="DBEWDiGNModel.tblCarChassis" />
+    <EntitySet Name="tblCarConditions" EntityType="DBEWDiGNModel.tblCarConditions" />
+    <EntitySet Name="tblCarCrash" EntityType="DBEWDiGNModel.tblCarCrash" />
     <EntitySet Name="tblCarMotorHajme" EntityType="DBEWDiGNModel.tblCarMotorHajme" />
+    <EntitySet Name="tblCarPelak" EntityType="DBEWDiGNModel.tblCarPelak" />
     <EntitySet Name="tblCarSokht" EntityType="DBEWDiGNModel.tblCarSokht" />
     <EntitySet Name="tblCarSopapMotor" EntityType="DBEWDiGNModel.tblCarSopapMotor" />
     <EntitySet Name="tblCarTip" EntityType="DBEWDiGNModel.tblCarTip" />
@@ -592,6 +594,8 @@
     <EntitySet Name="tblRegions" EntityType="DBEWDiGNModel.tblRegions" />
     <EntitySet Name="tblUserLoginLog" EntityType="DBEWDiGNModel.tblUserLoginLog" />
     <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
+    <EntitySet Name="tblUserType" EntityType="DBEWDiGNModel.tblUserType" />
+    <EntitySet Name="tblVam" EntityType="DBEWDiGNModel.tblVam" />
     <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
       <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
@@ -628,42 +632,6 @@
       <End Role="tblAgahi" EntitySet="tblAgahi" />
       <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
-      <End Role="tblAgahiBrandMobileCopmuter" EntitySet="tblAgahiBrandMobileCopmuter" />
-      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang">
-      <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang1" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1">
-      <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme">
-      <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht">
-      <End Role="tblCarSokht" EntitySet="tblCarSokht" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSopapMotor" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor">
-      <End Role="tblCarSopapMotor" EntitySet="tblCarSopapMotor" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarTip" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip">
-      <End Role="tblCarTip" EntitySet="tblCarTip" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblCarBodyStatus_tblAgahiCarDetails" Association="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails">
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
-    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType">
       <End Role="tblHomeGarmayeshType" EntitySet="tblHomeGarmayeshType" />
       <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
@@ -696,13 +664,217 @@
       <End Role="tblCity" EntitySet="tblCity" />
       <End Role="tblRegions" EntitySet="tblRegions" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblCountry_tblGeoRegion" Association="DBEWDiGNModel.FK_tblCountry_tblGeoRegion">
-      <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
-      <End Role="tblCountry" EntitySet="tblCountry" />
-    </AssociationSet>
     <AssociationSet Name="FK_tblUserLoginLog_tblUsers" Association="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers">
       <End Role="tblUsers" EntitySet="tblUsers" />
       <End Role="tblUserLoginLog" EntitySet="tblUserLoginLog" />
+    </AssociationSet>
+    <FunctionImport Name="sp_DynamicSearchQuery">
+      <Parameter Name="sqlCommand" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchAccessoriesDetails" ReturnType="Collection(DBEWDiGNModel.sp_SearchAccessoriesDetails_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchAllAgahis" ReturnType="Collection(DBEWDiGNModel.sp_SearchAllAgahis_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchBoatsAccessoriess" ReturnType="Collection(DBEWDiGNModel.sp_SearchBoatsAccessoriess_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchCarBoatAccs" ReturnType="Collection(DBEWDiGNModel.sp_SearchCarBoatAccs_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchCarHeavys" ReturnType="Collection(DBEWDiGNModel.sp_SearchCarHeavys_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="UntillMonthlyInstallment" Mode="In" Type="Decimal" />
+      <Parameter Name="FromMonthlyInstallment" Mode="In" Type="Decimal" />
+      <Parameter Name="UNumberMonthlyInstallment" Mode="In" Type="Int32" />
+      <Parameter Name="FNumberMonthlyInstallment" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillYear" Mode="In" Type="Int32" />
+      <Parameter Name="FromYear" Mode="In" Type="Int32" />
+      <Parameter Name="BrandID" Mode="In" Type="Int32" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="UntillCarFunction" Mode="In" Type="Int32" />
+      <Parameter Name="FromCarFunction" Mode="In" Type="Int32" />
+      <Parameter Name="KindConditionID" Mode="In" Type="Int32" />
+      <Parameter Name="KindChassisID" Mode="In" Type="Int32" />
+      <Parameter Name="KindDiff" Mode="In" Type="Int32" />
+      <Parameter Name="KindColorOut" Mode="In" Type="Int32" />
+      <Parameter Name="KindColorIn" Mode="In" Type="Int32" />
+      <Parameter Name="KindModelTip" Mode="In" Type="Int32" />
+      <Parameter Name="KindGearbox" Mode="In" Type="Boolean" />
+      <Parameter Name="KindFuel" Mode="In" Type="Int32" />
+      <Parameter Name="KindCrash" Mode="In" Type="Int32" />
+      <Parameter Name="KindPelak" Mode="In" Type="Int32" />
+      <Parameter Name="HasSunroof" Mode="In" Type="Boolean" />
+      <Parameter Name="HasAlarm" Mode="In" Type="Boolean" />
+      <Parameter Name="HasSound" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchCarRidings" ReturnType="Collection(DBEWDiGNModel.sp_SearchCarRidings_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="UntillMonthlyInstallment" Mode="In" Type="Decimal" />
+      <Parameter Name="FromMonthlyInstallment" Mode="In" Type="Decimal" />
+      <Parameter Name="UNumberMonthlyInstallment" Mode="In" Type="Int32" />
+      <Parameter Name="FNumberMonthlyInstallment" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillYear" Mode="In" Type="Int32" />
+      <Parameter Name="FromYear" Mode="In" Type="Int32" />
+      <Parameter Name="BrandID" Mode="In" Type="Int32" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="UntillCarFunction" Mode="In" Type="Int32" />
+      <Parameter Name="FromCarFunction" Mode="In" Type="Int32" />
+      <Parameter Name="KindConditionID" Mode="In" Type="Int32" />
+      <Parameter Name="KindChassisID" Mode="In" Type="Int32" />
+      <Parameter Name="KindDiff" Mode="In" Type="Int32" />
+      <Parameter Name="KindColorOut" Mode="In" Type="Int32" />
+      <Parameter Name="KindColorIn" Mode="In" Type="Int32" />
+      <Parameter Name="KindModelTip" Mode="In" Type="Int32" />
+      <Parameter Name="KindGearbox" Mode="In" Type="Boolean" />
+      <Parameter Name="KindFuel" Mode="In" Type="Int32" />
+      <Parameter Name="KindCrash" Mode="In" Type="Int32" />
+      <Parameter Name="KindPelak" Mode="In" Type="Int32" />
+      <Parameter Name="HasSunroof" Mode="In" Type="Boolean" />
+      <Parameter Name="HasAlarm" Mode="In" Type="Boolean" />
+      <Parameter Name="HasSound" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchElectronicss" ReturnType="Collection(DBEWDiGNModel.sp_SearchElectronicss_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchPersonalEntertainments" ReturnType="Collection(DBEWDiGNModel.sp_SearchPersonalEntertainments_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchServicesEmployments" ReturnType="Collection(DBEWDiGNModel.sp_SearchServicesEmployments_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchServicesHouses" ReturnType="Collection(DBEWDiGNModel.sp_SearchServicesHouses_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="UserTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchServicesHouseSubs" ReturnType="Collection(DBEWDiGNModel.sp_SearchServicesHouseSubs_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="UserTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SearchVehicleAccessoriess" ReturnType="Collection(DBEWDiGNModel.sp_SearchVehicleAccessoriess_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="SearchInput" Mode="In" Type="String" />
+      <Parameter Name="ShahrSelectID" Mode="In" Type="Int32" />
+      <Parameter Name="MahaleSelect" Mode="In" Type="String" />
+      <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+      <Parameter Name="HasFast" Mode="In" Type="Boolean" />
+      <Parameter Name="Kind" Mode="In" Type="Int32" />
+      <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
+      <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tblAgahiCarDetails" EntityType="DBEWDiGNModel.tblAgahiCarDetails" />
+    <EntitySet Name="tblCarColors" EntityType="DBEWDiGNModel.tblCarColors" />
+    <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarColors" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors">
+      <End Role="tblCarColors" EntitySet="tblCarColors" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarColors1" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors1">
+      <End Role="tblCarColors" EntitySet="tblCarColors" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme">
+      <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht">
+      <End Role="tblCarSokht" EntitySet="tblCarSokht" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSopapMotor" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor">
+      <End Role="tblCarSopapMotor" EntitySet="tblCarSopapMotor" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarTip" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip">
+      <End Role="tblCarTip" EntitySet="tblCarTip" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="CheckUserPass_Result">
@@ -1345,6 +1517,7 @@
     <Property Name="Chatable" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
     <Property Name="OnTime" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SpecialAgahi" Type="Boolean" />
+    <Property Name="UserAgahiTypeID" Type="Int32" />
     <NavigationProperty Name="tblAgahiCategories" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahi" ToRole="tblAgahiCategories" />
     <NavigationProperty Name="tblAgahiPlans" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahi" ToRole="tblAgahiPlans" />
     <NavigationProperty Name="tblAgahiService" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahi" ToRole="tblAgahiService" />
@@ -1355,54 +1528,6 @@
     <NavigationProperty Name="tblAgahiFavorite" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiFavorite" />
     <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiMobCompDetails" />
     <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblAgahiBrandMobileCopmuter">
-    <Key>
-      <PropertyRef Name="BrandID" />
-    </Key>
-    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ParrentID" Type="Int32" />
-    <Property Name="Mobile" Type="Boolean" />
-    <Property Name="Computer" Type="Boolean" />
-    <Property Name="AllinOne" Type="Boolean" />
-    <Property Name="Labtop" Type="Boolean" />
-    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" FromRole="tblAgahiBrandMobileCopmuter" ToRole="tblAgahiMobCompDetails" />
-  </EntityType>
-  <EntityType Name="tblAgahiCarDetails">
-    <Key>
-      <PropertyRef Name="AgahiDetailCar" />
-    </Key>
-    <Property Name="AgahiDetailCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiID" Type="Int32" />
-    <Property Name="karkardDaghigh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SaleSakht" Type="Int32" />
-    <Property Name="GirboxAuto" Type="Boolean" />
-    <Property Name="SokhtID" Type="Int32" />
-    <Property Name="RangeKharegiID" Type="Int32" />
-    <Property Name="RangeDakheliID" Type="Int32" />
-    <Property Name="CarTipID" Type="Int32" />
-    <Property Name="MotorHajmID" Type="Int32" />
-    <Property Name="AirBagNumber" Type="Int32" />
-    <Property Name="DandehNumber" Type="Int32" />
-    <Property Name="SunRoof" Type="Boolean" />
-    <Property Name="Remote" Type="Boolean" />
-    <Property Name="SandaliBarghi" Type="Boolean" />
-    <Property Name="SopapID" Type="Int32" />
-    <Property Name="PishPardakht" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Mahane" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="ChanMaheID" Type="Int32" />
-    <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="RokeshTypeID" Type="Int32" />
-    <Property Name="BiRang" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahiCarDetails" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblAgahiRang" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
-    <NavigationProperty Name="tblAgahiRang1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
-    <NavigationProperty Name="tblCarMotorHajme" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblAgahiCarDetails" ToRole="tblCarMotorHajme" />
-    <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
-    <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
-    <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
-    <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
   </EntityType>
   <EntityType Name="tblAgahiCategories">
     <Key>
@@ -1473,6 +1598,9 @@
     <Property Name="Vam" Type="Boolean" />
     <Property Name="Mablaghevam" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="GarmayeshTypeID" Type="Int32" />
+    <Property Name="Area" Type="Int32" />
+    <Property Name="CitySideTypeID" Type="Int32" />
+    <Property Name="AdminDoc" Type="Boolean" />
     <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahiHomeDetail" ToRole="tblAgahi" />
     <NavigationProperty Name="tblHomeGarmayeshType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGarmayeshType" />
     <NavigationProperty Name="tblHomeGharardad" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGharardad" />
@@ -1504,8 +1632,16 @@
     <Property Name="AntiWater" Type="Boolean" />
     <Property Name="JeansBadaneID" Type="Int32" />
     <Property Name="USB3" Type="Boolean" />
+    <Property Name="HDDMeasure" Type="Int32" />
+    <Property Name="SSDMeasure" Type="Int32" />
+    <Property Name="HasHHD" Type="Boolean" />
+    <Property Name="HasSSD" Type="Boolean" />
+    <Property Name="HasUSB3" Type="Boolean" />
+    <Property Name="HasDVDRW" Type="Boolean" />
+    <Property Name="ColorID" Type="Int32" />
+    <Property Name="HasCamera" Type="Boolean" />
+    <Property Name="CameraMgeaPixel" Type="Int32" />
     <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblAgahiBrandMobileCopmuter" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahiBrandMobileCopmuter" />
     <NavigationProperty Name="tblJeansBadane" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblAgahiMobCompDetails" ToRole="tblJeansBadane" />
   </EntityType>
   <EntityType Name="tblAgahiPlans">
@@ -1517,15 +1653,6 @@
     <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NumberDayShow" Type="Int32" />
     <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahiPlans" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblAgahiRang">
-    <Key>
-      <PropertyRef Name="AgahiRangID" />
-    </Key>
-    <Property Name="AgahiRangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang" FromRole="tblAgahiRang" ToRole="tblAgahiCarDetails" />
-    <NavigationProperty Name="tblAgahiCarDetails1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1" FromRole="tblAgahiRang" ToRole="tblAgahiCarDetails" />
   </EntityType>
   <EntityType Name="tblAgahiService">
     <Key>
@@ -1544,26 +1671,42 @@
     <Property Name="CalculateDate" Type="DateTime" Precision="3" />
     <Property Name="RepCount" Type="Int32" />
   </EntityType>
-  <EntityType Name="tblCarBodyStatus">
+  <EntityType Name="tblBrands">
     <Key>
-      <PropertyRef Name="CarBodyStatusID" />
+      <PropertyRef Name="BrandID" />
     </Key>
-    <Property Name="CarBodyStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiDetailCar" Type="Int32" Nullable="false" />
-    <Property Name="OneLakeRang" Type="Boolean" />
-    <Property Name="TwoLakeRang" Type="Boolean" />
-    <Property Name="ThreeLakeRang" Type="Boolean" />
-    <Property Name="DorRang" Type="Boolean" />
-    <Property Name="Chapiye" Type="Boolean" />
-    <Property Name="ShasiAghab" Type="Boolean" />
-    <Property Name="ShasiJolo" Type="Boolean" />
-    <Property Name="KhatoKhash" Type="Boolean" />
-    <Property Name="KaputRang" Type="Boolean" />
-    <Property Name="SandoghRang" Type="Boolean" />
-    <Property Name="SaghfRang" Type="Boolean" />
-    <Property Name="OtaghTaviz" Type="Boolean" />
-    <Property Name="NiazBeSafkari" Type="Boolean" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" FromRole="tblCarBodyStatus" ToRole="tblAgahiCarDetails" />
+    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParrentID" Type="Int32" />
+    <Property Name="BrandTypeID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBrandType">
+    <Key>
+      <PropertyRef Name="BrandTypeID" />
+    </Key>
+    <Property Name="BrandTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCarChassis">
+    <Key>
+      <PropertyRef Name="CarChassisTypeID" />
+    </Key>
+    <Property Name="CarChassisTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarChassisTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCarConditions">
+    <Key>
+      <PropertyRef Name="CarConditionID" />
+    </Key>
+    <Property Name="CarConditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarConditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCarCrash">
+    <Key>
+      <PropertyRef Name="CarCrashTypeID" />
+    </Key>
+    <Property Name="CarCrashTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarCrashType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCarMotorHajme">
     <Key>
@@ -1573,6 +1716,13 @@
     <Property Name="HamjName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HajmCC" Type="Int32" />
     <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblCarMotorHajme" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarPelak">
+    <Key>
+      <PropertyRef Name="CarPelakTypeID" />
+    </Key>
+    <Property Name="CarPelakTypeID" Type="Int32" Nullable="false" />
+    <Property Name="CarPelakType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCarSokht">
     <Key>
@@ -1616,7 +1766,6 @@
     <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GeoRegionID" Type="Int32" />
-    <NavigationProperty Name="tblGeoRegion" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblCountry" ToRole="tblGeoRegion" />
   </EntityType>
   <EntityType Name="tblGeoRegion">
     <Key>
@@ -1624,7 +1773,6 @@
     </Key>
     <Property Name="GeoRegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GeoTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblGeoRegion" ToRole="tblCountry" />
   </EntityType>
   <EntityType Name="tblHomeGarmayeshType">
     <Key>
@@ -1751,7 +1899,7 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="UserTypeIDelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1763,6 +1911,23 @@
     <Property Name="LocationID" Type="Int32" />
     <Property Name="IsDeleted" Type="Boolean" />
     <NavigationProperty Name="tblUserLoginLog" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginLog" />
+  </EntityType>
+  <EntityType Name="tblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblVam">
+    <Key>
+      <PropertyRef Name="VamID" />
+    </Key>
+    <Property Name="VamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MahanePrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Teadad" Type="Int32" />
+    <Property Name="VamDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="VamYear" Type="Int32" />
   </EntityType>
   <Association Name="FK_tblAgahi_tblAgahiCategories">
     <End Type="DBEWDiGNModel.tblAgahiCategories" Role="tblAgahiCategories" Multiplicity="0..1" />
@@ -1872,114 +2037,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblCarDetails_tblAgahi">
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahi">
-        <PropertyRef Name="AgahiID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="AgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
-    <End Type="DBEWDiGNModel.tblAgahiBrandMobileCopmuter" Role="tblAgahiBrandMobileCopmuter" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiBrandMobileCopmuter">
-        <PropertyRef Name="BrandID" />
-      </Principal>
-      <Dependent Role="tblAgahiMobCompDetails">
-        <PropertyRef Name="BrandID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblAgahiRang">
-    <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiRang">
-        <PropertyRef Name="AgahiRangID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="RangeKharegiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblAgahiRang1">
-    <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiRang">
-        <PropertyRef Name="AgahiRangID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="RangeDakheliID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
-    <End Type="DBEWDiGNModel.tblCarMotorHajme" Role="tblCarMotorHajme" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCarMotorHajme">
-        <PropertyRef Name="MotorHajmID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="MotorHajmID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblCarSokht">
-    <End Type="DBEWDiGNModel.tblCarSokht" Role="tblCarSokht" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCarSokht">
-        <PropertyRef Name="SokhtID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="SokhtID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblCarSopapMotor">
-    <End Type="DBEWDiGNModel.tblCarSopapMotor" Role="tblCarSopapMotor" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCarSopapMotor">
-        <PropertyRef Name="SopapID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="SopapID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiCarDetails_tblCarTip">
-    <End Type="DBEWDiGNModel.tblCarTip" Role="tblCarTip" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCarTip">
-        <PropertyRef Name="CarTipID" />
-      </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="CarTipID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblCarBodyStatus_tblAgahiCarDetails">
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="1" />
-    <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiCarDetails">
-        <PropertyRef Name="AgahiDetailCar" />
-      </Principal>
-      <Dependent Role="tblCarBodyStatus">
-        <PropertyRef Name="AgahiDetailCar" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType">
     <End Type="DBEWDiGNModel.tblHomeGarmayeshType" Role="tblHomeGarmayeshType" Multiplicity="0..1" />
     <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
@@ -2076,18 +2133,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblCountry_tblGeoRegion">
-    <End Type="DBEWDiGNModel.tblGeoRegion" Role="tblGeoRegion" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblCountry" Role="tblCountry" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblGeoRegion">
-        <PropertyRef Name="GeoRegionID" />
-      </Principal>
-      <Dependent Role="tblCountry">
-        <PropertyRef Name="GeoRegionID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tblUserLoginLog_tblUsers">
     <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
     <End Type="DBEWDiGNModel.tblUserLoginLog" Role="tblUserLoginLog" Multiplicity="*" />
@@ -2097,6 +2142,589 @@
       </Principal>
       <Dependent Role="tblUserLoginLog">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_SearchAccessoriesDetails_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchAllAgahis_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchBoatsAccessoriess_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchCarBoatAccs_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchCarHeavys_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiDetailCarID" Nullable="false" />
+    <Property Type="Int32" Name="AgahiID1" Nullable="true" />
+    <Property Type="String" Name="karkardDaghigh" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SaleSakht" Nullable="true" />
+    <Property Type="Boolean" Name="GirboxAuto" Nullable="true" />
+    <Property Type="Int32" Name="SokhtID" Nullable="true" />
+    <Property Type="Int32" Name="RangeKharegiID" Nullable="true" />
+    <Property Type="Int32" Name="RangeDakheliID" Nullable="true" />
+    <Property Type="Int32" Name="CarTipID" Nullable="true" />
+    <Property Type="Int32" Name="MotorHajmID" Nullable="true" />
+    <Property Type="Int32" Name="AirBagNumber" Nullable="true" />
+    <Property Type="Int32" Name="DandehNumber" Nullable="true" />
+    <Property Type="Boolean" Name="SunRoof" Nullable="true" />
+    <Property Type="Boolean" Name="Remote" Nullable="true" />
+    <Property Type="Boolean" Name="SandaliBarghi" Nullable="true" />
+    <Property Type="Int32" Name="SopapID" Nullable="true" />
+    <Property Type="Decimal" Name="PishPardakht" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Mahane" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ChanMaheID" Nullable="true" />
+    <Property Type="Decimal" Name="MablagheKole" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RokeshTypeID" Nullable="true" />
+    <Property Type="Int32" Name="VamID" Nullable="true" />
+    <Property Type="Int32" Name="BrandID" Nullable="true" />
+    <Property Type="Int32" Name="CarConditionID" Nullable="true" />
+    <Property Type="Int32" Name="CarChassisTypeID" Nullable="true" />
+    <Property Type="Byte" Name="DiffType" Nullable="true" />
+    <Property Type="Int32" Name="CrashTypeID" Nullable="true" />
+    <Property Type="Int32" Name="CarCrashTypeID" Nullable="true" />
+    <Property Type="Int32" Name="CarPelakTypeID" Nullable="true" />
+    <Property Type="Boolean" Name="HasAlarm" Nullable="true" />
+    <Property Type="Boolean" Name="HasSound" Nullable="true" />
+    <Property Type="Int32" Name="VamID1" Nullable="false" />
+    <Property Type="Decimal" Name="MahanePrice" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Teadad" Nullable="true" />
+    <Property Type="String" Name="VamDescription" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="VamYear" Nullable="true" />
+    <Property Type="Int32" Name="CarConditionID1" Nullable="false" />
+    <Property Type="String" Name="CarConditionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CarChassisTypeID1" Nullable="false" />
+    <Property Type="String" Name="CarChassisTypeName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchCarRidings_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiDetailCarID" Nullable="false" />
+    <Property Type="Int32" Name="AgahiID1" Nullable="true" />
+    <Property Type="String" Name="karkardDaghigh" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SaleSakht" Nullable="true" />
+    <Property Type="Boolean" Name="GirboxAuto" Nullable="true" />
+    <Property Type="Int32" Name="SokhtID" Nullable="true" />
+    <Property Type="Int32" Name="RangeKharegiID" Nullable="true" />
+    <Property Type="Int32" Name="RangeDakheliID" Nullable="true" />
+    <Property Type="Int32" Name="CarTipID" Nullable="true" />
+    <Property Type="Int32" Name="MotorHajmID" Nullable="true" />
+    <Property Type="Int32" Name="AirBagNumber" Nullable="true" />
+    <Property Type="Int32" Name="DandehNumber" Nullable="true" />
+    <Property Type="Boolean" Name="SunRoof" Nullable="true" />
+    <Property Type="Boolean" Name="Remote" Nullable="true" />
+    <Property Type="Boolean" Name="SandaliBarghi" Nullable="true" />
+    <Property Type="Int32" Name="SopapID" Nullable="true" />
+    <Property Type="Decimal" Name="PishPardakht" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Mahane" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="ChanMaheID" Nullable="true" />
+    <Property Type="Decimal" Name="MablagheKole" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="RokeshTypeID" Nullable="true" />
+    <Property Type="Int32" Name="VamID" Nullable="true" />
+    <Property Type="Int32" Name="BrandID" Nullable="true" />
+    <Property Type="Int32" Name="CarConditionID" Nullable="true" />
+    <Property Type="Int32" Name="CarChassisTypeID" Nullable="true" />
+    <Property Type="Byte" Name="DiffType" Nullable="true" />
+    <Property Type="Int32" Name="CrashTypeID" Nullable="true" />
+    <Property Type="Int32" Name="CarCrashTypeID" Nullable="true" />
+    <Property Type="Int32" Name="CarPelakTypeID" Nullable="true" />
+    <Property Type="Boolean" Name="HasAlarm" Nullable="true" />
+    <Property Type="Boolean" Name="HasSound" Nullable="true" />
+    <Property Type="Int32" Name="VamID1" Nullable="false" />
+    <Property Type="Decimal" Name="MahanePrice" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Teadad" Nullable="true" />
+    <Property Type="String" Name="VamDescription" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="VamYear" Nullable="true" />
+    <Property Type="Int32" Name="CarConditionID1" Nullable="false" />
+    <Property Type="String" Name="CarConditionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CarChassisTypeID1" Nullable="false" />
+    <Property Type="String" Name="CarChassisTypeName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchElectronicss_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchPersonalEntertainments_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchServicesEmployments_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchServicesHouses_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+    <Property Type="Int32" Name="UserID1" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tell1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SecondryPass" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserLinkPage" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="PersonelImageUrl" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="RegisterDate1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NationalityID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BussinessFieldID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BirthDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NickName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LanguageID1" Nullable="true" />
+    <Property Type="Byte" Name="UserType" Nullable="true" />
+    <Property Type="Int32" Name="LocationID" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchServicesHouseSubs_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+    <Property Type="Int32" Name="UserID1" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tell1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SecondryPass" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserLinkPage" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="PersonelImageUrl" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="RegisterDate1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NationalityID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BussinessFieldID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BirthDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NickName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="LanguageID1" Nullable="true" />
+    <Property Type="Byte" Name="UserType" Nullable="true" />
+    <Property Type="Int32" Name="LocationID" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SearchVehicleAccessoriess_Result">
+    <Property Type="Int32" Name="AgahiID" Nullable="false" />
+    <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
+    <Property Type="Int32" Name="AgahiServiceID" Nullable="true" />
+    <Property Type="String" Name="AgahiTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="NewOrUsed" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Keyword" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="RegisterDate" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="true" />
+    <Property Type="Int32" Name="AdminUserID" Nullable="true" />
+    <Property Type="DateTime" Name="AdminAgreeDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="AgahiStatus" Nullable="true" />
+    <Property Type="Int32" Name="LanguageID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="Int32" Name="RegionID" Nullable="true" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PriceTypeID" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="PlanShowAgahiID" Nullable="true" />
+    <Property Type="Boolean" Name="HasImage" Nullable="true" />
+    <Property Type="String" Name="Chatable" Nullable="true" MaxLength="900" />
+    <Property Type="String" Name="OnTime" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
+    <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblAgahiCarDetails">
+    <Key>
+      <PropertyRef Name="AgahiDetailCarID" />
+    </Key>
+    <Property Name="AgahiDetailCarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiID" Type="Int32" />
+    <Property Name="karkardDaghigh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SaleSakht" Type="Int32" />
+    <Property Name="GirboxAuto" Type="Boolean" />
+    <Property Name="SokhtID" Type="Int32" />
+    <Property Name="CarColorIDInside" Type="Int32" />
+    <Property Name="CarColorIDOutSide" Type="Int32" />
+    <Property Name="CarTipID" Type="Int32" />
+    <Property Name="MotorHajmID" Type="Int32" />
+    <Property Name="AirBagNumber" Type="Int32" />
+    <Property Name="DandehNumber" Type="Int32" />
+    <Property Name="SunRoof" Type="Boolean" />
+    <Property Name="Remote" Type="Boolean" />
+    <Property Name="SandaliBarghi" Type="Boolean" />
+    <Property Name="SopapID" Type="Int32" />
+    <Property Name="PishPardakht" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Mahane" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ChanMaheID" Type="Int32" />
+    <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RokeshTypeID" Type="Int32" />
+    <Property Name="VamID" Type="Int32" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="CarConditionID" Type="Int32" />
+    <Property Name="CarChassisTypeID" Type="Int32" />
+    <Property Name="DiffType" Type="Byte" />
+    <Property Name="CarBodyStatusID" Type="Int32" />
+    <Property Name="CarPelakTypeID" Type="Int32" />
+    <Property Name="HasAlarm" Type="Boolean" />
+    <Property Name="HasSound" Type="Boolean" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahiCarDetails" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblCarColors" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors" FromRole="tblAgahiCarDetails" ToRole="tblCarColors" />
+    <NavigationProperty Name="tblCarColors1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors1" FromRole="tblAgahiCarDetails" ToRole="tblCarColors" />
+    <NavigationProperty Name="tblCarMotorHajme" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblAgahiCarDetails" ToRole="tblCarMotorHajme" />
+    <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
+    <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
+    <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
+  </EntityType>
+  <EntityType Name="tblCarColors">
+    <Key>
+      <PropertyRef Name="CarColorID" />
+    </Key>
+    <Property Name="CarColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors" FromRole="tblCarColors" ToRole="tblAgahiCarDetails" />
+    <NavigationProperty Name="tblAgahiCarDetails1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors1" FromRole="tblCarColors" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <Association Name="FK_tblCarDetails_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarColors">
+    <End Type="DBEWDiGNModel.tblCarColors" Role="tblCarColors" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarColors">
+        <PropertyRef Name="CarColorID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarColorIDOutSide" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarColors1">
+    <End Type="DBEWDiGNModel.tblCarColors" Role="tblCarColors" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarColors">
+        <PropertyRef Name="CarColorID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarColorIDInside" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
+    <End Type="DBEWDiGNModel.tblCarMotorHajme" Role="tblCarMotorHajme" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarMotorHajme">
+        <PropertyRef Name="MotorHajmID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="MotorHajmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarSokht">
+    <End Type="DBEWDiGNModel.tblCarSokht" Role="tblCarSokht" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarSokht">
+        <PropertyRef Name="SokhtID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="SokhtID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarSopapMotor">
+    <End Type="DBEWDiGNModel.tblCarSopapMotor" Role="tblCarSopapMotor" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarSopapMotor">
+        <PropertyRef Name="SopapID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="SopapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarTip">
+    <End Type="DBEWDiGNModel.tblCarTip" Role="tblCarTip" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarTip">
+        <PropertyRef Name="CarTipID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarTipID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

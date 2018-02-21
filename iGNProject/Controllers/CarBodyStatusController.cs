@@ -19,18 +19,19 @@ namespace iGNProject.Controllers
         // GET: api/CarBodyStatus
         public IHttpActionResult GettblCarBodyStatus()
         {
-            return Json(db.tblCarBodyStatus.Select(p=> new { AgahiDetailCar = p.AgahiDetailCar, CarBodyStatusID = p.CarBodyStatusID}).ToList());
+            return Json(db.tblCarBodyStatus.ToList());
         }
 
         // GET: api/CarBodyStatus/5
         [ResponseType(typeof(tblCarBodyStatus))]
         public IHttpActionResult GettblCarBodyStatus(int id)
         {
-            var tblCarBodyStatus = db.tblCarBodyStatus.Where(p=> p.CarBodyStatusID == id).Select(p => new { AgahiDetailCar = p.AgahiDetailCar, CarBodyStatusID = p.CarBodyStatusID }).ToList();
+            tblCarBodyStatus tblCarBodyStatus = db.tblCarBodyStatus.Where(p=> p.CarBodyStatusID == id).FirstOrDefault();
             if (tblCarBodyStatus == null)
             {
                 return NotFound();
             }
+
             return Json(tblCarBodyStatus);
         }
 

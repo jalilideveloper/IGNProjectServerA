@@ -14,8 +14,13 @@ namespace iGNProject.Models
     
     public partial class tblCarBodyStatus
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblCarBodyStatus()
+        {
+            this.tblAgahiCarDetails = new HashSet<tblAgahiCarDetails>();
+        }
+    
         public int CarBodyStatusID { get; set; }
-        public int AgahiDetailCar { get; set; }
         public Nullable<bool> OneLakeRang { get; set; }
         public Nullable<bool> TwoLakeRang { get; set; }
         public Nullable<bool> ThreeLakeRang { get; set; }
@@ -30,6 +35,7 @@ namespace iGNProject.Models
         public Nullable<bool> OtaghTaviz { get; set; }
         public Nullable<bool> NiazBeSafkari { get; set; }
     
-        public virtual tblAgahiCarDetails tblAgahiCarDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
     }
 }

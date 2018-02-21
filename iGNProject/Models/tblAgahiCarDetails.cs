@@ -14,20 +14,14 @@ namespace iGNProject.Models
     
     public partial class tblAgahiCarDetails
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblAgahiCarDetails()
-        {
-            this.tblCarBodyStatus = new HashSet<tblCarBodyStatus>();
-        }
-    
         public int AgahiDetailCarID { get; set; }
         public Nullable<int> AgahiID { get; set; }
         public string karkardDaghigh { get; set; }
         public Nullable<int> SaleSakht { get; set; }
         public Nullable<bool> GirboxAuto { get; set; }
         public Nullable<int> SokhtID { get; set; }
-        public Nullable<int> RangeKharegiID { get; set; }
-        public Nullable<int> RangeDakheliID { get; set; }
+        public Nullable<int> CarColorIDInside { get; set; }
+        public Nullable<int> CarColorIDOutSide { get; set; }
         public Nullable<int> CarTipID { get; set; }
         public Nullable<int> MotorHajmID { get; set; }
         public Nullable<int> AirBagNumber { get; set; }
@@ -46,20 +40,18 @@ namespace iGNProject.Models
         public Nullable<int> CarConditionID { get; set; }
         public Nullable<int> CarChassisTypeID { get; set; }
         public Nullable<byte> DiffType { get; set; }
-        public Nullable<int> CrashTypeID { get; set; }
-        public Nullable<int> CarCrashTypeID { get; set; }
+        public Nullable<int> CarBodyStatusID { get; set; }
         public Nullable<int> CarPelakTypeID { get; set; }
         public Nullable<bool> HasAlarm { get; set; }
         public Nullable<bool> HasSound { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
-        public virtual tblAgahiRang tblAgahiRang { get; set; }
-        public virtual tblAgahiRang tblAgahiRang1 { get; set; }
+        public virtual tblCarColors tblCarColors { get; set; }
+        public virtual tblCarColors tblCarColors1 { get; set; }
         public virtual tblCarMotorHajme tblCarMotorHajme { get; set; }
         public virtual tblCarSokht tblCarSokht { get; set; }
         public virtual tblCarSopapMotor tblCarSopapMotor { get; set; }
         public virtual tblCarTip tblCarTip { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblCarBodyStatus> tblCarBodyStatus { get; set; }
+        public virtual tblCarBodyStatus tblCarBodyStatus { get; set; }
     }
 }

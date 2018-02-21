@@ -16,6 +16,7 @@ namespace iGNProject.Models
     {
         public int BrandID { get; set; }
         public string BrandName { get; set; }
-        public Nullable<int> BrandTypeID { get; set; }
+        public Nullable<int> ParrentID { get; set; }
+        public int BrandTypeID { get; set; }
     }
 }

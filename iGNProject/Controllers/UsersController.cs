@@ -28,7 +28,7 @@ namespace iGNProject.Controllers
         public string GetUsers(string id)
         {
             string[] arr = id.Split('-');
-            tblUsers tblUsers = db.CheckUserPass(arr[0],arr[1]).Select(p=> new tblUsers {UserName = p.UserName,Password = p.Password,UserID = p.UserID ,Address = p.Address, BirthDate = p.BirthDate,BussinessFieldID = p.BussinessFieldID,Email = p.Email, FirstName = p.FirstName,IsDeleted = p.IsDeleted,LanguageID = p.LanguageID,Lastname = p.Lastname,LocationID = p.LocationID,Mobile = p.Mobile,NationalityID = p.NationalityID,NickName = p.NickName,UserTypeIDelImageUrl = p.UserTypeIDelImageUrl,PostalCode = p.PostalCode,RegisterDate = p.RegisterDate,SecondryPass = p.SecondryPass,UserLinkPage = p.UserLinkPage,UserType = p.UserType,Tell = p.Tell}).FirstOrDefault();
+            tblUsers tblUsers = db.CheckUserPass(arr[0],arr[1]).Select(p=> new tblUsers {UserName = p.UserName,Password = p.Password,UserID = p.UserID ,Address = p.Address, BirthDate = p.BirthDate,BussinessFieldID = p.BussinessFieldID,Email = p.Email, FirstName = p.FirstName,IsDeleted = p.IsDeleted,LanguageID = p.LanguageID,Lastname = p.Lastname,LocationID = p.LocationID,Mobile = p.Mobile,NationalityID = p.NationalityID,NickName = p.NickName,PostalCode = p.PostalCode,RegisterDate = p.RegisterDate,SecondryPass = p.SecondryPass,UserLinkPage = p.UserLinkPage,UserType = p.UserType,Tell = p.Tell,PersonelImageUrl = p.UserTypeIDelImageUrl}).FirstOrDefault();
             if (tblUsers == null)
             {
                 return "No";
@@ -80,7 +80,7 @@ namespace iGNProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.sp_Add_tblUsers(tblUsers.UserName, tblUsers.FirstName, tblUsers.Lastname, tblUsers.Email, tblUsers.Tell, tblUsers.Mobile, tblUsers.Address, tblUsers.Password, tblUsers.SecondryPass, tblUsers.UserLinkPage, tblUsers.UserTypeIDelImageUrl, DateTime.Now.Date.ToShortDateString(), tblUsers.NationalityID, tblUsers.PostalCode, tblUsers.BussinessFieldID, tblUsers.BirthDate, tblUsers.NickName, tblUsers.LanguageID, tblUsers.UserType, tblUsers.LocationID, false);
+            db.sp_Add_tblUsers(tblUsers.UserName, tblUsers.FirstName, tblUsers.Lastname, tblUsers.Email, tblUsers.Tell, tblUsers.Mobile, tblUsers.Address, tblUsers.Password, tblUsers.SecondryPass, tblUsers.UserLinkPage, tblUsers.PersonelImageUrl, DateTime.Now.Date.ToShortDateString(), tblUsers.NationalityID, tblUsers.PostalCode, tblUsers.BussinessFieldID, tblUsers.BirthDate, tblUsers.NickName, tblUsers.LanguageID, tblUsers.UserType, tblUsers.LocationID, false);
             
             return CreatedAtRoute("DefaultApi", new { id = tblUsers.UserID }, tblUsers);
         }
