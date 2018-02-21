@@ -33,6 +33,15 @@ namespace iGNProject.Models
         public Nullable<bool> AntiWater { get; set; }
         public Nullable<int> JeansBadaneID { get; set; }
         public Nullable<bool> USB3 { get; set; }
+        public Nullable<int> HDDMeasure { get; set; }
+        public Nullable<int> SSDMeasure { get; set; }
+        public Nullable<bool> HasHHD { get; set; }
+        public Nullable<bool> HasSSD { get; set; }
+        public Nullable<bool> HasUSB3 { get; set; }
+        public Nullable<bool> HasDVDRW { get; set; }
+        public Nullable<int> ColorID { get; set; }
+        public Nullable<bool> HasCamera { get; set; }
+        public Nullable<int> CameraMgeaPixel { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblAgahiBrandMobileCopmuter tblAgahiBrandMobileCopmuter { get; set; }

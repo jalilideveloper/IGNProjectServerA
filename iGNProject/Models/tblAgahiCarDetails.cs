@@ -20,7 +20,7 @@ namespace iGNProject.Models
             this.tblCarBodyStatus = new HashSet<tblCarBodyStatus>();
         }
     
-        public int AgahiDetailCar { get; set; }
+        public int AgahiDetailCarID { get; set; }
         public Nullable<int> AgahiID { get; set; }
         public string karkardDaghigh { get; set; }
         public Nullable<int> SaleSakht { get; set; }
@@ -41,7 +41,16 @@ namespace iGNProject.Models
         public Nullable<int> ChanMaheID { get; set; }
         public Nullable<decimal> MablagheKole { get; set; }
         public Nullable<int> RokeshTypeID { get; set; }
-        public bool BiRang { get; set; }
+        public Nullable<int> VamID { get; set; }
+        public Nullable<int> BrandID { get; set; }
+        public Nullable<int> CarConditionID { get; set; }
+        public Nullable<int> CarChassisTypeID { get; set; }
+        public Nullable<byte> DiffType { get; set; }
+        public Nullable<int> CrashTypeID { get; set; }
+        public Nullable<int> CarCrashTypeID { get; set; }
+        public Nullable<int> CarPelakTypeID { get; set; }
+        public Nullable<bool> HasAlarm { get; set; }
+        public Nullable<bool> HasSound { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblAgahiRang tblAgahiRang { get; set; }

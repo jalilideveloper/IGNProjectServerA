@@ -45,6 +45,7 @@
           <Property Name="Chatable" Type="nvarchar" MaxLength="900" />
           <Property Name="OnTime" Type="nvarchar" MaxLength="100" />
           <Property Name="SpecialAgahi" Type="bit" />
+          <Property Name="UserAgahiTypeID" Type="int" />
         </EntityType>
         <EntityType Name="tblAgahiBrandMobileCopmuter">
           <Key>
@@ -60,9 +61,9 @@
         </EntityType>
         <EntityType Name="tblAgahiCarDetails">
           <Key>
-            <PropertyRef Name="AgahiDetailCar" />
+            <PropertyRef Name="AgahiDetailCarID" />
           </Key>
-          <Property Name="AgahiDetailCar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgahiDetailCarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AgahiID" Type="int" />
           <Property Name="karkardDaghigh" Type="nvarchar" MaxLength="50" />
           <Property Name="SaleSakht" Type="int" />
@@ -83,7 +84,16 @@
           <Property Name="ChanMaheID" Type="int" />
           <Property Name="MablagheKole" Type="decimal" Precision="18" Scale="0" />
           <Property Name="RokeshTypeID" Type="int" />
-          <Property Name="BiRang" Type="bit" Nullable="false" />
+          <Property Name="VamID" Type="int" />
+          <Property Name="BrandID" Type="int" />
+          <Property Name="CarConditionID" Type="int" />
+          <Property Name="CarChassisTypeID" Type="int" />
+          <Property Name="DiffType" Type="tinyint" />
+          <Property Name="CrashTypeID" Type="int" />
+          <Property Name="CarCrashTypeID" Type="int" />
+          <Property Name="CarPelakTypeID" Type="int" />
+          <Property Name="HasAlarm" Type="bit" />
+          <Property Name="HasSound" Type="bit" />
         </EntityType>
         <EntityType Name="tblAgahiCategories">
           <Key>
@@ -152,6 +162,8 @@
           <Property Name="Vam" Type="bit" />
           <Property Name="Mablaghevam" Type="decimal" Precision="18" Scale="0" />
           <Property Name="GarmayeshTypeID" Type="int" />
+          <Property Name="Area" Type="int" />
+          <Property Name="CitySideTypeID" Type="int" />
         </EntityType>
         <EntityType Name="tblAgahiMobCompDetails">
           <Key>
@@ -176,6 +188,15 @@
           <Property Name="AntiWater" Type="bit" />
           <Property Name="JeansBadaneID" Type="int" />
           <Property Name="USB3" Type="bit" />
+          <Property Name="HDDMeasure" Type="int" />
+          <Property Name="SSDMeasure" Type="int" />
+          <Property Name="HasHHD" Type="bit" />
+          <Property Name="HasSSD" Type="bit" />
+          <Property Name="HasUSB3" Type="bit" />
+          <Property Name="HasDVDRW" Type="bit" />
+          <Property Name="ColorID" Type="int" />
+          <Property Name="HasCamera" Type="bit" />
+          <Property Name="CameraMgeaPixel" Type="int" />
         </EntityType>
         <EntityType Name="tblAgahiPlans">
           <Key>
@@ -209,6 +230,21 @@
           <Property Name="CalculateDate" Type="datetime" />
           <Property Name="RepCount" Type="int" />
         </EntityType>
+        <EntityType Name="tblBrands">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrandTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblBrandType">
+          <Key>
+            <PropertyRef Name="BrandTypeID" />
+          </Key>
+          <Property Name="BrandTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BrandTypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblCarBodyStatus">
           <Key>
             <PropertyRef Name="CarBodyStatusID" />
@@ -229,6 +265,27 @@
           <Property Name="OtaghTaviz" Type="bit" />
           <Property Name="NiazBeSafkari" Type="bit" />
         </EntityType>
+        <EntityType Name="tblCarChassis">
+          <Key>
+            <PropertyRef Name="CarChassisTypeID" />
+          </Key>
+          <Property Name="CarChassisTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarChassisTypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCarConditions">
+          <Key>
+            <PropertyRef Name="CarConditionID" />
+          </Key>
+          <Property Name="CarConditionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarConditionName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCarCrash">
+          <Key>
+            <PropertyRef Name="CarCrashTypeID" />
+          </Key>
+          <Property Name="CarCrashTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarCrashType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblCarMotorHajme">
           <Key>
             <PropertyRef Name="MotorHajmID" />
@@ -236,6 +293,13 @@
           <Property Name="MotorHajmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="HamjName" Type="nvarchar" MaxLength="50" />
           <Property Name="HajmCC" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCarPelak">
+          <Key>
+            <PropertyRef Name="CarPelakTypeID" />
+          </Key>
+          <Property Name="CarPelakTypeID" Type="int" Nullable="false" />
+          <Property Name="CarPelakType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblCarSokht">
           <Key>
@@ -396,7 +460,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="SecondryPass" Type="nvarchar" MaxLength="50" />
           <Property Name="UserLinkPage" Type="nvarchar" MaxLength="900" />
-          <Property Name="UserTypeIDelImageUrl" Type="nvarchar" MaxLength="1000" />
+          <Property Name="PersonelImageUrl" Type="nvarchar" MaxLength="1000" />
           <Property Name="RegisterDate" Type="nvarchar" MaxLength="50" />
           <Property Name="NationalityID" Type="nvarchar" MaxLength="50" />
           <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
@@ -407,6 +471,23 @@
           <Property Name="UserType" Type="tinyint" />
           <Property Name="LocationID" Type="int" />
           <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblUserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserTypeName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblVam">
+          <Key>
+            <PropertyRef Name="VamID" />
+          </Key>
+          <Property Name="VamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MahanePrice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Teadad" Type="int" />
+          <Property Name="VamDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="VamYear" Type="int" />
         </EntityType>
         <Association Name="FK_tblAgahi_tblAgahiCategories">
           <End Role="tblAgahiCategories" Type="Self.tblAgahiCategories" Multiplicity="0..1" />
@@ -689,7 +770,7 @@
           <End Role="tblCarBodyStatus" Type="Self.tblCarBodyStatus" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblAgahiCarDetails">
-              <PropertyRef Name="AgahiDetailCar" />
+              <PropertyRef Name="AgahiDetailCarID" />
             </Principal>
             <Dependent Role="tblCarBodyStatus">
               <PropertyRef Name="AgahiDetailCar" />
@@ -749,429 +830,6 @@
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="GetAllCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetAllLinkestans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="langID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetAllNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="langID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetAllNewsForCompareWithNewNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="RssID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetAllRecentNewsTopView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetAllRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="TableName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="GetAllRssCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetAllTop10News" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="langID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetAllWallPagesByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdAdsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="adsLocID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="adsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BlockKeyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CommentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DailyDaysID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DayID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagAdsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HtagLinkID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashTagNewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagPagePostID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdIpAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IpAddressID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LikestanID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="MenuID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsLocationID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PageFreindID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PagePostId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PagePostLocID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdPagePrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PrivacyTypeID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserRateID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="RssID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SearchedKeyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="TimeID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByIdUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserWallPageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetByNameCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategoryName" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetCountSearchedKeyInDayMonthYear_Ago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="InputKey" Type="nvarchar" Mode="In" />
-          <Parameter Name="whichDWM" Type="nvarchar" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="Status" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="GetHashtagIDByTagName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="InputName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="GetLatestNewsByTagNameOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Startpageid" Type="int" Mode="In" />
-          <Parameter Name="languageID" Type="int" Mode="In" />
-          <Parameter Name="TagName" Type="nvarchar" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="Status" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="GetLatestNewsOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Startpageid" Type="int" Mode="In" />
-          <Parameter Name="languageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetLatestNewsOrderByDateByRssID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="RssID" Type="int" Mode="In" />
-          <Parameter Name="startpageid" Type="int" Mode="In" />
-          <Parameter Name="lanID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetNewsOrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="startpageid" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetPageCountWithTagName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="TagName" Type="nvarchar" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="status" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="GetToNewsEachCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategroyID" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetTop200HashTagDayWeekMonthYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="whichDWM" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="GetTopNewsByCategoryName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetTopNewsSlider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategroyID" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="GetTopViewNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="LatestNewsOrderByPublishDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="langID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="LatestNewsOrderByViewNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="ResetCountTblHashTagAndArchived" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_Add_tblAdsLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="AdsID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="StartDate" Type="datetime" Mode="In" />
-          <Parameter Name="EndDate" Type="datetime" Mode="In" />
-          <Parameter Name="DailyDaysID" Type="int" Mode="In" />
-          <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
-          <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
-          <Parameter Name="IsActive" Type="bit" Mode="In" />
-          <Parameter Name="IsArchive" Type="bit" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BlockKeywords" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ParrentID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="Comments" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="NewsID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DayID" Type="int" Mode="In" />
-          <Parameter Name="TimeID" Type="int" Mode="In" />
-          <Parameter Name="AdsID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DayName" Type="nvarchar" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
-          <Parameter Name="UserWallPageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryIDNews" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagName" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-          <Parameter Name="Priority" Type="int" Mode="In" />
-          <Parameter Name="Counter" Type="int" Mode="In" />
-          <Parameter Name="languageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-          <Parameter Name="AdsID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LinkestanID" Type="int" Mode="In" />
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-          <Parameter Name="languageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsID" Type="int" Mode="In" />
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-          <Parameter Name="languageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PagePostID" Type="int" Mode="In" />
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblIpAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BrowserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="BrowserVersion" Type="nvarchar" Mode="In" />
-          <Parameter Name="DateRegister" Type="datetime" Mode="In" />
-          <Parameter Name="IpAddress" Type="nvarchar" Mode="In" />
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="WindowsName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Lnaguage" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="LinkName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-          <Parameter Name="Description" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="Keyword" Type="nvarchar" Mode="In" />
-          <Parameter Name="DateRegister" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CurrentLication" Type="geography" Mode="In" />
-          <Parameter Name="CountryID" Type="int" Mode="In" />
-          <Parameter Name="CityID" Type="int" Mode="In" />
-          <Parameter Name="NeighbourhoodID" Type="int" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="ParrentID" Type="int" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="PublishDate" Type="datetime" Mode="In" />
-          <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
-          <Parameter Name="ImageUrl" Type="nvarchar" Mode="In" />
-          <Parameter Name="ViewNumber" Type="bigint" Mode="In" />
-          <Parameter Name="Link" Type="nvarchar" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="RssID" Type="int" Mode="In" />
-          <Parameter Name="LikeCount" Type="int" Mode="In" />
-          <Parameter Name="Unlike" Type="int" Mode="In" />
-          <Parameter Name="Likes" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-          <Parameter Name="categoryID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsID" Type="int" Mode="In" />
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserWallPageID" Type="int" Mode="In" />
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="Invited" Type="bit" Mode="In" />
-          <Parameter Name="Confrim" Type="bit" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserWallPageID" Type="int" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="Description" Type="nvarchar" Mode="In" />
-          <Parameter Name="UnLike" Type="int" Mode="In" />
-          <Parameter Name="Likes" Type="int" Mode="In" />
-          <Parameter Name="Visit" Type="int" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="PagePostID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblPrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PrivacyType" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="PostCount" Type="int" Mode="In" />
-          <Parameter Name="LikesCount" Type="int" Mode="In" />
-          <Parameter Name="UnLikesCount" Type="int" Mode="In" />
-          <Parameter Name="CommentsCount" Type="int" Mode="In" />
-          <Parameter Name="SaveImageCount" Type="int" Mode="In" />
-          <Parameter Name="ShareFileCount" Type="int" Mode="In" />
-          <Parameter Name="FriendCount" Type="int" Mode="In" />
-          <Parameter Name="SpamCount" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="RssUrl" Type="nvarchar" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="Description" Type="nvarchar" Mode="In" />
-          <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SearchedKeyword" Type="nvarchar" Mode="In" />
-          <Parameter Name="CountSearched" Type="int" Mode="In" />
-          <Parameter Name="RegisterDate" Type="datetime" Mode="In" />
-          <Parameter Name="MountYear" Type="datetime" Mode="In" />
-          <Parameter Name="LastUpdateInMount" Type="datetime" Mode="In" />
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="StartTime" Type="time" Mode="In" />
-          <Parameter Name="EndTime" Type="time" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AdsID" Type="int" Mode="In" />
-          <Parameter Name="FileAddress" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Lastname" Type="nvarchar" Mode="In" />
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-          <Parameter Name="Tell" Type="nvarchar" Mode="In" />
-          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
-          <Parameter Name="Address" Type="nvarchar" Mode="In" />
-          <Parameter Name="Password" Type="nvarchar" Mode="In" />
-          <Parameter Name="SecondryPass" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserLinkPage" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserTypeIDelImageUrl" Type="nvarchar" Mode="In" />
-          <Parameter Name="RegisterDate" Type="nvarchar" Mode="In" />
-          <Parameter Name="NationalityID" Type="nvarchar" Mode="In" />
-          <Parameter Name="PostalCode" Type="nvarchar" Mode="In" />
-          <Parameter Name="BussinessFieldID" Type="nvarchar" Mode="In" />
-          <Parameter Name="BirthDate" Type="nvarchar" Mode="In" />
-          <Parameter Name="NickName" Type="nvarchar" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-          <Parameter Name="UserType" Type="tinyint" Mode="In" />
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="sp_Add_tblUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-          <Parameter Name="PagePrivacyID" Type="int" Mode="In" />
-          <Parameter Name="PageRate" Type="bigint" Mode="In" />
-          <Parameter Name="Block" Type="bit" Mode="In" />
-          <Parameter Name="Confrim" Type="bit" Mode="In" />
-          <Parameter Name="RegisterDate" Type="bit" Mode="In" />
-          <Parameter Name="Title" Type="nvarchar" Mode="In" />
-          <Parameter Name="TelegramLink" Type="nvarchar" Mode="In" />
-          <Parameter Name="FacebookLink" Type="nvarchar" Mode="In" />
-          <Parameter Name="TwitterLink" Type="nvarchar" Mode="In" />
-          <Parameter Name="GooglePlusLink" Type="nvarchar" Mode="In" />
-          <Parameter Name="Description" Type="nvarchar" Mode="In" />
-          <Parameter Name="FriendCount" Type="int" Mode="In" />
-          <Parameter Name="PageImageUrl" Type="nvarchar" Mode="In" />
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
-        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1183,96 +841,6 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblAdsLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AdsLocaID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblAdsSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AdsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblBlockTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BlockKeyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblComments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CommentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblDailyDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DailyDaysID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="DayID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblFavoritePageNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="FavoritesCategoryNewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblHashtagAds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagAdsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblHashtagLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HtagLinkID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblHashtagNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashTagNewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblHashtagPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="HashtagPagePostID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblLanguages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblLinkestan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LinkestanID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="LocationID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="MenuID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblNewsLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NewsLocationID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblPageFreinds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PageFreindID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblPagePost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PagePostId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblPagePostLocations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PagePostLocID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblPrivacyType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PrivacyTypeID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblRateUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserRateID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblRss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="RssID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblSearchedKeyword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SearchedKeyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblTimes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="TimeID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblUploadAdsFile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UploadAdsFileID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_DeltblUserWallPages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserWallPageID" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1291,16 +859,7 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="sp_UpdateOrAdd_tblHashTag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="InputKey" Type="nvarchar" Mode="In" />
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-        </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="spgo_GetPageNumbers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CategoryID" Type="int" Mode="In" />
-          <Parameter Name="LanguageID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="SyndicatorTopNewsCategoryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBEWDiGNModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAgahi" EntityType="Self.tblAgahi" Schema="dbo" store:Type="Tables" />
@@ -1315,8 +874,14 @@
           <EntitySet Name="tblAgahiRang" EntityType="Self.tblAgahiRang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblAgahiService" EntityType="Self.tblAgahiService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblArchiveHashTags" EntityType="Self.tblArchiveHashTags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBrands" EntityType="Self.tblBrands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBrandType" EntityType="Self.tblBrandType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCarBodyStatus" EntityType="Self.tblCarBodyStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCarChassis" EntityType="Self.tblCarChassis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCarConditions" EntityType="Self.tblCarConditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCarCrash" EntityType="Self.tblCarCrash" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCarMotorHajme" EntityType="Self.tblCarMotorHajme" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCarPelak" EntityType="Self.tblCarPelak" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCarSokht" EntityType="Self.tblCarSokht" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCarSopapMotor" EntityType="Self.tblCarSopapMotor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCarTip" EntityType="Self.tblCarTip" Schema="dbo" store:Type="Tables" />
@@ -1337,6 +902,8 @@
           <EntitySet Name="tblRegions" EntityType="Self.tblRegions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUserLoginLog" EntityType="Self.tblUserLoginLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserType" EntityType="Self.tblUserType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVam" EntityType="Self.tblVam" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="Self.FK_tblAgahi_tblAgahiCategories">
             <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
@@ -2014,7 +1581,6 @@
           <EntitySet Name="sysdiagrams" EntityType="DBEWDiGNModel.sysdiagrams" />
           <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
           <EntitySet Name="tblAgahiBrandMobileCopmuter" EntityType="DBEWDiGNModel.tblAgahiBrandMobileCopmuter" />
-          <EntitySet Name="tblAgahiCarDetails" EntityType="DBEWDiGNModel.tblAgahiCarDetails" />
           <EntitySet Name="tblAgahiCategories" EntityType="DBEWDiGNModel.tblAgahiCategories" />
           <EntitySet Name="tblAgahiFavorite" EntityType="DBEWDiGNModel.tblAgahiFavorite" />
           <EntitySet Name="tblAgahiGalleries" EntityType="DBEWDiGNModel.tblAgahiGalleries" />
@@ -2045,7 +1611,6 @@
           <EntitySet Name="tblProvince" EntityType="DBEWDiGNModel.tblProvince" />
           <EntitySet Name="tblRegions" EntityType="DBEWDiGNModel.tblRegions" />
           <EntitySet Name="tblUserLoginLog" EntityType="DBEWDiGNModel.tblUserLoginLog" />
-          <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
           <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
             <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
@@ -2082,41 +1647,9 @@
             <End Role="tblAgahi" EntitySet="tblAgahi" />
             <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
-            <End Role="tblAgahi" EntitySet="tblAgahi" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
             <End Role="tblAgahiBrandMobileCopmuter" EntitySet="tblAgahiBrandMobileCopmuter" />
             <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang">
-            <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang1" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1">
-            <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme">
-            <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht">
-            <End Role="tblCarSokht" EntitySet="tblCarSokht" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSopapMotor" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor">
-            <End Role="tblCarSopapMotor" EntitySet="tblCarSopapMotor" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarTip" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip">
-            <End Role="tblCarTip" EntitySet="tblCarTip" />
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblCarBodyStatus_tblAgahiCarDetails" Association="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails">
-            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-            <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
           </AssociationSet>
           <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType">
             <End Role="tblHomeGarmayeshType" EntitySet="tblHomeGarmayeshType" />
@@ -2154,6 +1687,48 @@
             <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
             <End Role="tblCountry" EntitySet="tblCountry" />
           </AssociationSet>
+          <EntitySet Name="tblBrands" EntityType="DBEWDiGNModel.tblBrands" />
+          <EntitySet Name="tblBrandType" EntityType="DBEWDiGNModel.tblBrandType" />
+          <EntitySet Name="tblCarChassis" EntityType="DBEWDiGNModel.tblCarChassis" />
+          <EntitySet Name="tblCarConditions" EntityType="DBEWDiGNModel.tblCarConditions" />
+          <EntitySet Name="tblCarCrash" EntityType="DBEWDiGNModel.tblCarCrash" />
+          <EntitySet Name="tblCarPelak" EntityType="DBEWDiGNModel.tblCarPelak" />
+          <EntitySet Name="tblUserType" EntityType="DBEWDiGNModel.tblUserType" />
+          <EntitySet Name="tblVam" EntityType="DBEWDiGNModel.tblVam" />
+          <EntitySet Name="tblAgahiCarDetails" EntityType="DBEWDiGNModel.tblAgahiCarDetails" />
+          <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
+            <End Role="tblAgahi" EntitySet="tblAgahi" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang">
+            <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblAgahiRang1" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1">
+            <End Role="tblAgahiRang" EntitySet="tblAgahiRang" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme">
+            <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht">
+            <End Role="tblCarSokht" EntitySet="tblCarSokht" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSopapMotor" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor">
+            <End Role="tblCarSopapMotor" EntitySet="tblCarSopapMotor" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAgahiCarDetails_tblCarTip" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip">
+            <End Role="tblCarTip" EntitySet="tblCarTip" />
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCarBodyStatus_tblAgahiCarDetails" Association="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails">
+            <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+            <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+          </AssociationSet>
+          <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
           <AssociationSet Name="FK_tblUserLoginLog_tblUsers" Association="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers">
             <End Role="tblUsers" EntitySet="tblUsers" />
             <End Role="tblUserLoginLog" EntitySet="tblUserLoginLog" />
@@ -2809,6 +2384,7 @@
           <NavigationProperty Name="tblAgahiFavorite" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiFavorite" />
           <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiMobCompDetails" />
           <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiCarDetails" />
+          <Property Name="UserAgahiTypeID" Type="Int32" />
         </EntityType>
         <EntityType Name="tblAgahiBrandMobileCopmuter">
           <Key>
@@ -2822,41 +2398,6 @@
           <Property Name="AllinOne" Type="Boolean" />
           <Property Name="Labtop" Type="Boolean" />
           <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" FromRole="tblAgahiBrandMobileCopmuter" ToRole="tblAgahiMobCompDetails" />
-        </EntityType>
-        <EntityType Name="tblAgahiCarDetails">
-          <Key>
-            <PropertyRef Name="AgahiDetailCar" />
-          </Key>
-          <Property Name="AgahiDetailCar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AgahiID" Type="Int32" />
-          <Property Name="karkardDaghigh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SaleSakht" Type="Int32" />
-          <Property Name="GirboxAuto" Type="Boolean" />
-          <Property Name="SokhtID" Type="Int32" />
-          <Property Name="RangeKharegiID" Type="Int32" />
-          <Property Name="RangeDakheliID" Type="Int32" />
-          <Property Name="CarTipID" Type="Int32" />
-          <Property Name="MotorHajmID" Type="Int32" />
-          <Property Name="AirBagNumber" Type="Int32" />
-          <Property Name="DandehNumber" Type="Int32" />
-          <Property Name="SunRoof" Type="Boolean" />
-          <Property Name="Remote" Type="Boolean" />
-          <Property Name="SandaliBarghi" Type="Boolean" />
-          <Property Name="SopapID" Type="Int32" />
-          <Property Name="PishPardakht" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Mahane" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ChanMaheID" Type="Int32" />
-          <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="RokeshTypeID" Type="Int32" />
-          <Property Name="BiRang" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahiCarDetails" ToRole="tblAgahi" />
-          <NavigationProperty Name="tblAgahiRang" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
-          <NavigationProperty Name="tblAgahiRang1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
-          <NavigationProperty Name="tblCarMotorHajme" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblAgahiCarDetails" ToRole="tblCarMotorHajme" />
-          <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
-          <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
-          <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
-          <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
         </EntityType>
         <EntityType Name="tblAgahiCategories">
           <Key>
@@ -2934,6 +2475,8 @@
           <NavigationProperty Name="tblHomeMantagheID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMantagheID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeMantagheID" />
           <NavigationProperty Name="tblHomeMelkType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeMelkType" />
           <NavigationProperty Name="tblHomeNSEWID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeNSEWID" />
+          <Property Name="Area" Type="Int32" />
+          <Property Name="CitySideTypeID" Type="Int32" />
         </EntityType>
         <EntityType Name="tblAgahiMobCompDetails">
           <Key>
@@ -2961,6 +2504,15 @@
           <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahi" />
           <NavigationProperty Name="tblAgahiBrandMobileCopmuter" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahiBrandMobileCopmuter" />
           <NavigationProperty Name="tblJeansBadane" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblAgahiMobCompDetails" ToRole="tblJeansBadane" />
+          <Property Name="HDDMeasure" Type="Int32" />
+          <Property Name="SSDMeasure" Type="Int32" />
+          <Property Name="HasHHD" Type="Boolean" />
+          <Property Name="HasSSD" Type="Boolean" />
+          <Property Name="HasUSB3" Type="Boolean" />
+          <Property Name="HasDVDRW" Type="Boolean" />
+          <Property Name="ColorID" Type="Int32" />
+          <Property Name="HasCamera" Type="Boolean" />
+          <Property Name="CameraMgeaPixel" Type="Int32" />
         </EntityType>
         <EntityType Name="tblAgahiPlans">
           <Key>
@@ -3018,7 +2570,7 @@
           <Property Name="OtaghTaviz" Type="Boolean" />
           <Property Name="NiazBeSafkari" Type="Boolean" />
           <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" FromRole="tblCarBodyStatus" ToRole="tblAgahiCarDetails" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="tblCarMotorHajme">
           <Key>
             <PropertyRef Name="MotorHajmID" />
@@ -3190,34 +2742,6 @@
           <Property Name="IsCheckPassed" Type="Boolean" />
           <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUserLoginLog" ToRole="tblUsers" />
         </EntityType>
-        <EntityType Name="tblUsers">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-          <Property Name="UserTypeIDelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LanguageID" Type="Int32" />
-          <Property Name="UserType" Type="Byte" />
-          <Property Name="LocationID" Type="Int32" />
-          <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="tblUserLoginLog" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginLog" />
-        </EntityType>
         <Association Name="FK_tblAgahi_tblAgahiCategories">
           <End Type="DBEWDiGNModel.tblAgahiCategories" Role="tblAgahiCategories" Multiplicity="0..1" />
           <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
@@ -3326,18 +2850,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblCarDetails_tblAgahi">
-          <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAgahi">
-              <PropertyRef Name="AgahiID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="AgahiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tblAgahiMobCompDetails_tblAgahiBrandMobileCopmuter">
           <End Type="DBEWDiGNModel.tblAgahiBrandMobileCopmuter" Role="tblAgahiBrandMobileCopmuter" Multiplicity="0..1" />
           <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
@@ -3347,90 +2859,6 @@
             </Principal>
             <Dependent Role="tblAgahiMobCompDetails">
               <PropertyRef Name="BrandID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblAgahiRang">
-          <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAgahiRang">
-              <PropertyRef Name="AgahiRangID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="RangeKharegiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblAgahiRang1">
-          <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAgahiRang">
-              <PropertyRef Name="AgahiRangID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="RangeDakheliID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
-          <End Type="DBEWDiGNModel.tblCarMotorHajme" Role="tblCarMotorHajme" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCarMotorHajme">
-              <PropertyRef Name="MotorHajmID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="MotorHajmID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblCarSokht">
-          <End Type="DBEWDiGNModel.tblCarSokht" Role="tblCarSokht" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCarSokht">
-              <PropertyRef Name="SokhtID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="SokhtID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblCarSopapMotor">
-          <End Type="DBEWDiGNModel.tblCarSopapMotor" Role="tblCarSopapMotor" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCarSopapMotor">
-              <PropertyRef Name="SopapID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="SopapID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahiCarDetails_tblCarTip">
-          <End Type="DBEWDiGNModel.tblCarTip" Role="tblCarTip" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblCarTip">
-              <PropertyRef Name="CarTipID" />
-            </Principal>
-            <Dependent Role="tblAgahiCarDetails">
-              <PropertyRef Name="CarTipID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblCarBodyStatus_tblAgahiCarDetails">
-          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="1" />
-          <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblAgahiCarDetails">
-              <PropertyRef Name="AgahiDetailCar" />
-            </Principal>
-            <Dependent Role="tblCarBodyStatus">
-              <PropertyRef Name="AgahiDetailCar" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3542,6 +2970,234 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblBrands">
+          <Key>
+            <PropertyRef Name="BrandID" />
+          </Key>
+          <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrandTypeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblBrandType">
+          <Key>
+            <PropertyRef Name="BrandTypeID" />
+          </Key>
+          <Property Name="BrandTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCarChassis">
+          <Key>
+            <PropertyRef Name="CarChassisTypeID" />
+          </Key>
+          <Property Name="CarChassisTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarChassisTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCarConditions">
+          <Key>
+            <PropertyRef Name="CarConditionID" />
+          </Key>
+          <Property Name="CarConditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarConditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCarCrash">
+          <Key>
+            <PropertyRef Name="CarCrashTypeID" />
+          </Key>
+          <Property Name="CarCrashTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarCrashType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCarPelak">
+          <Key>
+            <PropertyRef Name="CarPelakTypeID" />
+          </Key>
+          <Property Name="CarPelakTypeID" Type="Int32" Nullable="false" />
+          <Property Name="CarPelakType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblUserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblVam">
+          <Key>
+            <PropertyRef Name="VamID" />
+          </Key>
+          <Property Name="VamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MahanePrice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Teadad" Type="Int32" />
+          <Property Name="VamDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VamYear" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblAgahiCarDetails">
+          <Key>
+            <PropertyRef Name="AgahiDetailCarID" />
+          </Key>
+          <Property Name="AgahiDetailCarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgahiID" Type="Int32" />
+          <Property Name="karkardDaghigh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaleSakht" Type="Int32" />
+          <Property Name="GirboxAuto" Type="Boolean" />
+          <Property Name="SokhtID" Type="Int32" />
+          <Property Name="RangeKharegiID" Type="Int32" />
+          <Property Name="RangeDakheliID" Type="Int32" />
+          <Property Name="CarTipID" Type="Int32" />
+          <Property Name="MotorHajmID" Type="Int32" />
+          <Property Name="AirBagNumber" Type="Int32" />
+          <Property Name="DandehNumber" Type="Int32" />
+          <Property Name="SunRoof" Type="Boolean" />
+          <Property Name="Remote" Type="Boolean" />
+          <Property Name="SandaliBarghi" Type="Boolean" />
+          <Property Name="SopapID" Type="Int32" />
+          <Property Name="PishPardakht" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Mahane" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ChanMaheID" Type="Int32" />
+          <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RokeshTypeID" Type="Int32" />
+          <Property Name="VamID" Type="Int32" />
+          <Property Name="BrandID" Type="Int32" />
+          <Property Name="CarConditionID" Type="Int32" />
+          <Property Name="CarChassisTypeID" Type="Int32" />
+          <Property Name="DiffType" Type="Byte" />
+          <Property Name="CrashTypeID" Type="Int32" />
+          <Property Name="CarCrashTypeID" Type="Int32" />
+          <Property Name="CarPelakTypeID" Type="Int32" />
+          <Property Name="HasAlarm" Type="Boolean" />
+          <Property Name="HasSound" Type="Boolean" />
+          <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahiCarDetails" ToRole="tblAgahi" />
+          <NavigationProperty Name="tblAgahiRang" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
+          <NavigationProperty Name="tblAgahiRang1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblAgahiRang1" FromRole="tblAgahiCarDetails" ToRole="tblAgahiRang" />
+          <NavigationProperty Name="tblCarMotorHajme" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblAgahiCarDetails" ToRole="tblCarMotorHajme" />
+          <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
+          <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
+          <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
+          <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblCarBodyStatus_tblAgahiCarDetails" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
+        </EntityType>
+        <Association Name="FK_tblCarDetails_tblAgahi">
+          <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgahi">
+              <PropertyRef Name="AgahiID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="AgahiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblAgahiRang">
+          <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgahiRang">
+              <PropertyRef Name="AgahiRangID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="RangeKharegiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblAgahiRang1">
+          <End Type="DBEWDiGNModel.tblAgahiRang" Role="tblAgahiRang" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgahiRang">
+              <PropertyRef Name="AgahiRangID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="RangeDakheliID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
+          <End Type="DBEWDiGNModel.tblCarMotorHajme" Role="tblCarMotorHajme" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCarMotorHajme">
+              <PropertyRef Name="MotorHajmID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="MotorHajmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblCarSokht">
+          <End Type="DBEWDiGNModel.tblCarSokht" Role="tblCarSokht" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCarSokht">
+              <PropertyRef Name="SokhtID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="SokhtID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblCarSopapMotor">
+          <End Type="DBEWDiGNModel.tblCarSopapMotor" Role="tblCarSopapMotor" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCarSopapMotor">
+              <PropertyRef Name="SopapID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="SopapID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAgahiCarDetails_tblCarTip">
+          <End Type="DBEWDiGNModel.tblCarTip" Role="tblCarTip" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCarTip">
+              <PropertyRef Name="CarTipID" />
+            </Principal>
+            <Dependent Role="tblAgahiCarDetails">
+              <PropertyRef Name="CarTipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCarBodyStatus_tblAgahiCarDetails">
+          <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="1" />
+          <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAgahiCarDetails">
+              <PropertyRef Name="AgahiDetailCarID" />
+            </Principal>
+            <Dependent Role="tblCarBodyStatus">
+              <PropertyRef Name="AgahiDetailCar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageID" Type="Int32" />
+          <Property Name="UserType" Type="Byte" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="tblUserLoginLog" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginLog" />
+        </EntityType>
         <Association Name="FK_tblUserLoginLog_tblUsers">
           <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
           <End Type="DBEWDiGNModel.tblUserLoginLog" Role="tblUserLoginLog" Multiplicity="*" />
@@ -3588,678 +3244,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllCategories" FunctionName="DBEWDiGNModel.Store.GetAllCategories">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllCategories_Result">
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllNews" FunctionName="DBEWDiGNModel.Store.GetAllNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllNews_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Title1" ColumnName="Title1" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllNewsForCompareWithNewNews" FunctionName="DBEWDiGNModel.Store.GetAllNewsForCompareWithNewNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllNewsForCompareWithNewNews_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PubDate" ColumnName="PubDate" />
-                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
-                <ScalarProperty Name="MagazineName" ColumnName="MagazineName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllRecentNewsTopView" FunctionName="DBEWDiGNModel.Store.GetAllRecentNewsTopView">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllRecentNewsTopView_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Title1" ColumnName="Title1" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllRecord" FunctionName="DBEWDiGNModel.Store.GetAllRecord" />
-          <FunctionImportMapping FunctionImportName="GetAllRssCategory" FunctionName="DBEWDiGNModel.Store.GetAllRssCategory">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllRssCategory_Result">
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="RssUrl" ColumnName="RssUrl" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="RssTypeID" ColumnName="RssTypeID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdAdsLocation" FunctionName="DBEWDiGNModel.Store.GetByIdAdsLocation">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdAdsLocation_Result">
-                <ScalarProperty Name="AdsLocID" ColumnName="AdsLocID" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="AdsID" ColumnName="AdsID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdAdsSchedules" FunctionName="DBEWDiGNModel.Store.GetByIdAdsSchedules">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdAdsSchedules_Result">
-                <ScalarProperty Name="AdsID" ColumnName="AdsID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="DailyDaysID" ColumnName="DailyDaysID" />
-                <ScalarProperty Name="UploadAdsFileID" ColumnName="UploadAdsFileID" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="IsArchive" ColumnName="IsArchive" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdBlockTag" FunctionName="DBEWDiGNModel.Store.GetByIdBlockTag">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdBlockTag_Result">
-                <ScalarProperty Name="BlockKeyID" ColumnName="BlockKeyID" />
-                <ScalarProperty Name="BlockKeywords" ColumnName="BlockKeywords" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdCategories" FunctionName="DBEWDiGNModel.Store.GetByIdCategories">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdCategories_Result">
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdComments" FunctionName="DBEWDiGNModel.Store.GetByIdComments">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdComments_Result">
-                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdDailyDays" FunctionName="DBEWDiGNModel.Store.GetByIdDailyDays">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdDailyDays_Result">
-                <ScalarProperty Name="DailyDaysID" ColumnName="DailyDaysID" />
-                <ScalarProperty Name="DayID" ColumnName="DayID" />
-                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
-                <ScalarProperty Name="AdsID" ColumnName="AdsID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdDays" FunctionName="DBEWDiGNModel.Store.GetByIdDays">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdDays_Result">
-                <ScalarProperty Name="DayID" ColumnName="DayID" />
-                <ScalarProperty Name="DayName" ColumnName="DayName" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdFavoritePageNews" FunctionName="DBEWDiGNModel.Store.GetByIdFavoritePageNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdFavoritePageNews_Result">
-                <ScalarProperty Name="FavoritesCategoryNewsID" ColumnName="FavoritesCategoryNewsID" />
-                <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
-                <ScalarProperty Name="CategoryIDNews" ColumnName="CategoryIDNews" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdHashTag" FunctionName="DBEWDiGNModel.Store.GetByIdHashTag">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashTag_Result">
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="Counter" ColumnName="Counter" />
-                <ScalarProperty Name="Priority" ColumnName="Priority" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdHashtagAds" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagAds">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagAds_Result">
-                <ScalarProperty Name="HashtagAdsID" ColumnName="HashtagAdsID" />
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="AdsID" ColumnName="AdsID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagLinkestan">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagLinkestan_Result">
-                <ScalarProperty Name="HtagLinkID" ColumnName="HtagLinkID" />
-                <ScalarProperty Name="LinkestanID" ColumnName="LinkestanID" />
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdHashtagNews" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagNews_Result">
-                <ScalarProperty Name="HashTagNewsID" ColumnName="HashTagNewsID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdHashtagPagePost" FunctionName="DBEWDiGNModel.Store.GetByIdHashtagPagePost">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdHashtagPagePost_Result">
-                <ScalarProperty Name="HashtagPagePostID" ColumnName="HashtagPagePostID" />
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="PagePostID" ColumnName="PagePostID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdIpAddress" FunctionName="DBEWDiGNModel.Store.GetByIdIpAddress">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdIpAddress_Result">
-                <ScalarProperty Name="IpAddressID" ColumnName="IpAddressID" />
-                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
-                <ScalarProperty Name="DateRegister" ColumnName="DateRegister" />
-                <ScalarProperty Name="BrowserName" ColumnName="BrowserName" />
-                <ScalarProperty Name="WindowsName" ColumnName="WindowsName" />
-                <ScalarProperty Name="BrowserVersion" ColumnName="BrowserVersion" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdLanguages" FunctionName="DBEWDiGNModel.Store.GetByIdLanguages">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLanguages_Result">
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="Lnaguage" ColumnName="Lnaguage" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdLinkestan" FunctionName="DBEWDiGNModel.Store.GetByIdLinkestan">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLinkestan_Result">
-                <ScalarProperty Name="LikestanID" ColumnName="LikestanID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="LinkName" ColumnName="LinkName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdLocations" FunctionName="DBEWDiGNModel.Store.GetByIdLocations">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdLocations_Result">
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
-                <ScalarProperty Name="NeighbourhoodID" ColumnName="NeighbourhoodID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdMenu" FunctionName="DBEWDiGNModel.Store.GetByIdMenu">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdMenu_Result">
-                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdNews" FunctionName="DBEWDiGNModel.Store.GetByIdNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdNews_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdNewsLocation" FunctionName="DBEWDiGNModel.Store.GetByIdNewsLocation">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdNewsLocation_Result">
-                <ScalarProperty Name="NewsLocationID" ColumnName="NewsLocationID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdPageFreinds" FunctionName="DBEWDiGNModel.Store.GetByIdPageFreinds">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPageFreinds_Result">
-                <ScalarProperty Name="PageFreindID" ColumnName="PageFreindID" />
-                <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="Invited" ColumnName="Invited" />
-                <ScalarProperty Name="Confrim" ColumnName="Confrim" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdPagePost" FunctionName="DBEWDiGNModel.Store.GetByIdPagePost">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePost_Result">
-                <ScalarProperty Name="PagePostId" ColumnName="PagePostId" />
-                <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="UnLike" ColumnName="UnLike" />
-                <ScalarProperty Name="Visit" ColumnName="Visit" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdPagePostLocations" FunctionName="DBEWDiGNModel.Store.GetByIdPagePostLocations">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePostLocations_Result">
-                <ScalarProperty Name="PagePostLocID" ColumnName="PagePostLocID" />
-                <ScalarProperty Name="PagePostID" ColumnName="PagePostID" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdPagePrivacyType" FunctionName="DBEWDiGNModel.Store.GetByIdPagePrivacyType">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdPagePrivacyType_Result">
-                <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
-                <ScalarProperty Name="PrivacyType" ColumnName="PrivacyType" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdRateUsers" FunctionName="DBEWDiGNModel.Store.GetByIdRateUsers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdRateUsers_Result">
-                <ScalarProperty Name="UserRateID" ColumnName="UserRateID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="PostCount" ColumnName="PostCount" />
-                <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
-                <ScalarProperty Name="UnLikesCount" ColumnName="UnLikesCount" />
-                <ScalarProperty Name="CommentsCount" ColumnName="CommentsCount" />
-                <ScalarProperty Name="SaveImageCount" ColumnName="SaveImageCount" />
-                <ScalarProperty Name="ShareFileCount" ColumnName="ShareFileCount" />
-                <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
-                <ScalarProperty Name="SpamCount" ColumnName="SpamCount" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdRss" FunctionName="DBEWDiGNModel.Store.GetByIdRss">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdRss_Result">
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="RssUrl" ColumnName="RssUrl" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="RssTypeID" ColumnName="RssTypeID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdSearchedKeyword" FunctionName="DBEWDiGNModel.Store.GetByIdSearchedKeyword">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdSearchedKeyword_Result">
-                <ScalarProperty Name="SearchedKeyID" ColumnName="SearchedKeyID" />
-                <ScalarProperty Name="SearchedKeyword" ColumnName="SearchedKeyword" />
-                <ScalarProperty Name="CountSearched" ColumnName="CountSearched" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="MountYear" ColumnName="MountYear" />
-                <ScalarProperty Name="LastUpdateInMount" ColumnName="LastUpdateInMount" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdTimes" FunctionName="DBEWDiGNModel.Store.GetByIdTimes">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdTimes_Result">
-                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdUploadAdsFile" FunctionName="DBEWDiGNModel.Store.GetByIdUploadAdsFile">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUploadAdsFile_Result">
-                <ScalarProperty Name="UploadAdsFileID" ColumnName="UploadAdsFileID" />
-                <ScalarProperty Name="AdsID" ColumnName="AdsID" />
-                <ScalarProperty Name="FileAddress" ColumnName="FileAddress" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdUsers" FunctionName="DBEWDiGNModel.Store.GetByIdUsers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUsers_Result">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Tell" ColumnName="Tell" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
-                <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
-                <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="NickName" ColumnName="NickName" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="UserType" ColumnName="UserType" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByIdUserWallPages" FunctionName="DBEWDiGNModel.Store.GetByIdUserWallPages">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByIdUserWallPages_Result">
-                <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
-                <ScalarProperty Name="PageRate" ColumnName="PageRate" />
-                <ScalarProperty Name="Block" ColumnName="Block" />
-                <ScalarProperty Name="Confrim" ColumnName="Confrim" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="TelegramLink" ColumnName="TelegramLink" />
-                <ScalarProperty Name="FacebookLink" ColumnName="FacebookLink" />
-                <ScalarProperty Name="TwitterLink" ColumnName="TwitterLink" />
-                <ScalarProperty Name="GooglePlusLink" ColumnName="GooglePlusLink" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
-                <ScalarProperty Name="PageImageUrl" ColumnName="PageImageUrl" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetByNameCategories" FunctionName="DBEWDiGNModel.Store.GetByNameCategories">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetByNameCategories_Result">
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetLatestNewsOrderByDate" FunctionName="DBEWDiGNModel.Store.GetLatestNewsOrderByDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsOrderByDate_Result">
-                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetLatestNewsOrderByDateByRssID" FunctionName="DBEWDiGNModel.Store.GetLatestNewsOrderByDateByRssID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsOrderByDateByRssID_Result">
-                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PubDate" ColumnName="PubDate" />
-                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetNewsOrderByDate" FunctionName="DBEWDiGNModel.Store.GetNewsOrderByDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetNewsOrderByDate_Result">
-                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetToNewsEachCategory" FunctionName="DBEWDiGNModel.Store.GetToNewsEachCategory">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetToNewsEachCategory_Result">
-                <ScalarProperty Name="TempID" ColumnName="TempID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="RecordType" ColumnName="RecordType" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetTopNewsByCategoryName" FunctionName="DBEWDiGNModel.Store.GetTopNewsByCategoryName" />
-          <FunctionImportMapping FunctionImportName="GetTopViewNews" FunctionName="DBEWDiGNModel.Store.GetTopViewNews">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTopViewNews_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Title1" ColumnName="Title1" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="LatestNewsOrderByPublishDate" FunctionName="DBEWDiGNModel.Store.LatestNewsOrderByPublishDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.LatestNewsOrderByPublishDate_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="LatestNewsOrderByViewNumber" FunctionName="DBEWDiGNModel.Store.LatestNewsOrderByViewNumber">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.LatestNewsOrderByViewNumber_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_Add_tblAdsLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblAdsLocations" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblAdsSchedules" FunctionName="DBEWDiGNModel.Store.sp_Add_tblAdsSchedules" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblBlockTag" FunctionName="DBEWDiGNModel.Store.sp_Add_tblBlockTag" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblCategories" FunctionName="DBEWDiGNModel.Store.sp_Add_tblCategories" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblComments" FunctionName="DBEWDiGNModel.Store.sp_Add_tblComments" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblDailyDays" FunctionName="DBEWDiGNModel.Store.sp_Add_tblDailyDays" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblDays" FunctionName="DBEWDiGNModel.Store.sp_Add_tblDays" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblFavoritePageNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblFavoritePageNews" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblHashTag" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashTag" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagAds" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagAds" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagLinkestan" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagNews" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblHashtagPagePost" FunctionName="DBEWDiGNModel.Store.sp_Add_tblHashtagPagePost" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblIpAddress" FunctionName="DBEWDiGNModel.Store.sp_Add_tblIpAddress" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblLanguages" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLanguages" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblLinkestan" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLinkestan" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblLocations" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblMenu" FunctionName="DBEWDiGNModel.Store.sp_Add_tblMenu" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblNews" FunctionName="DBEWDiGNModel.Store.sp_Add_tblNews" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblNewsLocation" FunctionName="DBEWDiGNModel.Store.sp_Add_tblNewsLocation" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblPageFreinds" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPageFreinds" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblPagePost" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPagePost" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblPagePostLocations" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPagePostLocations" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblPrivacyType" FunctionName="DBEWDiGNModel.Store.sp_Add_tblPrivacyType" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblRateUsers" FunctionName="DBEWDiGNModel.Store.sp_Add_tblRateUsers" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblRss" FunctionName="DBEWDiGNModel.Store.sp_Add_tblRss" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblSearchedKeyword" FunctionName="DBEWDiGNModel.Store.sp_Add_tblSearchedKeyword" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblTimes" FunctionName="DBEWDiGNModel.Store.sp_Add_tblTimes" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblUploadAdsFile" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUploadAdsFile" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblUsers" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUsers" />
-          <FunctionImportMapping FunctionImportName="sp_Add_tblUserWallPages" FunctionName="DBEWDiGNModel.Store.sp_Add_tblUserWallPages" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBEWDiGNModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBEWDiGNModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblAdsLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblAdsLocations" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblAdsSchedules" FunctionName="DBEWDiGNModel.Store.sp_DeltblAdsSchedules" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblBlockTag" FunctionName="DBEWDiGNModel.Store.sp_DeltblBlockTag" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblCategories" FunctionName="DBEWDiGNModel.Store.sp_DeltblCategories" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblComments" FunctionName="DBEWDiGNModel.Store.sp_DeltblComments" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblDailyDays" FunctionName="DBEWDiGNModel.Store.sp_DeltblDailyDays" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblDays" FunctionName="DBEWDiGNModel.Store.sp_DeltblDays" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblFavoritePageNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblFavoritePageNews" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblHashTag" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashTag" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblHashtagAds" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagAds" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblHashtagLinkestan" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagLinkestan" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblHashtagNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagNews" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblHashtagPagePost" FunctionName="DBEWDiGNModel.Store.sp_DeltblHashtagPagePost" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblLanguages" FunctionName="DBEWDiGNModel.Store.sp_DeltblLanguages" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblLinkestan" FunctionName="DBEWDiGNModel.Store.sp_DeltblLinkestan" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblLocations" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblMenu" FunctionName="DBEWDiGNModel.Store.sp_DeltblMenu" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblNews" FunctionName="DBEWDiGNModel.Store.sp_DeltblNews" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblNewsLocation" FunctionName="DBEWDiGNModel.Store.sp_DeltblNewsLocation" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblPageFreinds" FunctionName="DBEWDiGNModel.Store.sp_DeltblPageFreinds" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblPagePost" FunctionName="DBEWDiGNModel.Store.sp_DeltblPagePost" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblPagePostLocations" FunctionName="DBEWDiGNModel.Store.sp_DeltblPagePostLocations" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblPrivacyType" FunctionName="DBEWDiGNModel.Store.sp_DeltblPrivacyType" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblRateUsers" FunctionName="DBEWDiGNModel.Store.sp_DeltblRateUsers" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblRss" FunctionName="DBEWDiGNModel.Store.sp_DeltblRss" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblSearchedKeyword" FunctionName="DBEWDiGNModel.Store.sp_DeltblSearchedKeyword" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblTimes" FunctionName="DBEWDiGNModel.Store.sp_DeltblTimes" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblUploadAdsFile" FunctionName="DBEWDiGNModel.Store.sp_DeltblUploadAdsFile" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblUsers" FunctionName="DBEWDiGNModel.Store.sp_DeltblUsers" />
-          <FunctionImportMapping FunctionImportName="sp_DeltblUserWallPages" FunctionName="DBEWDiGNModel.Store.sp_DeltblUserWallPages" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBEWDiGNModel.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBEWDiGNModel.Store.sp_helpdiagramdefinition">
             <ResultMapping>
@@ -4281,181 +3267,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBEWDiGNModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_UpdateOrAdd_tblHashTag" FunctionName="DBEWDiGNModel.Store.sp_UpdateOrAdd_tblHashTag" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBEWDiGNModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="spgo_GetPageNumbers" FunctionName="DBEWDiGNModel.Store.spgo_GetPageNumbers" />
-          <FunctionImportMapping FunctionImportName="SyndicatorTopNewsCategoryID" FunctionName="DBEWDiGNModel.Store.SyndicatorTopNewsCategoryID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.SyndicatorTopNewsCategoryID_Result">
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllWallPagesByUserID" FunctionName="DBEWDiGNModel.Store.GetAllWallPagesByUserID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllWallPagesByUserID_Result">
-                <ScalarProperty Name="UserWallPageID" ColumnName="UserWallPageID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
-                <ScalarProperty Name="PageRate" ColumnName="PageRate" />
-                <ScalarProperty Name="Block" ColumnName="Block" />
-                <ScalarProperty Name="Confrim" ColumnName="Confrim" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="TelegramLink" ColumnName="TelegramLink" />
-                <ScalarProperty Name="FacebookLink" ColumnName="FacebookLink" />
-                <ScalarProperty Name="TwitterLink" ColumnName="TwitterLink" />
-                <ScalarProperty Name="GooglePlusLink" ColumnName="GooglePlusLink" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="FriendCount" ColumnName="FriendCount" />
-                <ScalarProperty Name="PageImageUrl" ColumnName="PageImageUrl" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllTop10News" FunctionName="DBEWDiGNModel.Store.GetAllTop10News">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllTop10News_Result">
-                <ScalarProperty Name="TempID" ColumnName="TempID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="RecordType" ColumnName="RecordType" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPageCountWithTagName" FunctionName="DBEWDiGNModel.Store.GetPageCountWithTagName" />
-          <FunctionImportMapping FunctionImportName="GetLatestNewsByTagNameOrderByDate" FunctionName="DBEWDiGNModel.Store.GetLatestNewsByTagNameOrderByDate">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetLatestNewsByTagNameOrderByDate_Result">
-                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="RssName" ColumnName="RssName" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="RssID" ColumnName="RssID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetTopNewsSlider" FunctionName="DBEWDiGNModel.Store.GetTopNewsSlider">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTopNewsSlider_Result">
-                <ScalarProperty Name="TempID" ColumnName="TempID" />
-                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="rssname" ColumnName="rssname" />
-                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="ViewNumber" ColumnName="ViewNumber" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Unlike" ColumnName="Unlike" />
-                <ScalarProperty Name="RecordType" ColumnName="RecordType" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetTop200HashTagDayWeekMonthYear" FunctionName="DBEWDiGNModel.Store.GetTop200HashTagDayWeekMonthYear">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetTop200HashTagDayWeekMonthYear_Result">
-                <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
-                <ScalarProperty Name="repcount" ColumnName="repcount" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Month" ColumnName="Month" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ResetCountTblHashTagAndArchived" FunctionName="DBEWDiGNModel.Store.ResetCountTblHashTagAndArchived" />
-          <FunctionImportMapping FunctionImportName="GetCountSearchedKeyInDayMonthYear_Ago" FunctionName="DBEWDiGNModel.Store.GetCountSearchedKeyInDayMonthYear_Ago">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetCountSearchedKeyInDayMonthYear_Ago_Result">
-                <ScalarProperty Name="DAY_1" ColumnName="DAY 1" />
-                <ScalarProperty Name="DAY_2" ColumnName="DAY 2" />
-                <ScalarProperty Name="DAY_3" ColumnName="DAY 3" />
-                <ScalarProperty Name="DAY_4" ColumnName="DAY 4" />
-                <ScalarProperty Name="DAY_5" ColumnName="DAY 5" />
-                <ScalarProperty Name="DAY_6" ColumnName="DAY 6" />
-                <ScalarProperty Name="DAY_7" ColumnName="DAY 7" />
-                <ScalarProperty Name="DAY_8" ColumnName="DAY 8" />
-                <ScalarProperty Name="DAY_9" ColumnName="DAY 9" />
-                <ScalarProperty Name="DAY_10" ColumnName="DAY 10" />
-                <ScalarProperty Name="DAY_11" ColumnName="DAY 11" />
-                <ScalarProperty Name="DAY_12" ColumnName="DAY 12" />
-                <ScalarProperty Name="DAY_13" ColumnName="DAY 13" />
-                <ScalarProperty Name="DAY_14" ColumnName="DAY 14" />
-                <ScalarProperty Name="DAY_15" ColumnName="DAY 15" />
-                <ScalarProperty Name="DAY_16" ColumnName="DAY 16" />
-                <ScalarProperty Name="DAY_17" ColumnName="DAY 17" />
-                <ScalarProperty Name="DAY_18" ColumnName="DAY 18" />
-                <ScalarProperty Name="DAY_19" ColumnName="DAY 19" />
-                <ScalarProperty Name="DAY_20" ColumnName="DAY 20" />
-                <ScalarProperty Name="DAY_21" ColumnName="DAY 21" />
-                <ScalarProperty Name="DAY_22" ColumnName="DAY 22" />
-                <ScalarProperty Name="DAY_23" ColumnName="DAY 23" />
-                <ScalarProperty Name="DAY_24" ColumnName="DAY 24" />
-                <ScalarProperty Name="DAY_25" ColumnName="DAY 25" />
-                <ScalarProperty Name="DAY_26" ColumnName="DAY 26" />
-                <ScalarProperty Name="DAY_27" ColumnName="DAY 27" />
-                <ScalarProperty Name="DAY_28" ColumnName="DAY 28" />
-                <ScalarProperty Name="DAY_29" ColumnName="DAY 29" />
-                <ScalarProperty Name="DAY_30" ColumnName="DAY 30" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetHashtagIDByTagName" FunctionName="DBEWDiGNModel.Store.GetHashtagIDByTagName">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetHashtagIDByTagName_Result">
-                <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-                <ScalarProperty Name="HashtagName" ColumnName="HashtagName" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="Counter" ColumnName="Counter" />
-                <ScalarProperty Name="Priority" ColumnName="Priority" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetAllLinkestans" FunctionName="DBEWDiGNModel.Store.GetAllLinkestans">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DBEWDiGNModel.GetAllLinkestans_Result">
-                <ScalarProperty Name="LikestanID" ColumnName="LikestanID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="LinkName" ColumnName="LinkName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-                <ScalarProperty Name="DateRegister" ColumnName="DateRegister" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DBEWDiGNModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -4471,6 +3283,7 @@
           <EntitySetMapping Name="tblAgahi">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
               <MappingFragment StoreEntitySet="tblAgahi">
+                <ScalarProperty Name="UserAgahiTypeID" ColumnName="UserAgahiTypeID" />
                 <ScalarProperty Name="SpecialAgahi" ColumnName="SpecialAgahi" />
                 <ScalarProperty Name="OnTime" ColumnName="OnTime" />
                 <ScalarProperty Name="Chatable" ColumnName="Chatable" />
@@ -4512,34 +3325,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblAgahiCarDetails">
-            <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCarDetails">
-              <MappingFragment StoreEntitySet="tblAgahiCarDetails">
-                <ScalarProperty Name="BiRang" ColumnName="BiRang" />
-                <ScalarProperty Name="RokeshTypeID" ColumnName="RokeshTypeID" />
-                <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
-                <ScalarProperty Name="ChanMaheID" ColumnName="ChanMaheID" />
-                <ScalarProperty Name="Mahane" ColumnName="Mahane" />
-                <ScalarProperty Name="PishPardakht" ColumnName="PishPardakht" />
-                <ScalarProperty Name="SopapID" ColumnName="SopapID" />
-                <ScalarProperty Name="SandaliBarghi" ColumnName="SandaliBarghi" />
-                <ScalarProperty Name="Remote" ColumnName="Remote" />
-                <ScalarProperty Name="SunRoof" ColumnName="SunRoof" />
-                <ScalarProperty Name="DandehNumber" ColumnName="DandehNumber" />
-                <ScalarProperty Name="AirBagNumber" ColumnName="AirBagNumber" />
-                <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
-                <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
-                <ScalarProperty Name="RangeDakheliID" ColumnName="RangeDakheliID" />
-                <ScalarProperty Name="RangeKharegiID" ColumnName="RangeKharegiID" />
-                <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
-                <ScalarProperty Name="GirboxAuto" ColumnName="GirboxAuto" />
-                <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
-                <ScalarProperty Name="karkardDaghigh" ColumnName="karkardDaghigh" />
-                <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-                <ScalarProperty Name="AgahiDetailCar" ColumnName="AgahiDetailCar" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblAgahiCategories">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCategories">
               <MappingFragment StoreEntitySet="tblAgahiCategories">
@@ -4572,6 +3357,8 @@
           <EntitySetMapping Name="tblAgahiHomeDetail">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiHomeDetail">
               <MappingFragment StoreEntitySet="tblAgahiHomeDetail">
+                <ScalarProperty Name="CitySideTypeID" ColumnName="CitySideTypeID" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
                 <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
                 <ScalarProperty Name="Mablaghevam" ColumnName="Mablaghevam" />
                 <ScalarProperty Name="Vam" ColumnName="Vam" />
@@ -4615,6 +3402,15 @@
           <EntitySetMapping Name="tblAgahiMobCompDetails">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiMobCompDetails">
               <MappingFragment StoreEntitySet="tblAgahiMobCompDetails">
+                <ScalarProperty Name="CameraMgeaPixel" ColumnName="CameraMgeaPixel" />
+                <ScalarProperty Name="HasCamera" ColumnName="HasCamera" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="HasDVDRW" ColumnName="HasDVDRW" />
+                <ScalarProperty Name="HasUSB3" ColumnName="HasUSB3" />
+                <ScalarProperty Name="HasSSD" ColumnName="HasSSD" />
+                <ScalarProperty Name="HasHHD" ColumnName="HasHHD" />
+                <ScalarProperty Name="SSDMeasure" ColumnName="SSDMeasure" />
+                <ScalarProperty Name="HDDMeasure" ColumnName="HDDMeasure" />
                 <ScalarProperty Name="USB3" ColumnName="USB3" />
                 <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
                 <ScalarProperty Name="AntiWater" ColumnName="AntiWater" />
@@ -4866,6 +3662,111 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblBrands">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrands">
+              <MappingFragment StoreEntitySet="tblBrands">
+                <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBrandType">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrandType">
+              <MappingFragment StoreEntitySet="tblBrandType">
+                <ScalarProperty Name="BrandTypeName" ColumnName="BrandTypeName" />
+                <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCarChassis">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarChassis">
+              <MappingFragment StoreEntitySet="tblCarChassis">
+                <ScalarProperty Name="CarChassisTypeName" ColumnName="CarChassisTypeName" />
+                <ScalarProperty Name="CarChassisTypeID" ColumnName="CarChassisTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCarConditions">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarConditions">
+              <MappingFragment StoreEntitySet="tblCarConditions">
+                <ScalarProperty Name="CarConditionName" ColumnName="CarConditionName" />
+                <ScalarProperty Name="CarConditionID" ColumnName="CarConditionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCarCrash">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarCrash">
+              <MappingFragment StoreEntitySet="tblCarCrash">
+                <ScalarProperty Name="CarCrashType" ColumnName="CarCrashType" />
+                <ScalarProperty Name="CarCrashTypeID" ColumnName="CarCrashTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCarPelak">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarPelak">
+              <MappingFragment StoreEntitySet="tblCarPelak">
+                <ScalarProperty Name="CarPelakType" ColumnName="CarPelakType" />
+                <ScalarProperty Name="CarPelakTypeID" ColumnName="CarPelakTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserType">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserType">
+              <MappingFragment StoreEntitySet="tblUserType">
+                <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVam">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblVam">
+              <MappingFragment StoreEntitySet="tblVam">
+                <ScalarProperty Name="VamYear" ColumnName="VamYear" />
+                <ScalarProperty Name="VamDescription" ColumnName="VamDescription" />
+                <ScalarProperty Name="Teadad" ColumnName="Teadad" />
+                <ScalarProperty Name="MahanePrice" ColumnName="MahanePrice" />
+                <ScalarProperty Name="VamID" ColumnName="VamID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAgahiCarDetails">
+            <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCarDetails">
+              <MappingFragment StoreEntitySet="tblAgahiCarDetails">
+                <ScalarProperty Name="HasSound" ColumnName="HasSound" />
+                <ScalarProperty Name="HasAlarm" ColumnName="HasAlarm" />
+                <ScalarProperty Name="CarPelakTypeID" ColumnName="CarPelakTypeID" />
+                <ScalarProperty Name="CarCrashTypeID" ColumnName="CarCrashTypeID" />
+                <ScalarProperty Name="CrashTypeID" ColumnName="CrashTypeID" />
+                <ScalarProperty Name="DiffType" ColumnName="DiffType" />
+                <ScalarProperty Name="CarChassisTypeID" ColumnName="CarChassisTypeID" />
+                <ScalarProperty Name="CarConditionID" ColumnName="CarConditionID" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="VamID" ColumnName="VamID" />
+                <ScalarProperty Name="RokeshTypeID" ColumnName="RokeshTypeID" />
+                <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
+                <ScalarProperty Name="ChanMaheID" ColumnName="ChanMaheID" />
+                <ScalarProperty Name="Mahane" ColumnName="Mahane" />
+                <ScalarProperty Name="PishPardakht" ColumnName="PishPardakht" />
+                <ScalarProperty Name="SopapID" ColumnName="SopapID" />
+                <ScalarProperty Name="SandaliBarghi" ColumnName="SandaliBarghi" />
+                <ScalarProperty Name="Remote" ColumnName="Remote" />
+                <ScalarProperty Name="SunRoof" ColumnName="SunRoof" />
+                <ScalarProperty Name="DandehNumber" ColumnName="DandehNumber" />
+                <ScalarProperty Name="AirBagNumber" ColumnName="AirBagNumber" />
+                <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
+                <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
+                <ScalarProperty Name="RangeDakheliID" ColumnName="RangeDakheliID" />
+                <ScalarProperty Name="RangeKharegiID" ColumnName="RangeKharegiID" />
+                <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
+                <ScalarProperty Name="GirboxAuto" ColumnName="GirboxAuto" />
+                <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+                <ScalarProperty Name="karkardDaghigh" ColumnName="karkardDaghigh" />
+                <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+                <ScalarProperty Name="AgahiDetailCarID" ColumnName="AgahiDetailCarID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblUsers">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblUsers">
               <MappingFragment StoreEntitySet="tblUsers">
@@ -4879,7 +3780,7 @@
                 <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
                 <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
                 <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-                <ScalarProperty Name="UserTypeIDelImageUrl" ColumnName="UserTypeIDelImageUrl" />
+                <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
                 <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
                 <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

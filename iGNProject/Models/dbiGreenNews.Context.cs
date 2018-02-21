@@ -30,7 +30,6 @@ namespace iGNProject.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tblAgahi> tblAgahi { get; set; }
         public virtual DbSet<tblAgahiBrandMobileCopmuter> tblAgahiBrandMobileCopmuter { get; set; }
-        public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
         public virtual DbSet<tblAgahiCategories> tblAgahiCategories { get; set; }
         public virtual DbSet<tblAgahiFavorite> tblAgahiFavorite { get; set; }
         public virtual DbSet<tblAgahiGalleries> tblAgahiGalleries { get; set; }
@@ -61,6 +60,15 @@ namespace iGNProject.Models
         public virtual DbSet<tblProvince> tblProvince { get; set; }
         public virtual DbSet<tblRegions> tblRegions { get; set; }
         public virtual DbSet<tblUserLoginLog> tblUserLoginLog { get; set; }
+        public virtual DbSet<tblBrands> tblBrands { get; set; }
+        public virtual DbSet<tblBrandType> tblBrandType { get; set; }
+        public virtual DbSet<tblCarChassis> tblCarChassis { get; set; }
+        public virtual DbSet<tblCarConditions> tblCarConditions { get; set; }
+        public virtual DbSet<tblCarCrash> tblCarCrash { get; set; }
+        public virtual DbSet<tblCarPelak> tblCarPelak { get; set; }
+        public virtual DbSet<tblUserType> tblUserType { get; set; }
+        public virtual DbSet<tblVam> tblVam { get; set; }
+        public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
         public virtual DbSet<tblUsers> tblUsers { get; set; }
     
         public virtual ObjectResult<CheckUserPass_Result> CheckUserPass(string userName, string password)
@@ -1243,7 +1251,7 @@ namespace iGNProject.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUploadAdsFile", adsIDParameter, fileAddressParameter, isDeletedParameter);
         }
     
-        public virtual int sp_Add_tblUsers(string userName, string firstName, string lastname, string email, string tell, string mobile, string address, string password, string secondryPass, string userLinkPage, string UserTypeIDelImageUrl, string registerDate, string nationalityID, string postalCode, string bussinessFieldID, string birthDate, string nickName, Nullable<int> languageID, Nullable<byte> userType, Nullable<int> locationID, Nullable<bool> isDeleted)
+        public virtual int sp_Add_tblUsers(string userName, string firstName, string lastname, string email, string tell, string mobile, string address, string password, string secondryPass, string userLinkPage, string userTypeIDelImageUrl, string registerDate, string nationalityID, string postalCode, string bussinessFieldID, string birthDate, string nickName, Nullable<int> languageID, Nullable<byte> userType, Nullable<int> locationID, Nullable<bool> isDeleted)
         {
             var userNameParameter = userName != null ?
                 new ObjectParameter("UserName", userName) :
@@ -1285,8 +1293,8 @@ namespace iGNProject.Models
                 new ObjectParameter("UserLinkPage", userLinkPage) :
                 new ObjectParameter("UserLinkPage", typeof(string));
     
-            var UserTypeIDelImageUrlParameter = UserTypeIDelImageUrl != null ?
-                new ObjectParameter("UserTypeIDelImageUrl", UserTypeIDelImageUrl) :
+            var userTypeIDelImageUrlParameter = userTypeIDelImageUrl != null ?
+                new ObjectParameter("UserTypeIDelImageUrl", userTypeIDelImageUrl) :
                 new ObjectParameter("UserTypeIDelImageUrl", typeof(string));
     
             var registerDateParameter = registerDate != null ?
@@ -1329,7 +1337,7 @@ namespace iGNProject.Models
                 new ObjectParameter("IsDeleted", isDeleted) :
                 new ObjectParameter("IsDeleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUsers", userNameParameter, firstNameParameter, lastnameParameter, emailParameter, tellParameter, mobileParameter, addressParameter, passwordParameter, secondryPassParameter, userLinkPageParameter, UserTypeIDelImageUrlParameter, registerDateParameter, nationalityIDParameter, postalCodeParameter, bussinessFieldIDParameter, birthDateParameter, nickNameParameter, languageIDParameter, userTypeParameter, locationIDParameter, isDeletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Add_tblUsers", userNameParameter, firstNameParameter, lastnameParameter, emailParameter, tellParameter, mobileParameter, addressParameter, passwordParameter, secondryPassParameter, userLinkPageParameter, userTypeIDelImageUrlParameter, registerDateParameter, nationalityIDParameter, postalCodeParameter, bussinessFieldIDParameter, birthDateParameter, nickNameParameter, languageIDParameter, userTypeParameter, locationIDParameter, isDeletedParameter);
         }
     
         public virtual int sp_Add_tblUserWallPages(Nullable<int> userID, Nullable<int> pagePrivacyID, Nullable<long> pageRate, Nullable<bool> block, Nullable<bool> confrim, Nullable<bool> registerDate, string title, string telegramLink, string facebookLink, string twitterLink, string googlePlusLink, string description, Nullable<int> friendCount, string pageImageUrl, Nullable<int> locationID, Nullable<bool> isDeleted)

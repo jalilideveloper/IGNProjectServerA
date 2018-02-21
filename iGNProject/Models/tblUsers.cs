@@ -31,7 +31,7 @@ namespace iGNProject.Models
         public string Password { get; set; }
         public string SecondryPass { get; set; }
         public string UserLinkPage { get; set; }
-        public string UserTypeIDelImageUrl { get; set; }
+        public string PersonelImageUrl { get; set; }
         public string RegisterDate { get; set; }
         public string NationalityID { get; set; }
         public string PostalCode { get; set; }

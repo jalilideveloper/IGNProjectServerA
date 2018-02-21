@@ -69,10 +69,24 @@ namespace CodeEngine.Framework.QueryBuilder
 
         public WhereClause(string field, Comparison firstCompareOperator, object firstCompareValue)
         {
-            m_FieldName = field;
-            m_ComparisonOperator = firstCompareOperator;
-            m_Value = firstCompareValue;
-            SubClauses = new List<SubClause>();
+            if (firstCompareOperator == Comparison.Like)
+            {
+                string key = firstCompareValue.ToString();
+                string formatLike = "%*%";
+                string format = formatLike.Replace("*", key);
+
+                m_FieldName = field;
+                m_ComparisonOperator = firstCompareOperator;
+                m_Value = format;
+                SubClauses = new List<SubClause>();
+            }
+            else
+            {
+                m_FieldName = field;
+                m_ComparisonOperator = firstCompareOperator;
+                m_Value = firstCompareValue;
+                SubClauses = new List<SubClause>();
+            }
         }
         public void AddClause(LogicOperator logic, Comparison compareOperator, object compareValue)
         {

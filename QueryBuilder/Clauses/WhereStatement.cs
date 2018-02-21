@@ -171,7 +171,7 @@ namespace CodeEngine.Framework.QueryBuilder
                     case Comparison.LessOrEquals:
                         Output = fieldName + " <= " + FormatSQLValue(value); break;
                     case Comparison.Like:
-                        Output = fieldName + " LIKE " + FormatSQLValue(value); break;
+                        Output = fieldName + " LIKE N" + FormatSQLValue(value); break;
                     case Comparison.NotLike:
                         Output = "NOT " + fieldName + " LIKE " + FormatSQLValue(value); break;
                     case Comparison.In:

@@ -51,6 +51,8 @@ namespace iGNProject.Models
         public Nullable<bool> Vam { get; set; }
         public Nullable<decimal> Mablaghevam { get; set; }
         public Nullable<int> GarmayeshTypeID { get; set; }
+        public Nullable<int> Area { get; set; }
+        public Nullable<int> CitySideTypeID { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblHomeGarmayeshType tblHomeGarmayeshType { get; set; }

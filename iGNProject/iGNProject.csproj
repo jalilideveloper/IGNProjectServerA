@@ -420,6 +420,7 @@
     <Compile Include="Models\LatestNewsOrderByViewNumber_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RelApiClass\Agahi.cs" />
     <Compile Include="Models\Search\SearchAccessoriesDetails.cs" />
     <Compile Include="Models\Search\SearchAllAgahis.cs" />
     <Compile Include="Models\Search\SearchBoatsAccessoriess.cs" />
@@ -494,10 +495,28 @@
     <Compile Include="Models\tblArchiveHashTags.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblBrands.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblBrandType.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblCarBodyStatus.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblCarChassis.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCarConditions.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCarCrash.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblCarMotorHajme.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCarPelak.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCarSokht.cs">
@@ -558,6 +577,12 @@
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUsers.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUserType.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblVam.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

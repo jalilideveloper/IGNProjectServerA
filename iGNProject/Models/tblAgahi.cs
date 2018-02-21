@@ -48,6 +48,7 @@ namespace iGNProject.Models
         public string Chatable { get; set; }
         public string OnTime { get; set; }
         public Nullable<bool> SpecialAgahi { get; set; }
+        public Nullable<int> UserAgahiTypeID { get; set; }
     
         public virtual tblAgahiCategories tblAgahiCategories { get; set; }
         public virtual tblAgahiPlans tblAgahiPlans { get; set; }
