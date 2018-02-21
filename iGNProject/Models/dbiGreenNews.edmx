@@ -164,6 +164,7 @@
           <Property Name="GarmayeshTypeID" Type="int" />
           <Property Name="Area" Type="int" />
           <Property Name="CitySideTypeID" Type="int" />
+          <Property Name="AdminDoc" Type="bit" />
         </EntityType>
         <EntityType Name="tblAgahiMobCompDetails">
           <Key>
@@ -2477,6 +2478,7 @@
           <NavigationProperty Name="tblHomeNSEWID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeNSEWID" />
           <Property Name="Area" Type="Int32" />
           <Property Name="CitySideTypeID" Type="Int32" />
+          <Property Name="AdminDoc" Type="Boolean" />
         </EntityType>
         <EntityType Name="tblAgahiMobCompDetails">
           <Key>
@@ -3357,6 +3359,7 @@
           <EntitySetMapping Name="tblAgahiHomeDetail">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiHomeDetail">
               <MappingFragment StoreEntitySet="tblAgahiHomeDetail">
+                <ScalarProperty Name="AdminDoc" ColumnName="AdminDoc" />
                 <ScalarProperty Name="CitySideTypeID" ColumnName="CitySideTypeID" />
                 <ScalarProperty Name="Area" ColumnName="Area" />
                 <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
