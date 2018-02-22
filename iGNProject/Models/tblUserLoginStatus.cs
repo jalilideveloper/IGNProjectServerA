@@ -12,10 +12,16 @@ namespace iGNProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblPrivacyType
+    public partial class tblUserLoginStatus
     {
-        public int PrivacyTypeID { get; set; }
-        public string PrivacyType { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
+        public int UserLoginLogID { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public string SMSCodeSent { get; set; }
+        public Nullable<System.DateTime> DateSent { get; set; }
+        public System.DateTime DateLogin { get; set; }
+        public Nullable<bool> IsCheckPassed { get; set; }
+        public Nullable<bool> SMSSent { get; set; }
+    
+        public virtual tblUsers tblUsers { get; set; }
     }
 }

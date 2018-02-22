@@ -29,6 +29,7 @@ namespace iGNProject.Models
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tblAgahi> tblAgahi { get; set; }
+        public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
         public virtual DbSet<tblAgahiCategories> tblAgahiCategories { get; set; }
         public virtual DbSet<tblAgahiFavorite> tblAgahiFavorite { get; set; }
         public virtual DbSet<tblAgahiGalleries> tblAgahiGalleries { get; set; }
@@ -36,10 +37,13 @@ namespace iGNProject.Models
         public virtual DbSet<tblAgahiMobCompDetails> tblAgahiMobCompDetails { get; set; }
         public virtual DbSet<tblAgahiPlans> tblAgahiPlans { get; set; }
         public virtual DbSet<tblAgahiService> tblAgahiService { get; set; }
-        public virtual DbSet<tblArchiveHashTags> tblArchiveHashTags { get; set; }
+        public virtual DbSet<tblAgahiStatus> tblAgahiStatus { get; set; }
+        public virtual DbSet<tblAgahiType> tblAgahiType { get; set; }
         public virtual DbSet<tblBrands> tblBrands { get; set; }
         public virtual DbSet<tblBrandType> tblBrandType { get; set; }
+        public virtual DbSet<tblCarBodyStatus> tblCarBodyStatus { get; set; }
         public virtual DbSet<tblCarChassis> tblCarChassis { get; set; }
+        public virtual DbSet<tblCarColors> tblCarColors { get; set; }
         public virtual DbSet<tblCarConditions> tblCarConditions { get; set; }
         public virtual DbSet<tblCarCrash> tblCarCrash { get; set; }
         public virtual DbSet<tblCarMotorHajme> tblCarMotorHajme { get; set; }
@@ -49,26 +53,19 @@ namespace iGNProject.Models
         public virtual DbSet<tblCarTip> tblCarTip { get; set; }
         public virtual DbSet<tblCity> tblCity { get; set; }
         public virtual DbSet<tblCountry> tblCountry { get; set; }
-        public virtual DbSet<tblGeoRegion> tblGeoRegion { get; set; }
         public virtual DbSet<tblHomeGarmayeshType> tblHomeGarmayeshType { get; set; }
         public virtual DbSet<tblHomeGharardad> tblHomeGharardad { get; set; }
         public virtual DbSet<tblHomeJenesKafID> tblHomeJenesKafID { get; set; }
-        public virtual DbSet<tblHomeMantagheID> tblHomeMantagheID { get; set; }
         public virtual DbSet<tblHomeMelkType> tblHomeMelkType { get; set; }
-        public virtual DbSet<tblHomeNSEWID> tblHomeNSEWID { get; set; }
         public virtual DbSet<tblJeansBadane> tblJeansBadane { get; set; }
-        public virtual DbSet<tblNeighbourhoodRange> tblNeighbourhoodRange { get; set; }
         public virtual DbSet<tblPriceType> tblPriceType { get; set; }
-        public virtual DbSet<tblPrivacyType> tblPrivacyType { get; set; }
         public virtual DbSet<tblProvince> tblProvince { get; set; }
         public virtual DbSet<tblRegions> tblRegions { get; set; }
-        public virtual DbSet<tblUserLoginLog> tblUserLoginLog { get; set; }
-        public virtual DbSet<tblUsers> tblUsers { get; set; }
+        public virtual DbSet<tblUserAgahiStatus> tblUserAgahiStatus { get; set; }
+        public virtual DbSet<tblUserLoginStatus> tblUserLoginStatus { get; set; }
         public virtual DbSet<tblUserType> tblUserType { get; set; }
         public virtual DbSet<tblVam> tblVam { get; set; }
-        public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
-        public virtual DbSet<tblCarColors> tblCarColors { get; set; }
-        public virtual DbSet<tblCarBodyStatus> tblCarBodyStatus { get; set; }
+        public virtual DbSet<tblUsers> tblUsers { get; set; }
     
         public virtual ObjectResult<CheckUserPass_Result> CheckUserPass(string userName, string password)
         {

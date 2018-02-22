@@ -12,18 +12,18 @@ namespace iGNProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblGeoRegion
+    public partial class tblAgahiStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblGeoRegion()
+        public tblAgahiStatus()
         {
-            this.tblCountry = new HashSet<tblCountry>();
+            this.tblUserAgahiStatus = new HashSet<tblUserAgahiStatus>();
         }
     
-        public int GeoRegionID { get; set; }
-        public string GeoTitle { get; set; }
+        public int AgahiStatusID { get; set; }
+        public string AgahiStatusName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblCountry> tblCountry { get; set; }
+        public virtual ICollection<tblUserAgahiStatus> tblUserAgahiStatus { get; set; }
     }
 }

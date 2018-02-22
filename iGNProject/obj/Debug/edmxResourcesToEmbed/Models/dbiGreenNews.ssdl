@@ -28,7 +28,6 @@
     <Property Name="AdminAgreeDate" Type="datetime" />
     <Property Name="AgahiStatus" Type="tinyint" />
     <Property Name="Location" Type="geography" />
-    <Property Name="LanguageID" Type="int" />
     <Property Name="ProvinceID" Type="int" />
     <Property Name="RegionID" Type="int" />
     <Property Name="Tell" Type="nvarchar" MaxLength="50" />
@@ -41,6 +40,8 @@
     <Property Name="OnTime" Type="nvarchar" MaxLength="100" />
     <Property Name="SpecialAgahi" Type="bit" />
     <Property Name="UserAgahiTypeID" Type="int" />
+    <Property Name="LanguageID" Type="int" />
+    <Property Name="AgahiStatusID" Type="int" />
   </EntityType>
   <EntityType Name="tblAgahiCarDetails">
     <Key>
@@ -64,10 +65,8 @@
     <Property Name="SopapID" Type="int" />
     <Property Name="PishPardakht" Type="decimal" Precision="18" Scale="0" />
     <Property Name="Mahane" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="ChanMaheID" Type="int" />
     <Property Name="MablagheKole" Type="decimal" Precision="18" Scale="0" />
     <Property Name="RokeshTypeID" Type="int" />
-    <Property Name="VamID" Type="int" />
     <Property Name="BrandID" Type="int" />
     <Property Name="CarConditionID" Type="int" />
     <Property Name="CarChassisTypeID" Type="int" />
@@ -76,6 +75,7 @@
     <Property Name="CarPelakTypeID" Type="int" />
     <Property Name="HasAlarm" Type="bit" />
     <Property Name="HasSound" Type="bit" />
+    <Property Name="CarCrashTypeID" Type="int" />
   </EntityType>
   <EntityType Name="tblAgahiCategories">
     <Key>
@@ -122,7 +122,6 @@
     <Property Name="Zirbana" Type="int" />
     <Property Name="MablagheKole" Type="decimal" Precision="18" Scale="0" />
     <Property Name="MablagheMahane" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="MantagheID" Type="int" />
     <Property Name="Balkon" Type="bit" />
     <Property Name="Estakhr" Type="bit" />
     <Property Name="Zirzamin" Type="bit" />
@@ -197,14 +196,19 @@
     <Property Name="AgahiServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="AgahiServiceType" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblArchiveHashTags">
+  <EntityType Name="tblAgahiStatus">
     <Key>
-      <PropertyRef Name="ArchiveHashtagID" />
+      <PropertyRef Name="AgahiStatusID" />
     </Key>
-    <Property Name="ArchiveHashtagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HashtagID" Type="int" />
-    <Property Name="CalculateDate" Type="datetime" />
-    <Property Name="RepCount" Type="int" />
+    <Property Name="AgahiStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiStatusName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblAgahiType">
+    <Key>
+      <PropertyRef Name="AgahiTypeID" />
+    </Key>
+    <Property Name="AgahiTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiTypeName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblBrands">
     <Key>
@@ -313,7 +317,6 @@
     <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProvinceId" Type="int" />
     <Property Name="CityName" Type="nvarchar" MaxLength="50" />
-    <Property Name="CountryID" Type="int" />
   </EntityType>
   <EntityType Name="tblCountry">
     <Key>
@@ -321,14 +324,6 @@
     </Key>
     <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
-    <Property Name="GeoRegionID" Type="int" />
-  </EntityType>
-  <EntityType Name="tblGeoRegion">
-    <Key>
-      <PropertyRef Name="GeoRegionID" />
-    </Key>
-    <Property Name="GeoRegionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="GeoTitle" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblHomeGarmayeshType">
     <Key>
@@ -351,26 +346,12 @@
     <Property Name="JeneskafID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="JeneskafName" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblHomeMantagheID">
-    <Key>
-      <PropertyRef Name="MantagheID" />
-    </Key>
-    <Property Name="MantagheID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MantagheNumber" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="tblHomeMelkType">
     <Key>
       <PropertyRef Name="MelkTypeID" />
     </Key>
     <Property Name="MelkTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MelkType" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="tblHomeNSEWID">
-    <Key>
-      <PropertyRef Name="NSEWID" />
-    </Key>
-    <Property Name="NSEWID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NSEWName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tblJeansBadane">
     <Key>
@@ -379,14 +360,6 @@
     <Property Name="JeansBadaneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="JeansBadaneType" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblNeighbourhoodRange">
-    <Key>
-      <PropertyRef Name="NeighbourhoodRangeID" />
-    </Key>
-    <Property Name="NeighbourhoodRangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NeighbourhoodRangeName" Type="nvarchar" MaxLength="50" />
-    <Property Name="ProvinceID" Type="int" />
-  </EntityType>
   <EntityType Name="tblPriceType">
     <Key>
       <PropertyRef Name="PriceTypeID" />
@@ -394,20 +367,13 @@
     <Property Name="PriceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PriceTypeName" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblPrivacyType">
-    <Key>
-      <PropertyRef Name="PrivacyTypeID" />
-    </Key>
-    <Property Name="PrivacyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PrivacyType" Type="nvarchar" MaxLength="50" />
-    <Property Name="IsDeleted" Type="bit" />
-  </EntityType>
   <EntityType Name="tblProvince">
     <Key>
       <PropertyRef Name="ProvinceID" />
     </Key>
     <Property Name="ProvinceID" Type="int" Nullable="false" />
     <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
   </EntityType>
   <EntityType Name="tblRegions">
     <Key>
@@ -417,7 +383,17 @@
     <Property Name="CityID" Type="int" />
     <Property Name="RegionName" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tblUserLoginLog">
+  <EntityType Name="tblUserAgahiStatus">
+    <Key>
+      <PropertyRef Name="UserAgahiStatusID" />
+    </Key>
+    <Property Name="UserAgahiStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgahiID" Type="int" />
+    <Property Name="Datetime" Type="datetime" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AgahiStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblUserLoginStatus">
     <Key>
       <PropertyRef Name="UserLoginLogID" />
     </Key>
@@ -427,6 +403,7 @@
     <Property Name="DateSent" Type="datetime" />
     <Property Name="DateLogin" Type="datetime" Nullable="false" />
     <Property Name="IsCheckPassed" Type="bit" />
+    <Property Name="SMSSent" Type="bit" />
   </EntityType>
   <EntityType Name="tblUsers">
     <Key>
@@ -451,9 +428,9 @@
     <Property Name="BirthDate" Type="nvarchar" MaxLength="50" />
     <Property Name="NickName" Type="nvarchar" MaxLength="50" />
     <Property Name="LanguageID" Type="int" />
-    <Property Name="UserType" Type="tinyint" />
     <Property Name="LocationID" Type="int" />
     <Property Name="IsDeleted" Type="bit" />
+    <Property Name="UserTypeID" Type="int" />
   </EntityType>
   <EntityType Name="tblUserType">
     <Key>
@@ -471,6 +448,7 @@
     <Property Name="Teadad" Type="int" />
     <Property Name="VamDescription" Type="nvarchar" MaxLength="500" />
     <Property Name="VamYear" Type="int" />
+    <Property Name="AgahiID" Type="int" />
   </EntityType>
   <Association Name="FK_tblAgahi_tblAgahiCategories">
     <End Role="tblAgahiCategories" Type="Self.tblAgahiCategories" Multiplicity="0..1" />
@@ -544,6 +522,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahi_tblUserAgahiType">
+    <End Role="tblAgahiType" Type="Self.tblAgahiType" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiType">
+        <PropertyRef Name="AgahiTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="UserAgahiTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblBrands">
+    <End Role="tblBrands" Type="Self.tblBrands" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahiCarDetails_tblCarBodyStatus">
     <End Role="tblCarBodyStatus" Type="Self.tblCarBodyStatus" Multiplicity="0..1" />
     <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
@@ -553,6 +567,18 @@
       </Principal>
       <Dependent Role="tblAgahiCarDetails">
         <PropertyRef Name="CarBodyStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarChassis">
+    <End Role="tblCarChassis" Type="Self.tblCarChassis" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarChassis">
+        <PropertyRef Name="CarChassisTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarChassisTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -580,6 +606,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarConditions">
+    <End Role="tblCarConditions" Type="Self.tblCarConditions" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarConditions">
+        <PropertyRef Name="CarConditionID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarConditionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarCrash">
+    <End Role="tblCarCrash" Type="Self.tblCarCrash" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarCrash">
+        <PropertyRef Name="CarCrashTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarCrashTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
     <End Role="tblCarMotorHajme" Type="Self.tblCarMotorHajme" Multiplicity="0..1" />
     <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
@@ -589,6 +639,18 @@
       </Principal>
       <Dependent Role="tblAgahiCarDetails">
         <PropertyRef Name="MotorHajmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarPelak">
+    <End Role="tblCarPelak" Type="Self.tblCarPelak" Multiplicity="0..1" />
+    <End Role="tblAgahiCarDetails" Type="Self.tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarPelak">
+        <PropertyRef Name="CarPelakTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarPelakTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -676,18 +738,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeMantagheID">
-    <End Role="tblHomeMantagheID" Type="Self.tblHomeMantagheID" Multiplicity="0..1" />
-    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeMantagheID">
-        <PropertyRef Name="MantagheID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="MantagheID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tblAgahiDetailHome_tblHomeMelkType">
     <End Role="tblHomeMelkType" Type="Self.tblHomeMelkType" Multiplicity="0..1" />
     <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
@@ -700,18 +750,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeNSEWID">
-    <End Role="tblHomeNSEWID" Type="Self.tblHomeNSEWID" Multiplicity="0..1" />
-    <End Role="tblAgahiHomeDetail" Type="Self.tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeNSEWID">
-        <PropertyRef Name="NSEWID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="NSEWID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_tblAgahiFavorite_tblAgahi">
     <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
     <End Role="tblAgahiFavorite" Type="Self.tblAgahiFavorite" Multiplicity="*" />
@@ -720,6 +758,18 @@
         <PropertyRef Name="AgahiID" />
       </Principal>
       <Dependent Role="tblAgahiFavorite">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiGalleries_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblAgahiGalleries" Type="Self.tblAgahiGalleries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiGalleries">
         <PropertyRef Name="AgahiID" />
       </Dependent>
     </ReferentialConstraint>
@@ -736,6 +786,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblBrands">
+    <End Role="tblBrands" Type="Self.tblBrands" Multiplicity="0..1" />
+    <End Role="tblAgahiMobCompDetails" Type="Self.tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahiMobCompDetails_tblJeansBadane">
     <End Role="tblJeansBadane" Type="Self.tblJeansBadane" Multiplicity="0..1" />
     <End Role="tblAgahiMobCompDetails" Type="Self.tblAgahiMobCompDetails" Multiplicity="*" />
@@ -745,6 +807,18 @@
       </Principal>
       <Dependent Role="tblAgahiMobCompDetails">
         <PropertyRef Name="JeansBadaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBrands_tblBrandType">
+    <End Role="tblBrandType" Type="Self.tblBrandType" Multiplicity="1" />
+    <End Role="tblBrands" Type="Self.tblBrands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrandType">
+        <PropertyRef Name="BrandTypeID" />
+      </Principal>
+      <Dependent Role="tblBrands">
+        <PropertyRef Name="BrandTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -760,15 +834,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblCountry_tblGeoRegion">
-    <End Role="tblGeoRegion" Type="Self.tblGeoRegion" Multiplicity="0..1" />
-    <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="*" />
+  <Association Name="FK_tblCity_tblProvince">
+    <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+    <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblGeoRegion">
-        <PropertyRef Name="GeoRegionID" />
+      <Principal Role="tblProvince">
+        <PropertyRef Name="ProvinceID" />
       </Principal>
-      <Dependent Role="tblCountry">
-        <PropertyRef Name="GeoRegionID" />
+      <Dependent Role="tblCity">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProvince_tblCountry">
+    <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="0..1" />
+    <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCountry">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="tblProvince">
+        <PropertyRef Name="CountryID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -784,15 +870,75 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblUserLoginLog_tblUsers">
+  <Association Name="FK_tblUserAgahiStatus_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblUserAgahiStatus" Type="Self.tblUserAgahiStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblUserAgahiStatus">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserAgahiStatus_tblAgahiStatus">
+    <End Role="tblAgahiStatus" Type="Self.tblAgahiStatus" Multiplicity="0..1" />
+    <End Role="tblUserAgahiStatus" Type="Self.tblUserAgahiStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiStatus">
+        <PropertyRef Name="AgahiStatusID" />
+      </Principal>
+      <Dependent Role="tblUserAgahiStatus">
+        <PropertyRef Name="AgahiStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserAgahiStatus_tblUsers">
     <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
-    <End Role="tblUserLoginLog" Type="Self.tblUserLoginLog" Multiplicity="*" />
+    <End Role="tblUserAgahiStatus" Type="Self.tblUserAgahiStatus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblUsers">
         <PropertyRef Name="UserID" />
       </Principal>
-      <Dependent Role="tblUserLoginLog">
+      <Dependent Role="tblUserAgahiStatus">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserLoginStatus_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblUserLoginStatus" Type="Self.tblUserLoginStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserLoginStatus">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsers_tblUserType">
+    <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="0..1" />
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVam_tblAgahi">
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="0..1" />
+    <End Role="tblVam" Type="Self.tblVam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblVam">
+        <PropertyRef Name="AgahiID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1020,7 +1166,8 @@
     <EntitySet Name="tblAgahiMobCompDetails" EntityType="Self.tblAgahiMobCompDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblAgahiPlans" EntityType="Self.tblAgahiPlans" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblAgahiService" EntityType="Self.tblAgahiService" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblArchiveHashTags" EntityType="Self.tblArchiveHashTags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiStatus" EntityType="Self.tblAgahiStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAgahiType" EntityType="Self.tblAgahiType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBrands" EntityType="Self.tblBrands" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblBrandType" EntityType="Self.tblBrandType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCarBodyStatus" EntityType="Self.tblCarBodyStatus" Schema="dbo" store:Type="Tables" />
@@ -1035,20 +1182,16 @@
     <EntitySet Name="tblCarTip" EntityType="Self.tblCarTip" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCountry" EntityType="Self.tblCountry" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblGeoRegion" EntityType="Self.tblGeoRegion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHomeGarmayeshType" EntityType="Self.tblHomeGarmayeshType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHomeGharardad" EntityType="Self.tblHomeGharardad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHomeJenesKafID" EntityType="Self.tblHomeJenesKafID" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblHomeMantagheID" EntityType="Self.tblHomeMantagheID" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblHomeMelkType" EntityType="Self.tblHomeMelkType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblHomeNSEWID" EntityType="Self.tblHomeNSEWID" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblJeansBadane" EntityType="Self.tblJeansBadane" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblNeighbourhoodRange" EntityType="Self.tblNeighbourhoodRange" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblPriceType" EntityType="Self.tblPriceType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblPrivacyType" EntityType="Self.tblPrivacyType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblProvince" EntityType="Self.tblProvince" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblRegions" EntityType="Self.tblRegions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblUserLoginLog" EntityType="Self.tblUserLoginLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserAgahiStatus" EntityType="Self.tblUserAgahiStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserLoginStatus" EntityType="Self.tblUserLoginStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUserType" EntityType="Self.tblUserType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblVam" EntityType="Self.tblVam" Schema="dbo" store:Type="Tables" />
@@ -1076,8 +1219,24 @@
       <End Role="tblRegions" EntitySet="tblRegions" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUserAgahiType" Association="Self.FK_tblAgahi_tblUserAgahiType">
+      <End Role="tblAgahiType" EntitySet="tblAgahiType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="Self.FK_tblAgahi_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblBrands" Association="Self.FK_tblAgahiCarDetails_tblBrands">
+      <End Role="tblBrands" EntitySet="tblBrands" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarBodyStatus" Association="Self.FK_tblAgahiCarDetails_tblCarBodyStatus">
       <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarChassis" Association="Self.FK_tblAgahiCarDetails_tblCarChassis">
+      <End Role="tblCarChassis" EntitySet="tblCarChassis" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarColors" Association="Self.FK_tblAgahiCarDetails_tblCarColors">
@@ -1088,8 +1247,20 @@
       <End Role="tblCarColors" EntitySet="tblCarColors" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarConditions" Association="Self.FK_tblAgahiCarDetails_tblCarConditions">
+      <End Role="tblCarConditions" EntitySet="tblCarConditions" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarCrash" Association="Self.FK_tblAgahiCarDetails_tblCarCrash">
+      <End Role="tblCarCrash" EntitySet="tblCarCrash" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="Self.FK_tblAgahiCarDetails_tblCarMotorHajme">
       <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarPelak" Association="Self.FK_tblAgahiCarDetails_tblCarPelak">
+      <End Role="tblCarPelak" EntitySet="tblCarPelak" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="Self.FK_tblAgahiCarDetails_tblCarSokht">
@@ -1120,45 +1291,73 @@
       <End Role="tblHomeJenesKafID" EntitySet="tblHomeJenesKafID" />
       <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMantagheID" Association="Self.FK_tblAgahiDetailHome_tblHomeMantagheID">
-      <End Role="tblHomeMantagheID" EntitySet="tblHomeMantagheID" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMelkType" Association="Self.FK_tblAgahiDetailHome_tblHomeMelkType">
       <End Role="tblHomeMelkType" EntitySet="tblHomeMelkType" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeNSEWID" Association="Self.FK_tblAgahiDetailHome_tblHomeNSEWID">
-      <End Role="tblHomeNSEWID" EntitySet="tblHomeNSEWID" />
       <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="Self.FK_tblAgahiFavorite_tblAgahi">
       <End Role="tblAgahi" EntitySet="tblAgahi" />
       <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiGalleries_tblAgahi" Association="Self.FK_tblAgahiGalleries_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiGalleries" EntitySet="tblAgahiGalleries" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="Self.FK_tblAgahiMobCompDetails_tblAgahi">
       <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblBrands" Association="Self.FK_tblAgahiMobCompDetails_tblBrands">
+      <End Role="tblBrands" EntitySet="tblBrands" />
       <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiMobCompDetails_tblJeansBadane" Association="Self.FK_tblAgahiMobCompDetails_tblJeansBadane">
       <End Role="tblJeansBadane" EntitySet="tblJeansBadane" />
       <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblBrands_tblBrandType" Association="Self.FK_tblBrands_tblBrandType">
+      <End Role="tblBrandType" EntitySet="tblBrandType" />
+      <End Role="tblBrands" EntitySet="tblBrands" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="Self.FK_tblCarDetails_tblAgahi">
       <End Role="tblAgahi" EntitySet="tblAgahi" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblCountry_tblGeoRegion" Association="Self.FK_tblCountry_tblGeoRegion">
-      <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
+    <AssociationSet Name="FK_tblCity_tblProvince" Association="Self.FK_tblCity_tblProvince">
+      <End Role="tblProvince" EntitySet="tblProvince" />
+      <End Role="tblCity" EntitySet="tblCity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProvince_tblCountry" Association="Self.FK_tblProvince_tblCountry">
       <End Role="tblCountry" EntitySet="tblCountry" />
+      <End Role="tblProvince" EntitySet="tblProvince" />
     </AssociationSet>
     <AssociationSet Name="FK_tblRegions_tblCity" Association="Self.FK_tblRegions_tblCity">
       <End Role="tblCity" EntitySet="tblCity" />
       <End Role="tblRegions" EntitySet="tblRegions" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblUserLoginLog_tblUsers" Association="Self.FK_tblUserLoginLog_tblUsers">
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahi" Association="Self.FK_tblUserAgahiStatus_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahiStatus" Association="Self.FK_tblUserAgahiStatus_tblAgahiStatus">
+      <End Role="tblAgahiStatus" EntitySet="tblAgahiStatus" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblUsers" Association="Self.FK_tblUserAgahiStatus_tblUsers">
       <End Role="tblUsers" EntitySet="tblUsers" />
-      <End Role="tblUserLoginLog" EntitySet="tblUserLoginLog" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserLoginStatus_tblUsers" Association="Self.FK_tblUserLoginStatus_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserLoginStatus" EntitySet="tblUserLoginStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsers_tblUserType" Association="Self.FK_tblUsers_tblUserType">
+      <End Role="tblUserType" EntitySet="tblUserType" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVam_tblAgahi" Association="Self.FK_tblVam_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblVam" EntitySet="tblVam" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -17,5 +17,7 @@ namespace iGNProject.Models
         public int GalleryID { get; set; }
         public Nullable<int> AgahiID { get; set; }
         public string ImageAddress { get; set; }
+    
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

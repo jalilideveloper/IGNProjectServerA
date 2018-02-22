@@ -14,10 +14,16 @@ namespace iGNProject.Models
     
     public partial class tblCountry
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblCountry()
+        {
+            this.tblProvince = new HashSet<tblProvince>();
+        }
+    
         public int CountryID { get; set; }
         public string CountryName { get; set; }
-        public Nullable<int> GeoRegionID { get; set; }
     
-        public virtual tblGeoRegion tblGeoRegion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblProvince> tblProvince { get; set; }
     }
 }

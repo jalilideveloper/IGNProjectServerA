@@ -22,7 +22,7 @@ namespace iGNProject.Controllers
             return Json(db.tblAgahiHomeDetail.Select(o=> new { AgahiDetailHomeID = o.AgahiDetailHomeID , AgahiID = o.AgahiID, Alachigh = o.Alachigh, Asansor = o.Asansor,
                 Badansazi = o.Badansazi, Balkon = o.Balkon, Barbikio = o.Barbikio, Chiler = o.Chiler, CodeMelk = o.CodeMelk, Estakhr = o.Estakhr, GarmayeshTypeID = o.GarmayeshTypeID,
                 GharardadTypeID = o.GharardadTypeID, Hayat = o.Hayat, Jakozi=o.Jakozi, JeneskafID = o.JeneskafID, Khabmaster = o.Khabmaster, Labi = o.Labi, MablagheKole = o.MablagheKole,
-                MablagheMahane = o.MablagheMahane, Mablaghevam = o.Mablaghevam, MantagheID = o.MantagheID, MelkTypeID = o.MelkTypeID, MohavateBaziKodak = o.MohavateBaziKodak,
+                MablagheMahane = o.MablagheMahane, Mablaghevam = o.Mablaghevam, MelkTypeID = o.MelkTypeID, MohavateBaziKodak = o.MohavateBaziKodak,
                 NSEWID = o.NSEWID, OtaghKhab = o.OtaghKhab, Parking = o.Parking, Roofgarden = o.Roofgarden, SaleSakht = o.SaleSakht, ServiceIrani = o.ServiceIrani, ServiceKhareji =o.ServiceKhareji,
                 Sona = o.Sona, Tabaghe = o.Tabaghe, TakBarg = o.TakBarg, Vam = o.Vam, Varaseiye =o.Varaseiye, Zirbana =o.Zirbana, Zirzamin = o.Zirzamin}).ToList());
         }
@@ -52,7 +52,6 @@ namespace iGNProject.Controllers
                 MablagheKole = o.MablagheKole,
                 MablagheMahane = o.MablagheMahane,
                 Mablaghevam = o.Mablaghevam,
-                MantagheID = o.MantagheID,
                 MelkTypeID = o.MelkTypeID,
                 MohavateBaziKodak = o.MohavateBaziKodak,
                 NSEWID = o.NSEWID,

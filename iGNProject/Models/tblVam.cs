@@ -19,5 +19,8 @@ namespace iGNProject.Models
         public Nullable<int> Teadad { get; set; }
         public string VamDescription { get; set; }
         public Nullable<int> VamYear { get; set; }
+        public Nullable<int> AgahiID { get; set; }
+    
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

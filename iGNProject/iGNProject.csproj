@@ -202,11 +202,9 @@
     <Compile Include="Controllers\CarSokhtsController.cs" />
     <Compile Include="Controllers\CarSopapMotorsController.cs" />
     <Compile Include="Controllers\CarTipsController.cs" />
-    <Compile Include="Controllers\GeoRegionsController.cs" />
     <Compile Include="Controllers\HomeGarmayeshTypesController.cs" />
     <Compile Include="Controllers\HomeGharardadsController.cs" />
     <Compile Include="Controllers\HomeJenesKafIDsController.cs" />
-    <Compile Include="Controllers\HomeMantagheIDsController.cs" />
     <Compile Include="Controllers\HomeMelkTypesController.cs" />
     <Compile Include="Controllers\JeansBadanesController.cs" />
     <Compile Include="Controllers\ProvincesController.cs" />
@@ -240,7 +238,6 @@
     <Compile Include="Controllers\SearchVehicleAccessoriessController.cs" />
     <Compile Include="Controllers\CarColorsController.cs" />
     <Compile Include="Controllers\tblPriceTypesController.cs" />
-    <Compile Include="Controllers\tblPrivacyTypesController.cs" />
     <Compile Include="Controllers\tblRegionsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -522,7 +519,10 @@
     <Compile Include="Models\tblAgahiService.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblArchiveHashTags.cs">
+    <Compile Include="Models\tblAgahiStatus.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblAgahiType.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblBrands.cs">
@@ -567,9 +567,6 @@
     <Compile Include="Models\tblCountry.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblGeoRegion.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblHomeGarmayeshType.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
@@ -579,25 +576,13 @@
     <Compile Include="Models\tblHomeJenesKafID.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblHomeMantagheID.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblHomeMelkType.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblHomeNSEWID.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblJeansBadane.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblNeighbourhoodRange.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblPriceType.cs">
-      <DependentUpon>dbiGreenNews.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblPrivacyType.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblProvince.cs">
@@ -606,7 +591,10 @@
     <Compile Include="Models\tblRegions.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblUserLoginLog.cs">
+    <Compile Include="Models\tblUserAgahiStatus.cs">
+      <DependentUpon>dbiGreenNews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUserLoginStatus.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUsers.cs">

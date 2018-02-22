@@ -17,7 +17,9 @@ namespace iGNProject.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblUsers()
         {
-            this.tblUserLoginLog = new HashSet<tblUserLoginLog>();
+            this.tblAgahi = new HashSet<tblAgahi>();
+            this.tblUserAgahiStatus = new HashSet<tblUserAgahiStatus>();
+            this.tblUserLoginStatus = new HashSet<tblUserLoginStatus>();
         }
     
         public int UserID { get; set; }
@@ -39,11 +41,16 @@ namespace iGNProject.Models
         public string BirthDate { get; set; }
         public string NickName { get; set; }
         public Nullable<int> LanguageID { get; set; }
-        public Nullable<byte> UserType { get; set; }
         public Nullable<int> LocationID { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<int> UserTypeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblUserLoginLog> tblUserLoginLog { get; set; }
+        public virtual ICollection<tblAgahi> tblAgahi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblUserAgahiStatus> tblUserAgahiStatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblUserLoginStatus> tblUserLoginStatus { get; set; }
+        public virtual tblUserType tblUserType { get; set; }
     }
 }

@@ -14,7 +14,16 @@ namespace iGNProject.Models
     
     public partial class tblUserType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblUserType()
+        {
+            this.tblUsers = new HashSet<tblUsers>();
+        }
+    
         public int UserTypeID { get; set; }
         public string UserTypeName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblUsers> tblUsers { get; set; }
     }
 }

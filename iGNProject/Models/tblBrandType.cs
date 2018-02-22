@@ -14,7 +14,16 @@ namespace iGNProject.Models
     
     public partial class tblBrandType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblBrandType()
+        {
+            this.tblBrands = new HashSet<tblBrands>();
+        }
+    
         public int BrandTypeID { get; set; }
         public string BrandTypeName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblBrands> tblBrands { get; set; }
     }
 }

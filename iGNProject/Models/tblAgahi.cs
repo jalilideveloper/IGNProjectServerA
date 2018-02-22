@@ -19,8 +19,11 @@ namespace iGNProject.Models
         {
             this.tblAgahiHomeDetail = new HashSet<tblAgahiHomeDetail>();
             this.tblAgahiFavorite = new HashSet<tblAgahiFavorite>();
+            this.tblAgahiGalleries = new HashSet<tblAgahiGalleries>();
             this.tblAgahiMobCompDetails = new HashSet<tblAgahiMobCompDetails>();
             this.tblAgahiCarDetails = new HashSet<tblAgahiCarDetails>();
+            this.tblUserAgahiStatus = new HashSet<tblUserAgahiStatus>();
+            this.tblVam = new HashSet<tblVam>();
         }
     
         public int AgahiID { get; set; }
@@ -36,7 +39,6 @@ namespace iGNProject.Models
         public Nullable<System.DateTime> AdminAgreeDate { get; set; }
         public Nullable<byte> AgahiStatus { get; set; }
         public System.Data.Entity.Spatial.DbGeography Location { get; set; }
-        public Nullable<int> LanguageID { get; set; }
         public Nullable<int> ProvinceID { get; set; }
         public Nullable<int> RegionID { get; set; }
         public string Tell { get; set; }
@@ -49,6 +51,8 @@ namespace iGNProject.Models
         public string OnTime { get; set; }
         public Nullable<bool> SpecialAgahi { get; set; }
         public Nullable<int> UserAgahiTypeID { get; set; }
+        public Nullable<int> LanguageID { get; set; }
+        public Nullable<int> AgahiStatusID { get; set; }
     
         public virtual tblAgahiCategories tblAgahiCategories { get; set; }
         public virtual tblAgahiPlans tblAgahiPlans { get; set; }
@@ -56,13 +60,21 @@ namespace iGNProject.Models
         public virtual tblPriceType tblPriceType { get; set; }
         public virtual tblProvince tblProvince { get; set; }
         public virtual tblRegions tblRegions { get; set; }
+        public virtual tblAgahiType tblAgahiType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahiHomeDetail> tblAgahiHomeDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahiFavorite> tblAgahiFavorite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAgahiGalleries> tblAgahiGalleries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahiMobCompDetails> tblAgahiMobCompDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblUserAgahiStatus> tblUserAgahiStatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblVam> tblVam { get; set; }
+        public virtual tblUsers tblUsers { get; set; }
     }
 }

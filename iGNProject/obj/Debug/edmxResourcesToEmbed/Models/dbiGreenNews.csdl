@@ -557,117 +557,6 @@
     <FunctionImport Name="GetAllLinkestans" ReturnType="Collection(DBEWDiGNModel.GetAllLinkestans_Result)">
       <Parameter Name="langID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <EntitySet Name="sysdiagrams" EntityType="DBEWDiGNModel.sysdiagrams" />
-    <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
-    <EntitySet Name="tblAgahiCategories" EntityType="DBEWDiGNModel.tblAgahiCategories" />
-    <EntitySet Name="tblAgahiFavorite" EntityType="DBEWDiGNModel.tblAgahiFavorite" />
-    <EntitySet Name="tblAgahiGalleries" EntityType="DBEWDiGNModel.tblAgahiGalleries" />
-    <EntitySet Name="tblAgahiHomeDetail" EntityType="DBEWDiGNModel.tblAgahiHomeDetail" />
-    <EntitySet Name="tblAgahiMobCompDetails" EntityType="DBEWDiGNModel.tblAgahiMobCompDetails" />
-    <EntitySet Name="tblAgahiPlans" EntityType="DBEWDiGNModel.tblAgahiPlans" />
-    <EntitySet Name="tblAgahiService" EntityType="DBEWDiGNModel.tblAgahiService" />
-    <EntitySet Name="tblArchiveHashTags" EntityType="DBEWDiGNModel.tblArchiveHashTags" />
-    <EntitySet Name="tblBrands" EntityType="DBEWDiGNModel.tblBrands" />
-    <EntitySet Name="tblBrandType" EntityType="DBEWDiGNModel.tblBrandType" />
-    <EntitySet Name="tblCarChassis" EntityType="DBEWDiGNModel.tblCarChassis" />
-    <EntitySet Name="tblCarConditions" EntityType="DBEWDiGNModel.tblCarConditions" />
-    <EntitySet Name="tblCarCrash" EntityType="DBEWDiGNModel.tblCarCrash" />
-    <EntitySet Name="tblCarMotorHajme" EntityType="DBEWDiGNModel.tblCarMotorHajme" />
-    <EntitySet Name="tblCarPelak" EntityType="DBEWDiGNModel.tblCarPelak" />
-    <EntitySet Name="tblCarSokht" EntityType="DBEWDiGNModel.tblCarSokht" />
-    <EntitySet Name="tblCarSopapMotor" EntityType="DBEWDiGNModel.tblCarSopapMotor" />
-    <EntitySet Name="tblCarTip" EntityType="DBEWDiGNModel.tblCarTip" />
-    <EntitySet Name="tblCity" EntityType="DBEWDiGNModel.tblCity" />
-    <EntitySet Name="tblCountry" EntityType="DBEWDiGNModel.tblCountry" />
-    <EntitySet Name="tblGeoRegion" EntityType="DBEWDiGNModel.tblGeoRegion" />
-    <EntitySet Name="tblHomeGarmayeshType" EntityType="DBEWDiGNModel.tblHomeGarmayeshType" />
-    <EntitySet Name="tblHomeGharardad" EntityType="DBEWDiGNModel.tblHomeGharardad" />
-    <EntitySet Name="tblHomeJenesKafID" EntityType="DBEWDiGNModel.tblHomeJenesKafID" />
-    <EntitySet Name="tblHomeMantagheID" EntityType="DBEWDiGNModel.tblHomeMantagheID" />
-    <EntitySet Name="tblHomeMelkType" EntityType="DBEWDiGNModel.tblHomeMelkType" />
-    <EntitySet Name="tblHomeNSEWID" EntityType="DBEWDiGNModel.tblHomeNSEWID" />
-    <EntitySet Name="tblJeansBadane" EntityType="DBEWDiGNModel.tblJeansBadane" />
-    <EntitySet Name="tblNeighbourhoodRange" EntityType="DBEWDiGNModel.tblNeighbourhoodRange" />
-    <EntitySet Name="tblPriceType" EntityType="DBEWDiGNModel.tblPriceType" />
-    <EntitySet Name="tblPrivacyType" EntityType="DBEWDiGNModel.tblPrivacyType" />
-    <EntitySet Name="tblProvince" EntityType="DBEWDiGNModel.tblProvince" />
-    <EntitySet Name="tblRegions" EntityType="DBEWDiGNModel.tblRegions" />
-    <EntitySet Name="tblUserLoginLog" EntityType="DBEWDiGNModel.tblUserLoginLog" />
-    <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
-    <EntitySet Name="tblUserType" EntityType="DBEWDiGNModel.tblUserType" />
-    <EntitySet Name="tblVam" EntityType="DBEWDiGNModel.tblVam" />
-    <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
-      <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblAgahiPlans" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans">
-      <End Role="tblAgahiPlans" EntitySet="tblAgahiPlans" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblAgahiService" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService">
-      <End Role="tblAgahiService" EntitySet="tblAgahiService" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
-      <End Role="tblPriceType" EntitySet="tblPriceType" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblProvince" Association="DBEWDiGNModel.FK_tblAgahi_tblProvince">
-      <End Role="tblProvince" EntitySet="tblProvince" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblRegions" Association="DBEWDiGNModel.FK_tblAgahi_tblRegions">
-      <End Role="tblRegions" EntitySet="tblRegions" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType">
-      <End Role="tblHomeGarmayeshType" EntitySet="tblHomeGarmayeshType" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGharardad" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad">
-      <End Role="tblHomeGharardad" EntitySet="tblHomeGharardad" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeJenesKafID" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID">
-      <End Role="tblHomeJenesKafID" EntitySet="tblHomeJenesKafID" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMantagheID" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMantagheID">
-      <End Role="tblHomeMantagheID" EntitySet="tblHomeMantagheID" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMelkType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType">
-      <End Role="tblHomeMelkType" EntitySet="tblHomeMelkType" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeNSEWID" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID">
-      <End Role="tblHomeNSEWID" EntitySet="tblHomeNSEWID" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblJeansBadane" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane">
-      <End Role="tblJeansBadane" EntitySet="tblJeansBadane" />
-      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblRegions_tblCity" Association="DBEWDiGNModel.FK_tblRegions_tblCity">
-      <End Role="tblCity" EntitySet="tblCity" />
-      <End Role="tblRegions" EntitySet="tblRegions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblUserLoginLog_tblUsers" Association="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers">
-      <End Role="tblUsers" EntitySet="tblUsers" />
-      <End Role="tblUserLoginLog" EntitySet="tblUserLoginLog" />
-    </AssociationSet>
     <FunctionImport Name="sp_DynamicSearchQuery">
       <Parameter Name="sqlCommand" Mode="In" Type="String" />
     </FunctionImport>
@@ -846,10 +735,115 @@
       <Parameter Name="UntillTotalPrice" Mode="In" Type="Int32" />
       <Parameter Name="FromTotalPrice" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="sysdiagrams" EntityType="DBEWDiGNModel.sysdiagrams" />
+    <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
     <EntitySet Name="tblAgahiCarDetails" EntityType="DBEWDiGNModel.tblAgahiCarDetails" />
+    <EntitySet Name="tblAgahiCategories" EntityType="DBEWDiGNModel.tblAgahiCategories" />
+    <EntitySet Name="tblAgahiFavorite" EntityType="DBEWDiGNModel.tblAgahiFavorite" />
+    <EntitySet Name="tblAgahiGalleries" EntityType="DBEWDiGNModel.tblAgahiGalleries" />
+    <EntitySet Name="tblAgahiHomeDetail" EntityType="DBEWDiGNModel.tblAgahiHomeDetail" />
+    <EntitySet Name="tblAgahiMobCompDetails" EntityType="DBEWDiGNModel.tblAgahiMobCompDetails" />
+    <EntitySet Name="tblAgahiPlans" EntityType="DBEWDiGNModel.tblAgahiPlans" />
+    <EntitySet Name="tblAgahiService" EntityType="DBEWDiGNModel.tblAgahiService" />
+    <EntitySet Name="tblAgahiStatus" EntityType="DBEWDiGNModel.tblAgahiStatus" />
+    <EntitySet Name="tblAgahiType" EntityType="DBEWDiGNModel.tblAgahiType" />
+    <EntitySet Name="tblBrands" EntityType="DBEWDiGNModel.tblBrands" />
+    <EntitySet Name="tblBrandType" EntityType="DBEWDiGNModel.tblBrandType" />
+    <EntitySet Name="tblCarBodyStatus" EntityType="DBEWDiGNModel.tblCarBodyStatus" />
+    <EntitySet Name="tblCarChassis" EntityType="DBEWDiGNModel.tblCarChassis" />
     <EntitySet Name="tblCarColors" EntityType="DBEWDiGNModel.tblCarColors" />
+    <EntitySet Name="tblCarConditions" EntityType="DBEWDiGNModel.tblCarConditions" />
+    <EntitySet Name="tblCarCrash" EntityType="DBEWDiGNModel.tblCarCrash" />
+    <EntitySet Name="tblCarMotorHajme" EntityType="DBEWDiGNModel.tblCarMotorHajme" />
+    <EntitySet Name="tblCarPelak" EntityType="DBEWDiGNModel.tblCarPelak" />
+    <EntitySet Name="tblCarSokht" EntityType="DBEWDiGNModel.tblCarSokht" />
+    <EntitySet Name="tblCarSopapMotor" EntityType="DBEWDiGNModel.tblCarSopapMotor" />
+    <EntitySet Name="tblCarTip" EntityType="DBEWDiGNModel.tblCarTip" />
+    <EntitySet Name="tblCity" EntityType="DBEWDiGNModel.tblCity" />
+    <EntitySet Name="tblCountry" EntityType="DBEWDiGNModel.tblCountry" />
+    <EntitySet Name="tblHomeGarmayeshType" EntityType="DBEWDiGNModel.tblHomeGarmayeshType" />
+    <EntitySet Name="tblHomeGharardad" EntityType="DBEWDiGNModel.tblHomeGharardad" />
+    <EntitySet Name="tblHomeJenesKafID" EntityType="DBEWDiGNModel.tblHomeJenesKafID" />
+    <EntitySet Name="tblHomeMelkType" EntityType="DBEWDiGNModel.tblHomeMelkType" />
+    <EntitySet Name="tblJeansBadane" EntityType="DBEWDiGNModel.tblJeansBadane" />
+    <EntitySet Name="tblPriceType" EntityType="DBEWDiGNModel.tblPriceType" />
+    <EntitySet Name="tblProvince" EntityType="DBEWDiGNModel.tblProvince" />
+    <EntitySet Name="tblRegions" EntityType="DBEWDiGNModel.tblRegions" />
+    <EntitySet Name="tblUserAgahiStatus" EntityType="DBEWDiGNModel.tblUserAgahiStatus" />
+    <EntitySet Name="tblUserLoginStatus" EntityType="DBEWDiGNModel.tblUserLoginStatus" />
+    <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
+    <EntitySet Name="tblUserType" EntityType="DBEWDiGNModel.tblUserType" />
+    <EntitySet Name="tblVam" EntityType="DBEWDiGNModel.tblVam" />
+    <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
+      <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiPlans" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans">
+      <End Role="tblAgahiPlans" EntitySet="tblAgahiPlans" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiService" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService">
+      <End Role="tblAgahiService" EntitySet="tblAgahiService" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
+      <End Role="tblPriceType" EntitySet="tblPriceType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblProvince" Association="DBEWDiGNModel.FK_tblAgahi_tblProvince">
+      <End Role="tblProvince" EntitySet="tblProvince" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblRegions" Association="DBEWDiGNModel.FK_tblAgahi_tblRegions">
+      <End Role="tblRegions" EntitySet="tblRegions" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUserAgahiType" Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType">
+      <End Role="tblAgahiType" EntitySet="tblAgahiType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="DBEWDiGNModel.FK_tblAgahi_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiGalleries_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiGalleries" EntitySet="tblAgahiGalleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
       <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahi" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVam_tblAgahi" Association="DBEWDiGNModel.FK_tblVam_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblVam" EntitySet="tblVam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblBrands" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblBrands">
+      <End Role="tblBrands" EntitySet="tblBrands" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarBodyStatus" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus">
+      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarChassis" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarChassis">
+      <End Role="tblCarChassis" EntitySet="tblCarChassis" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarColors" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors">
@@ -860,8 +854,20 @@
       <End Role="tblCarColors" EntitySet="tblCarColors" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarConditions" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarConditions">
+      <End Role="tblCarConditions" EntitySet="tblCarConditions" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarCrash" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarCrash">
+      <End Role="tblCarCrash" EntitySet="tblCarCrash" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarMotorHajme" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme">
       <End Role="tblCarMotorHajme" EntitySet="tblCarMotorHajme" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarPelak" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarPelak">
+      <End Role="tblCarPelak" EntitySet="tblCarPelak" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiCarDetails_tblCarSokht" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht">
@@ -876,14 +882,61 @@
       <End Role="tblCarTip" EntitySet="tblCarTip" />
       <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
     </AssociationSet>
-    <EntitySet Name="tblCarBodyStatus" EntityType="DBEWDiGNModel.tblCarBodyStatus" />
-    <AssociationSet Name="FK_tblAgahiCarDetails_tblCarBodyStatus" Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus">
-      <End Role="tblCarBodyStatus" EntitySet="tblCarBodyStatus" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType">
+      <End Role="tblHomeGarmayeshType" EntitySet="tblHomeGarmayeshType" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblCountry_tblGeoRegion" Association="DBEWDiGNModel.FK_tblCountry_tblGeoRegion">
-      <End Role="tblGeoRegion" EntitySet="tblGeoRegion" />
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeGharardad" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad">
+      <End Role="tblHomeGharardad" EntitySet="tblHomeGharardad" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeJenesKafID" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID">
+      <End Role="tblHomeJenesKafID" EntitySet="tblHomeJenesKafID" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblHomeMelkType" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType">
+      <End Role="tblHomeMelkType" EntitySet="tblHomeMelkType" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblBrands" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblBrands">
+      <End Role="tblBrands" EntitySet="tblBrands" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblJeansBadane" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane">
+      <End Role="tblJeansBadane" EntitySet="tblJeansBadane" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahiStatus" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahiStatus">
+      <End Role="tblAgahiStatus" EntitySet="tblAgahiStatus" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBrands_tblBrandType" Association="DBEWDiGNModel.FK_tblBrands_tblBrandType">
+      <End Role="tblBrandType" EntitySet="tblBrandType" />
+      <End Role="tblBrands" EntitySet="tblBrands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCity_tblProvince" Association="DBEWDiGNModel.FK_tblCity_tblProvince">
+      <End Role="tblProvince" EntitySet="tblProvince" />
+      <End Role="tblCity" EntitySet="tblCity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblRegions_tblCity" Association="DBEWDiGNModel.FK_tblRegions_tblCity">
+      <End Role="tblCity" EntitySet="tblCity" />
+      <End Role="tblRegions" EntitySet="tblRegions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProvince_tblCountry" Association="DBEWDiGNModel.FK_tblProvince_tblCountry">
       <End Role="tblCountry" EntitySet="tblCountry" />
+      <End Role="tblProvince" EntitySet="tblProvince" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblUsers" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserLoginStatus_tblUsers" Association="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserLoginStatus" EntitySet="tblUserLoginStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsers_tblUserType" Association="DBEWDiGNModel.FK_tblUsers_tblUserType">
+      <End Role="tblUserType" EntitySet="tblUserType" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="CheckUserPass_Result">
@@ -1486,676 +1539,6 @@
     <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Keywords" Nullable="true" MaxLength="500" />
   </ComplexType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="IsDeleted" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="tblAgahi">
-    <Key>
-      <PropertyRef Name="AgahiID" />
-    </Key>
-    <Property Name="AgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryAgahiID" Type="Int32" />
-    <Property Name="AgahiServiceID" Type="Int32" />
-    <Property Name="AgahiTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NewOrUsed" Type="Boolean" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Keyword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="AdminUserID" Type="Int32" />
-    <Property Name="AdminAgreeDate" Type="DateTime" Precision="3" />
-    <Property Name="AgahiStatus" Type="Byte" />
-    <Property Name="Location" Type="Geography" />
-    <Property Name="LanguageID" Type="Int32" />
-    <Property Name="ProvinceID" Type="Int32" />
-    <Property Name="RegionID" Type="Int32" />
-    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PriceTypeID" Type="Int32" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="PlanShowAgahiID" Type="Int32" />
-    <Property Name="HasImage" Type="Boolean" />
-    <Property Name="Chatable" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="OnTime" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="SpecialAgahi" Type="Boolean" />
-    <Property Name="UserAgahiTypeID" Type="Int32" />
-    <NavigationProperty Name="tblAgahiCategories" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahi" ToRole="tblAgahiCategories" />
-    <NavigationProperty Name="tblAgahiPlans" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahi" ToRole="tblAgahiPlans" />
-    <NavigationProperty Name="tblAgahiService" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahi" ToRole="tblAgahiService" />
-    <NavigationProperty Name="tblPriceType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblAgahi" ToRole="tblPriceType" />
-    <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblAgahi" ToRole="tblProvince" />
-    <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblAgahi" ToRole="tblRegions" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiHomeDetail" />
-    <NavigationProperty Name="tblAgahiFavorite" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiFavorite" />
-    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiMobCompDetails" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblAgahiCategories">
-    <Key>
-      <PropertyRef Name="AgahiCategoryID" />
-    </Key>
-    <Property Name="AgahiCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ParrentID" Type="Int32" />
-    <Property Name="Priority" Type="Int32" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahiCategories" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblAgahiFavorite">
-    <Key>
-      <PropertyRef Name="FavoriteAgahiID" />
-    </Key>
-    <Property Name="FavoriteAgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="AgahiID" Type="Int32" />
-    <Property Name="IsDeteled" Type="Boolean" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahiFavorite" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblAgahiGalleries">
-    <Key>
-      <PropertyRef Name="GalleryID" />
-    </Key>
-    <Property Name="GalleryID" Type="Int32" Nullable="false" />
-    <Property Name="AgahiID" Type="Int32" />
-    <Property Name="ImageAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblAgahiHomeDetail">
-    <Key>
-      <PropertyRef Name="AgahiDetailHomeID" />
-    </Key>
-    <Property Name="AgahiDetailHomeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiID" Type="Int32" Nullable="false" />
-    <Property Name="CodeMelk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Parking" Type="Boolean" />
-    <Property Name="Asansor" Type="Boolean" />
-    <Property Name="OtaghKhab" Type="Int32" />
-    <Property Name="ServiceIrani" Type="Int32" />
-    <Property Name="ServiceKhareji" Type="Int32" />
-    <Property Name="SaleSakht" Type="Int32" />
-    <Property Name="Tabaghe" Type="Int32" />
-    <Property Name="MelkTypeID" Type="Int32" />
-    <Property Name="GharardadTypeID" Type="Int32" />
-    <Property Name="Zirbana" Type="Int32" />
-    <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="MablagheMahane" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="MantagheID" Type="Int32" />
-    <Property Name="Balkon" Type="Boolean" />
-    <Property Name="Estakhr" Type="Boolean" />
-    <Property Name="Zirzamin" Type="Boolean" />
-    <Property Name="Hayat" Type="Boolean" />
-    <Property Name="NSEWID" Type="Int32" />
-    <Property Name="Sona" Type="Boolean" />
-    <Property Name="Jakozi" Type="Boolean" />
-    <Property Name="Khabmaster" Type="Boolean" />
-    <Property Name="Roofgarden" Type="Boolean" />
-    <Property Name="Chiler" Type="Boolean" />
-    <Property Name="Barbikio" Type="Boolean" />
-    <Property Name="Alachigh" Type="Boolean" />
-    <Property Name="Labi" Type="Boolean" />
-    <Property Name="MohavateBaziKodak" Type="Boolean" />
-    <Property Name="JeneskafID" Type="Int32" />
-    <Property Name="Badansazi" Type="Boolean" />
-    <Property Name="Varaseiye" Type="Boolean" />
-    <Property Name="TakBarg" Type="Boolean" />
-    <Property Name="Vam" Type="Boolean" />
-    <Property Name="Mablaghevam" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="GarmayeshTypeID" Type="Int32" />
-    <Property Name="Area" Type="Int32" />
-    <Property Name="CitySideTypeID" Type="Int32" />
-    <Property Name="AdminDoc" Type="Boolean" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahiHomeDetail" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblHomeGarmayeshType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGarmayeshType" />
-    <NavigationProperty Name="tblHomeGharardad" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGharardad" />
-    <NavigationProperty Name="tblHomeJenesKafID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeJenesKafID" />
-    <NavigationProperty Name="tblHomeMantagheID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMantagheID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeMantagheID" />
-    <NavigationProperty Name="tblHomeMelkType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeMelkType" />
-    <NavigationProperty Name="tblHomeNSEWID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeNSEWID" />
-  </EntityType>
-  <EntityType Name="tblAgahiMobCompDetails">
-    <Key>
-      <PropertyRef Name="AgahiMobCopID" />
-    </Key>
-    <Property Name="AgahiMobCopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiID" Type="Int32" />
-    <Property Name="Ram" Type="Int32" />
-    <Property Name="Cpu" Type="Int32" />
-    <Property Name="Graphic" Type="Int32" />
-    <Property Name="LCD" Type="Boolean" />
-    <Property Name="LED" Type="Boolean" />
-    <Property Name="Four4K" Type="Boolean" />
-    <Property Name="Touch" Type="Boolean" />
-    <Property Name="DisplaySize" Type="Double" />
-    <Property Name="BrandID" Type="Int32" />
-    <Property Name="LabTop" Type="Boolean" />
-    <Property Name="Mobile" Type="Boolean" />
-    <Property Name="AllinOne" Type="Boolean" />
-    <Property Name="Garanti" Type="Boolean" />
-    <Property Name="Waranty" Type="Boolean" />
-    <Property Name="AntiWater" Type="Boolean" />
-    <Property Name="JeansBadaneID" Type="Int32" />
-    <Property Name="USB3" Type="Boolean" />
-    <Property Name="HDDMeasure" Type="Int32" />
-    <Property Name="SSDMeasure" Type="Int32" />
-    <Property Name="HasHHD" Type="Boolean" />
-    <Property Name="HasSSD" Type="Boolean" />
-    <Property Name="HasUSB3" Type="Boolean" />
-    <Property Name="HasDVDRW" Type="Boolean" />
-    <Property Name="ColorID" Type="Int32" />
-    <Property Name="HasCamera" Type="Boolean" />
-    <Property Name="CameraMgeaPixel" Type="Int32" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblJeansBadane" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblAgahiMobCompDetails" ToRole="tblJeansBadane" />
-  </EntityType>
-  <EntityType Name="tblAgahiPlans">
-    <Key>
-      <PropertyRef Name="PlanShowAgahiID" />
-    </Key>
-    <Property Name="PlanShowAgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NumberDayShow" Type="Int32" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahiPlans" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblAgahiService">
-    <Key>
-      <PropertyRef Name="AgahiServiceID" />
-    </Key>
-    <Property Name="AgahiServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="AgahiServiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahiService" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblArchiveHashTags">
-    <Key>
-      <PropertyRef Name="ArchiveHashtagID" />
-    </Key>
-    <Property Name="ArchiveHashtagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HashtagID" Type="Int32" />
-    <Property Name="CalculateDate" Type="DateTime" Precision="3" />
-    <Property Name="RepCount" Type="Int32" />
-  </EntityType>
-  <EntityType Name="tblBrands">
-    <Key>
-      <PropertyRef Name="BrandID" />
-    </Key>
-    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ParrentID" Type="Int32" />
-    <Property Name="BrandTypeID" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tblBrandType">
-    <Key>
-      <PropertyRef Name="BrandTypeID" />
-    </Key>
-    <Property Name="BrandTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BrandTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblCarChassis">
-    <Key>
-      <PropertyRef Name="CarChassisTypeID" />
-    </Key>
-    <Property Name="CarChassisTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CarChassisTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblCarConditions">
-    <Key>
-      <PropertyRef Name="CarConditionID" />
-    </Key>
-    <Property Name="CarConditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CarConditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblCarCrash">
-    <Key>
-      <PropertyRef Name="CarCrashTypeID" />
-    </Key>
-    <Property Name="CarCrashTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CarCrashType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblCarMotorHajme">
-    <Key>
-      <PropertyRef Name="MotorHajmID" />
-    </Key>
-    <Property Name="MotorHajmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HamjName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="HajmCC" Type="Int32" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblCarMotorHajme" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblCarPelak">
-    <Key>
-      <PropertyRef Name="CarPelakTypeID" />
-    </Key>
-    <Property Name="CarPelakTypeID" Type="Int32" Nullable="false" />
-    <Property Name="CarPelakType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblCarSokht">
-    <Key>
-      <PropertyRef Name="SokhtID" />
-    </Key>
-    <Property Name="SokhtID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SokhName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblCarSokht" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblCarSopapMotor">
-    <Key>
-      <PropertyRef Name="SopapID" />
-    </Key>
-    <Property Name="SopapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SopapName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SopapNumber" Type="Int32" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblCarSopapMotor" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblCarTip">
-    <Key>
-      <PropertyRef Name="CarTipID" />
-    </Key>
-    <Property Name="CarTipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TipName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblCarTip" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <EntityType Name="tblCity">
-    <Key>
-      <PropertyRef Name="CityID" />
-    </Key>
-    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProvinceId" Type="Int32" />
-    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="CountryID" Type="Int32" />
-    <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblCity" ToRole="tblRegions" />
-  </EntityType>
-  <EntityType Name="tblCountry">
-    <Key>
-      <PropertyRef Name="CountryID" />
-    </Key>
-    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="GeoRegionID" Type="Int32" />
-    <NavigationProperty Name="tblGeoRegion" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblCountry" ToRole="tblGeoRegion" />
-  </EntityType>
-  <EntityType Name="tblGeoRegion">
-    <Key>
-      <PropertyRef Name="GeoRegionID" />
-    </Key>
-    <Property Name="GeoRegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="GeoTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblCountry_tblGeoRegion" FromRole="tblGeoRegion" ToRole="tblCountry" />
-  </EntityType>
-  <EntityType Name="tblHomeGarmayeshType">
-    <Key>
-      <PropertyRef Name="GarmayeshTypeID" />
-    </Key>
-    <Property Name="GarmayeshTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="GarmayeshType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" FromRole="tblHomeGarmayeshType" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblHomeGharardad">
-    <Key>
-      <PropertyRef Name="GharardadTypeID" />
-    </Key>
-    <Property Name="GharardadTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" FromRole="tblHomeGharardad" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblHomeJenesKafID">
-    <Key>
-      <PropertyRef Name="JeneskafID" />
-    </Key>
-    <Property Name="JeneskafID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="JeneskafName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID" FromRole="tblHomeJenesKafID" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblHomeMantagheID">
-    <Key>
-      <PropertyRef Name="MantagheID" />
-    </Key>
-    <Property Name="MantagheID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MantagheNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMantagheID" FromRole="tblHomeMantagheID" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblHomeMelkType">
-    <Key>
-      <PropertyRef Name="MelkTypeID" />
-    </Key>
-    <Property Name="MelkTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MelkType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" FromRole="tblHomeMelkType" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblHomeNSEWID">
-    <Key>
-      <PropertyRef Name="NSEWID" />
-    </Key>
-    <Property Name="NSEWID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NSEWName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeNSEWID" FromRole="tblHomeNSEWID" ToRole="tblAgahiHomeDetail" />
-  </EntityType>
-  <EntityType Name="tblJeansBadane">
-    <Key>
-      <PropertyRef Name="JeansBadaneID" />
-    </Key>
-    <Property Name="JeansBadaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="JeansBadaneType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblJeansBadane" ToRole="tblAgahiMobCompDetails" />
-  </EntityType>
-  <EntityType Name="tblNeighbourhoodRange">
-    <Key>
-      <PropertyRef Name="NeighbourhoodRangeID" />
-    </Key>
-    <Property Name="NeighbourhoodRangeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NeighbourhoodRangeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ProvinceID" Type="Int32" />
-  </EntityType>
-  <EntityType Name="tblPriceType">
-    <Key>
-      <PropertyRef Name="PriceTypeID" />
-    </Key>
-    <Property Name="PriceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PriceTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblPriceType" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblPrivacyType">
-    <Key>
-      <PropertyRef Name="PrivacyTypeID" />
-    </Key>
-    <Property Name="PrivacyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PrivacyType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IsDeleted" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="tblProvince">
-    <Key>
-      <PropertyRef Name="ProvinceID" />
-    </Key>
-    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
-    <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblProvince" ToRole="tblAgahi" />
-  </EntityType>
-  <EntityType Name="tblRegions">
-    <Key>
-      <PropertyRef Name="RegionID" />
-    </Key>
-    <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CityID" Type="Int32" />
-    <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblRegions" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblRegions" ToRole="tblCity" />
-  </EntityType>
-  <EntityType Name="tblUserLoginLog">
-    <Key>
-      <PropertyRef Name="UserLoginLogID" />
-    </Key>
-    <Property Name="UserLoginLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="SMSCodeSent" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
-    <Property Name="DateSent" Type="DateTime" Precision="3" />
-    <Property Name="DateLogin" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="IsCheckPassed" Type="Boolean" />
-    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUserLoginLog" ToRole="tblUsers" />
-  </EntityType>
-  <EntityType Name="tblUsers">
-    <Key>
-      <PropertyRef Name="UserID" />
-    </Key>
-    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="LanguageID" Type="Int32" />
-    <Property Name="UserType" Type="Byte" />
-    <Property Name="LocationID" Type="Int32" />
-    <Property Name="IsDeleted" Type="Boolean" />
-    <NavigationProperty Name="tblUserLoginLog" Relationship="DBEWDiGNModel.FK_tblUserLoginLog_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginLog" />
-  </EntityType>
-  <EntityType Name="tblUserType">
-    <Key>
-      <PropertyRef Name="UserTypeID" />
-    </Key>
-    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="tblVam">
-    <Key>
-      <PropertyRef Name="VamID" />
-    </Key>
-    <Property Name="VamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MahanePrice" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Teadad" Type="Int32" />
-    <Property Name="VamDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="VamYear" Type="Int32" />
-  </EntityType>
-  <Association Name="FK_tblAgahi_tblAgahiCategories">
-    <End Type="DBEWDiGNModel.tblAgahiCategories" Role="tblAgahiCategories" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiCategories">
-        <PropertyRef Name="AgahiCategoryID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="CategoryAgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblAgahiPlans">
-    <End Type="DBEWDiGNModel.tblAgahiPlans" Role="tblAgahiPlans" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiPlans">
-        <PropertyRef Name="PlanShowAgahiID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="PlanShowAgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblAgahiService">
-    <End Type="DBEWDiGNModel.tblAgahiService" Role="tblAgahiService" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahiService">
-        <PropertyRef Name="AgahiServiceID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="AgahiServiceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblPriceType">
-    <End Type="DBEWDiGNModel.tblPriceType" Role="tblPriceType" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblPriceType">
-        <PropertyRef Name="PriceTypeID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="PriceTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblProvince">
-    <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblProvince">
-        <PropertyRef Name="ProvinceID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="ProvinceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblRegions">
-    <End Type="DBEWDiGNModel.tblRegions" Role="tblRegions" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblRegions">
-        <PropertyRef Name="RegionID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="RegionID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblAgahi">
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahi">
-        <PropertyRef Name="AgahiID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="AgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiFavorite_tblAgahi">
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiFavorite" Role="tblAgahiFavorite" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahi">
-        <PropertyRef Name="AgahiID" />
-      </Principal>
-      <Dependent Role="tblAgahiFavorite">
-        <PropertyRef Name="AgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiMobCompDetails_tblAgahi">
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblAgahi">
-        <PropertyRef Name="AgahiID" />
-      </Principal>
-      <Dependent Role="tblAgahiMobCompDetails">
-        <PropertyRef Name="AgahiID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType">
-    <End Type="DBEWDiGNModel.tblHomeGarmayeshType" Role="tblHomeGarmayeshType" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeGarmayeshType">
-        <PropertyRef Name="GarmayeshTypeID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="GarmayeshTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeGharardad">
-    <End Type="DBEWDiGNModel.tblHomeGharardad" Role="tblHomeGharardad" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeGharardad">
-        <PropertyRef Name="GharardadTypeID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="GharardadTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeJenesKafID">
-    <End Type="DBEWDiGNModel.tblHomeJenesKafID" Role="tblHomeJenesKafID" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeJenesKafID">
-        <PropertyRef Name="JeneskafID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="JeneskafID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeMantagheID">
-    <End Type="DBEWDiGNModel.tblHomeMantagheID" Role="tblHomeMantagheID" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeMantagheID">
-        <PropertyRef Name="MantagheID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="MantagheID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeMelkType">
-    <End Type="DBEWDiGNModel.tblHomeMelkType" Role="tblHomeMelkType" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeMelkType">
-        <PropertyRef Name="MelkTypeID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="MelkTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiDetailHome_tblHomeNSEWID">
-    <End Type="DBEWDiGNModel.tblHomeNSEWID" Role="tblHomeNSEWID" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblHomeNSEWID">
-        <PropertyRef Name="NSEWID" />
-      </Principal>
-      <Dependent Role="tblAgahiHomeDetail">
-        <PropertyRef Name="NSEWID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahiMobCompDetails_tblJeansBadane">
-    <End Type="DBEWDiGNModel.tblJeansBadane" Role="tblJeansBadane" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblJeansBadane">
-        <PropertyRef Name="JeansBadaneID" />
-      </Principal>
-      <Dependent Role="tblAgahiMobCompDetails">
-        <PropertyRef Name="JeansBadaneID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblRegions_tblCity">
-    <End Type="DBEWDiGNModel.tblCity" Role="tblCity" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblRegions" Role="tblRegions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblCity">
-        <PropertyRef Name="CityID" />
-      </Principal>
-      <Dependent Role="tblRegions">
-        <PropertyRef Name="CityID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblUserLoginLog_tblUsers">
-    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblUserLoginLog" Role="tblUserLoginLog" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblUsers">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="tblUserLoginLog">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <ComplexType Name="sp_SearchAccessoriesDetails_Result">
     <Property Type="Int32" Name="AgahiID" Nullable="false" />
     <Property Type="Int32" Name="CategoryAgahiID" Nullable="true" />
@@ -2604,6 +1987,64 @@
     <Property Type="Boolean" Name="SpecialAgahi" Nullable="true" />
     <Property Type="Int32" Name="UserAgahiTypeID" Nullable="true" />
   </ComplexType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblAgahi">
+    <Key>
+      <PropertyRef Name="AgahiID" />
+    </Key>
+    <Property Name="AgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryAgahiID" Type="Int32" />
+    <Property Name="AgahiServiceID" Type="Int32" />
+    <Property Name="AgahiTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewOrUsed" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Keyword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AdminUserID" Type="Int32" />
+    <Property Name="AdminAgreeDate" Type="DateTime" Precision="3" />
+    <Property Name="AgahiStatus" Type="Byte" />
+    <Property Name="Location" Type="Geography" />
+    <Property Name="ProvinceID" Type="Int32" />
+    <Property Name="RegionID" Type="Int32" />
+    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriceTypeID" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PlanShowAgahiID" Type="Int32" />
+    <Property Name="HasImage" Type="Boolean" />
+    <Property Name="Chatable" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="OnTime" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialAgahi" Type="Boolean" />
+    <Property Name="UserAgahiTypeID" Type="Int32" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="AgahiStatusID" Type="Int32" />
+    <NavigationProperty Name="tblAgahiCategories" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahi" ToRole="tblAgahiCategories" />
+    <NavigationProperty Name="tblAgahiPlans" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahi" ToRole="tblAgahiPlans" />
+    <NavigationProperty Name="tblAgahiService" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahi" ToRole="tblAgahiService" />
+    <NavigationProperty Name="tblPriceType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblAgahi" ToRole="tblPriceType" />
+    <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblAgahi" ToRole="tblProvince" />
+    <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblAgahi" ToRole="tblRegions" />
+    <NavigationProperty Name="tblAgahiType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" FromRole="tblAgahi" ToRole="tblAgahiType" />
+    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblAgahi" ToRole="tblUsers" />
+    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiHomeDetail" />
+    <NavigationProperty Name="tblAgahiFavorite" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiFavorite" />
+    <NavigationProperty Name="tblAgahiGalleries" Relationship="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiGalleries" />
+    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiMobCompDetails" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiCarDetails" />
+    <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi" FromRole="tblAgahi" ToRole="tblUserAgahiStatus" />
+    <NavigationProperty Name="tblVam" Relationship="DBEWDiGNModel.FK_tblVam_tblAgahi" FromRole="tblAgahi" ToRole="tblVam" />
+  </EntityType>
   <EntityType Name="tblAgahiCarDetails">
     <Key>
       <PropertyRef Name="AgahiDetailCarID" />
@@ -2626,10 +2067,8 @@
     <Property Name="SopapID" Type="Int32" />
     <Property Name="PishPardakht" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Mahane" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="ChanMaheID" Type="Int32" />
     <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="RokeshTypeID" Type="Int32" />
-    <Property Name="VamID" Type="Int32" />
     <Property Name="BrandID" Type="Int32" />
     <Property Name="CarConditionID" Type="Int32" />
     <Property Name="CarChassisTypeID" Type="Int32" />
@@ -2638,14 +2077,216 @@
     <Property Name="CarPelakTypeID" Type="Int32" />
     <Property Name="HasAlarm" Type="Boolean" />
     <Property Name="HasSound" Type="Boolean" />
+    <Property Name="CarCrashTypeID" Type="Int32" />
     <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahiCarDetails" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblBrands" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblBrands" FromRole="tblAgahiCarDetails" ToRole="tblBrands" />
+    <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
+    <NavigationProperty Name="tblCarChassis" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarChassis" FromRole="tblAgahiCarDetails" ToRole="tblCarChassis" />
     <NavigationProperty Name="tblCarColors" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors" FromRole="tblAgahiCarDetails" ToRole="tblCarColors" />
     <NavigationProperty Name="tblCarColors1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors1" FromRole="tblAgahiCarDetails" ToRole="tblCarColors" />
+    <NavigationProperty Name="tblCarConditions" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarConditions" FromRole="tblAgahiCarDetails" ToRole="tblCarConditions" />
+    <NavigationProperty Name="tblCarCrash" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarCrash" FromRole="tblAgahiCarDetails" ToRole="tblCarCrash" />
     <NavigationProperty Name="tblCarMotorHajme" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblAgahiCarDetails" ToRole="tblCarMotorHajme" />
+    <NavigationProperty Name="tblCarPelak" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarPelak" FromRole="tblAgahiCarDetails" ToRole="tblCarPelak" />
     <NavigationProperty Name="tblCarSokht" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblAgahiCarDetails" ToRole="tblCarSokht" />
     <NavigationProperty Name="tblCarSopapMotor" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblAgahiCarDetails" ToRole="tblCarSopapMotor" />
     <NavigationProperty Name="tblCarTip" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblAgahiCarDetails" ToRole="tblCarTip" />
-    <NavigationProperty Name="tblCarBodyStatus" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblAgahiCarDetails" ToRole="tblCarBodyStatus" />
+  </EntityType>
+  <EntityType Name="tblAgahiCategories">
+    <Key>
+      <PropertyRef Name="AgahiCategoryID" />
+    </Key>
+    <Property Name="AgahiCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParrentID" Type="Int32" />
+    <Property Name="Priority" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahiCategories" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblAgahiFavorite">
+    <Key>
+      <PropertyRef Name="FavoriteAgahiID" />
+    </Key>
+    <Property Name="FavoriteAgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AgahiID" Type="Int32" />
+    <Property Name="IsDeteled" Type="Boolean" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahiFavorite" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblAgahiGalleries">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" />
+    <Property Name="AgahiID" Type="Int32" />
+    <Property Name="ImageAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi" FromRole="tblAgahiGalleries" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblAgahiHomeDetail">
+    <Key>
+      <PropertyRef Name="AgahiDetailHomeID" />
+    </Key>
+    <Property Name="AgahiDetailHomeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiID" Type="Int32" Nullable="false" />
+    <Property Name="CodeMelk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parking" Type="Boolean" />
+    <Property Name="Asansor" Type="Boolean" />
+    <Property Name="OtaghKhab" Type="Int32" />
+    <Property Name="ServiceIrani" Type="Int32" />
+    <Property Name="ServiceKhareji" Type="Int32" />
+    <Property Name="SaleSakht" Type="Int32" />
+    <Property Name="Tabaghe" Type="Int32" />
+    <Property Name="MelkTypeID" Type="Int32" />
+    <Property Name="GharardadTypeID" Type="Int32" />
+    <Property Name="Zirbana" Type="Int32" />
+    <Property Name="MablagheKole" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MablagheMahane" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Balkon" Type="Boolean" />
+    <Property Name="Estakhr" Type="Boolean" />
+    <Property Name="Zirzamin" Type="Boolean" />
+    <Property Name="Hayat" Type="Boolean" />
+    <Property Name="NSEWID" Type="Int32" />
+    <Property Name="Sona" Type="Boolean" />
+    <Property Name="Jakozi" Type="Boolean" />
+    <Property Name="Khabmaster" Type="Boolean" />
+    <Property Name="Roofgarden" Type="Boolean" />
+    <Property Name="Chiler" Type="Boolean" />
+    <Property Name="Barbikio" Type="Boolean" />
+    <Property Name="Alachigh" Type="Boolean" />
+    <Property Name="Labi" Type="Boolean" />
+    <Property Name="MohavateBaziKodak" Type="Boolean" />
+    <Property Name="JeneskafID" Type="Int32" />
+    <Property Name="Badansazi" Type="Boolean" />
+    <Property Name="Varaseiye" Type="Boolean" />
+    <Property Name="TakBarg" Type="Boolean" />
+    <Property Name="Vam" Type="Boolean" />
+    <Property Name="Mablaghevam" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GarmayeshTypeID" Type="Int32" />
+    <Property Name="Area" Type="Int32" />
+    <Property Name="CitySideTypeID" Type="Int32" />
+    <Property Name="AdminDoc" Type="Boolean" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahiHomeDetail" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblHomeGarmayeshType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGarmayeshType" />
+    <NavigationProperty Name="tblHomeGharardad" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" FromRole="tblAgahiHomeDetail" ToRole="tblHomeGharardad" />
+    <NavigationProperty Name="tblHomeJenesKafID" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID" FromRole="tblAgahiHomeDetail" ToRole="tblHomeJenesKafID" />
+    <NavigationProperty Name="tblHomeMelkType" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" FromRole="tblAgahiHomeDetail" ToRole="tblHomeMelkType" />
+  </EntityType>
+  <EntityType Name="tblAgahiMobCompDetails">
+    <Key>
+      <PropertyRef Name="AgahiMobCopID" />
+    </Key>
+    <Property Name="AgahiMobCopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiID" Type="Int32" />
+    <Property Name="Ram" Type="Int32" />
+    <Property Name="Cpu" Type="Int32" />
+    <Property Name="Graphic" Type="Int32" />
+    <Property Name="LCD" Type="Boolean" />
+    <Property Name="LED" Type="Boolean" />
+    <Property Name="Four4K" Type="Boolean" />
+    <Property Name="Touch" Type="Boolean" />
+    <Property Name="DisplaySize" Type="Double" />
+    <Property Name="BrandID" Type="Int32" />
+    <Property Name="LabTop" Type="Boolean" />
+    <Property Name="Mobile" Type="Boolean" />
+    <Property Name="AllinOne" Type="Boolean" />
+    <Property Name="Garanti" Type="Boolean" />
+    <Property Name="Waranty" Type="Boolean" />
+    <Property Name="AntiWater" Type="Boolean" />
+    <Property Name="JeansBadaneID" Type="Int32" />
+    <Property Name="USB3" Type="Boolean" />
+    <Property Name="HDDMeasure" Type="Int32" />
+    <Property Name="SSDMeasure" Type="Int32" />
+    <Property Name="HasHHD" Type="Boolean" />
+    <Property Name="HasSSD" Type="Boolean" />
+    <Property Name="HasUSB3" Type="Boolean" />
+    <Property Name="HasDVDRW" Type="Boolean" />
+    <Property Name="ColorID" Type="Int32" />
+    <Property Name="HasCamera" Type="Boolean" />
+    <Property Name="CameraMgeaPixel" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" FromRole="tblAgahiMobCompDetails" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblBrands" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblBrands" FromRole="tblAgahiMobCompDetails" ToRole="tblBrands" />
+    <NavigationProperty Name="tblJeansBadane" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblAgahiMobCompDetails" ToRole="tblJeansBadane" />
+  </EntityType>
+  <EntityType Name="tblAgahiPlans">
+    <Key>
+      <PropertyRef Name="PlanShowAgahiID" />
+    </Key>
+    <Property Name="PlanShowAgahiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberDayShow" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahiPlans" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblAgahiService">
+    <Key>
+      <PropertyRef Name="AgahiServiceID" />
+    </Key>
+    <Property Name="AgahiServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiServiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahiService" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblAgahiStatus">
+    <Key>
+      <PropertyRef Name="AgahiStatusID" />
+    </Key>
+    <Property Name="AgahiStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahiStatus" FromRole="tblAgahiStatus" ToRole="tblUserAgahiStatus" />
+  </EntityType>
+  <EntityType Name="tblAgahiType">
+    <Key>
+      <PropertyRef Name="AgahiTypeID" />
+    </Key>
+    <Property Name="AgahiTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" FromRole="tblAgahiType" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblBrands">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParrentID" Type="Int32" />
+    <Property Name="BrandTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblBrands" FromRole="tblBrands" ToRole="tblAgahiCarDetails" />
+    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblBrands" FromRole="tblBrands" ToRole="tblAgahiMobCompDetails" />
+    <NavigationProperty Name="tblBrandType" Relationship="DBEWDiGNModel.FK_tblBrands_tblBrandType" FromRole="tblBrands" ToRole="tblBrandType" />
+  </EntityType>
+  <EntityType Name="tblBrandType">
+    <Key>
+      <PropertyRef Name="BrandTypeID" />
+    </Key>
+    <Property Name="BrandTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblBrands" Relationship="DBEWDiGNModel.FK_tblBrands_tblBrandType" FromRole="tblBrandType" ToRole="tblBrands" />
+  </EntityType>
+  <EntityType Name="tblCarBodyStatus">
+    <Key>
+      <PropertyRef Name="CarBodyStatusID" />
+    </Key>
+    <Property Name="CarBodyStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OneLakeRang" Type="Boolean" />
+    <Property Name="TwoLakeRang" Type="Boolean" />
+    <Property Name="ThreeLakeRang" Type="Boolean" />
+    <Property Name="DorRang" Type="Boolean" />
+    <Property Name="Chapiye" Type="Boolean" />
+    <Property Name="ShasiAghab" Type="Boolean" />
+    <Property Name="ShasiJolo" Type="Boolean" />
+    <Property Name="KhatoKhash" Type="Boolean" />
+    <Property Name="KaputRang" Type="Boolean" />
+    <Property Name="SandoghRang" Type="Boolean" />
+    <Property Name="SaghfRang" Type="Boolean" />
+    <Property Name="OtaghTaviz" Type="Boolean" />
+    <Property Name="NiazBeSafkari" Type="Boolean" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblCarBodyStatus" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarChassis">
+    <Key>
+      <PropertyRef Name="CarChassisTypeID" />
+    </Key>
+    <Property Name="CarChassisTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarChassisTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarChassis" FromRole="tblCarChassis" ToRole="tblAgahiCarDetails" />
   </EntityType>
   <EntityType Name="tblCarColors">
     <Key>
@@ -2656,6 +2297,372 @@
     <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors" FromRole="tblCarColors" ToRole="tblAgahiCarDetails" />
     <NavigationProperty Name="tblAgahiCarDetails1" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarColors1" FromRole="tblCarColors" ToRole="tblAgahiCarDetails" />
   </EntityType>
+  <EntityType Name="tblCarConditions">
+    <Key>
+      <PropertyRef Name="CarConditionID" />
+    </Key>
+    <Property Name="CarConditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarConditionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarConditions" FromRole="tblCarConditions" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarCrash">
+    <Key>
+      <PropertyRef Name="CarCrashTypeID" />
+    </Key>
+    <Property Name="CarCrashTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CarCrashType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarCrash" FromRole="tblCarCrash" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarMotorHajme">
+    <Key>
+      <PropertyRef Name="MotorHajmID" />
+    </Key>
+    <Property Name="MotorHajmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HamjName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HajmCC" Type="Int32" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarMotorHajme" FromRole="tblCarMotorHajme" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarPelak">
+    <Key>
+      <PropertyRef Name="CarPelakTypeID" />
+    </Key>
+    <Property Name="CarPelakTypeID" Type="Int32" Nullable="false" />
+    <Property Name="CarPelakType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarPelak" FromRole="tblCarPelak" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarSokht">
+    <Key>
+      <PropertyRef Name="SokhtID" />
+    </Key>
+    <Property Name="SokhtID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SokhName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSokht" FromRole="tblCarSokht" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarSopapMotor">
+    <Key>
+      <PropertyRef Name="SopapID" />
+    </Key>
+    <Property Name="SopapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SopapName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SopapNumber" Type="Int32" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarSopapMotor" FromRole="tblCarSopapMotor" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCarTip">
+    <Key>
+      <PropertyRef Name="CarTipID" />
+    </Key>
+    <Property Name="CarTipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarTip" FromRole="tblCarTip" ToRole="tblAgahiCarDetails" />
+  </EntityType>
+  <EntityType Name="tblCity">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceId" Type="Int32" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblCity" ToRole="tblProvince" />
+    <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblCity" ToRole="tblRegions" />
+  </EntityType>
+  <EntityType Name="tblCountry">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblProvince_tblCountry" FromRole="tblCountry" ToRole="tblProvince" />
+  </EntityType>
+  <EntityType Name="tblHomeGarmayeshType">
+    <Key>
+      <PropertyRef Name="GarmayeshTypeID" />
+    </Key>
+    <Property Name="GarmayeshTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GarmayeshType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGarmayeshType" FromRole="tblHomeGarmayeshType" ToRole="tblAgahiHomeDetail" />
+  </EntityType>
+  <EntityType Name="tblHomeGharardad">
+    <Key>
+      <PropertyRef Name="GharardadTypeID" />
+    </Key>
+    <Property Name="GharardadTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeGharardad" FromRole="tblHomeGharardad" ToRole="tblAgahiHomeDetail" />
+  </EntityType>
+  <EntityType Name="tblHomeJenesKafID">
+    <Key>
+      <PropertyRef Name="JeneskafID" />
+    </Key>
+    <Property Name="JeneskafID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JeneskafName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeJenesKafID" FromRole="tblHomeJenesKafID" ToRole="tblAgahiHomeDetail" />
+  </EntityType>
+  <EntityType Name="tblHomeMelkType">
+    <Key>
+      <PropertyRef Name="MelkTypeID" />
+    </Key>
+    <Property Name="MelkTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MelkType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblHomeMelkType" FromRole="tblHomeMelkType" ToRole="tblAgahiHomeDetail" />
+  </EntityType>
+  <EntityType Name="tblJeansBadane">
+    <Key>
+      <PropertyRef Name="JeansBadaneID" />
+    </Key>
+    <Property Name="JeansBadaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JeansBadaneType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahiMobCompDetails" Relationship="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblJeansBadane" FromRole="tblJeansBadane" ToRole="tblAgahiMobCompDetails" />
+  </EntityType>
+  <EntityType Name="tblPriceType">
+    <Key>
+      <PropertyRef Name="PriceTypeID" />
+    </Key>
+    <Property Name="PriceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PriceTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblPriceType" ToRole="tblAgahi" />
+  </EntityType>
+  <EntityType Name="tblProvince">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryID" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblProvince" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblProvince" ToRole="tblCity" />
+    <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblProvince_tblCountry" FromRole="tblProvince" ToRole="tblCountry" />
+  </EntityType>
+  <EntityType Name="tblRegions">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="RegionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblRegions" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblRegions" ToRole="tblCity" />
+  </EntityType>
+  <EntityType Name="tblUserAgahiStatus">
+    <Key>
+      <PropertyRef Name="UserAgahiStatusID" />
+    </Key>
+    <Property Name="UserAgahiStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgahiID" Type="Int32" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AgahiStatusID" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi" FromRole="tblUserAgahiStatus" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahiStatus" FromRole="tblUserAgahiStatus" ToRole="tblAgahiStatus" />
+    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers" FromRole="tblUserAgahiStatus" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUserLoginStatus">
+    <Key>
+      <PropertyRef Name="UserLoginLogID" />
+    </Key>
+    <Property Name="UserLoginLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SMSCodeSent" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="DateSent" Type="DateTime" Precision="3" />
+    <Property Name="DateLogin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsCheckPassed" Type="Boolean" />
+    <Property Name="SMSSent" Type="Boolean" />
+    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" FromRole="tblUserLoginStatus" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserTypeID" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblUsers" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserAgahiStatus" />
+    <NavigationProperty Name="tblUserLoginStatus" Relationship="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginStatus" />
+    <NavigationProperty Name="tblUserType" Relationship="DBEWDiGNModel.FK_tblUsers_tblUserType" FromRole="tblUsers" ToRole="tblUserType" />
+  </EntityType>
+  <EntityType Name="tblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUsers_tblUserType" FromRole="tblUserType" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblVam">
+    <Key>
+      <PropertyRef Name="VamID" />
+    </Key>
+    <Property Name="VamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MahanePrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Teadad" Type="Int32" />
+    <Property Name="VamDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="VamYear" Type="Int32" />
+    <Property Name="AgahiID" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblVam_tblAgahi" FromRole="tblVam" ToRole="tblAgahi" />
+  </EntityType>
+  <Association Name="FK_tblAgahi_tblAgahiCategories">
+    <End Type="DBEWDiGNModel.tblAgahiCategories" Role="tblAgahiCategories" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiCategories">
+        <PropertyRef Name="AgahiCategoryID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="CategoryAgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblAgahiPlans">
+    <End Type="DBEWDiGNModel.tblAgahiPlans" Role="tblAgahiPlans" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiPlans">
+        <PropertyRef Name="PlanShowAgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="PlanShowAgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblAgahiService">
+    <End Type="DBEWDiGNModel.tblAgahiService" Role="tblAgahiService" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiService">
+        <PropertyRef Name="AgahiServiceID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="AgahiServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblPriceType">
+    <End Type="DBEWDiGNModel.tblPriceType" Role="tblPriceType" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPriceType">
+        <PropertyRef Name="PriceTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="PriceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblProvince">
+    <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProvince">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblRegions">
+    <End Type="DBEWDiGNModel.tblRegions" Role="tblRegions" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRegions">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblUserAgahiType">
+    <End Type="DBEWDiGNModel.tblAgahiType" Role="tblAgahiType" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiType">
+        <PropertyRef Name="AgahiTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="UserAgahiTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahi_tblUsers">
+    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="1" />
+    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiFavorite_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiFavorite" Role="tblAgahiFavorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiFavorite">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiGalleries_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiGalleries" Role="tblAgahiGalleries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiGalleries">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblCarDetails_tblAgahi">
     <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
     <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
@@ -2665,6 +2672,66 @@
       </Principal>
       <Dependent Role="tblAgahiCarDetails">
         <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserAgahiStatus_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblUserAgahiStatus" Role="tblUserAgahiStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblUserAgahiStatus">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVam_tblAgahi">
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblVam" Role="tblVam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahi">
+        <PropertyRef Name="AgahiID" />
+      </Principal>
+      <Dependent Role="tblVam">
+        <PropertyRef Name="AgahiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblBrands">
+    <End Type="DBEWDiGNModel.tblBrands" Role="tblBrands" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarBodyStatus">
+    <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarBodyStatus">
+        <PropertyRef Name="CarBodyStatusID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarBodyStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarChassis">
+    <End Type="DBEWDiGNModel.tblCarChassis" Role="tblCarChassis" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarChassis">
+        <PropertyRef Name="CarChassisTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarChassisTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2692,6 +2759,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarConditions">
+    <End Type="DBEWDiGNModel.tblCarConditions" Role="tblCarConditions" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarConditions">
+        <PropertyRef Name="CarConditionID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarConditionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarCrash">
+    <End Type="DBEWDiGNModel.tblCarCrash" Role="tblCarCrash" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarCrash">
+        <PropertyRef Name="CarCrashTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarCrashTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahiCarDetails_tblCarMotorHajme">
     <End Type="DBEWDiGNModel.tblCarMotorHajme" Role="tblCarMotorHajme" Multiplicity="0..1" />
     <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
@@ -2701,6 +2792,18 @@
       </Principal>
       <Dependent Role="tblAgahiCarDetails">
         <PropertyRef Name="MotorHajmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiCarDetails_tblCarPelak">
+    <End Type="DBEWDiGNModel.tblCarPelak" Role="tblCarPelak" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCarPelak">
+        <PropertyRef Name="CarPelakTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiCarDetails">
+        <PropertyRef Name="CarPelakTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2740,47 +2843,171 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="tblCarBodyStatus">
-    <Key>
-      <PropertyRef Name="CarBodyStatusID" />
-    </Key>
-    <Property Name="CarBodyStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OneLakeRang" Type="Boolean" />
-    <Property Name="TwoLakeRang" Type="Boolean" />
-    <Property Name="ThreeLakeRang" Type="Boolean" />
-    <Property Name="DorRang" Type="Boolean" />
-    <Property Name="Chapiye" Type="Boolean" />
-    <Property Name="ShasiAghab" Type="Boolean" />
-    <Property Name="ShasiJolo" Type="Boolean" />
-    <Property Name="KhatoKhash" Type="Boolean" />
-    <Property Name="KaputRang" Type="Boolean" />
-    <Property Name="SandoghRang" Type="Boolean" />
-    <Property Name="SaghfRang" Type="Boolean" />
-    <Property Name="OtaghTaviz" Type="Boolean" />
-    <Property Name="NiazBeSafkari" Type="Boolean" />
-    <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" FromRole="tblCarBodyStatus" ToRole="tblAgahiCarDetails" />
-  </EntityType>
-  <Association Name="FK_tblAgahiCarDetails_tblCarBodyStatus">
-    <End Type="DBEWDiGNModel.tblCarBodyStatus" Role="tblCarBodyStatus" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahiCarDetails" Role="tblAgahiCarDetails" Multiplicity="*" />
+  <Association Name="FK_tblAgahiDetailHome_tblHomeGarmayeshType">
+    <End Type="DBEWDiGNModel.tblHomeGarmayeshType" Role="tblHomeGarmayeshType" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblCarBodyStatus">
-        <PropertyRef Name="CarBodyStatusID" />
+      <Principal Role="tblHomeGarmayeshType">
+        <PropertyRef Name="GarmayeshTypeID" />
       </Principal>
-      <Dependent Role="tblAgahiCarDetails">
-        <PropertyRef Name="CarBodyStatusID" />
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="GarmayeshTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_tblCountry_tblGeoRegion">
-    <End Type="DBEWDiGNModel.tblGeoRegion" Role="tblGeoRegion" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblCountry" Role="tblCountry" Multiplicity="*" />
+  <Association Name="FK_tblAgahiDetailHome_tblHomeGharardad">
+    <End Type="DBEWDiGNModel.tblHomeGharardad" Role="tblHomeGharardad" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tblGeoRegion">
-        <PropertyRef Name="GeoRegionID" />
+      <Principal Role="tblHomeGharardad">
+        <PropertyRef Name="GharardadTypeID" />
       </Principal>
-      <Dependent Role="tblCountry">
-        <PropertyRef Name="GeoRegionID" />
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="GharardadTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeJenesKafID">
+    <End Type="DBEWDiGNModel.tblHomeJenesKafID" Role="tblHomeJenesKafID" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeJenesKafID">
+        <PropertyRef Name="JeneskafID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="JeneskafID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiDetailHome_tblHomeMelkType">
+    <End Type="DBEWDiGNModel.tblHomeMelkType" Role="tblHomeMelkType" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiHomeDetail" Role="tblAgahiHomeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHomeMelkType">
+        <PropertyRef Name="MelkTypeID" />
+      </Principal>
+      <Dependent Role="tblAgahiHomeDetail">
+        <PropertyRef Name="MelkTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblBrands">
+    <End Type="DBEWDiGNModel.tblBrands" Role="tblBrands" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAgahiMobCompDetails_tblJeansBadane">
+    <End Type="DBEWDiGNModel.tblJeansBadane" Role="tblJeansBadane" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahiMobCompDetails" Role="tblAgahiMobCompDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJeansBadane">
+        <PropertyRef Name="JeansBadaneID" />
+      </Principal>
+      <Dependent Role="tblAgahiMobCompDetails">
+        <PropertyRef Name="JeansBadaneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserAgahiStatus_tblAgahiStatus">
+    <End Type="DBEWDiGNModel.tblAgahiStatus" Role="tblAgahiStatus" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblUserAgahiStatus" Role="tblUserAgahiStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAgahiStatus">
+        <PropertyRef Name="AgahiStatusID" />
+      </Principal>
+      <Dependent Role="tblUserAgahiStatus">
+        <PropertyRef Name="AgahiStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBrands_tblBrandType">
+    <End Type="DBEWDiGNModel.tblBrandType" Role="tblBrandType" Multiplicity="1" />
+    <End Type="DBEWDiGNModel.tblBrands" Role="tblBrands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrandType">
+        <PropertyRef Name="BrandTypeID" />
+      </Principal>
+      <Dependent Role="tblBrands">
+        <PropertyRef Name="BrandTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCity_tblProvince">
+    <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblCity" Role="tblCity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProvince">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="tblCity">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblRegions_tblCity">
+    <End Type="DBEWDiGNModel.tblCity" Role="tblCity" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblRegions" Role="tblRegions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tblRegions">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProvince_tblCountry">
+    <End Type="DBEWDiGNModel.tblCountry" Role="tblCountry" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCountry">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="tblProvince">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserAgahiStatus_tblUsers">
+    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblUserAgahiStatus" Role="tblUserAgahiStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserAgahiStatus">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserLoginStatus_tblUsers">
+    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblUserLoginStatus" Role="tblUserLoginStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserLoginStatus">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsers_tblUserType">
+    <End Type="DBEWDiGNModel.tblUserType" Role="tblUserType" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="UserTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

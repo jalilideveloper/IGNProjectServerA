@@ -12,18 +12,18 @@ namespace iGNProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblHomeNSEWID
+    public partial class tblAgahiType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblHomeNSEWID()
+        public tblAgahiType()
         {
-            this.tblAgahiHomeDetail = new HashSet<tblAgahiHomeDetail>();
+            this.tblAgahi = new HashSet<tblAgahi>();
         }
     
-        public int NSEWID { get; set; }
-        public string NSEWName { get; set; }
+        public int AgahiTypeID { get; set; }
+        public string AgahiTypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAgahiHomeDetail> tblAgahiHomeDetail { get; set; }
+        public virtual ICollection<tblAgahi> tblAgahi { get; set; }
     }
 }

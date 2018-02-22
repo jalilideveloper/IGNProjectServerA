@@ -19,7 +19,7 @@ namespace iGNProject.Controllers
         // GET: api/AgahiCarDetails
         public IHttpActionResult GettblAgahiCarDetails()
         {
-            return Json(db.tblAgahiCarDetails.Select(p=>  new { AgahiDetailCar = p.AgahiDetailCarID , AgahiID  =p.AgahiID, AirBagNumber = p.AirBagNumber, CarTipID = p.CarTipID, ChanMaheID = p.ChanMaheID,
+            return Json(db.tblAgahiCarDetails.Select(p=>  new { AgahiDetailCar = p.AgahiDetailCarID , AgahiID  =p.AgahiID, AirBagNumber = p.AirBagNumber, CarTipID = p.CarTipID,
                 DandehNumber = p.DandehNumber, GirboxAuto = p.GirboxAuto, karkardDaghigh = p.karkardDaghigh, MablagheKole = p.MablagheKole, Mahane = p.Mahane, MotorHajmID = p.MotorHajmID,
                 PishPardakht  = p.PishPardakht, RangeDakheliID = p.CarColorIDInside, RangeKharegiID = p.CarColorIDOutSide, Remote = p.Remote, RokeshTypeID = p.RokeshTypeID, SaleSakht = p.SaleSakht,
                 SandaliBarghi = p.SandaliBarghi, SokhtID = p.SokhtID, SopapID = p.SopapID, SunRoof = p.SunRoof}).ToList());
@@ -34,7 +34,6 @@ namespace iGNProject.Controllers
                 AgahiID = p.AgahiID,
                 AirBagNumber = p.AirBagNumber,
                 CarTipID = p.CarTipID,
-                ChanMaheID = p.ChanMaheID,
                 DandehNumber = p.DandehNumber,
                 GirboxAuto = p.GirboxAuto,
                 karkardDaghigh = p.karkardDaghigh,

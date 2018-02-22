@@ -53,456 +53,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBEWDiGNModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBEWDiGNModel.Store.sp_upgraddiagrams" />
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahi">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
-        <MappingFragment StoreEntitySet="tblAgahi">
-          <ScalarProperty Name="UserAgahiTypeID" ColumnName="UserAgahiTypeID" />
-          <ScalarProperty Name="SpecialAgahi" ColumnName="SpecialAgahi" />
-          <ScalarProperty Name="OnTime" ColumnName="OnTime" />
-          <ScalarProperty Name="Chatable" ColumnName="Chatable" />
-          <ScalarProperty Name="HasImage" ColumnName="HasImage" />
-          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Tell" ColumnName="Tell" />
-          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
-          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-          <ScalarProperty Name="Location" ColumnName="Location" />
-          <ScalarProperty Name="AgahiStatus" ColumnName="AgahiStatus" />
-          <ScalarProperty Name="AdminAgreeDate" ColumnName="AdminAgreeDate" />
-          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="NewOrUsed" ColumnName="NewOrUsed" />
-          <ScalarProperty Name="AgahiTitle" ColumnName="AgahiTitle" />
-          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
-          <ScalarProperty Name="CategoryAgahiID" ColumnName="CategoryAgahiID" />
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiCategories">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCategories">
-        <MappingFragment StoreEntitySet="tblAgahiCategories">
-          <ScalarProperty Name="Priority" ColumnName="Priority" />
-          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-          <ScalarProperty Name="AgahiCategoryName" ColumnName="AgahiCategoryName" />
-          <ScalarProperty Name="AgahiCategoryID" ColumnName="AgahiCategoryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiFavorite">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiFavorite">
-        <MappingFragment StoreEntitySet="tblAgahiFavorite">
-          <ScalarProperty Name="IsDeteled" ColumnName="IsDeteled" />
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="FavoriteAgahiID" ColumnName="FavoriteAgahiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiGalleries">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiGalleries">
-        <MappingFragment StoreEntitySet="tblAgahiGalleries">
-          <ScalarProperty Name="ImageAddress" ColumnName="ImageAddress" />
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiHomeDetail">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiHomeDetail">
-        <MappingFragment StoreEntitySet="tblAgahiHomeDetail">
-          <ScalarProperty Name="AdminDoc" ColumnName="AdminDoc" />
-          <ScalarProperty Name="CitySideTypeID" ColumnName="CitySideTypeID" />
-          <ScalarProperty Name="Area" ColumnName="Area" />
-          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
-          <ScalarProperty Name="Mablaghevam" ColumnName="Mablaghevam" />
-          <ScalarProperty Name="Vam" ColumnName="Vam" />
-          <ScalarProperty Name="TakBarg" ColumnName="TakBarg" />
-          <ScalarProperty Name="Varaseiye" ColumnName="Varaseiye" />
-          <ScalarProperty Name="Badansazi" ColumnName="Badansazi" />
-          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
-          <ScalarProperty Name="MohavateBaziKodak" ColumnName="MohavateBaziKodak" />
-          <ScalarProperty Name="Labi" ColumnName="Labi" />
-          <ScalarProperty Name="Alachigh" ColumnName="Alachigh" />
-          <ScalarProperty Name="Barbikio" ColumnName="Barbikio" />
-          <ScalarProperty Name="Chiler" ColumnName="Chiler" />
-          <ScalarProperty Name="Roofgarden" ColumnName="Roofgarden" />
-          <ScalarProperty Name="Khabmaster" ColumnName="Khabmaster" />
-          <ScalarProperty Name="Jakozi" ColumnName="Jakozi" />
-          <ScalarProperty Name="Sona" ColumnName="Sona" />
-          <ScalarProperty Name="NSEWID" ColumnName="NSEWID" />
-          <ScalarProperty Name="Hayat" ColumnName="Hayat" />
-          <ScalarProperty Name="Zirzamin" ColumnName="Zirzamin" />
-          <ScalarProperty Name="Estakhr" ColumnName="Estakhr" />
-          <ScalarProperty Name="Balkon" ColumnName="Balkon" />
-          <ScalarProperty Name="MantagheID" ColumnName="MantagheID" />
-          <ScalarProperty Name="MablagheMahane" ColumnName="MablagheMahane" />
-          <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
-          <ScalarProperty Name="Zirbana" ColumnName="Zirbana" />
-          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
-          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
-          <ScalarProperty Name="Tabaghe" ColumnName="Tabaghe" />
-          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
-          <ScalarProperty Name="ServiceKhareji" ColumnName="ServiceKhareji" />
-          <ScalarProperty Name="ServiceIrani" ColumnName="ServiceIrani" />
-          <ScalarProperty Name="OtaghKhab" ColumnName="OtaghKhab" />
-          <ScalarProperty Name="Asansor" ColumnName="Asansor" />
-          <ScalarProperty Name="Parking" ColumnName="Parking" />
-          <ScalarProperty Name="CodeMelk" ColumnName="CodeMelk" />
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-          <ScalarProperty Name="AgahiDetailHomeID" ColumnName="AgahiDetailHomeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiMobCompDetails">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiMobCompDetails">
-        <MappingFragment StoreEntitySet="tblAgahiMobCompDetails">
-          <ScalarProperty Name="CameraMgeaPixel" ColumnName="CameraMgeaPixel" />
-          <ScalarProperty Name="HasCamera" ColumnName="HasCamera" />
-          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
-          <ScalarProperty Name="HasDVDRW" ColumnName="HasDVDRW" />
-          <ScalarProperty Name="HasUSB3" ColumnName="HasUSB3" />
-          <ScalarProperty Name="HasSSD" ColumnName="HasSSD" />
-          <ScalarProperty Name="HasHHD" ColumnName="HasHHD" />
-          <ScalarProperty Name="SSDMeasure" ColumnName="SSDMeasure" />
-          <ScalarProperty Name="HDDMeasure" ColumnName="HDDMeasure" />
-          <ScalarProperty Name="USB3" ColumnName="USB3" />
-          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
-          <ScalarProperty Name="AntiWater" ColumnName="AntiWater" />
-          <ScalarProperty Name="Waranty" ColumnName="Waranty" />
-          <ScalarProperty Name="Garanti" ColumnName="Garanti" />
-          <ScalarProperty Name="AllinOne" ColumnName="AllinOne" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="LabTop" ColumnName="LabTop" />
-          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
-          <ScalarProperty Name="DisplaySize" ColumnName="DisplaySize" />
-          <ScalarProperty Name="Touch" ColumnName="Touch" />
-          <ScalarProperty Name="Four4K" ColumnName="Four4K" />
-          <ScalarProperty Name="LED" ColumnName="LED" />
-          <ScalarProperty Name="LCD" ColumnName="LCD" />
-          <ScalarProperty Name="Graphic" ColumnName="Graphic" />
-          <ScalarProperty Name="Cpu" ColumnName="Cpu" />
-          <ScalarProperty Name="Ram" ColumnName="Ram" />
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-          <ScalarProperty Name="AgahiMobCopID" ColumnName="AgahiMobCopID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiPlans">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiPlans">
-        <MappingFragment StoreEntitySet="tblAgahiPlans">
-          <ScalarProperty Name="NumberDayShow" ColumnName="NumberDayShow" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
-          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblAgahiService">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiService">
-        <MappingFragment StoreEntitySet="tblAgahiService">
-          <ScalarProperty Name="AgahiServiceType" ColumnName="AgahiServiceType" />
-          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblArchiveHashTags">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblArchiveHashTags">
-        <MappingFragment StoreEntitySet="tblArchiveHashTags">
-          <ScalarProperty Name="RepCount" ColumnName="RepCount" />
-          <ScalarProperty Name="CalculateDate" ColumnName="CalculateDate" />
-          <ScalarProperty Name="HashtagID" ColumnName="HashtagID" />
-          <ScalarProperty Name="ArchiveHashtagID" ColumnName="ArchiveHashtagID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblBrands">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrands">
-        <MappingFragment StoreEntitySet="tblBrands">
-          <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
-          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
-          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
-          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblBrandType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrandType">
-        <MappingFragment StoreEntitySet="tblBrandType">
-          <ScalarProperty Name="BrandTypeName" ColumnName="BrandTypeName" />
-          <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarChassis">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarChassis">
-        <MappingFragment StoreEntitySet="tblCarChassis">
-          <ScalarProperty Name="CarChassisTypeName" ColumnName="CarChassisTypeName" />
-          <ScalarProperty Name="CarChassisTypeID" ColumnName="CarChassisTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarConditions">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarConditions">
-        <MappingFragment StoreEntitySet="tblCarConditions">
-          <ScalarProperty Name="CarConditionName" ColumnName="CarConditionName" />
-          <ScalarProperty Name="CarConditionID" ColumnName="CarConditionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarCrash">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarCrash">
-        <MappingFragment StoreEntitySet="tblCarCrash">
-          <ScalarProperty Name="CarCrashType" ColumnName="CarCrashType" />
-          <ScalarProperty Name="CarCrashTypeID" ColumnName="CarCrashTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarMotorHajme">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarMotorHajme">
-        <MappingFragment StoreEntitySet="tblCarMotorHajme">
-          <ScalarProperty Name="HajmCC" ColumnName="HajmCC" />
-          <ScalarProperty Name="HamjName" ColumnName="HamjName" />
-          <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarPelak">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarPelak">
-        <MappingFragment StoreEntitySet="tblCarPelak">
-          <ScalarProperty Name="CarPelakType" ColumnName="CarPelakType" />
-          <ScalarProperty Name="CarPelakTypeID" ColumnName="CarPelakTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarSokht">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSokht">
-        <MappingFragment StoreEntitySet="tblCarSokht">
-          <ScalarProperty Name="SokhName" ColumnName="SokhName" />
-          <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarSopapMotor">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSopapMotor">
-        <MappingFragment StoreEntitySet="tblCarSopapMotor">
-          <ScalarProperty Name="SopapNumber" ColumnName="SopapNumber" />
-          <ScalarProperty Name="SopapName" ColumnName="SopapName" />
-          <ScalarProperty Name="SopapID" ColumnName="SopapID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCarTip">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarTip">
-        <MappingFragment StoreEntitySet="tblCarTip">
-          <ScalarProperty Name="TipName" ColumnName="TipName" />
-          <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCity">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCity">
-        <MappingFragment StoreEntitySet="tblCity">
-          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-          <ScalarProperty Name="CityName" ColumnName="CityName" />
-          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
-          <ScalarProperty Name="CityID" ColumnName="CityID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblCountry">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCountry">
-        <MappingFragment StoreEntitySet="tblCountry">
-          <ScalarProperty Name="GeoRegionID" ColumnName="GeoRegionID" />
-          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
-          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblGeoRegion">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblGeoRegion">
-        <MappingFragment StoreEntitySet="tblGeoRegion">
-          <ScalarProperty Name="GeoTitle" ColumnName="GeoTitle" />
-          <ScalarProperty Name="GeoRegionID" ColumnName="GeoRegionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeGarmayeshType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGarmayeshType">
-        <MappingFragment StoreEntitySet="tblHomeGarmayeshType">
-          <ScalarProperty Name="GarmayeshType" ColumnName="GarmayeshType" />
-          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeGharardad">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGharardad">
-        <MappingFragment StoreEntitySet="tblHomeGharardad">
-          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeJenesKafID">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeJenesKafID">
-        <MappingFragment StoreEntitySet="tblHomeJenesKafID">
-          <ScalarProperty Name="JeneskafName" ColumnName="JeneskafName" />
-          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeMantagheID">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeMantagheID">
-        <MappingFragment StoreEntitySet="tblHomeMantagheID">
-          <ScalarProperty Name="MantagheNumber" ColumnName="MantagheNumber" />
-          <ScalarProperty Name="MantagheID" ColumnName="MantagheID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeMelkType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeMelkType">
-        <MappingFragment StoreEntitySet="tblHomeMelkType">
-          <ScalarProperty Name="MelkType" ColumnName="MelkType" />
-          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblHomeNSEWID">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeNSEWID">
-        <MappingFragment StoreEntitySet="tblHomeNSEWID">
-          <ScalarProperty Name="NSEWName" ColumnName="NSEWName" />
-          <ScalarProperty Name="NSEWID" ColumnName="NSEWID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblJeansBadane">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblJeansBadane">
-        <MappingFragment StoreEntitySet="tblJeansBadane">
-          <ScalarProperty Name="JeansBadaneType" ColumnName="JeansBadaneType" />
-          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblNeighbourhoodRange">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblNeighbourhoodRange">
-        <MappingFragment StoreEntitySet="tblNeighbourhoodRange">
-          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
-          <ScalarProperty Name="NeighbourhoodRangeName" ColumnName="NeighbourhoodRangeName" />
-          <ScalarProperty Name="NeighbourhoodRangeID" ColumnName="NeighbourhoodRangeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblPriceType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblPriceType">
-        <MappingFragment StoreEntitySet="tblPriceType">
-          <ScalarProperty Name="PriceTypeName" ColumnName="PriceTypeName" />
-          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblPrivacyType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblPrivacyType">
-        <MappingFragment StoreEntitySet="tblPrivacyType">
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="PrivacyType" ColumnName="PrivacyType" />
-          <ScalarProperty Name="PrivacyTypeID" ColumnName="PrivacyTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblProvince">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblProvince">
-        <MappingFragment StoreEntitySet="tblProvince">
-          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
-          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblRegions">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblRegions">
-        <MappingFragment StoreEntitySet="tblRegions">
-          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
-          <ScalarProperty Name="CityID" ColumnName="CityID" />
-          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblUserLoginLog">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserLoginLog">
-        <MappingFragment StoreEntitySet="tblUserLoginLog">
-          <ScalarProperty Name="IsCheckPassed" ColumnName="IsCheckPassed" />
-          <ScalarProperty Name="DateLogin" ColumnName="DateLogin" />
-          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
-          <ScalarProperty Name="SMSCodeSent" ColumnName="SMSCodeSent" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="UserLoginLogID" ColumnName="UserLoginLogID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblUsers">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUsers">
-        <MappingFragment StoreEntitySet="tblUsers">
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
-          <ScalarProperty Name="UserType" ColumnName="UserType" />
-          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
-          <ScalarProperty Name="NickName" ColumnName="NickName" />
-          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-          <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
-          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
-          <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
-          <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
-          <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Tell" ColumnName="Tell" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblUserType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserType">
-        <MappingFragment StoreEntitySet="tblUserType">
-          <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
-          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblVam">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblVam">
-        <MappingFragment StoreEntitySet="tblVam">
-          <ScalarProperty Name="VamYear" ColumnName="VamYear" />
-          <ScalarProperty Name="VamDescription" ColumnName="VamDescription" />
-          <ScalarProperty Name="Teadad" ColumnName="Teadad" />
-          <ScalarProperty Name="MahanePrice" ColumnName="MahanePrice" />
-          <ScalarProperty Name="VamID" ColumnName="VamID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_DynamicSearchQuery" FunctionName="DBEWDiGNModel.Store.sp_DynamicSearchQuery" />
     <FunctionImportMapping FunctionImportName="sp_SearchAccessoriesDetails" FunctionName="DBEWDiGNModel.Store.sp_SearchAccessoriesDetails">
       <ResultMapping>
@@ -1000,9 +550,55 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahi">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
+        <MappingFragment StoreEntitySet="tblAgahi">
+          <ScalarProperty Name="AgahiStatusID" ColumnName="AgahiStatusID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="UserAgahiTypeID" ColumnName="UserAgahiTypeID" />
+          <ScalarProperty Name="SpecialAgahi" ColumnName="SpecialAgahi" />
+          <ScalarProperty Name="OnTime" ColumnName="OnTime" />
+          <ScalarProperty Name="Chatable" ColumnName="Chatable" />
+          <ScalarProperty Name="HasImage" ColumnName="HasImage" />
+          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="AgahiStatus" ColumnName="AgahiStatus" />
+          <ScalarProperty Name="AdminAgreeDate" ColumnName="AdminAgreeDate" />
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NewOrUsed" ColumnName="NewOrUsed" />
+          <ScalarProperty Name="AgahiTitle" ColumnName="AgahiTitle" />
+          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
+          <ScalarProperty Name="CategoryAgahiID" ColumnName="CategoryAgahiID" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblAgahiCarDetails">
       <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCarDetails">
         <MappingFragment StoreEntitySet="tblAgahiCarDetails">
+          <ScalarProperty Name="CarCrashTypeID" ColumnName="CarCrashTypeID" />
           <ScalarProperty Name="HasSound" ColumnName="HasSound" />
           <ScalarProperty Name="HasAlarm" ColumnName="HasAlarm" />
           <ScalarProperty Name="CarPelakTypeID" ColumnName="CarPelakTypeID" />
@@ -1011,10 +607,8 @@
           <ScalarProperty Name="CarChassisTypeID" ColumnName="CarChassisTypeID" />
           <ScalarProperty Name="CarConditionID" ColumnName="CarConditionID" />
           <ScalarProperty Name="BrandID" ColumnName="BrandID" />
-          <ScalarProperty Name="VamID" ColumnName="VamID" />
           <ScalarProperty Name="RokeshTypeID" ColumnName="RokeshTypeID" />
           <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
-          <ScalarProperty Name="ChanMaheID" ColumnName="ChanMaheID" />
           <ScalarProperty Name="Mahane" ColumnName="Mahane" />
           <ScalarProperty Name="PishPardakht" ColumnName="PishPardakht" />
           <ScalarProperty Name="SopapID" ColumnName="SopapID" />
@@ -1036,11 +630,163 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tblCarColors">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarColors">
-        <MappingFragment StoreEntitySet="tblCarColors">
-          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
-          <ScalarProperty Name="CarColorID" ColumnName="CarColorID" />
+    <EntitySetMapping Name="tblAgahiCategories">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiCategories">
+        <MappingFragment StoreEntitySet="tblAgahiCategories">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="AgahiCategoryName" ColumnName="AgahiCategoryName" />
+          <ScalarProperty Name="AgahiCategoryID" ColumnName="AgahiCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiFavorite">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiFavorite">
+        <MappingFragment StoreEntitySet="tblAgahiFavorite">
+          <ScalarProperty Name="IsDeteled" ColumnName="IsDeteled" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FavoriteAgahiID" ColumnName="FavoriteAgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiGalleries">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiGalleries">
+        <MappingFragment StoreEntitySet="tblAgahiGalleries">
+          <ScalarProperty Name="ImageAddress" ColumnName="ImageAddress" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiHomeDetail">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiHomeDetail">
+        <MappingFragment StoreEntitySet="tblAgahiHomeDetail">
+          <ScalarProperty Name="AdminDoc" ColumnName="AdminDoc" />
+          <ScalarProperty Name="CitySideTypeID" ColumnName="CitySideTypeID" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
+          <ScalarProperty Name="Mablaghevam" ColumnName="Mablaghevam" />
+          <ScalarProperty Name="Vam" ColumnName="Vam" />
+          <ScalarProperty Name="TakBarg" ColumnName="TakBarg" />
+          <ScalarProperty Name="Varaseiye" ColumnName="Varaseiye" />
+          <ScalarProperty Name="Badansazi" ColumnName="Badansazi" />
+          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
+          <ScalarProperty Name="MohavateBaziKodak" ColumnName="MohavateBaziKodak" />
+          <ScalarProperty Name="Labi" ColumnName="Labi" />
+          <ScalarProperty Name="Alachigh" ColumnName="Alachigh" />
+          <ScalarProperty Name="Barbikio" ColumnName="Barbikio" />
+          <ScalarProperty Name="Chiler" ColumnName="Chiler" />
+          <ScalarProperty Name="Roofgarden" ColumnName="Roofgarden" />
+          <ScalarProperty Name="Khabmaster" ColumnName="Khabmaster" />
+          <ScalarProperty Name="Jakozi" ColumnName="Jakozi" />
+          <ScalarProperty Name="Sona" ColumnName="Sona" />
+          <ScalarProperty Name="NSEWID" ColumnName="NSEWID" />
+          <ScalarProperty Name="Hayat" ColumnName="Hayat" />
+          <ScalarProperty Name="Zirzamin" ColumnName="Zirzamin" />
+          <ScalarProperty Name="Estakhr" ColumnName="Estakhr" />
+          <ScalarProperty Name="Balkon" ColumnName="Balkon" />
+          <ScalarProperty Name="MablagheMahane" ColumnName="MablagheMahane" />
+          <ScalarProperty Name="MablagheKole" ColumnName="MablagheKole" />
+          <ScalarProperty Name="Zirbana" ColumnName="Zirbana" />
+          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
+          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
+          <ScalarProperty Name="Tabaghe" ColumnName="Tabaghe" />
+          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+          <ScalarProperty Name="ServiceKhareji" ColumnName="ServiceKhareji" />
+          <ScalarProperty Name="ServiceIrani" ColumnName="ServiceIrani" />
+          <ScalarProperty Name="OtaghKhab" ColumnName="OtaghKhab" />
+          <ScalarProperty Name="Asansor" ColumnName="Asansor" />
+          <ScalarProperty Name="Parking" ColumnName="Parking" />
+          <ScalarProperty Name="CodeMelk" ColumnName="CodeMelk" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="AgahiDetailHomeID" ColumnName="AgahiDetailHomeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiMobCompDetails">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiMobCompDetails">
+        <MappingFragment StoreEntitySet="tblAgahiMobCompDetails">
+          <ScalarProperty Name="CameraMgeaPixel" ColumnName="CameraMgeaPixel" />
+          <ScalarProperty Name="HasCamera" ColumnName="HasCamera" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="HasDVDRW" ColumnName="HasDVDRW" />
+          <ScalarProperty Name="HasUSB3" ColumnName="HasUSB3" />
+          <ScalarProperty Name="HasSSD" ColumnName="HasSSD" />
+          <ScalarProperty Name="HasHHD" ColumnName="HasHHD" />
+          <ScalarProperty Name="SSDMeasure" ColumnName="SSDMeasure" />
+          <ScalarProperty Name="HDDMeasure" ColumnName="HDDMeasure" />
+          <ScalarProperty Name="USB3" ColumnName="USB3" />
+          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
+          <ScalarProperty Name="AntiWater" ColumnName="AntiWater" />
+          <ScalarProperty Name="Waranty" ColumnName="Waranty" />
+          <ScalarProperty Name="Garanti" ColumnName="Garanti" />
+          <ScalarProperty Name="AllinOne" ColumnName="AllinOne" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="LabTop" ColumnName="LabTop" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          <ScalarProperty Name="DisplaySize" ColumnName="DisplaySize" />
+          <ScalarProperty Name="Touch" ColumnName="Touch" />
+          <ScalarProperty Name="Four4K" ColumnName="Four4K" />
+          <ScalarProperty Name="LED" ColumnName="LED" />
+          <ScalarProperty Name="LCD" ColumnName="LCD" />
+          <ScalarProperty Name="Graphic" ColumnName="Graphic" />
+          <ScalarProperty Name="Cpu" ColumnName="Cpu" />
+          <ScalarProperty Name="Ram" ColumnName="Ram" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="AgahiMobCopID" ColumnName="AgahiMobCopID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiPlans">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiPlans">
+        <MappingFragment StoreEntitySet="tblAgahiPlans">
+          <ScalarProperty Name="NumberDayShow" ColumnName="NumberDayShow" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="PlanShowAgahiID" ColumnName="PlanShowAgahiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiService">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiService">
+        <MappingFragment StoreEntitySet="tblAgahiService">
+          <ScalarProperty Name="AgahiServiceType" ColumnName="AgahiServiceType" />
+          <ScalarProperty Name="AgahiServiceID" ColumnName="AgahiServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiStatus">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiStatus">
+        <MappingFragment StoreEntitySet="tblAgahiStatus">
+          <ScalarProperty Name="AgahiStatusName" ColumnName="AgahiStatusName" />
+          <ScalarProperty Name="AgahiStatusID" ColumnName="AgahiStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAgahiType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahiType">
+        <MappingFragment StoreEntitySet="tblAgahiType">
+          <ScalarProperty Name="AgahiTypeName" ColumnName="AgahiTypeName" />
+          <ScalarProperty Name="AgahiTypeID" ColumnName="AgahiTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBrands">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrands">
+        <MappingFragment StoreEntitySet="tblBrands">
+          <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
+          <ScalarProperty Name="ParrentID" ColumnName="ParrentID" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBrandType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblBrandType">
+        <MappingFragment StoreEntitySet="tblBrandType">
+          <ScalarProperty Name="BrandTypeName" ColumnName="BrandTypeName" />
+          <ScalarProperty Name="BrandTypeID" ColumnName="BrandTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1061,6 +807,235 @@
           <ScalarProperty Name="TwoLakeRang" ColumnName="TwoLakeRang" />
           <ScalarProperty Name="OneLakeRang" ColumnName="OneLakeRang" />
           <ScalarProperty Name="CarBodyStatusID" ColumnName="CarBodyStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarChassis">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarChassis">
+        <MappingFragment StoreEntitySet="tblCarChassis">
+          <ScalarProperty Name="CarChassisTypeName" ColumnName="CarChassisTypeName" />
+          <ScalarProperty Name="CarChassisTypeID" ColumnName="CarChassisTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarColors">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarColors">
+        <MappingFragment StoreEntitySet="tblCarColors">
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="CarColorID" ColumnName="CarColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarConditions">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarConditions">
+        <MappingFragment StoreEntitySet="tblCarConditions">
+          <ScalarProperty Name="CarConditionName" ColumnName="CarConditionName" />
+          <ScalarProperty Name="CarConditionID" ColumnName="CarConditionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarCrash">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarCrash">
+        <MappingFragment StoreEntitySet="tblCarCrash">
+          <ScalarProperty Name="CarCrashType" ColumnName="CarCrashType" />
+          <ScalarProperty Name="CarCrashTypeID" ColumnName="CarCrashTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarMotorHajme">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarMotorHajme">
+        <MappingFragment StoreEntitySet="tblCarMotorHajme">
+          <ScalarProperty Name="HajmCC" ColumnName="HajmCC" />
+          <ScalarProperty Name="HamjName" ColumnName="HamjName" />
+          <ScalarProperty Name="MotorHajmID" ColumnName="MotorHajmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarPelak">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarPelak">
+        <MappingFragment StoreEntitySet="tblCarPelak">
+          <ScalarProperty Name="CarPelakType" ColumnName="CarPelakType" />
+          <ScalarProperty Name="CarPelakTypeID" ColumnName="CarPelakTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarSokht">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSokht">
+        <MappingFragment StoreEntitySet="tblCarSokht">
+          <ScalarProperty Name="SokhName" ColumnName="SokhName" />
+          <ScalarProperty Name="SokhtID" ColumnName="SokhtID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarSopapMotor">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarSopapMotor">
+        <MappingFragment StoreEntitySet="tblCarSopapMotor">
+          <ScalarProperty Name="SopapNumber" ColumnName="SopapNumber" />
+          <ScalarProperty Name="SopapName" ColumnName="SopapName" />
+          <ScalarProperty Name="SopapID" ColumnName="SopapID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarTip">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCarTip">
+        <MappingFragment StoreEntitySet="tblCarTip">
+          <ScalarProperty Name="TipName" ColumnName="TipName" />
+          <ScalarProperty Name="CarTipID" ColumnName="CarTipID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCity">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCountry">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblCountry">
+        <MappingFragment StoreEntitySet="tblCountry">
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeGarmayeshType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGarmayeshType">
+        <MappingFragment StoreEntitySet="tblHomeGarmayeshType">
+          <ScalarProperty Name="GarmayeshType" ColumnName="GarmayeshType" />
+          <ScalarProperty Name="GarmayeshTypeID" ColumnName="GarmayeshTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeGharardad">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeGharardad">
+        <MappingFragment StoreEntitySet="tblHomeGharardad">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="GharardadTypeID" ColumnName="GharardadTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeJenesKafID">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeJenesKafID">
+        <MappingFragment StoreEntitySet="tblHomeJenesKafID">
+          <ScalarProperty Name="JeneskafName" ColumnName="JeneskafName" />
+          <ScalarProperty Name="JeneskafID" ColumnName="JeneskafID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHomeMelkType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblHomeMelkType">
+        <MappingFragment StoreEntitySet="tblHomeMelkType">
+          <ScalarProperty Name="MelkType" ColumnName="MelkType" />
+          <ScalarProperty Name="MelkTypeID" ColumnName="MelkTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJeansBadane">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblJeansBadane">
+        <MappingFragment StoreEntitySet="tblJeansBadane">
+          <ScalarProperty Name="JeansBadaneType" ColumnName="JeansBadaneType" />
+          <ScalarProperty Name="JeansBadaneID" ColumnName="JeansBadaneID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPriceType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblPriceType">
+        <MappingFragment StoreEntitySet="tblPriceType">
+          <ScalarProperty Name="PriceTypeName" ColumnName="PriceTypeName" />
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProvince">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblProvince">
+        <MappingFragment StoreEntitySet="tblProvince">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRegions">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblRegions">
+        <MappingFragment StoreEntitySet="tblRegions">
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserAgahiStatus">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserAgahiStatus">
+        <MappingFragment StoreEntitySet="tblUserAgahiStatus">
+          <ScalarProperty Name="AgahiStatusID" ColumnName="AgahiStatusID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="UserAgahiStatusID" ColumnName="UserAgahiStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLoginStatus">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserLoginStatus">
+        <MappingFragment StoreEntitySet="tblUserLoginStatus">
+          <ScalarProperty Name="SMSSent" ColumnName="SMSSent" />
+          <ScalarProperty Name="IsCheckPassed" ColumnName="IsCheckPassed" />
+          <ScalarProperty Name="DateLogin" ColumnName="DateLogin" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+          <ScalarProperty Name="SMSCodeSent" ColumnName="SMSCodeSent" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserLoginLogID" ColumnName="UserLoginLogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUsers">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="BussinessFieldID" ColumnName="BussinessFieldID" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="PersonelImageUrl" ColumnName="PersonelImageUrl" />
+          <ScalarProperty Name="UserLinkPage" ColumnName="UserLinkPage" />
+          <ScalarProperty Name="SecondryPass" ColumnName="SecondryPass" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserType">
+        <MappingFragment StoreEntitySet="tblUserType">
+          <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVam">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblVam">
+        <MappingFragment StoreEntitySet="tblVam">
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="VamYear" ColumnName="VamYear" />
+          <ScalarProperty Name="VamDescription" ColumnName="VamDescription" />
+          <ScalarProperty Name="Teadad" ColumnName="Teadad" />
+          <ScalarProperty Name="MahanePrice" ColumnName="MahanePrice" />
+          <ScalarProperty Name="VamID" ColumnName="VamID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

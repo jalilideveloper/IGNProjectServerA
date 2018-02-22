@@ -32,10 +32,8 @@ namespace iGNProject.Models
         public Nullable<int> SopapID { get; set; }
         public Nullable<decimal> PishPardakht { get; set; }
         public Nullable<decimal> Mahane { get; set; }
-        public Nullable<int> ChanMaheID { get; set; }
         public Nullable<decimal> MablagheKole { get; set; }
         public Nullable<int> RokeshTypeID { get; set; }
-        public Nullable<int> VamID { get; set; }
         public Nullable<int> BrandID { get; set; }
         public Nullable<int> CarConditionID { get; set; }
         public Nullable<int> CarChassisTypeID { get; set; }
@@ -44,14 +42,20 @@ namespace iGNProject.Models
         public Nullable<int> CarPelakTypeID { get; set; }
         public Nullable<bool> HasAlarm { get; set; }
         public Nullable<bool> HasSound { get; set; }
+        public Nullable<int> CarCrashTypeID { get; set; }
     
         public virtual tblAgahi tblAgahi { get; set; }
+        public virtual tblBrands tblBrands { get; set; }
+        public virtual tblCarBodyStatus tblCarBodyStatus { get; set; }
+        public virtual tblCarChassis tblCarChassis { get; set; }
         public virtual tblCarColors tblCarColors { get; set; }
         public virtual tblCarColors tblCarColors1 { get; set; }
+        public virtual tblCarConditions tblCarConditions { get; set; }
+        public virtual tblCarCrash tblCarCrash { get; set; }
         public virtual tblCarMotorHajme tblCarMotorHajme { get; set; }
+        public virtual tblCarPelak tblCarPelak { get; set; }
         public virtual tblCarSokht tblCarSokht { get; set; }
         public virtual tblCarSopapMotor tblCarSopapMotor { get; set; }
         public virtual tblCarTip tblCarTip { get; set; }
-        public virtual tblCarBodyStatus tblCarBodyStatus { get; set; }
     }
 }

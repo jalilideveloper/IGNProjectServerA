@@ -12,10 +12,16 @@ namespace iGNProject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblNeighbourhoodRange
+    public partial class tblUserAgahiStatus
     {
-        public int NeighbourhoodRangeID { get; set; }
-        public string NeighbourhoodRangeName { get; set; }
-        public Nullable<int> ProvinceID { get; set; }
+        public int UserAgahiStatusID { get; set; }
+        public Nullable<int> AgahiID { get; set; }
+        public Nullable<System.DateTime> Datetime { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public Nullable<int> AgahiStatusID { get; set; }
+    
+        public virtual tblAgahi tblAgahi { get; set; }
+        public virtual tblAgahiStatus tblAgahiStatus { get; set; }
+        public virtual tblUsers tblUsers { get; set; }
     }
 }

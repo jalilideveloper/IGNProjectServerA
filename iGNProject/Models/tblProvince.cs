@@ -18,12 +18,17 @@ namespace iGNProject.Models
         public tblProvince()
         {
             this.tblAgahi = new HashSet<tblAgahi>();
+            this.tblCity = new HashSet<tblCity>();
         }
     
         public int ProvinceID { get; set; }
         public string ProvinceName { get; set; }
+        public Nullable<int> CountryID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahi> tblAgahi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblCity> tblCity { get; set; }
+        public virtual tblCountry tblCountry { get; set; }
     }
 }

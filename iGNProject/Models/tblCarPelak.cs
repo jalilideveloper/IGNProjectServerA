@@ -14,7 +14,16 @@ namespace iGNProject.Models
     
     public partial class tblCarPelak
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblCarPelak()
+        {
+            this.tblAgahiCarDetails = new HashSet<tblAgahiCarDetails>();
+        }
+    
         public int CarPelakTypeID { get; set; }
         public string CarPelakType { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
     }
 }

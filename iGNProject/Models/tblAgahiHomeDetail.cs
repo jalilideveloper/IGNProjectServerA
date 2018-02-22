@@ -29,7 +29,6 @@ namespace iGNProject.Models
         public Nullable<int> Zirbana { get; set; }
         public Nullable<decimal> MablagheKole { get; set; }
         public Nullable<decimal> MablagheMahane { get; set; }
-        public Nullable<int> MantagheID { get; set; }
         public Nullable<bool> Balkon { get; set; }
         public Nullable<bool> Estakhr { get; set; }
         public Nullable<bool> Zirzamin { get; set; }
@@ -59,8 +58,6 @@ namespace iGNProject.Models
         public virtual tblHomeGarmayeshType tblHomeGarmayeshType { get; set; }
         public virtual tblHomeGharardad tblHomeGharardad { get; set; }
         public virtual tblHomeJenesKafID tblHomeJenesKafID { get; set; }
-        public virtual tblHomeMantagheID tblHomeMantagheID { get; set; }
         public virtual tblHomeMelkType tblHomeMelkType { get; set; }
-        public virtual tblHomeNSEWID tblHomeNSEWID { get; set; }
     }
 }

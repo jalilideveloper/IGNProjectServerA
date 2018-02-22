@@ -23,8 +23,8 @@ namespace iGNProject.Models
         public int CityID { get; set; }
         public Nullable<int> ProvinceId { get; set; }
         public string CityName { get; set; }
-        public Nullable<int> CountryID { get; set; }
     
+        public virtual tblProvince tblProvince { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblRegions> tblRegions { get; set; }
     }

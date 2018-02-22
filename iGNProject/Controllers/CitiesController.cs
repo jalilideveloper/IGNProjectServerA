@@ -19,14 +19,14 @@ namespace iGNProject.Controllers
         // GET: api/tblCities
         public IHttpActionResult GettblCity()
         {
-            return Json(db.tblCity.Select(p => new { p.CityID, p.CityName, p.CountryID, p.ProvinceId }).ToList());
+            return Json(db.tblCity.Select(p => new { p.CityID, p.CityName, p.ProvinceId }).ToList());
         }
 
         // GET: api/tblCities/5
         [ResponseType(typeof(tblCity))]
         public IHttpActionResult GettblCity(int id)
         {
-            var tblCity = db.tblCity.Where(p => p.ProvinceId == id).Select(p=> new {p.CityID,p.CityName,p.CountryID,p.ProvinceId }).ToList() ;
+            var tblCity = db.tblCity.Where(p => p.ProvinceId == id).Select(p=> new {p.CityID,p.CityName,p.ProvinceId }).ToList() ;
             if (tblCity == null)
             {
                 return NotFound();
