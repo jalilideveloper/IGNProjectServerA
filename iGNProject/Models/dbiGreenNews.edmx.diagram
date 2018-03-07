@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cd6d8a4dacf04fffb781fa4d7a86f5fc" Name="Diagram1" ZoomLevel="96">
-        <EntityTypeShape EntityType="DBEWDiGNModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.sysdiagrams" Width="1.5" PointX="5.125" PointY="8.125" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahi" Width="1.5" PointX="8.25" PointY="19.375" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCarDetails" Width="1.5" PointX="10.5" PointY="19.375" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCategories" Width="1.5" PointX="6" PointY="20" />

@@ -991,6 +991,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblUserType">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserType">
+        <MappingFragment StoreEntitySet="tblUserType">
+          <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVam">
+      <EntityTypeMapping TypeName="DBEWDiGNModel.tblVam">
+        <MappingFragment StoreEntitySet="tblVam">
+          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
+          <ScalarProperty Name="VamYear" ColumnName="VamYear" />
+          <ScalarProperty Name="VamDescription" ColumnName="VamDescription" />
+          <ScalarProperty Name="Teadad" ColumnName="Teadad" />
+          <ScalarProperty Name="MahanePrice" ColumnName="MahanePrice" />
+          <ScalarProperty Name="VamID" ColumnName="VamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblUsers">
       <EntityTypeMapping TypeName="DBEWDiGNModel.tblUsers">
         <MappingFragment StoreEntitySet="tblUsers">
@@ -1016,26 +1036,6 @@
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblUserType">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblUserType">
-        <MappingFragment StoreEntitySet="tblUserType">
-          <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
-          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tblVam">
-      <EntityTypeMapping TypeName="DBEWDiGNModel.tblVam">
-        <MappingFragment StoreEntitySet="tblVam">
-          <ScalarProperty Name="AgahiID" ColumnName="AgahiID" />
-          <ScalarProperty Name="VamYear" ColumnName="VamYear" />
-          <ScalarProperty Name="VamDescription" ColumnName="VamDescription" />
-          <ScalarProperty Name="Teadad" ColumnName="Teadad" />
-          <ScalarProperty Name="MahanePrice" ColumnName="MahanePrice" />
-          <ScalarProperty Name="VamID" ColumnName="VamID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

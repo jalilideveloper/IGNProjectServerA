@@ -79,6 +79,8 @@ namespace iGNProject.Controllers
                 return BadRequest(ModelState);
             }
 
+
+
             db.tblAgahi.Add(tblAgahi);
             db.SaveChanges();
 

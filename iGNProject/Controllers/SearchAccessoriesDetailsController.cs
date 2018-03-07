@@ -81,8 +81,9 @@ namespace iGNProject.Controllers
                                   HasImage = p.HasImage,Price = p.Price,LanguageID = p.LanguageID,Location = p.Location ,Mobile = p.Mobile,OnTime = p.OnTime,PriceTypeID = p.PriceTypeID,ProvinceID = p.ProvinceID,
                                   RegionID = p.RegionID,RegisterDate = p.RegisterDate,SpecialAgahi = p.SpecialAgahi,Tell = p.Tell,UserID = p.UserID}).ToList<Agahi>();
                 return Json(studentList);
-
                 
+
+
             }
 
        

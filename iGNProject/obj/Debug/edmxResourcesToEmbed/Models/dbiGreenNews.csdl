@@ -771,7 +771,6 @@
     <EntitySet Name="tblRegions" EntityType="DBEWDiGNModel.tblRegions" />
     <EntitySet Name="tblUserAgahiStatus" EntityType="DBEWDiGNModel.tblUserAgahiStatus" />
     <EntitySet Name="tblUserLoginStatus" EntityType="DBEWDiGNModel.tblUserLoginStatus" />
-    <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
     <EntitySet Name="tblUserType" EntityType="DBEWDiGNModel.tblUserType" />
     <EntitySet Name="tblVam" EntityType="DBEWDiGNModel.tblVam" />
     <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
@@ -800,10 +799,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahi_tblUserAgahiType" Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType">
       <End Role="tblAgahiType" EntitySet="tblAgahiType" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="DBEWDiGNModel.FK_tblAgahi_tblUsers">
-      <End Role="tblUsers" EntitySet="tblUsers" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi">
@@ -925,6 +920,11 @@
     <AssociationSet Name="FK_tblProvince_tblCountry" Association="DBEWDiGNModel.FK_tblProvince_tblCountry">
       <End Role="tblCountry" EntitySet="tblCountry" />
       <End Role="tblProvince" EntitySet="tblProvince" />
+    </AssociationSet>
+    <EntitySet Name="tblUsers" EntityType="DBEWDiGNModel.tblUsers" />
+    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="DBEWDiGNModel.FK_tblAgahi_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
     <AssociationSet Name="FK_tblUserAgahiStatus_tblUsers" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers">
       <End Role="tblUsers" EntitySet="tblUsers" />
@@ -2036,7 +2036,6 @@
     <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblAgahi" ToRole="tblProvince" />
     <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblAgahi" ToRole="tblRegions" />
     <NavigationProperty Name="tblAgahiType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" FromRole="tblAgahi" ToRole="tblAgahiType" />
-    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblAgahi" ToRole="tblUsers" />
     <NavigationProperty Name="tblAgahiHomeDetail" Relationship="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiHomeDetail" />
     <NavigationProperty Name="tblAgahiFavorite" Relationship="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiFavorite" />
     <NavigationProperty Name="tblAgahiGalleries" Relationship="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiGalleries" />
@@ -2044,6 +2043,7 @@
     <NavigationProperty Name="tblAgahiCarDetails" Relationship="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" FromRole="tblAgahi" ToRole="tblAgahiCarDetails" />
     <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi" FromRole="tblAgahi" ToRole="tblUserAgahiStatus" />
     <NavigationProperty Name="tblVam" Relationship="DBEWDiGNModel.FK_tblVam_tblAgahi" FromRole="tblAgahi" ToRole="tblVam" />
+    <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblAgahi" ToRole="tblUsers" />
   </EntityType>
   <EntityType Name="tblAgahiCarDetails">
     <Key>
@@ -2468,37 +2468,6 @@
     <Property Name="SMSSent" Type="Boolean" />
     <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" FromRole="tblUserLoginStatus" ToRole="tblUsers" />
   </EntityType>
-  <EntityType Name="tblUsers">
-    <Key>
-      <PropertyRef Name="UserID" />
-    </Key>
-    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
-    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="LanguageID" Type="Int32" />
-    <Property Name="LocationID" Type="Int32" />
-    <Property Name="IsDeleted" Type="Boolean" />
-    <Property Name="UserTypeID" Type="Int32" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblUsers" ToRole="tblAgahi" />
-    <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserAgahiStatus" />
-    <NavigationProperty Name="tblUserLoginStatus" Relationship="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginStatus" />
-    <NavigationProperty Name="tblUserType" Relationship="DBEWDiGNModel.FK_tblUsers_tblUserType" FromRole="tblUsers" ToRole="tblUserType" />
-  </EntityType>
   <EntityType Name="tblUserType">
     <Key>
       <PropertyRef Name="UserTypeID" />
@@ -2600,18 +2569,6 @@
       </Principal>
       <Dependent Role="tblAgahi">
         <PropertyRef Name="UserAgahiTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblUsers">
-    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblUsers">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -2972,6 +2929,49 @@
       </Principal>
       <Dependent Role="tblProvince">
         <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecondryPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserLinkPage" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelImageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NationalityID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BussinessFieldID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UserTypeID" Type="Int32" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblUsers" ToRole="tblAgahi" />
+    <NavigationProperty Name="tblUserAgahiStatus" Relationship="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserAgahiStatus" />
+    <NavigationProperty Name="tblUserLoginStatus" Relationship="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" FromRole="tblUsers" ToRole="tblUserLoginStatus" />
+    <NavigationProperty Name="tblUserType" Relationship="DBEWDiGNModel.FK_tblUsers_tblUserType" FromRole="tblUsers" ToRole="tblUserType" />
+  </EntityType>
+  <Association Name="FK_tblAgahi_tblUsers">
+    <End Type="DBEWDiGNModel.tblUsers" Role="tblUsers" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
