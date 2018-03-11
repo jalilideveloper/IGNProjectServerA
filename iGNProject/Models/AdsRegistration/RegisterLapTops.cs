@@ -41,7 +41,7 @@ namespace iGNProject.Models.AdsRegistration
         public int KindTotalPriceID { get; set; }
         public decimal TotalPrice { get; set; }
         public int BrandID { get; set; }
-        public int KindColor { get; set; }
+        public int KindColorID { get; set; }
         public int KindSizeScreen { get; set; }
         public int KindTouch { get; set; }
         public int MeasureRAM { get; set; }
