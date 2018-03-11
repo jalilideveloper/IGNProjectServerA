@@ -448,7 +448,7 @@
     <Compile Include="Models\LatestNewsOrderByViewNumber_Result.cs">
       <DependentUpon>dbiGreenNews.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegisterAccessoriesDetailsController.cs" />
+    <Compile Include="Controllers\RegisterAccessoriesDetailsController.cs" />
     <Compile Include="Models\RelApiClass\Agahi.cs" />
     <Compile Include="Models\Search\SearchAccessoriesDetails.cs" />
     <Compile Include="Models\Search\SearchAllAgahis.cs" />

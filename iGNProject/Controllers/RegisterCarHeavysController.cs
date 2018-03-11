@@ -25,6 +25,8 @@ namespace iGNProject.Controllers
         // POST: api/RegisterCarHeavys
         public void Post(RegisterCarHeavys value)
         {
+
+
         }
 
         // PUT: api/RegisterCarHeavys/5

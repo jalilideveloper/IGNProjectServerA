@@ -28,7 +28,6 @@ namespace iGNProject.Models
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<tblAgahi> tblAgahi { get; set; }
         public virtual DbSet<tblAgahiCarDetails> tblAgahiCarDetails { get; set; }
         public virtual DbSet<tblAgahiCategories> tblAgahiCategories { get; set; }
         public virtual DbSet<tblAgahiFavorite> tblAgahiFavorite { get; set; }
@@ -66,6 +65,7 @@ namespace iGNProject.Models
         public virtual DbSet<tblUserType> tblUserType { get; set; }
         public virtual DbSet<tblVam> tblVam { get; set; }
         public virtual DbSet<tblUsers> tblUsers { get; set; }
+        public virtual DbSet<tblAgahi> tblAgahi { get; set; }
     
         public virtual ObjectResult<CheckUserPass_Result> CheckUserPass(string userName, string password)
         {
@@ -2606,6 +2606,156 @@ namespace iGNProject.Models
                 new ObjectParameter("FromTotalPrice", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchVehicleAccessoriess_Result>("sp_SearchVehicleAccessoriess", categoryIDParameter, searchInputParameter, shahrSelectIDParameter, mahaleSelectParameter, hasImageParameter, hasFastParameter, kindParameter, kindTotalPriceParameter, untillTotalPriceParameter, fromTotalPriceParameter);
+        }
+    
+        public virtual int sp_AddAgahi(Nullable<int> categoryID, Nullable<int> agahiServiceID, string agahiTitle, Nullable<bool> newOrUsed, string description, string keyword, string registerDate, Nullable<int> userID, Nullable<int> adminUserID, Nullable<System.DateTime> adminAgreeDate, Nullable<byte> agahiStatus, System.Data.Entity.Spatial.DbGeography location, Nullable<int> provinceID, Nullable<int> regionID, string tell, string mobile, Nullable<int> priceTypeID, Nullable<decimal> price, Nullable<int> planShowAgahiID, Nullable<bool> hasImage, Nullable<bool> chatable, string onTime, Nullable<bool> specialAgahi, Nullable<int> userAgahiTypeID, Nullable<int> languageID, Nullable<int> agahiStatusID, string imageOne, string imageTwo, string imageThree, string imageFour, ObjectParameter iDs)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var agahiServiceIDParameter = agahiServiceID.HasValue ?
+                new ObjectParameter("AgahiServiceID", agahiServiceID) :
+                new ObjectParameter("AgahiServiceID", typeof(int));
+    
+            var agahiTitleParameter = agahiTitle != null ?
+                new ObjectParameter("AgahiTitle", agahiTitle) :
+                new ObjectParameter("AgahiTitle", typeof(string));
+    
+            var newOrUsedParameter = newOrUsed.HasValue ?
+                new ObjectParameter("NewOrUsed", newOrUsed) :
+                new ObjectParameter("NewOrUsed", typeof(bool));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var keywordParameter = keyword != null ?
+                new ObjectParameter("Keyword", keyword) :
+                new ObjectParameter("Keyword", typeof(string));
+    
+            var registerDateParameter = registerDate != null ?
+                new ObjectParameter("RegisterDate", registerDate) :
+                new ObjectParameter("RegisterDate", typeof(string));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var adminUserIDParameter = adminUserID.HasValue ?
+                new ObjectParameter("AdminUserID", adminUserID) :
+                new ObjectParameter("AdminUserID", typeof(int));
+    
+            var adminAgreeDateParameter = adminAgreeDate.HasValue ?
+                new ObjectParameter("AdminAgreeDate", adminAgreeDate) :
+                new ObjectParameter("AdminAgreeDate", typeof(System.DateTime));
+    
+            var agahiStatusParameter = agahiStatus.HasValue ?
+                new ObjectParameter("AgahiStatus", agahiStatus) :
+                new ObjectParameter("AgahiStatus", typeof(byte));
+    
+            var locationParameter = location != null ?
+                new ObjectParameter("Location", location) :
+                new ObjectParameter("Location", typeof(System.Data.Entity.Spatial.DbGeography));
+    
+            var provinceIDParameter = provinceID.HasValue ?
+                new ObjectParameter("ProvinceID", provinceID) :
+                new ObjectParameter("ProvinceID", typeof(int));
+    
+            var regionIDParameter = regionID.HasValue ?
+                new ObjectParameter("RegionID", regionID) :
+                new ObjectParameter("RegionID", typeof(int));
+    
+            var tellParameter = tell != null ?
+                new ObjectParameter("Tell", tell) :
+                new ObjectParameter("Tell", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("Mobile", mobile) :
+                new ObjectParameter("Mobile", typeof(string));
+    
+            var priceTypeIDParameter = priceTypeID.HasValue ?
+                new ObjectParameter("PriceTypeID", priceTypeID) :
+                new ObjectParameter("PriceTypeID", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("Price", price) :
+                new ObjectParameter("Price", typeof(decimal));
+    
+            var planShowAgahiIDParameter = planShowAgahiID.HasValue ?
+                new ObjectParameter("PlanShowAgahiID", planShowAgahiID) :
+                new ObjectParameter("PlanShowAgahiID", typeof(int));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var chatableParameter = chatable.HasValue ?
+                new ObjectParameter("Chatable", chatable) :
+                new ObjectParameter("Chatable", typeof(bool));
+    
+            var onTimeParameter = onTime != null ?
+                new ObjectParameter("OnTime", onTime) :
+                new ObjectParameter("OnTime", typeof(string));
+    
+            var specialAgahiParameter = specialAgahi.HasValue ?
+                new ObjectParameter("SpecialAgahi", specialAgahi) :
+                new ObjectParameter("SpecialAgahi", typeof(bool));
+    
+            var userAgahiTypeIDParameter = userAgahiTypeID.HasValue ?
+                new ObjectParameter("UserAgahiTypeID", userAgahiTypeID) :
+                new ObjectParameter("UserAgahiTypeID", typeof(int));
+    
+            var languageIDParameter = languageID.HasValue ?
+                new ObjectParameter("LanguageID", languageID) :
+                new ObjectParameter("LanguageID", typeof(int));
+    
+            var agahiStatusIDParameter = agahiStatusID.HasValue ?
+                new ObjectParameter("AgahiStatusID", agahiStatusID) :
+                new ObjectParameter("AgahiStatusID", typeof(int));
+    
+            var imageOneParameter = imageOne != null ?
+                new ObjectParameter("imageOne", imageOne) :
+                new ObjectParameter("imageOne", typeof(string));
+    
+            var imageTwoParameter = imageTwo != null ?
+                new ObjectParameter("imageTwo", imageTwo) :
+                new ObjectParameter("imageTwo", typeof(string));
+    
+            var imageThreeParameter = imageThree != null ?
+                new ObjectParameter("imageThree", imageThree) :
+                new ObjectParameter("imageThree", typeof(string));
+    
+            var imageFourParameter = imageFour != null ?
+                new ObjectParameter("imageFour", imageFour) :
+                new ObjectParameter("imageFour", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddAgahi", categoryIDParameter, agahiServiceIDParameter, agahiTitleParameter, newOrUsedParameter, descriptionParameter, keywordParameter, registerDateParameter, userIDParameter, adminUserIDParameter, adminAgreeDateParameter, agahiStatusParameter, locationParameter, provinceIDParameter, regionIDParameter, tellParameter, mobileParameter, priceTypeIDParameter, priceParameter, planShowAgahiIDParameter, hasImageParameter, chatableParameter, onTimeParameter, specialAgahiParameter, userAgahiTypeIDParameter, languageIDParameter, agahiStatusIDParameter, imageOneParameter, imageTwoParameter, imageThreeParameter, imageFourParameter, iDs);
+        }
+    
+        public virtual int sp_AddAgahiGalleries(Nullable<int> agahiID, string imageOne, string imageTwo, string imageThree, string imageFour)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var imageOneParameter = imageOne != null ?
+                new ObjectParameter("imageOne", imageOne) :
+                new ObjectParameter("imageOne", typeof(string));
+    
+            var imageTwoParameter = imageTwo != null ?
+                new ObjectParameter("imageTwo", imageTwo) :
+                new ObjectParameter("imageTwo", typeof(string));
+    
+            var imageThreeParameter = imageThree != null ?
+                new ObjectParameter("imageThree", imageThree) :
+                new ObjectParameter("imageThree", typeof(string));
+    
+            var imageFourParameter = imageFour != null ?
+                new ObjectParameter("imageFour", imageFour) :
+                new ObjectParameter("imageFour", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddAgahiGalleries", agahiIDParameter, imageOneParameter, imageTwoParameter, imageThreeParameter, imageFourParameter);
         }
     }
 }

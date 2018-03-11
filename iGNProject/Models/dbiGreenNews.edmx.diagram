@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="cd6d8a4dacf04fffb781fa4d7a86f5fc" Name="Diagram1" ZoomLevel="96">
         <EntityTypeShape EntityType="DBEWDiGNModel.sysdiagrams" Width="1.5" PointX="5.125" PointY="8.125" />
-        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahi" Width="1.5" PointX="8.25" PointY="19.375" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCarDetails" Width="1.5" PointX="10.5" PointY="19.375" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiCategories" Width="1.5" PointX="6" PointY="20" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahiFavorite" Width="1.5" PointX="10.5" PointY="51.25" />
@@ -43,20 +42,6 @@
         <EntityTypeShape EntityType="DBEWDiGNModel.tblUserLoginStatus" Width="1.5" PointX="5.25" PointY="22.625" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblUserType" Width="1.5" PointX="0.75" PointY="23.125" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblVam" Width="1.5" PointX="10.5" PointY="54" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblProvince" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblRegions" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblVam_tblAgahi" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblBrands" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarBodyStatus" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiCarDetails_tblCarChassis" />
@@ -81,10 +66,25 @@
         <AssociationConnector Association="DBEWDiGNModel.FK_tblRegions_tblCity" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblProvince_tblCountry" />
         <EntityTypeShape EntityType="DBEWDiGNModel.tblUsers" Width="1.5" PointX="3" PointY="20.875" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUsers" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblUsers" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblUserLoginStatus_tblUsers" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblUsers_tblUserType" />
+        <EntityTypeShape EntityType="DBEWDiGNModel.tblAgahi" Width="1.5" PointX="8.25" PointY="19.375" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblProvince" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblRegions" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUsers" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblVam_tblAgahi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

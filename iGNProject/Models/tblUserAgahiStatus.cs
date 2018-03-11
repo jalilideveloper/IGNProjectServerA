@@ -20,8 +20,8 @@ namespace iGNProject.Models
         public Nullable<int> UserID { get; set; }
         public Nullable<int> AgahiStatusID { get; set; }
     
-        public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblAgahiStatus tblAgahiStatus { get; set; }
         public virtual tblUsers tblUsers { get; set; }
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

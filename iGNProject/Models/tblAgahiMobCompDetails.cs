@@ -43,8 +43,8 @@ namespace iGNProject.Models
         public Nullable<bool> HasCamera { get; set; }
         public Nullable<int> CameraMgeaPixel { get; set; }
     
-        public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblBrands tblBrands { get; set; }
         public virtual tblJeansBadane tblJeansBadane { get; set; }
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

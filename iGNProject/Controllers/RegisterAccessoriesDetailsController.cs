@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iGNProject.Models.AdsRegistration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,8 +23,9 @@ namespace iGNProject.Models
         }
 
         // POST: api/RegisterAccessoriesDetails
-        public void Post([FromBody]string value)
+        public void Post(RegisterAccessoriesDetails value)
         {
+
         }
 
         // PUT: api/RegisterAccessoriesDetails/5

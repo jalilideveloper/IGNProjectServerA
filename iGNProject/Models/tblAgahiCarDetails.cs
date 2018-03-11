@@ -44,7 +44,6 @@ namespace iGNProject.Models
         public Nullable<bool> HasSound { get; set; }
         public Nullable<int> CarCrashTypeID { get; set; }
     
-        public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblBrands tblBrands { get; set; }
         public virtual tblCarBodyStatus tblCarBodyStatus { get; set; }
         public virtual tblCarChassis tblCarChassis { get; set; }
@@ -57,5 +56,6 @@ namespace iGNProject.Models
         public virtual tblCarSokht tblCarSokht { get; set; }
         public virtual tblCarSopapMotor tblCarSopapMotor { get; set; }
         public virtual tblCarTip tblCarTip { get; set; }
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

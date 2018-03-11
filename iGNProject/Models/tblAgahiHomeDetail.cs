@@ -54,10 +54,10 @@ namespace iGNProject.Models
         public Nullable<int> CitySideTypeID { get; set; }
         public Nullable<bool> AdminDoc { get; set; }
     
-        public virtual tblAgahi tblAgahi { get; set; }
         public virtual tblHomeGarmayeshType tblHomeGarmayeshType { get; set; }
         public virtual tblHomeGharardad tblHomeGharardad { get; set; }
         public virtual tblHomeJenesKafID tblHomeJenesKafID { get; set; }
         public virtual tblHomeMelkType tblHomeMelkType { get; set; }
+        public virtual tblAgahi tblAgahi { get; set; }
     }
 }

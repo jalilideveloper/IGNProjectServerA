@@ -24,8 +24,8 @@ namespace iGNProject.Models
         public Nullable<int> CityID { get; set; }
         public string RegionName { get; set; }
     
+        public virtual tblCity tblCity { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahi> tblAgahi { get; set; }
-        public virtual tblCity tblCity { get; set; }
     }
 }

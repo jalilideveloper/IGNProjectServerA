@@ -47,7 +47,7 @@ namespace iGNProject.Models
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> PlanShowAgahiID { get; set; }
         public Nullable<bool> HasImage { get; set; }
-        public string Chatable { get; set; }
+        public Nullable<bool> Chatable { get; set; }
         public string OnTime { get; set; }
         public Nullable<bool> SpecialAgahi { get; set; }
         public Nullable<int> UserAgahiTypeID { get; set; }
@@ -61,6 +61,7 @@ namespace iGNProject.Models
         public virtual tblProvince tblProvince { get; set; }
         public virtual tblRegions tblRegions { get; set; }
         public virtual tblAgahiType tblAgahiType { get; set; }
+        public virtual tblUsers tblUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblAgahiHomeDetail> tblAgahiHomeDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -75,6 +76,5 @@ namespace iGNProject.Models
         public virtual ICollection<tblUserAgahiStatus> tblUserAgahiStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblVam> tblVam { get; set; }
-        public virtual tblUsers tblUsers { get; set; }
     }
 }

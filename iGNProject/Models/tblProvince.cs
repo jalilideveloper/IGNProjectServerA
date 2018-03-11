@@ -17,8 +17,8 @@ namespace iGNProject.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblProvince()
         {
-            this.tblAgahi = new HashSet<tblAgahi>();
             this.tblCity = new HashSet<tblCity>();
+            this.tblAgahi = new HashSet<tblAgahi>();
         }
     
         public int ProvinceID { get; set; }
@@ -26,9 +26,9 @@ namespace iGNProject.Models
         public Nullable<int> CountryID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAgahi> tblAgahi { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCity> tblCity { get; set; }
         public virtual tblCountry tblCountry { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblAgahi> tblAgahi { get; set; }
     }
 }
