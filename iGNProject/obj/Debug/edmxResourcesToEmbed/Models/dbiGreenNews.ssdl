@@ -20,7 +20,7 @@
     <Property Name="AgahiServiceID" Type="int" />
     <Property Name="AgahiTitle" Type="nvarchar" MaxLength="50" />
     <Property Name="NewOrUsed" Type="bit" />
-    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="Keyword" Type="nvarchar" MaxLength="500" />
     <Property Name="RegisterDate" Type="nvarchar" MaxLength="50" />
     <Property Name="UserID" Type="int" />
@@ -36,7 +36,7 @@
     <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
     <Property Name="PlanShowAgahiID" Type="int" />
     <Property Name="HasImage" Type="bit" />
-    <Property Name="Chatable" Type="nvarchar" MaxLength="900" />
+    <Property Name="Chatable" Type="bit" />
     <Property Name="OnTime" Type="nvarchar" MaxLength="100" />
     <Property Name="SpecialAgahi" Type="bit" />
     <Property Name="UserAgahiTypeID" Type="int" />
@@ -947,6 +947,199 @@
     <Parameter Name="Password" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_AddAgahi_AccessoriesAndElectronicAndPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryID" Type="int" Mode="In" />
+    <Parameter Name="AgahiServiceID" Type="int" Mode="In" />
+    <Parameter Name="AgahiTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="NewOrUsed" Type="bit" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Keyword" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegisterDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="AdminUserID" Type="int" Mode="In" />
+    <Parameter Name="AdminAgreeDate" Type="datetime" Mode="In" />
+    <Parameter Name="AgahiStatus" Type="tinyint" Mode="In" />
+    <Parameter Name="Location" Type="geography" Mode="In" />
+    <Parameter Name="ProvinceID" Type="int" Mode="In" />
+    <Parameter Name="RegionID" Type="int" Mode="In" />
+    <Parameter Name="Tell" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+    <Parameter Name="PriceTypeID" Type="int" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="PlanShowAgahiID" Type="int" Mode="In" />
+    <Parameter Name="HasImage" Type="bit" Mode="In" />
+    <Parameter Name="Chatable" Type="bit" Mode="In" />
+    <Parameter Name="OnTime" Type="nvarchar" Mode="In" />
+    <Parameter Name="SpecialAgahi" Type="bit" Mode="In" />
+    <Parameter Name="UserAgahiTypeID" Type="int" Mode="In" />
+    <Parameter Name="LanguageID" Type="int" Mode="In" />
+    <Parameter Name="AgahiStatusID" Type="int" Mode="In" />
+    <Parameter Name="imageOne" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageTwo" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageThree" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageFour" Type="nvarchar" Mode="In" />
+    <Parameter Name="IDs" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_AddAgahiGalleries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="imageOne" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageTwo" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageThree" Type="nvarchar" Mode="In" />
+    <Parameter Name="imageFour" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnCarHeavysAndRiddingMotor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="int" Mode="In" />
+    <Parameter Name="NumberMonthlyInstallment" Type="int" Mode="In" />
+    <Parameter Name="MonthlyInstallment" Type="int" Mode="In" />
+    <Parameter Name="BrandName" Type="int" Mode="In" />
+    <Parameter Name="CarFunction" Type="int" Mode="In" />
+    <Parameter Name="Year" Type="int" Mode="In" />
+    <Parameter Name="Person" Type="int" Mode="In" />
+    <Parameter Name="KindCondition" Type="int" Mode="In" />
+    <Parameter Name="KindChassis" Type="int" Mode="In" />
+    <Parameter Name="KindDiff" Type="int" Mode="In" />
+    <Parameter Name="KindColorOut" Type="int" Mode="In" />
+    <Parameter Name="KindColorIn" Type="int" Mode="In" />
+    <Parameter Name="KindModelTip" Type="int" Mode="In" />
+    <Parameter Name="KindGearbox" Type="int" Mode="In" />
+    <Parameter Name="KindFuel" Type="int" Mode="In" />
+    <Parameter Name="KindCrash" Type="bit" Mode="In" />
+    <Parameter Name="KindPelak" Type="int" Mode="In" />
+    <Parameter Name="HasSunroof" Type="bit" Mode="In" />
+    <Parameter Name="HasAlarm" Type="bit" Mode="In" />
+    <Parameter Name="HasSound" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnCases" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="int" Mode="In" />
+    <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+    <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+    <Parameter Name="MeasureHard" Type="int" Mode="In" />
+    <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+    <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+    <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+    <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnLabtop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="int" Mode="In" />
+    <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+    <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+    <Parameter Name="MeasureHard" Type="int" Mode="In" />
+    <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+    <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+    <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+    <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+    <Parameter Name="BrandName" Type="int" Mode="In" />
+    <Parameter Name="KindSizeScreen" Type="int" Mode="In" />
+    <Parameter Name="HasAntiWater" Type="bit" Mode="In" />
+    <Parameter Name="KindTouch" Type="bit" Mode="In" />
+    <Parameter Name="KindColor" Type="int" Mode="In" />
+    <Parameter Name="HasCamera" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnMobileTablet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="int" Mode="In" />
+    <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+    <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+    <Parameter Name="MeasureHard" Type="int" Mode="In" />
+    <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+    <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+    <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+    <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+    <Parameter Name="BrandName" Type="int" Mode="In" />
+    <Parameter Name="KindColor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnRentHouseAndOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindDepositPrice" Type="int" Mode="In" />
+    <Parameter Name="DepositPrice" Type="decimal" Mode="In" />
+    <Parameter Name="KindRentPrice" Type="int" Mode="In" />
+    <Parameter Name="RentPrice" Type="decimal" Mode="In" />
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="RoomNumber" Type="int" Mode="In" />
+    <Parameter Name="Countryside" Type="int" Mode="In" />
+    <Parameter Name="Person" Type="int" Mode="In" />
+    <Parameter Name="YearCreated" Type="int" Mode="In" />
+    <Parameter Name="FloorNumber" Type="int" Mode="In" />
+    <Parameter Name="KindBottom" Type="int" Mode="In" />
+    <Parameter Name="KindHeating" Type="int" Mode="In" />
+    <Parameter Name="HasParking" Type="bit" Mode="In" />
+    <Parameter Name="HasElevator" Type="bit" Mode="In" />
+    <Parameter Name="HasIranianService" Type="bit" Mode="In" />
+    <Parameter Name="HasForeignService" Type="bit" Mode="In" />
+    <Parameter Name="HasBalcony" Type="bit" Mode="In" />
+    <Parameter Name="HasPool" Type="bit" Mode="In" />
+    <Parameter Name="HasUnderground" Type="bit" Mode="In" />
+    <Parameter Name="HasYard" Type="bit" Mode="In" />
+    <Parameter Name="HasSauna" Type="bit" Mode="In" />
+    <Parameter Name="HasJacuzzi" Type="bit" Mode="In" />
+    <Parameter Name="HasSleepMaster" Type="bit" Mode="In" />
+    <Parameter Name="HasRoofGarden" Type="bit" Mode="In" />
+    <Parameter Name="HasChiller" Type="bit" Mode="In" />
+    <Parameter Name="HasBarbecue" Type="bit" Mode="In" />
+    <Parameter Name="HasAltar" Type="bit" Mode="In" />
+    <Parameter Name="HasLobby" Type="bit" Mode="In" />
+    <Parameter Name="HasBabyPlayground" Type="bit" Mode="In" />
+    <Parameter Name="HasGym" Type="bit" Mode="In" />
+    <Parameter Name="CodeMelk" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnSaleApartAndOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="decimal" Mode="In" />
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="RoomNumber" Type="int" Mode="In" />
+    <Parameter Name="Countryside" Type="int" Mode="In" />
+    <Parameter Name="Person" Type="int" Mode="In" />
+    <Parameter Name="FromYear" Type="int" Mode="In" />
+    <Parameter Name="FloorNumber" Type="int" Mode="In" />
+    <Parameter Name="KindBottom" Type="int" Mode="In" />
+    <Parameter Name="KindHeating" Type="int" Mode="In" />
+    <Parameter Name="HasParking" Type="bit" Mode="In" />
+    <Parameter Name="HasElevator" Type="bit" Mode="In" />
+    <Parameter Name="HasIranianService" Type="bit" Mode="In" />
+    <Parameter Name="HasForeignService" Type="bit" Mode="In" />
+    <Parameter Name="HasBalcony" Type="bit" Mode="In" />
+    <Parameter Name="HasPool" Type="bit" Mode="In" />
+    <Parameter Name="HasUnderground" Type="bit" Mode="In" />
+    <Parameter Name="HasYard" Type="bit" Mode="In" />
+    <Parameter Name="HasSauna" Type="bit" Mode="In" />
+    <Parameter Name="HasJacuzzi" Type="bit" Mode="In" />
+    <Parameter Name="HasSleepMaster" Type="bit" Mode="In" />
+    <Parameter Name="HasRoofGarden" Type="bit" Mode="In" />
+    <Parameter Name="HasChiller" Type="bit" Mode="In" />
+    <Parameter Name="HasBarbecue" Type="bit" Mode="In" />
+    <Parameter Name="HasAltar" Type="bit" Mode="In" />
+    <Parameter Name="HasLobby" Type="bit" Mode="In" />
+    <Parameter Name="HasBabyPlayground" Type="bit" Mode="In" />
+    <Parameter Name="HasGym" Type="bit" Mode="In" />
+    <Parameter Name="HasHeir" Type="bit" Mode="In" />
+    <Parameter Name="HasSingleDocument" Type="bit" Mode="In" />
+    <Parameter Name="Infrastructure" Type="int" Mode="In" />
+    <Parameter Name="LoanAmount" Type="int" Mode="In" />
+    <Parameter Name="price" Type="decimal" Mode="In" />
+    <Parameter Name="CodeMelk" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_AddOnSaleLand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AgahiID" Type="int" Mode="In" />
+    <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+    <Parameter Name="TotalPrice" Type="int" Mode="In" />
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="Countryside" Type="int" Mode="In" />
+    <Parameter Name="Person" Type="int" Mode="In" />
+    <Parameter Name="FloorNumber" Type="int" Mode="In" />
+    <Parameter Name="HasHeir" Type="bit" Mode="In" />
+    <Parameter Name="HasSingleDocument" Type="bit" Mode="In" />
+    <Parameter Name="Infrastructure" Type="int" Mode="In" />
+    <Parameter Name="price" Type="int" Mode="In" />
+    <Parameter Name="LoanAmount" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />

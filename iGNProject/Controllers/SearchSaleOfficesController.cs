@@ -131,7 +131,7 @@ namespace iGNProject.Controllers
                                       Mobile = p.Mobile,
                                       OnTime = p.OnTime,
                                       PriceTypeID = p.PriceTypeID,
-                                      ProvinceID = p.ProvinceID,
+                                      CityID = p.CityID,
                                       RegionID = p.RegionID,
                                       RegisterDate = p.RegisterDate,
                                       SpecialAgahi = p.SpecialAgahi,

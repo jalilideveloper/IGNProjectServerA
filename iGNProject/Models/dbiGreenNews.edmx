@@ -33,7 +33,7 @@
           <Property Name="AdminAgreeDate" Type="datetime" />
           <Property Name="AgahiStatus" Type="tinyint" />
           <Property Name="Location" Type="geography" />
-          <Property Name="ProvinceID" Type="int" />
+          <Property Name="CityID" Type="int" />
           <Property Name="RegionID" Type="int" />
           <Property Name="Tell" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
@@ -491,6 +491,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblAgahi_tblCity">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="0..1" />
+          <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="tblAgahi">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblAgahi_tblPriceType">
           <End Role="tblPriceType" Type="Self.tblPriceType" Multiplicity="0..1" />
           <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
@@ -500,18 +512,6 @@
             </Principal>
             <Dependent Role="tblAgahi">
               <PropertyRef Name="PriceTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahi_tblProvince">
-          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
-          <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblProvince">
-              <PropertyRef Name="ProvinceID" />
-            </Principal>
-            <Dependent Role="tblAgahi">
-              <PropertyRef Name="ProvinceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -952,7 +952,7 @@
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_AddAgahi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="sp_AddAgahi_AccessoriesAndElectronicAndPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
           <Parameter Name="AgahiServiceID" Type="int" Mode="In" />
           <Parameter Name="AgahiTitle" Type="nvarchar" Mode="In" />
@@ -965,7 +965,7 @@
           <Parameter Name="AdminAgreeDate" Type="datetime" Mode="In" />
           <Parameter Name="AgahiStatus" Type="tinyint" Mode="In" />
           <Parameter Name="Location" Type="geography" Mode="In" />
-          <Parameter Name="ProvinceID" Type="int" Mode="In" />
+          <Parameter Name="CityID" Type="int" Mode="In" />
           <Parameter Name="RegionID" Type="int" Mode="In" />
           <Parameter Name="Tell" Type="nvarchar" Mode="In" />
           <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
@@ -991,6 +991,159 @@
           <Parameter Name="imageTwo" Type="nvarchar" Mode="In" />
           <Parameter Name="imageThree" Type="nvarchar" Mode="In" />
           <Parameter Name="imageFour" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnCarHeavysAndRiddingMotor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="int" Mode="In" />
+          <Parameter Name="NumberMonthlyInstallment" Type="int" Mode="In" />
+          <Parameter Name="MonthlyInstallment" Type="int" Mode="In" />
+          <Parameter Name="BrandName" Type="int" Mode="In" />
+          <Parameter Name="CarFunction" Type="int" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+          <Parameter Name="Person" Type="int" Mode="In" />
+          <Parameter Name="KindCondition" Type="int" Mode="In" />
+          <Parameter Name="KindChassis" Type="int" Mode="In" />
+          <Parameter Name="KindDiff" Type="int" Mode="In" />
+          <Parameter Name="KindColorOut" Type="int" Mode="In" />
+          <Parameter Name="KindColorIn" Type="int" Mode="In" />
+          <Parameter Name="KindModelTip" Type="int" Mode="In" />
+          <Parameter Name="KindGearbox" Type="int" Mode="In" />
+          <Parameter Name="KindFuel" Type="int" Mode="In" />
+          <Parameter Name="KindCrash" Type="bit" Mode="In" />
+          <Parameter Name="KindPelak" Type="int" Mode="In" />
+          <Parameter Name="HasSunroof" Type="bit" Mode="In" />
+          <Parameter Name="HasAlarm" Type="bit" Mode="In" />
+          <Parameter Name="HasSound" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnCases" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="int" Mode="In" />
+          <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+          <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+          <Parameter Name="MeasureHard" Type="int" Mode="In" />
+          <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+          <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+          <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+          <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnLabtop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="int" Mode="In" />
+          <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+          <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+          <Parameter Name="MeasureHard" Type="int" Mode="In" />
+          <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+          <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+          <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+          <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+          <Parameter Name="BrandName" Type="int" Mode="In" />
+          <Parameter Name="KindSizeScreen" Type="int" Mode="In" />
+          <Parameter Name="HasAntiWater" Type="bit" Mode="In" />
+          <Parameter Name="KindTouch" Type="bit" Mode="In" />
+          <Parameter Name="KindColor" Type="int" Mode="In" />
+          <Parameter Name="HasCamera" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnMobileTablet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="int" Mode="In" />
+          <Parameter Name="MeasureRAM" Type="int" Mode="In" />
+          <Parameter Name="MeasureCPU" Type="int" Mode="In" />
+          <Parameter Name="MeasureHard" Type="int" Mode="In" />
+          <Parameter Name="MeasureGraphic" Type="int" Mode="In" />
+          <Parameter Name="HasUSB3" Type="bit" Mode="In" />
+          <Parameter Name="HasDVDRW" Type="bit" Mode="In" />
+          <Parameter Name="HasSpeaker" Type="bit" Mode="In" />
+          <Parameter Name="BrandName" Type="int" Mode="In" />
+          <Parameter Name="KindColor" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnRentHouseAndOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindDepositPrice" Type="int" Mode="In" />
+          <Parameter Name="DepositPrice" Type="decimal" Mode="In" />
+          <Parameter Name="KindRentPrice" Type="int" Mode="In" />
+          <Parameter Name="RentPrice" Type="decimal" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="RoomNumber" Type="int" Mode="In" />
+          <Parameter Name="Countryside" Type="int" Mode="In" />
+          <Parameter Name="Person" Type="int" Mode="In" />
+          <Parameter Name="YearCreated" Type="int" Mode="In" />
+          <Parameter Name="FloorNumber" Type="int" Mode="In" />
+          <Parameter Name="KindBottom" Type="int" Mode="In" />
+          <Parameter Name="KindHeating" Type="int" Mode="In" />
+          <Parameter Name="HasParking" Type="bit" Mode="In" />
+          <Parameter Name="HasElevator" Type="bit" Mode="In" />
+          <Parameter Name="HasIranianService" Type="bit" Mode="In" />
+          <Parameter Name="HasForeignService" Type="bit" Mode="In" />
+          <Parameter Name="HasBalcony" Type="bit" Mode="In" />
+          <Parameter Name="HasPool" Type="bit" Mode="In" />
+          <Parameter Name="HasUnderground" Type="bit" Mode="In" />
+          <Parameter Name="HasYard" Type="bit" Mode="In" />
+          <Parameter Name="HasSauna" Type="bit" Mode="In" />
+          <Parameter Name="HasJacuzzi" Type="bit" Mode="In" />
+          <Parameter Name="HasSleepMaster" Type="bit" Mode="In" />
+          <Parameter Name="HasRoofGarden" Type="bit" Mode="In" />
+          <Parameter Name="HasChiller" Type="bit" Mode="In" />
+          <Parameter Name="HasBarbecue" Type="bit" Mode="In" />
+          <Parameter Name="HasAltar" Type="bit" Mode="In" />
+          <Parameter Name="HasLobby" Type="bit" Mode="In" />
+          <Parameter Name="HasBabyPlayground" Type="bit" Mode="In" />
+          <Parameter Name="HasGym" Type="bit" Mode="In" />
+          <Parameter Name="CodeMelk" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnSaleApartAndOffice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="decimal" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="RoomNumber" Type="int" Mode="In" />
+          <Parameter Name="Countryside" Type="int" Mode="In" />
+          <Parameter Name="Person" Type="int" Mode="In" />
+          <Parameter Name="FromYear" Type="int" Mode="In" />
+          <Parameter Name="FloorNumber" Type="int" Mode="In" />
+          <Parameter Name="KindBottom" Type="int" Mode="In" />
+          <Parameter Name="KindHeating" Type="int" Mode="In" />
+          <Parameter Name="HasParking" Type="bit" Mode="In" />
+          <Parameter Name="HasElevator" Type="bit" Mode="In" />
+          <Parameter Name="HasIranianService" Type="bit" Mode="In" />
+          <Parameter Name="HasForeignService" Type="bit" Mode="In" />
+          <Parameter Name="HasBalcony" Type="bit" Mode="In" />
+          <Parameter Name="HasPool" Type="bit" Mode="In" />
+          <Parameter Name="HasUnderground" Type="bit" Mode="In" />
+          <Parameter Name="HasYard" Type="bit" Mode="In" />
+          <Parameter Name="HasSauna" Type="bit" Mode="In" />
+          <Parameter Name="HasJacuzzi" Type="bit" Mode="In" />
+          <Parameter Name="HasSleepMaster" Type="bit" Mode="In" />
+          <Parameter Name="HasRoofGarden" Type="bit" Mode="In" />
+          <Parameter Name="HasChiller" Type="bit" Mode="In" />
+          <Parameter Name="HasBarbecue" Type="bit" Mode="In" />
+          <Parameter Name="HasAltar" Type="bit" Mode="In" />
+          <Parameter Name="HasLobby" Type="bit" Mode="In" />
+          <Parameter Name="HasBabyPlayground" Type="bit" Mode="In" />
+          <Parameter Name="HasGym" Type="bit" Mode="In" />
+          <Parameter Name="HasHeir" Type="bit" Mode="In" />
+          <Parameter Name="HasSingleDocument" Type="bit" Mode="In" />
+          <Parameter Name="Infrastructure" Type="int" Mode="In" />
+          <Parameter Name="LoanAmount" Type="int" Mode="In" />
+          <Parameter Name="price" Type="decimal" Mode="In" />
+          <Parameter Name="CodeMelk" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_AddOnSaleLand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AgahiID" Type="int" Mode="In" />
+          <Parameter Name="KindTotalPrice" Type="int" Mode="In" />
+          <Parameter Name="TotalPrice" Type="int" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="Countryside" Type="int" Mode="In" />
+          <Parameter Name="Person" Type="int" Mode="In" />
+          <Parameter Name="FloorNumber" Type="int" Mode="In" />
+          <Parameter Name="HasHeir" Type="bit" Mode="In" />
+          <Parameter Name="HasSingleDocument" Type="bit" Mode="In" />
+          <Parameter Name="Infrastructure" Type="int" Mode="In" />
+          <Parameter Name="price" Type="int" Mode="In" />
+          <Parameter Name="LoanAmount" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1252,12 +1405,12 @@
             <End Role="tblAgahiService" EntitySet="tblAgahiService" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="Self.FK_tblAgahi_tblPriceType">
-            <End Role="tblPriceType" EntitySet="tblPriceType" />
+          <AssociationSet Name="FK_tblAgahi_tblCity" Association="Self.FK_tblAgahi_tblCity">
+            <End Role="tblCity" EntitySet="tblCity" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblAgahi_tblProvince" Association="Self.FK_tblAgahi_tblProvince">
-            <End Role="tblProvince" EntitySet="tblProvince" />
+          <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="Self.FK_tblAgahi_tblPriceType">
+            <End Role="tblPriceType" EntitySet="tblPriceType" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
           <AssociationSet Name="FK_tblAgahi_tblRegions" Association="Self.FK_tblAgahi_tblRegions">
@@ -2326,6 +2479,192 @@
             <Parameter Name="imageThree" Mode="In" Type="String" />
             <Parameter Name="imageFour" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_AddAgahi_AccessoriesAndElectronicAndPerson">
+            <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+            <Parameter Name="AgahiServiceID" Mode="In" Type="Int32" />
+            <Parameter Name="AgahiTitle" Mode="In" Type="String" />
+            <Parameter Name="NewOrUsed" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Keyword" Mode="In" Type="String" />
+            <Parameter Name="RegisterDate" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="AdminUserID" Mode="In" Type="Int32" />
+            <Parameter Name="AdminAgreeDate" Mode="In" Type="DateTime" />
+            <Parameter Name="AgahiStatus" Mode="In" Type="Byte" />
+            <Parameter Name="Location" Mode="In" Type="Geography" />
+            <Parameter Name="CityID" Mode="In" Type="Int32" />
+            <Parameter Name="RegionID" Mode="In" Type="Int32" />
+            <Parameter Name="Tell" Mode="In" Type="String" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="PriceTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="PlanShowAgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="HasImage" Mode="In" Type="Boolean" />
+            <Parameter Name="Chatable" Mode="In" Type="Boolean" />
+            <Parameter Name="OnTime" Mode="In" Type="String" />
+            <Parameter Name="SpecialAgahi" Mode="In" Type="Boolean" />
+            <Parameter Name="UserAgahiTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="LanguageID" Mode="In" Type="Int32" />
+            <Parameter Name="AgahiStatusID" Mode="In" Type="Int32" />
+            <Parameter Name="imageOne" Mode="In" Type="String" />
+            <Parameter Name="imageTwo" Mode="In" Type="String" />
+            <Parameter Name="imageThree" Mode="In" Type="String" />
+            <Parameter Name="imageFour" Mode="In" Type="String" />
+            <Parameter Name="IDs" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnCarHeavysAndRiddingMotor">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="NumberMonthlyInstallment" Mode="In" Type="Int32" />
+            <Parameter Name="MonthlyInstallment" Mode="In" Type="Int32" />
+            <Parameter Name="BrandName" Mode="In" Type="Int32" />
+            <Parameter Name="CarFunction" Mode="In" Type="Int32" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+            <Parameter Name="Person" Mode="In" Type="Int32" />
+            <Parameter Name="KindCondition" Mode="In" Type="Int32" />
+            <Parameter Name="KindChassis" Mode="In" Type="Int32" />
+            <Parameter Name="KindDiff" Mode="In" Type="Int32" />
+            <Parameter Name="KindColorOut" Mode="In" Type="Int32" />
+            <Parameter Name="KindColorIn" Mode="In" Type="Int32" />
+            <Parameter Name="KindModelTip" Mode="In" Type="Int32" />
+            <Parameter Name="KindGearbox" Mode="In" Type="Int32" />
+            <Parameter Name="KindFuel" Mode="In" Type="Int32" />
+            <Parameter Name="KindCrash" Mode="In" Type="Boolean" />
+            <Parameter Name="KindPelak" Mode="In" Type="Int32" />
+            <Parameter Name="HasSunroof" Mode="In" Type="Boolean" />
+            <Parameter Name="HasAlarm" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSound" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnCases">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureRAM" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureCPU" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureHard" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureGraphic" Mode="In" Type="Int32" />
+            <Parameter Name="HasUSB3" Mode="In" Type="Boolean" />
+            <Parameter Name="HasDVDRW" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSpeaker" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnLabtop">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureRAM" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureCPU" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureHard" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureGraphic" Mode="In" Type="Int32" />
+            <Parameter Name="HasUSB3" Mode="In" Type="Boolean" />
+            <Parameter Name="HasDVDRW" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSpeaker" Mode="In" Type="Boolean" />
+            <Parameter Name="BrandName" Mode="In" Type="Int32" />
+            <Parameter Name="KindSizeScreen" Mode="In" Type="Int32" />
+            <Parameter Name="HasAntiWater" Mode="In" Type="Boolean" />
+            <Parameter Name="KindTouch" Mode="In" Type="Boolean" />
+            <Parameter Name="KindColor" Mode="In" Type="Int32" />
+            <Parameter Name="HasCamera" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnMobileTablet">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureRAM" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureCPU" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureHard" Mode="In" Type="Int32" />
+            <Parameter Name="MeasureGraphic" Mode="In" Type="Int32" />
+            <Parameter Name="HasUSB3" Mode="In" Type="Boolean" />
+            <Parameter Name="HasDVDRW" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSpeaker" Mode="In" Type="Boolean" />
+            <Parameter Name="BrandName" Mode="In" Type="Int32" />
+            <Parameter Name="KindColor" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnRentHouseAndOffice">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindDepositPrice" Mode="In" Type="Int32" />
+            <Parameter Name="DepositPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="KindRentPrice" Mode="In" Type="Int32" />
+            <Parameter Name="RentPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="RoomNumber" Mode="In" Type="Int32" />
+            <Parameter Name="Countryside" Mode="In" Type="Int32" />
+            <Parameter Name="Person" Mode="In" Type="Int32" />
+            <Parameter Name="YearCreated" Mode="In" Type="Int32" />
+            <Parameter Name="FloorNumber" Mode="In" Type="Int32" />
+            <Parameter Name="KindBottom" Mode="In" Type="Int32" />
+            <Parameter Name="KindHeating" Mode="In" Type="Int32" />
+            <Parameter Name="HasParking" Mode="In" Type="Boolean" />
+            <Parameter Name="HasElevator" Mode="In" Type="Boolean" />
+            <Parameter Name="HasIranianService" Mode="In" Type="Boolean" />
+            <Parameter Name="HasForeignService" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBalcony" Mode="In" Type="Boolean" />
+            <Parameter Name="HasPool" Mode="In" Type="Boolean" />
+            <Parameter Name="HasUnderground" Mode="In" Type="Boolean" />
+            <Parameter Name="HasYard" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSauna" Mode="In" Type="Boolean" />
+            <Parameter Name="HasJacuzzi" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSleepMaster" Mode="In" Type="Boolean" />
+            <Parameter Name="HasRoofGarden" Mode="In" Type="Boolean" />
+            <Parameter Name="HasChiller" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBarbecue" Mode="In" Type="Boolean" />
+            <Parameter Name="HasAltar" Mode="In" Type="Boolean" />
+            <Parameter Name="HasLobby" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBabyPlayground" Mode="In" Type="Boolean" />
+            <Parameter Name="HasGym" Mode="In" Type="Boolean" />
+            <Parameter Name="CodeMelk" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnSaleApartAndOffice">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="RoomNumber" Mode="In" Type="Int32" />
+            <Parameter Name="Countryside" Mode="In" Type="Int32" />
+            <Parameter Name="Person" Mode="In" Type="Int32" />
+            <Parameter Name="FromYear" Mode="In" Type="Int32" />
+            <Parameter Name="FloorNumber" Mode="In" Type="Int32" />
+            <Parameter Name="KindBottom" Mode="In" Type="Int32" />
+            <Parameter Name="KindHeating" Mode="In" Type="Int32" />
+            <Parameter Name="HasParking" Mode="In" Type="Boolean" />
+            <Parameter Name="HasElevator" Mode="In" Type="Boolean" />
+            <Parameter Name="HasIranianService" Mode="In" Type="Boolean" />
+            <Parameter Name="HasForeignService" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBalcony" Mode="In" Type="Boolean" />
+            <Parameter Name="HasPool" Mode="In" Type="Boolean" />
+            <Parameter Name="HasUnderground" Mode="In" Type="Boolean" />
+            <Parameter Name="HasYard" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSauna" Mode="In" Type="Boolean" />
+            <Parameter Name="HasJacuzzi" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSleepMaster" Mode="In" Type="Boolean" />
+            <Parameter Name="HasRoofGarden" Mode="In" Type="Boolean" />
+            <Parameter Name="HasChiller" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBarbecue" Mode="In" Type="Boolean" />
+            <Parameter Name="HasAltar" Mode="In" Type="Boolean" />
+            <Parameter Name="HasLobby" Mode="In" Type="Boolean" />
+            <Parameter Name="HasBabyPlayground" Mode="In" Type="Boolean" />
+            <Parameter Name="HasGym" Mode="In" Type="Boolean" />
+            <Parameter Name="HasHeir" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSingleDocument" Mode="In" Type="Boolean" />
+            <Parameter Name="Infrastructure" Mode="In" Type="Int32" />
+            <Parameter Name="LoanAmount" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="CodeMelk" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_AddOnSaleLand">
+            <Parameter Name="AgahiID" Mode="In" Type="Int32" />
+            <Parameter Name="KindTotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrice" Mode="In" Type="Int32" />
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="Countryside" Mode="In" Type="Int32" />
+            <Parameter Name="Person" Mode="In" Type="Int32" />
+            <Parameter Name="FloorNumber" Mode="In" Type="Int32" />
+            <Parameter Name="HasHeir" Mode="In" Type="Boolean" />
+            <Parameter Name="HasSingleDocument" Mode="In" Type="Boolean" />
+            <Parameter Name="Infrastructure" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Int32" />
+            <Parameter Name="LoanAmount" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
           <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
             <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
@@ -2339,12 +2678,12 @@
             <End Role="tblAgahiService" EntitySet="tblAgahiService" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
-            <End Role="tblPriceType" EntitySet="tblPriceType" />
+          <AssociationSet Name="FK_tblAgahi_tblCity" Association="DBEWDiGNModel.FK_tblAgahi_tblCity">
+            <End Role="tblCity" EntitySet="tblCity" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblAgahi_tblProvince" Association="DBEWDiGNModel.FK_tblAgahi_tblProvince">
-            <End Role="tblProvince" EntitySet="tblProvince" />
+          <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
+            <End Role="tblPriceType" EntitySet="tblPriceType" />
             <End Role="tblAgahi" EntitySet="tblAgahi" />
           </AssociationSet>
           <AssociationSet Name="FK_tblAgahi_tblRegions" Association="DBEWDiGNModel.FK_tblAgahi_tblRegions">
@@ -3766,6 +4105,7 @@
           <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblCity" ToRole="tblProvince" />
           <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblCity" ToRole="tblRegions" />
+          <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblCity" FromRole="tblCity" ToRole="tblAgahi" />
         </EntityType>
         <EntityType Name="tblCountry">
           <Key>
@@ -3832,7 +4172,6 @@
           <Property Name="CountryID" Type="Int32" />
           <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblProvince" ToRole="tblCity" />
           <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblProvince_tblCountry" FromRole="tblProvince" ToRole="tblCountry" />
-          <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblProvince" ToRole="tblAgahi" />
         </EntityType>
         <EntityType Name="tblRegions">
           <Key>
@@ -4250,7 +4589,7 @@
           <Property Name="AdminAgreeDate" Type="DateTime" Precision="3" />
           <Property Name="AgahiStatus" Type="Byte" />
           <Property Name="Location" Type="Geography" />
-          <Property Name="ProvinceID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
           <Property Name="RegionID" Type="Int32" />
           <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -4267,8 +4606,8 @@
           <NavigationProperty Name="tblAgahiCategories" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahi" ToRole="tblAgahiCategories" />
           <NavigationProperty Name="tblAgahiPlans" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahi" ToRole="tblAgahiPlans" />
           <NavigationProperty Name="tblAgahiService" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahi" ToRole="tblAgahiService" />
+          <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblAgahi_tblCity" FromRole="tblAgahi" ToRole="tblCity" />
           <NavigationProperty Name="tblPriceType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblAgahi" ToRole="tblPriceType" />
-          <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblAgahi" ToRole="tblProvince" />
           <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblAgahi" ToRole="tblRegions" />
           <NavigationProperty Name="tblAgahiType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" FromRole="tblAgahi" ToRole="tblAgahiType" />
           <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblAgahi" ToRole="tblUsers" />
@@ -4316,6 +4655,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblAgahi_tblCity">
+          <End Type="DBEWDiGNModel.tblCity" Role="tblCity" Multiplicity="0..1" />
+          <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="tblAgahi">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblAgahi_tblPriceType">
           <End Type="DBEWDiGNModel.tblPriceType" Role="tblPriceType" Multiplicity="0..1" />
           <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
@@ -4325,18 +4676,6 @@
             </Principal>
             <Dependent Role="tblAgahi">
               <PropertyRef Name="PriceTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblAgahi_tblProvince">
-          <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
-          <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblProvince">
-              <PropertyRef Name="ProvinceID" />
-            </Principal>
-            <Dependent Role="tblAgahi">
-              <PropertyRef Name="ProvinceID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5471,8 +5810,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_AddAgahi" FunctionName="DBEWDiGNModel.Store.sp_AddAgahi" />
           <FunctionImportMapping FunctionImportName="sp_AddAgahiGalleries" FunctionName="DBEWDiGNModel.Store.sp_AddAgahiGalleries" />
+          <FunctionImportMapping FunctionImportName="sp_AddAgahi_AccessoriesAndElectronicAndPerson" FunctionName="DBEWDiGNModel.Store.sp_AddAgahi_AccessoriesAndElectronicAndPerson" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnCarHeavysAndRiddingMotor" FunctionName="DBEWDiGNModel.Store.sp_AddOnCarHeavysAndRiddingMotor" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnCases" FunctionName="DBEWDiGNModel.Store.sp_AddOnCases" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnLabtop" FunctionName="DBEWDiGNModel.Store.sp_AddOnLabtop" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnMobileTablet" FunctionName="DBEWDiGNModel.Store.sp_AddOnMobileTablet" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnRentHouseAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnRentHouseAndOffice" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnSaleApartAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleApartAndOffice" />
+          <FunctionImportMapping FunctionImportName="sp_AddOnSaleLand" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleLand" />
           <EntitySetMapping Name="tblAgahi">
             <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
               <MappingFragment StoreEntitySet="tblAgahi">
@@ -5489,7 +5835,7 @@
                 <ScalarProperty Name="Mobile" ColumnName="Mobile" />
                 <ScalarProperty Name="Tell" ColumnName="Tell" />
                 <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="AgahiStatus" ColumnName="AgahiStatus" />
                 <ScalarProperty Name="AdminAgreeDate" ColumnName="AdminAgreeDate" />

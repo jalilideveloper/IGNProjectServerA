@@ -22,7 +22,7 @@ namespace iGNProject.Models.RelApiClass
             public Nullable<byte> AgahiStatus { get; set; }
             public DbGeography Location { get; set; }
             public Nullable<int> LanguageID { get; set; }
-            public Nullable<int> ProvinceID { get; set; }
+            public Nullable<int> CityID { get; set; }
             public Nullable<int> RegionID { get; set; }
             public string Tell { get; set; }
             public string Mobile { get; set; }
@@ -30,7 +30,7 @@ namespace iGNProject.Models.RelApiClass
             public Nullable<decimal> Price { get; set; }
             public Nullable<int> PlanShowAgahiID { get; set; }
             public Nullable<bool> HasImage { get; set; }
-            public string Chatable { get; set; }
+            public bool ? Chatable { get; set; }
             public string OnTime { get; set; }
             public Nullable<bool> SpecialAgahi { get; set; }
 

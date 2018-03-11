@@ -22,9 +22,19 @@ namespace iGNProject.Models
             return "value";
         }
 
+        public System.Data.Entity.Core.Objects.ObjectParameter IDs { get; set; }
         // POST: api/RegisterAccessoriesDetails
         public void Post(RegisterAccessoriesDetails value)
         {
+            
+            using (DBEWDiGNEntities db = new DBEWDiGNEntities())
+            {
+
+             var q =   db.sp_AddAgahi_AccessoriesAndElectronicAndPerson(value.CategoryID, value.AgahiServiceID, value.TitleAgahi, false, value.AgahiDescription, "Key", DateTime.Now.Date.ToShortDateString(), value.UserID, 1, null, 0, value.Location
+                    , value.CityID, value.RegionID, "No. ", value.AdvertiserMobile, value.KindTotalPriceID, value.TotalPrice, value.KindAdsID, false, false, value.OnTime, value.SpecialAgahi, 0, value.LanguageID, 0,
+                    value.uploadimageone, value.uploadimagetwo, value.uploadimagethree, value.uploadimagefour,IDs);
+            }
+
 
         }
 

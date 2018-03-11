@@ -2757,5 +2757,721 @@ namespace iGNProject.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddAgahiGalleries", agahiIDParameter, imageOneParameter, imageTwoParameter, imageThreeParameter, imageFourParameter);
         }
+    
+        public virtual int sp_AddAgahi_AccessoriesAndElectronicAndPerson(Nullable<int> categoryID, Nullable<int> agahiServiceID, string agahiTitle, Nullable<bool> newOrUsed, string description, string keyword, string registerDate, Nullable<int> userID, Nullable<int> adminUserID, Nullable<System.DateTime> adminAgreeDate, Nullable<byte> agahiStatus, System.Data.Entity.Spatial.DbGeography location, Nullable<int> cityID, Nullable<int> regionID, string tell, string mobile, Nullable<int> priceTypeID, Nullable<decimal> price, Nullable<int> planShowAgahiID, Nullable<bool> hasImage, Nullable<bool> chatable, string onTime, Nullable<bool> specialAgahi, Nullable<int> userAgahiTypeID, Nullable<int> languageID, Nullable<int> agahiStatusID, string imageOne, string imageTwo, string imageThree, string imageFour, ObjectParameter iDs)
+        {
+            var categoryIDParameter = categoryID.HasValue ?
+                new ObjectParameter("CategoryID", categoryID) :
+                new ObjectParameter("CategoryID", typeof(int));
+    
+            var agahiServiceIDParameter = agahiServiceID.HasValue ?
+                new ObjectParameter("AgahiServiceID", agahiServiceID) :
+                new ObjectParameter("AgahiServiceID", typeof(int));
+    
+            var agahiTitleParameter = agahiTitle != null ?
+                new ObjectParameter("AgahiTitle", agahiTitle) :
+                new ObjectParameter("AgahiTitle", typeof(string));
+    
+            var newOrUsedParameter = newOrUsed.HasValue ?
+                new ObjectParameter("NewOrUsed", newOrUsed) :
+                new ObjectParameter("NewOrUsed", typeof(bool));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var keywordParameter = keyword != null ?
+                new ObjectParameter("Keyword", keyword) :
+                new ObjectParameter("Keyword", typeof(string));
+    
+            var registerDateParameter = registerDate != null ?
+                new ObjectParameter("RegisterDate", registerDate) :
+                new ObjectParameter("RegisterDate", typeof(string));
+    
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("UserID", userID) :
+                new ObjectParameter("UserID", typeof(int));
+    
+            var adminUserIDParameter = adminUserID.HasValue ?
+                new ObjectParameter("AdminUserID", adminUserID) :
+                new ObjectParameter("AdminUserID", typeof(int));
+    
+            var adminAgreeDateParameter = adminAgreeDate.HasValue ?
+                new ObjectParameter("AdminAgreeDate", adminAgreeDate) :
+                new ObjectParameter("AdminAgreeDate", typeof(System.DateTime));
+    
+            var agahiStatusParameter = agahiStatus.HasValue ?
+                new ObjectParameter("AgahiStatus", agahiStatus) :
+                new ObjectParameter("AgahiStatus", typeof(byte));
+    
+            var locationParameter = location != null ?
+                new ObjectParameter("Location", location) :
+                new ObjectParameter("Location", typeof(System.Data.Entity.Spatial.DbGeography));
+    
+            var cityIDParameter = cityID.HasValue ?
+                new ObjectParameter("CityID", cityID) :
+                new ObjectParameter("CityID", typeof(int));
+    
+            var regionIDParameter = regionID.HasValue ?
+                new ObjectParameter("RegionID", regionID) :
+                new ObjectParameter("RegionID", typeof(int));
+    
+            var tellParameter = tell != null ?
+                new ObjectParameter("Tell", tell) :
+                new ObjectParameter("Tell", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("Mobile", mobile) :
+                new ObjectParameter("Mobile", typeof(string));
+    
+            var priceTypeIDParameter = priceTypeID.HasValue ?
+                new ObjectParameter("PriceTypeID", priceTypeID) :
+                new ObjectParameter("PriceTypeID", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("Price", price) :
+                new ObjectParameter("Price", typeof(decimal));
+    
+            var planShowAgahiIDParameter = planShowAgahiID.HasValue ?
+                new ObjectParameter("PlanShowAgahiID", planShowAgahiID) :
+                new ObjectParameter("PlanShowAgahiID", typeof(int));
+    
+            var hasImageParameter = hasImage.HasValue ?
+                new ObjectParameter("HasImage", hasImage) :
+                new ObjectParameter("HasImage", typeof(bool));
+    
+            var chatableParameter = chatable.HasValue ?
+                new ObjectParameter("Chatable", chatable) :
+                new ObjectParameter("Chatable", typeof(bool));
+    
+            var onTimeParameter = onTime != null ?
+                new ObjectParameter("OnTime", onTime) :
+                new ObjectParameter("OnTime", typeof(string));
+    
+            var specialAgahiParameter = specialAgahi.HasValue ?
+                new ObjectParameter("SpecialAgahi", specialAgahi) :
+                new ObjectParameter("SpecialAgahi", typeof(bool));
+    
+            var userAgahiTypeIDParameter = userAgahiTypeID.HasValue ?
+                new ObjectParameter("UserAgahiTypeID", userAgahiTypeID) :
+                new ObjectParameter("UserAgahiTypeID", typeof(int));
+    
+            var languageIDParameter = languageID.HasValue ?
+                new ObjectParameter("LanguageID", languageID) :
+                new ObjectParameter("LanguageID", typeof(int));
+    
+            var agahiStatusIDParameter = agahiStatusID.HasValue ?
+                new ObjectParameter("AgahiStatusID", agahiStatusID) :
+                new ObjectParameter("AgahiStatusID", typeof(int));
+    
+            var imageOneParameter = imageOne != null ?
+                new ObjectParameter("imageOne", imageOne) :
+                new ObjectParameter("imageOne", typeof(string));
+    
+            var imageTwoParameter = imageTwo != null ?
+                new ObjectParameter("imageTwo", imageTwo) :
+                new ObjectParameter("imageTwo", typeof(string));
+    
+            var imageThreeParameter = imageThree != null ?
+                new ObjectParameter("imageThree", imageThree) :
+                new ObjectParameter("imageThree", typeof(string));
+    
+            var imageFourParameter = imageFour != null ?
+                new ObjectParameter("imageFour", imageFour) :
+                new ObjectParameter("imageFour", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddAgahi_AccessoriesAndElectronicAndPerson", categoryIDParameter, agahiServiceIDParameter, agahiTitleParameter, newOrUsedParameter, descriptionParameter, keywordParameter, registerDateParameter, userIDParameter, adminUserIDParameter, adminAgreeDateParameter, agahiStatusParameter, locationParameter, cityIDParameter, regionIDParameter, tellParameter, mobileParameter, priceTypeIDParameter, priceParameter, planShowAgahiIDParameter, hasImageParameter, chatableParameter, onTimeParameter, specialAgahiParameter, userAgahiTypeIDParameter, languageIDParameter, agahiStatusIDParameter, imageOneParameter, imageTwoParameter, imageThreeParameter, imageFourParameter, iDs);
+        }
+    
+        public virtual int sp_AddOnCarHeavysAndRiddingMotor(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<int> totalPrice, Nullable<int> numberMonthlyInstallment, Nullable<int> monthlyInstallment, Nullable<int> brandName, Nullable<int> carFunction, Nullable<int> year, Nullable<int> person, Nullable<int> kindCondition, Nullable<int> kindChassis, Nullable<int> kindDiff, Nullable<int> kindColorOut, Nullable<int> kindColorIn, Nullable<int> kindModelTip, Nullable<int> kindGearbox, Nullable<int> kindFuel, Nullable<bool> kindCrash, Nullable<int> kindPelak, Nullable<bool> hasSunroof, Nullable<bool> hasAlarm, Nullable<bool> hasSound)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(int));
+    
+            var numberMonthlyInstallmentParameter = numberMonthlyInstallment.HasValue ?
+                new ObjectParameter("NumberMonthlyInstallment", numberMonthlyInstallment) :
+                new ObjectParameter("NumberMonthlyInstallment", typeof(int));
+    
+            var monthlyInstallmentParameter = monthlyInstallment.HasValue ?
+                new ObjectParameter("MonthlyInstallment", monthlyInstallment) :
+                new ObjectParameter("MonthlyInstallment", typeof(int));
+    
+            var brandNameParameter = brandName.HasValue ?
+                new ObjectParameter("BrandName", brandName) :
+                new ObjectParameter("BrandName", typeof(int));
+    
+            var carFunctionParameter = carFunction.HasValue ?
+                new ObjectParameter("CarFunction", carFunction) :
+                new ObjectParameter("CarFunction", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("Year", year) :
+                new ObjectParameter("Year", typeof(int));
+    
+            var personParameter = person.HasValue ?
+                new ObjectParameter("Person", person) :
+                new ObjectParameter("Person", typeof(int));
+    
+            var kindConditionParameter = kindCondition.HasValue ?
+                new ObjectParameter("KindCondition", kindCondition) :
+                new ObjectParameter("KindCondition", typeof(int));
+    
+            var kindChassisParameter = kindChassis.HasValue ?
+                new ObjectParameter("KindChassis", kindChassis) :
+                new ObjectParameter("KindChassis", typeof(int));
+    
+            var kindDiffParameter = kindDiff.HasValue ?
+                new ObjectParameter("KindDiff", kindDiff) :
+                new ObjectParameter("KindDiff", typeof(int));
+    
+            var kindColorOutParameter = kindColorOut.HasValue ?
+                new ObjectParameter("KindColorOut", kindColorOut) :
+                new ObjectParameter("KindColorOut", typeof(int));
+    
+            var kindColorInParameter = kindColorIn.HasValue ?
+                new ObjectParameter("KindColorIn", kindColorIn) :
+                new ObjectParameter("KindColorIn", typeof(int));
+    
+            var kindModelTipParameter = kindModelTip.HasValue ?
+                new ObjectParameter("KindModelTip", kindModelTip) :
+                new ObjectParameter("KindModelTip", typeof(int));
+    
+            var kindGearboxParameter = kindGearbox.HasValue ?
+                new ObjectParameter("KindGearbox", kindGearbox) :
+                new ObjectParameter("KindGearbox", typeof(int));
+    
+            var kindFuelParameter = kindFuel.HasValue ?
+                new ObjectParameter("KindFuel", kindFuel) :
+                new ObjectParameter("KindFuel", typeof(int));
+    
+            var kindCrashParameter = kindCrash.HasValue ?
+                new ObjectParameter("KindCrash", kindCrash) :
+                new ObjectParameter("KindCrash", typeof(bool));
+    
+            var kindPelakParameter = kindPelak.HasValue ?
+                new ObjectParameter("KindPelak", kindPelak) :
+                new ObjectParameter("KindPelak", typeof(int));
+    
+            var hasSunroofParameter = hasSunroof.HasValue ?
+                new ObjectParameter("HasSunroof", hasSunroof) :
+                new ObjectParameter("HasSunroof", typeof(bool));
+    
+            var hasAlarmParameter = hasAlarm.HasValue ?
+                new ObjectParameter("HasAlarm", hasAlarm) :
+                new ObjectParameter("HasAlarm", typeof(bool));
+    
+            var hasSoundParameter = hasSound.HasValue ?
+                new ObjectParameter("HasSound", hasSound) :
+                new ObjectParameter("HasSound", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnCarHeavysAndRiddingMotor", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, numberMonthlyInstallmentParameter, monthlyInstallmentParameter, brandNameParameter, carFunctionParameter, yearParameter, personParameter, kindConditionParameter, kindChassisParameter, kindDiffParameter, kindColorOutParameter, kindColorInParameter, kindModelTipParameter, kindGearboxParameter, kindFuelParameter, kindCrashParameter, kindPelakParameter, hasSunroofParameter, hasAlarmParameter, hasSoundParameter);
+        }
+    
+        public virtual int sp_AddOnCases(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<int> totalPrice, Nullable<int> measureRAM, Nullable<int> measureCPU, Nullable<int> measureHard, Nullable<int> measureGraphic, Nullable<bool> hasUSB3, Nullable<bool> hasDVDRW, Nullable<bool> hasSpeaker)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(int));
+    
+            var measureRAMParameter = measureRAM.HasValue ?
+                new ObjectParameter("MeasureRAM", measureRAM) :
+                new ObjectParameter("MeasureRAM", typeof(int));
+    
+            var measureCPUParameter = measureCPU.HasValue ?
+                new ObjectParameter("MeasureCPU", measureCPU) :
+                new ObjectParameter("MeasureCPU", typeof(int));
+    
+            var measureHardParameter = measureHard.HasValue ?
+                new ObjectParameter("MeasureHard", measureHard) :
+                new ObjectParameter("MeasureHard", typeof(int));
+    
+            var measureGraphicParameter = measureGraphic.HasValue ?
+                new ObjectParameter("MeasureGraphic", measureGraphic) :
+                new ObjectParameter("MeasureGraphic", typeof(int));
+    
+            var hasUSB3Parameter = hasUSB3.HasValue ?
+                new ObjectParameter("HasUSB3", hasUSB3) :
+                new ObjectParameter("HasUSB3", typeof(bool));
+    
+            var hasDVDRWParameter = hasDVDRW.HasValue ?
+                new ObjectParameter("HasDVDRW", hasDVDRW) :
+                new ObjectParameter("HasDVDRW", typeof(bool));
+    
+            var hasSpeakerParameter = hasSpeaker.HasValue ?
+                new ObjectParameter("HasSpeaker", hasSpeaker) :
+                new ObjectParameter("HasSpeaker", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnCases", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, measureRAMParameter, measureCPUParameter, measureHardParameter, measureGraphicParameter, hasUSB3Parameter, hasDVDRWParameter, hasSpeakerParameter);
+        }
+    
+        public virtual int sp_AddOnLabtop(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<int> totalPrice, Nullable<int> measureRAM, Nullable<int> measureCPU, Nullable<int> measureHard, Nullable<int> measureGraphic, Nullable<bool> hasUSB3, Nullable<bool> hasDVDRW, Nullable<bool> hasSpeaker, Nullable<int> brandName, Nullable<int> kindSizeScreen, Nullable<bool> hasAntiWater, Nullable<bool> kindTouch, Nullable<int> kindColor, Nullable<bool> hasCamera)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(int));
+    
+            var measureRAMParameter = measureRAM.HasValue ?
+                new ObjectParameter("MeasureRAM", measureRAM) :
+                new ObjectParameter("MeasureRAM", typeof(int));
+    
+            var measureCPUParameter = measureCPU.HasValue ?
+                new ObjectParameter("MeasureCPU", measureCPU) :
+                new ObjectParameter("MeasureCPU", typeof(int));
+    
+            var measureHardParameter = measureHard.HasValue ?
+                new ObjectParameter("MeasureHard", measureHard) :
+                new ObjectParameter("MeasureHard", typeof(int));
+    
+            var measureGraphicParameter = measureGraphic.HasValue ?
+                new ObjectParameter("MeasureGraphic", measureGraphic) :
+                new ObjectParameter("MeasureGraphic", typeof(int));
+    
+            var hasUSB3Parameter = hasUSB3.HasValue ?
+                new ObjectParameter("HasUSB3", hasUSB3) :
+                new ObjectParameter("HasUSB3", typeof(bool));
+    
+            var hasDVDRWParameter = hasDVDRW.HasValue ?
+                new ObjectParameter("HasDVDRW", hasDVDRW) :
+                new ObjectParameter("HasDVDRW", typeof(bool));
+    
+            var hasSpeakerParameter = hasSpeaker.HasValue ?
+                new ObjectParameter("HasSpeaker", hasSpeaker) :
+                new ObjectParameter("HasSpeaker", typeof(bool));
+    
+            var brandNameParameter = brandName.HasValue ?
+                new ObjectParameter("BrandName", brandName) :
+                new ObjectParameter("BrandName", typeof(int));
+    
+            var kindSizeScreenParameter = kindSizeScreen.HasValue ?
+                new ObjectParameter("KindSizeScreen", kindSizeScreen) :
+                new ObjectParameter("KindSizeScreen", typeof(int));
+    
+            var hasAntiWaterParameter = hasAntiWater.HasValue ?
+                new ObjectParameter("HasAntiWater", hasAntiWater) :
+                new ObjectParameter("HasAntiWater", typeof(bool));
+    
+            var kindTouchParameter = kindTouch.HasValue ?
+                new ObjectParameter("KindTouch", kindTouch) :
+                new ObjectParameter("KindTouch", typeof(bool));
+    
+            var kindColorParameter = kindColor.HasValue ?
+                new ObjectParameter("KindColor", kindColor) :
+                new ObjectParameter("KindColor", typeof(int));
+    
+            var hasCameraParameter = hasCamera.HasValue ?
+                new ObjectParameter("HasCamera", hasCamera) :
+                new ObjectParameter("HasCamera", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnLabtop", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, measureRAMParameter, measureCPUParameter, measureHardParameter, measureGraphicParameter, hasUSB3Parameter, hasDVDRWParameter, hasSpeakerParameter, brandNameParameter, kindSizeScreenParameter, hasAntiWaterParameter, kindTouchParameter, kindColorParameter, hasCameraParameter);
+        }
+    
+        public virtual int sp_AddOnMobileTablet(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<int> totalPrice, Nullable<int> measureRAM, Nullable<int> measureCPU, Nullable<int> measureHard, Nullable<int> measureGraphic, Nullable<bool> hasUSB3, Nullable<bool> hasDVDRW, Nullable<bool> hasSpeaker, Nullable<int> brandName, Nullable<int> kindColor)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(int));
+    
+            var measureRAMParameter = measureRAM.HasValue ?
+                new ObjectParameter("MeasureRAM", measureRAM) :
+                new ObjectParameter("MeasureRAM", typeof(int));
+    
+            var measureCPUParameter = measureCPU.HasValue ?
+                new ObjectParameter("MeasureCPU", measureCPU) :
+                new ObjectParameter("MeasureCPU", typeof(int));
+    
+            var measureHardParameter = measureHard.HasValue ?
+                new ObjectParameter("MeasureHard", measureHard) :
+                new ObjectParameter("MeasureHard", typeof(int));
+    
+            var measureGraphicParameter = measureGraphic.HasValue ?
+                new ObjectParameter("MeasureGraphic", measureGraphic) :
+                new ObjectParameter("MeasureGraphic", typeof(int));
+    
+            var hasUSB3Parameter = hasUSB3.HasValue ?
+                new ObjectParameter("HasUSB3", hasUSB3) :
+                new ObjectParameter("HasUSB3", typeof(bool));
+    
+            var hasDVDRWParameter = hasDVDRW.HasValue ?
+                new ObjectParameter("HasDVDRW", hasDVDRW) :
+                new ObjectParameter("HasDVDRW", typeof(bool));
+    
+            var hasSpeakerParameter = hasSpeaker.HasValue ?
+                new ObjectParameter("HasSpeaker", hasSpeaker) :
+                new ObjectParameter("HasSpeaker", typeof(bool));
+    
+            var brandNameParameter = brandName.HasValue ?
+                new ObjectParameter("BrandName", brandName) :
+                new ObjectParameter("BrandName", typeof(int));
+    
+            var kindColorParameter = kindColor.HasValue ?
+                new ObjectParameter("KindColor", kindColor) :
+                new ObjectParameter("KindColor", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnMobileTablet", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, measureRAMParameter, measureCPUParameter, measureHardParameter, measureGraphicParameter, hasUSB3Parameter, hasDVDRWParameter, hasSpeakerParameter, brandNameParameter, kindColorParameter);
+        }
+    
+        public virtual int sp_AddOnRentHouseAndOffice(Nullable<int> agahiID, Nullable<int> kindDepositPrice, Nullable<decimal> depositPrice, Nullable<int> kindRentPrice, Nullable<decimal> rentPrice, Nullable<int> area, Nullable<int> roomNumber, Nullable<int> countryside, Nullable<int> person, Nullable<int> yearCreated, Nullable<int> floorNumber, Nullable<int> kindBottom, Nullable<int> kindHeating, Nullable<bool> hasParking, Nullable<bool> hasElevator, Nullable<bool> hasIranianService, Nullable<bool> hasForeignService, Nullable<bool> hasBalcony, Nullable<bool> hasPool, Nullable<bool> hasUnderground, Nullable<bool> hasYard, Nullable<bool> hasSauna, Nullable<bool> hasJacuzzi, Nullable<bool> hasSleepMaster, Nullable<bool> hasRoofGarden, Nullable<bool> hasChiller, Nullable<bool> hasBarbecue, Nullable<bool> hasAltar, Nullable<bool> hasLobby, Nullable<bool> hasBabyPlayground, Nullable<bool> hasGym, Nullable<int> codeMelk)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindDepositPriceParameter = kindDepositPrice.HasValue ?
+                new ObjectParameter("KindDepositPrice", kindDepositPrice) :
+                new ObjectParameter("KindDepositPrice", typeof(int));
+    
+            var depositPriceParameter = depositPrice.HasValue ?
+                new ObjectParameter("DepositPrice", depositPrice) :
+                new ObjectParameter("DepositPrice", typeof(decimal));
+    
+            var kindRentPriceParameter = kindRentPrice.HasValue ?
+                new ObjectParameter("KindRentPrice", kindRentPrice) :
+                new ObjectParameter("KindRentPrice", typeof(int));
+    
+            var rentPriceParameter = rentPrice.HasValue ?
+                new ObjectParameter("RentPrice", rentPrice) :
+                new ObjectParameter("RentPrice", typeof(decimal));
+    
+            var areaParameter = area.HasValue ?
+                new ObjectParameter("Area", area) :
+                new ObjectParameter("Area", typeof(int));
+    
+            var roomNumberParameter = roomNumber.HasValue ?
+                new ObjectParameter("RoomNumber", roomNumber) :
+                new ObjectParameter("RoomNumber", typeof(int));
+    
+            var countrysideParameter = countryside.HasValue ?
+                new ObjectParameter("Countryside", countryside) :
+                new ObjectParameter("Countryside", typeof(int));
+    
+            var personParameter = person.HasValue ?
+                new ObjectParameter("Person", person) :
+                new ObjectParameter("Person", typeof(int));
+    
+            var yearCreatedParameter = yearCreated.HasValue ?
+                new ObjectParameter("YearCreated", yearCreated) :
+                new ObjectParameter("YearCreated", typeof(int));
+    
+            var floorNumberParameter = floorNumber.HasValue ?
+                new ObjectParameter("FloorNumber", floorNumber) :
+                new ObjectParameter("FloorNumber", typeof(int));
+    
+            var kindBottomParameter = kindBottom.HasValue ?
+                new ObjectParameter("KindBottom", kindBottom) :
+                new ObjectParameter("KindBottom", typeof(int));
+    
+            var kindHeatingParameter = kindHeating.HasValue ?
+                new ObjectParameter("KindHeating", kindHeating) :
+                new ObjectParameter("KindHeating", typeof(int));
+    
+            var hasParkingParameter = hasParking.HasValue ?
+                new ObjectParameter("HasParking", hasParking) :
+                new ObjectParameter("HasParking", typeof(bool));
+    
+            var hasElevatorParameter = hasElevator.HasValue ?
+                new ObjectParameter("HasElevator", hasElevator) :
+                new ObjectParameter("HasElevator", typeof(bool));
+    
+            var hasIranianServiceParameter = hasIranianService.HasValue ?
+                new ObjectParameter("HasIranianService", hasIranianService) :
+                new ObjectParameter("HasIranianService", typeof(bool));
+    
+            var hasForeignServiceParameter = hasForeignService.HasValue ?
+                new ObjectParameter("HasForeignService", hasForeignService) :
+                new ObjectParameter("HasForeignService", typeof(bool));
+    
+            var hasBalconyParameter = hasBalcony.HasValue ?
+                new ObjectParameter("HasBalcony", hasBalcony) :
+                new ObjectParameter("HasBalcony", typeof(bool));
+    
+            var hasPoolParameter = hasPool.HasValue ?
+                new ObjectParameter("HasPool", hasPool) :
+                new ObjectParameter("HasPool", typeof(bool));
+    
+            var hasUndergroundParameter = hasUnderground.HasValue ?
+                new ObjectParameter("HasUnderground", hasUnderground) :
+                new ObjectParameter("HasUnderground", typeof(bool));
+    
+            var hasYardParameter = hasYard.HasValue ?
+                new ObjectParameter("HasYard", hasYard) :
+                new ObjectParameter("HasYard", typeof(bool));
+    
+            var hasSaunaParameter = hasSauna.HasValue ?
+                new ObjectParameter("HasSauna", hasSauna) :
+                new ObjectParameter("HasSauna", typeof(bool));
+    
+            var hasJacuzziParameter = hasJacuzzi.HasValue ?
+                new ObjectParameter("HasJacuzzi", hasJacuzzi) :
+                new ObjectParameter("HasJacuzzi", typeof(bool));
+    
+            var hasSleepMasterParameter = hasSleepMaster.HasValue ?
+                new ObjectParameter("HasSleepMaster", hasSleepMaster) :
+                new ObjectParameter("HasSleepMaster", typeof(bool));
+    
+            var hasRoofGardenParameter = hasRoofGarden.HasValue ?
+                new ObjectParameter("HasRoofGarden", hasRoofGarden) :
+                new ObjectParameter("HasRoofGarden", typeof(bool));
+    
+            var hasChillerParameter = hasChiller.HasValue ?
+                new ObjectParameter("HasChiller", hasChiller) :
+                new ObjectParameter("HasChiller", typeof(bool));
+    
+            var hasBarbecueParameter = hasBarbecue.HasValue ?
+                new ObjectParameter("HasBarbecue", hasBarbecue) :
+                new ObjectParameter("HasBarbecue", typeof(bool));
+    
+            var hasAltarParameter = hasAltar.HasValue ?
+                new ObjectParameter("HasAltar", hasAltar) :
+                new ObjectParameter("HasAltar", typeof(bool));
+    
+            var hasLobbyParameter = hasLobby.HasValue ?
+                new ObjectParameter("HasLobby", hasLobby) :
+                new ObjectParameter("HasLobby", typeof(bool));
+    
+            var hasBabyPlaygroundParameter = hasBabyPlayground.HasValue ?
+                new ObjectParameter("HasBabyPlayground", hasBabyPlayground) :
+                new ObjectParameter("HasBabyPlayground", typeof(bool));
+    
+            var hasGymParameter = hasGym.HasValue ?
+                new ObjectParameter("HasGym", hasGym) :
+                new ObjectParameter("HasGym", typeof(bool));
+    
+            var codeMelkParameter = codeMelk.HasValue ?
+                new ObjectParameter("CodeMelk", codeMelk) :
+                new ObjectParameter("CodeMelk", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnRentHouseAndOffice", agahiIDParameter, kindDepositPriceParameter, depositPriceParameter, kindRentPriceParameter, rentPriceParameter, areaParameter, roomNumberParameter, countrysideParameter, personParameter, yearCreatedParameter, floorNumberParameter, kindBottomParameter, kindHeatingParameter, hasParkingParameter, hasElevatorParameter, hasIranianServiceParameter, hasForeignServiceParameter, hasBalconyParameter, hasPoolParameter, hasUndergroundParameter, hasYardParameter, hasSaunaParameter, hasJacuzziParameter, hasSleepMasterParameter, hasRoofGardenParameter, hasChillerParameter, hasBarbecueParameter, hasAltarParameter, hasLobbyParameter, hasBabyPlaygroundParameter, hasGymParameter, codeMelkParameter);
+        }
+    
+        public virtual int sp_AddOnSaleApartAndOffice(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<decimal> totalPrice, Nullable<int> area, Nullable<int> roomNumber, Nullable<int> countryside, Nullable<int> person, Nullable<int> fromYear, Nullable<int> floorNumber, Nullable<int> kindBottom, Nullable<int> kindHeating, Nullable<bool> hasParking, Nullable<bool> hasElevator, Nullable<bool> hasIranianService, Nullable<bool> hasForeignService, Nullable<bool> hasBalcony, Nullable<bool> hasPool, Nullable<bool> hasUnderground, Nullable<bool> hasYard, Nullable<bool> hasSauna, Nullable<bool> hasJacuzzi, Nullable<bool> hasSleepMaster, Nullable<bool> hasRoofGarden, Nullable<bool> hasChiller, Nullable<bool> hasBarbecue, Nullable<bool> hasAltar, Nullable<bool> hasLobby, Nullable<bool> hasBabyPlayground, Nullable<bool> hasGym, Nullable<bool> hasHeir, Nullable<bool> hasSingleDocument, Nullable<int> infrastructure, Nullable<int> loanAmount, Nullable<decimal> price, Nullable<int> codeMelk)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(decimal));
+    
+            var areaParameter = area.HasValue ?
+                new ObjectParameter("Area", area) :
+                new ObjectParameter("Area", typeof(int));
+    
+            var roomNumberParameter = roomNumber.HasValue ?
+                new ObjectParameter("RoomNumber", roomNumber) :
+                new ObjectParameter("RoomNumber", typeof(int));
+    
+            var countrysideParameter = countryside.HasValue ?
+                new ObjectParameter("Countryside", countryside) :
+                new ObjectParameter("Countryside", typeof(int));
+    
+            var personParameter = person.HasValue ?
+                new ObjectParameter("Person", person) :
+                new ObjectParameter("Person", typeof(int));
+    
+            var fromYearParameter = fromYear.HasValue ?
+                new ObjectParameter("FromYear", fromYear) :
+                new ObjectParameter("FromYear", typeof(int));
+    
+            var floorNumberParameter = floorNumber.HasValue ?
+                new ObjectParameter("FloorNumber", floorNumber) :
+                new ObjectParameter("FloorNumber", typeof(int));
+    
+            var kindBottomParameter = kindBottom.HasValue ?
+                new ObjectParameter("KindBottom", kindBottom) :
+                new ObjectParameter("KindBottom", typeof(int));
+    
+            var kindHeatingParameter = kindHeating.HasValue ?
+                new ObjectParameter("KindHeating", kindHeating) :
+                new ObjectParameter("KindHeating", typeof(int));
+    
+            var hasParkingParameter = hasParking.HasValue ?
+                new ObjectParameter("HasParking", hasParking) :
+                new ObjectParameter("HasParking", typeof(bool));
+    
+            var hasElevatorParameter = hasElevator.HasValue ?
+                new ObjectParameter("HasElevator", hasElevator) :
+                new ObjectParameter("HasElevator", typeof(bool));
+    
+            var hasIranianServiceParameter = hasIranianService.HasValue ?
+                new ObjectParameter("HasIranianService", hasIranianService) :
+                new ObjectParameter("HasIranianService", typeof(bool));
+    
+            var hasForeignServiceParameter = hasForeignService.HasValue ?
+                new ObjectParameter("HasForeignService", hasForeignService) :
+                new ObjectParameter("HasForeignService", typeof(bool));
+    
+            var hasBalconyParameter = hasBalcony.HasValue ?
+                new ObjectParameter("HasBalcony", hasBalcony) :
+                new ObjectParameter("HasBalcony", typeof(bool));
+    
+            var hasPoolParameter = hasPool.HasValue ?
+                new ObjectParameter("HasPool", hasPool) :
+                new ObjectParameter("HasPool", typeof(bool));
+    
+            var hasUndergroundParameter = hasUnderground.HasValue ?
+                new ObjectParameter("HasUnderground", hasUnderground) :
+                new ObjectParameter("HasUnderground", typeof(bool));
+    
+            var hasYardParameter = hasYard.HasValue ?
+                new ObjectParameter("HasYard", hasYard) :
+                new ObjectParameter("HasYard", typeof(bool));
+    
+            var hasSaunaParameter = hasSauna.HasValue ?
+                new ObjectParameter("HasSauna", hasSauna) :
+                new ObjectParameter("HasSauna", typeof(bool));
+    
+            var hasJacuzziParameter = hasJacuzzi.HasValue ?
+                new ObjectParameter("HasJacuzzi", hasJacuzzi) :
+                new ObjectParameter("HasJacuzzi", typeof(bool));
+    
+            var hasSleepMasterParameter = hasSleepMaster.HasValue ?
+                new ObjectParameter("HasSleepMaster", hasSleepMaster) :
+                new ObjectParameter("HasSleepMaster", typeof(bool));
+    
+            var hasRoofGardenParameter = hasRoofGarden.HasValue ?
+                new ObjectParameter("HasRoofGarden", hasRoofGarden) :
+                new ObjectParameter("HasRoofGarden", typeof(bool));
+    
+            var hasChillerParameter = hasChiller.HasValue ?
+                new ObjectParameter("HasChiller", hasChiller) :
+                new ObjectParameter("HasChiller", typeof(bool));
+    
+            var hasBarbecueParameter = hasBarbecue.HasValue ?
+                new ObjectParameter("HasBarbecue", hasBarbecue) :
+                new ObjectParameter("HasBarbecue", typeof(bool));
+    
+            var hasAltarParameter = hasAltar.HasValue ?
+                new ObjectParameter("HasAltar", hasAltar) :
+                new ObjectParameter("HasAltar", typeof(bool));
+    
+            var hasLobbyParameter = hasLobby.HasValue ?
+                new ObjectParameter("HasLobby", hasLobby) :
+                new ObjectParameter("HasLobby", typeof(bool));
+    
+            var hasBabyPlaygroundParameter = hasBabyPlayground.HasValue ?
+                new ObjectParameter("HasBabyPlayground", hasBabyPlayground) :
+                new ObjectParameter("HasBabyPlayground", typeof(bool));
+    
+            var hasGymParameter = hasGym.HasValue ?
+                new ObjectParameter("HasGym", hasGym) :
+                new ObjectParameter("HasGym", typeof(bool));
+    
+            var hasHeirParameter = hasHeir.HasValue ?
+                new ObjectParameter("HasHeir", hasHeir) :
+                new ObjectParameter("HasHeir", typeof(bool));
+    
+            var hasSingleDocumentParameter = hasSingleDocument.HasValue ?
+                new ObjectParameter("HasSingleDocument", hasSingleDocument) :
+                new ObjectParameter("HasSingleDocument", typeof(bool));
+    
+            var infrastructureParameter = infrastructure.HasValue ?
+                new ObjectParameter("Infrastructure", infrastructure) :
+                new ObjectParameter("Infrastructure", typeof(int));
+    
+            var loanAmountParameter = loanAmount.HasValue ?
+                new ObjectParameter("LoanAmount", loanAmount) :
+                new ObjectParameter("LoanAmount", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(decimal));
+    
+            var codeMelkParameter = codeMelk.HasValue ?
+                new ObjectParameter("CodeMelk", codeMelk) :
+                new ObjectParameter("CodeMelk", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnSaleApartAndOffice", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, areaParameter, roomNumberParameter, countrysideParameter, personParameter, fromYearParameter, floorNumberParameter, kindBottomParameter, kindHeatingParameter, hasParkingParameter, hasElevatorParameter, hasIranianServiceParameter, hasForeignServiceParameter, hasBalconyParameter, hasPoolParameter, hasUndergroundParameter, hasYardParameter, hasSaunaParameter, hasJacuzziParameter, hasSleepMasterParameter, hasRoofGardenParameter, hasChillerParameter, hasBarbecueParameter, hasAltarParameter, hasLobbyParameter, hasBabyPlaygroundParameter, hasGymParameter, hasHeirParameter, hasSingleDocumentParameter, infrastructureParameter, loanAmountParameter, priceParameter, codeMelkParameter);
+        }
+    
+        public virtual int sp_AddOnSaleLand(Nullable<int> agahiID, Nullable<int> kindTotalPrice, Nullable<int> totalPrice, Nullable<int> area, Nullable<int> countryside, Nullable<int> person, Nullable<int> floorNumber, Nullable<bool> hasHeir, Nullable<bool> hasSingleDocument, Nullable<int> infrastructure, Nullable<int> price, Nullable<int> loanAmount)
+        {
+            var agahiIDParameter = agahiID.HasValue ?
+                new ObjectParameter("AgahiID", agahiID) :
+                new ObjectParameter("AgahiID", typeof(int));
+    
+            var kindTotalPriceParameter = kindTotalPrice.HasValue ?
+                new ObjectParameter("KindTotalPrice", kindTotalPrice) :
+                new ObjectParameter("KindTotalPrice", typeof(int));
+    
+            var totalPriceParameter = totalPrice.HasValue ?
+                new ObjectParameter("TotalPrice", totalPrice) :
+                new ObjectParameter("TotalPrice", typeof(int));
+    
+            var areaParameter = area.HasValue ?
+                new ObjectParameter("Area", area) :
+                new ObjectParameter("Area", typeof(int));
+    
+            var countrysideParameter = countryside.HasValue ?
+                new ObjectParameter("Countryside", countryside) :
+                new ObjectParameter("Countryside", typeof(int));
+    
+            var personParameter = person.HasValue ?
+                new ObjectParameter("Person", person) :
+                new ObjectParameter("Person", typeof(int));
+    
+            var floorNumberParameter = floorNumber.HasValue ?
+                new ObjectParameter("FloorNumber", floorNumber) :
+                new ObjectParameter("FloorNumber", typeof(int));
+    
+            var hasHeirParameter = hasHeir.HasValue ?
+                new ObjectParameter("HasHeir", hasHeir) :
+                new ObjectParameter("HasHeir", typeof(bool));
+    
+            var hasSingleDocumentParameter = hasSingleDocument.HasValue ?
+                new ObjectParameter("HasSingleDocument", hasSingleDocument) :
+                new ObjectParameter("HasSingleDocument", typeof(bool));
+    
+            var infrastructureParameter = infrastructure.HasValue ?
+                new ObjectParameter("Infrastructure", infrastructure) :
+                new ObjectParameter("Infrastructure", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(int));
+    
+            var loanAmountParameter = loanAmount.HasValue ?
+                new ObjectParameter("LoanAmount", loanAmount) :
+                new ObjectParameter("LoanAmount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_AddOnSaleLand", agahiIDParameter, kindTotalPriceParameter, totalPriceParameter, areaParameter, countrysideParameter, personParameter, floorNumberParameter, hasHeirParameter, hasSingleDocumentParameter, infrastructureParameter, priceParameter, loanAmountParameter);
+        }
     }
 }

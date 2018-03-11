@@ -26,12 +26,12 @@ namespace iGNProject.Models.Search
         public int Kind { get; set; }
         public int UntillCarFunction { get; set; }
         public int FromCarFunction { get; set; }
-        public int KindCondition { get; set; }
-        public int KindColorOut { get; set; }
-        public int KindModelTip { get; set; }
-        public int KindFuel { get; set; }
-        public int KindCrash { get; set; }
-        public int KindPelak { get; set; }
+        public int KindConditionID { get; set; }
+        public int KindColorOutID { get; set; }
+        public int KindModelTipID { get; set; }
+        public int KindFuelID { get; set; }
+        public int KindCrashID { get; set; }
+        public int KindPelakID { get; set; }
 
         public bool HasAlarm { get; set; }
 

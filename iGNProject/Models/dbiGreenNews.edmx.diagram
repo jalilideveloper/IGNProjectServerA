@@ -73,8 +73,8 @@
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" />
+        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblCity" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType" />
-        <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblProvince" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblRegions" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" />
         <AssociationConnector Association="DBEWDiGNModel.FK_tblAgahi_tblUsers" />

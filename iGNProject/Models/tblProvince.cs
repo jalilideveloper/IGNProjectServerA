@@ -18,7 +18,6 @@ namespace iGNProject.Models
         public tblProvince()
         {
             this.tblCity = new HashSet<tblCity>();
-            this.tblAgahi = new HashSet<tblAgahi>();
         }
     
         public int ProvinceID { get; set; }
@@ -28,7 +27,5 @@ namespace iGNProject.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCity> tblCity { get; set; }
         public virtual tblCountry tblCountry { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblAgahi> tblAgahi { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace iGNProject.Models
         public Nullable<System.DateTime> AdminAgreeDate { get; set; }
         public Nullable<byte> AgahiStatus { get; set; }
         public System.Data.Entity.Spatial.DbGeography Location { get; set; }
-        public Nullable<int> ProvinceID { get; set; }
+        public Nullable<int> CityID { get; set; }
         public Nullable<int> RegionID { get; set; }
         public string Tell { get; set; }
         public string Mobile { get; set; }
@@ -57,8 +57,8 @@ namespace iGNProject.Models
         public virtual tblAgahiCategories tblAgahiCategories { get; set; }
         public virtual tblAgahiPlans tblAgahiPlans { get; set; }
         public virtual tblAgahiService tblAgahiService { get; set; }
+        public virtual tblCity tblCity { get; set; }
         public virtual tblPriceType tblPriceType { get; set; }
-        public virtual tblProvince tblProvince { get; set; }
         public virtual tblRegions tblRegions { get; set; }
         public virtual tblAgahiType tblAgahiType { get; set; }
         public virtual tblUsers tblUsers { get; set; }
