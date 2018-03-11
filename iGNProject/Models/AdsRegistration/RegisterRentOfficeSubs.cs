@@ -39,18 +39,18 @@ namespace iGNProject.Models.AdsRegistration
         //Internal
 
 
-        public int KindDepositPrice { get; set; }
-        public int DepositPrice { get; set; }
-        public int KindRentPrice { get; set; }
-        public int RentPrice { get; set; }
+        public int KindDepositPriceID { get; set; }
+        public decimal DepositPrice { get; set; }
+        public int KindRentPriceID { get; set; }
+        public  decimal RentPrice { get; set; }
         public int Area { get; set; }
         public int RoomNumber { get; set; }
-        public int Countryside { get; set; }
+        public int CountrysideID { get; set; }
         public int AdvertiseTypeID { get; set; }
         public int AdminDoc { get; set; }
         public int YearCreated { get; set; }
         public int FloorNumber { get; set; }
-        public int KindBottom { get; set; }
+        public int KindBottomID { get; set; }
         public int KindHeating { get; set; }
         public bool HasParking { get; set; }
         public bool HasElevator { get; set; }

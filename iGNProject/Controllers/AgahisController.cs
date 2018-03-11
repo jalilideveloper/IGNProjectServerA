@@ -19,7 +19,9 @@ namespace iGNProject.Controllers
         // GET: api/Agahis
         public IHttpActionResult GettblAgahi()
         {
-            return Json(db.tblAgahi.Select(o=>  new  {o.AdminAgreeDate,o.AdminUserID,o.AgahiID,o.AgahiServiceID,o.AgahiStatus, o.AgahiTitle,o.CategoryAgahiID,o.Chatable,o.RegionID,o.Description,o.HasImage,o.Keyword,o.LanguageID,o.Location,o.Mobile,o.NewOrUsed,o.PlanShowAgahiID,o.Price,o.PriceTypeID,o.ProvinceID,o.RegisterDate,o.Tell,o.UserID,o.OnTime }));
+            return Json(db.tblAgahi.Select(o=>  new  {o.AdminAgreeDate,o.AdminUserID,o.AgahiID,o.AgahiServiceID,o.AgahiStatus, o.AgahiTitle,o.CategoryAgahiID,o.Chatable
+                ,o.RegionID,o.Description,o.HasImage,o.Keyword,o.LanguageID,o.Location,o.Mobile,o.NewOrUsed,o.PlanShowAgahiID,o.Price,o.PriceTypeID,o.CityID,
+                o.RegisterDate,o.Tell,o.UserID,o.OnTime }));
         }
 
         // GET: api/Agahis/5

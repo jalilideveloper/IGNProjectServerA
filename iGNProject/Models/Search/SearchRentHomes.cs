@@ -16,7 +16,7 @@ namespace iGNProject.Models.Search
 
         
 
-        public int KindRentPrice { get; set; }
+        public int KindRentPriceID { get; set; }
         public int UntillRentPrice { get; set; }
         public int FromRentPrice { get; set; }
 

@@ -1007,6 +1007,14 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_AddAgahiGalleries" FunctionName="DBEWDiGNModel.Store.sp_AddAgahiGalleries" />
+    <FunctionImportMapping FunctionImportName="sp_AddAgahi_AccessoriesAndElectronicAndPerson" FunctionName="DBEWDiGNModel.Store.sp_AddAgahi_AccessoriesAndElectronicAndPerson" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnCarHeavysAndRiddingMotor" FunctionName="DBEWDiGNModel.Store.sp_AddOnCarHeavysAndRiddingMotor" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnCases" FunctionName="DBEWDiGNModel.Store.sp_AddOnCases" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnLabtop" FunctionName="DBEWDiGNModel.Store.sp_AddOnLabtop" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnMobileTablet" FunctionName="DBEWDiGNModel.Store.sp_AddOnMobileTablet" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnRentHouseAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnRentHouseAndOffice" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnSaleApartAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleApartAndOffice" />
+    <FunctionImportMapping FunctionImportName="sp_AddOnSaleLand" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleLand" />
     <EntitySetMapping Name="tblAgahi">
       <EntityTypeMapping TypeName="DBEWDiGNModel.tblAgahi">
         <MappingFragment StoreEntitySet="tblAgahi">
@@ -1023,7 +1031,7 @@
           <ScalarProperty Name="Mobile" ColumnName="Mobile" />
           <ScalarProperty Name="Tell" ColumnName="Tell" />
           <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="Location" ColumnName="Location" />
           <ScalarProperty Name="AgahiStatus" ColumnName="AgahiStatus" />
           <ScalarProperty Name="AdminAgreeDate" ColumnName="AdminAgreeDate" />
@@ -1040,13 +1048,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_AddAgahi_AccessoriesAndElectronicAndPerson" FunctionName="DBEWDiGNModel.Store.sp_AddAgahi_AccessoriesAndElectronicAndPerson" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnCarHeavysAndRiddingMotor" FunctionName="DBEWDiGNModel.Store.sp_AddOnCarHeavysAndRiddingMotor" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnCases" FunctionName="DBEWDiGNModel.Store.sp_AddOnCases" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnLabtop" FunctionName="DBEWDiGNModel.Store.sp_AddOnLabtop" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnMobileTablet" FunctionName="DBEWDiGNModel.Store.sp_AddOnMobileTablet" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnRentHouseAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnRentHouseAndOffice" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnSaleApartAndOffice" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleApartAndOffice" />
-    <FunctionImportMapping FunctionImportName="sp_AddOnSaleLand" FunctionName="DBEWDiGNModel.Store.sp_AddOnSaleLand" />
   </EntityContainerMapping>
 </Mapping>

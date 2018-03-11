@@ -131,50 +131,50 @@ namespace iGNProject.Controllers
 
             
 
-            if (value.KindCondition >= 0)
+            if (value.KindConditionID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarConditionID", Comparison.Equals, value.KindCondition);
+                query.AddWhere("tblAgahiCarDetails.CarConditionID", Comparison.Equals, value.KindConditionID);
             }
 
 
-            if (value.KindChassis >= 0)
+            if (value.KindChassisID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarChassisTypeID", Comparison.Equals, value.KindChassis);
+                query.AddWhere("tblAgahiCarDetails.CarChassisTypeID", Comparison.Equals, value.KindChassisID);
             }
-            if (value.KindDiff >= 0)
+            if (value.KindDiffID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.DiffType", Comparison.Equals, value.KindDiff);
+                query.AddWhere("tblAgahiCarDetails.DiffType", Comparison.Equals, value.KindDiffID);
             }
-            if (value.KindColorIn >= 0)
+            if (value.KindColorInID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.RangeDakheliID", Comparison.Equals, value.KindColorIn);
-            }
-
-
-            if (value.KindColorOut >= 0)
-            {
-                query.AddWhere("tblAgahiCarDetails.RangeKharegiID", Comparison.Equals, value.KindColorOut);
+                query.AddWhere("tblAgahiCarDetails.RangeDakheliID", Comparison.Equals, value.KindColorInID);
             }
 
 
-
-            if (value.KindModelTip >= 0)
+            if (value.KindColorOutID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarTipID", Comparison.Equals, value.KindModelTip);
-            }
-            if (value.KindFuel >= 0)
-            {
-                query.AddWhere("tblAgahiCarDetails.SokhtID", Comparison.Equals, value.KindFuel);
-            }
-            if (value.KindCrash >= 0)
-            {
-                query.AddWhere("tblAgahiCarDetails.CarCrashTypeID", Comparison.Equals, value.KindCrash);
+                query.AddWhere("tblAgahiCarDetails.RangeKharegiID", Comparison.Equals, value.KindColorOutID);
             }
 
 
-            if (value.KindPelak >= 0)
+
+            if (value.KindModelTipID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarPelakTypeID", Comparison.Equals, value.KindPelak);
+                query.AddWhere("tblAgahiCarDetails.CarTipID", Comparison.Equals, value.KindModelTipID);
+            }
+            if (value.KindFuelID >= 0)
+            {
+                query.AddWhere("tblAgahiCarDetails.SokhtID", Comparison.Equals, value.KindFuelID);
+            }
+            if (value.KindCrashID >= 0)
+            {
+                query.AddWhere("tblAgahiCarDetails.CarCrashTypeID", Comparison.Equals, value.KindCrashID);
+            }
+
+
+            if (value.KindPelakID >= 0)
+            {
+                query.AddWhere("tblAgahiCarDetails.CarPelakTypeID", Comparison.Equals, value.KindPelakID);
             }
 
             if (value.HasSound)
@@ -230,7 +230,7 @@ namespace iGNProject.Controllers
                                       Mobile = p.Mobile,
                                       OnTime = p.OnTime,
                                       PriceTypeID = p.PriceTypeID,
-                                      ProvinceID = p.ProvinceID,
+                                      CityID = p.CityID,
                                       RegionID = p.RegionID,
                                       RegisterDate = p.RegisterDate,
                                       SpecialAgahi = p.SpecialAgahi,

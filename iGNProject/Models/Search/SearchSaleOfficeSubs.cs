@@ -29,8 +29,8 @@ namespace iGNProject.Models.Search
         public int UntillYear { get; set; }
         public int FromYear { get; set; }
         public int FloorNumber { get; set; }
-        public int KindBottom { get; set; }
-        public int KindHeating { get; set; }
+        public int KindBottomID { get; set; }
+        public int KindHeatingID { get; set; }
 
         public bool HasParking { get; set; }
         public bool HasElevator { get; set; }

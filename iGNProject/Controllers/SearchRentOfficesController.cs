@@ -80,9 +80,9 @@ namespace iGNProject.Controllers
                 query.AddWhere("tblAgahi.AgahiServiceID", Comparison.Equals, value.Kind);
             }
 
-            if (value.KindRentPrice > 0)
+            if (value.KindRentPriceID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.GharardadTypeID", Comparison.Equals, value.KindRentPrice);
+                query.AddWhere("tblAgahiHomeDetail.GharardadTypeID", Comparison.Equals, value.KindRentPriceID);
                 //KindRentPrice نوع ودیعه
                 //KindDepositPrice نوع اجاره ماهانه
             }
@@ -148,7 +148,7 @@ namespace iGNProject.Controllers
                                       Mobile = p.Mobile,
                                       OnTime = p.OnTime,
                                       PriceTypeID = p.PriceTypeID,
-                                      ProvinceID = p.ProvinceID,
+                                      CityID = p.CityID,
                                       RegionID = p.RegionID,
                                       RegisterDate = p.RegisterDate,
                                       SpecialAgahi = p.SpecialAgahi,

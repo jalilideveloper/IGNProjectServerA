@@ -108,14 +108,14 @@ namespace iGNProject.Controllers
                 query.AddWhere("tblAgahiHomeDetail.Tabaghe", Comparison.Equals, value.RoomNumber);
             }
 
-            if (value.KindBottom > 0)
+            if (value.KindBottomID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.JeneskafID", Comparison.Equals, value.KindBottom);
+                query.AddWhere("tblAgahiHomeDetail.JeneskafID", Comparison.Equals, value.KindBottomID);
             }
 
-            if (value.KindHeating > 0)
+            if (value.KindHeatingID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.GarmayeshTypeID", Comparison.Equals, value.KindHeating);
+                query.AddWhere("tblAgahiHomeDetail.GarmayeshTypeID", Comparison.Equals, value.KindHeatingID);
             }
 
             //---------------------------
@@ -321,7 +321,7 @@ namespace iGNProject.Controllers
                                       Mobile = p.Mobile,
                                       OnTime = p.OnTime,
                                       PriceTypeID = p.PriceTypeID,
-                                      ProvinceID = p.ProvinceID,
+                                      CityID = p.CityID,
                                       RegionID = p.RegionID,
                                       RegisterDate = p.RegisterDate,
                                       SpecialAgahi = p.SpecialAgahi,

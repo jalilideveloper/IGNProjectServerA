@@ -28,7 +28,7 @@
     <Property Name="AdminAgreeDate" Type="datetime" />
     <Property Name="AgahiStatus" Type="tinyint" />
     <Property Name="Location" Type="geography" />
-    <Property Name="ProvinceID" Type="int" />
+    <Property Name="CityID" Type="int" />
     <Property Name="RegionID" Type="int" />
     <Property Name="Tell" Type="nvarchar" MaxLength="50" />
     <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
@@ -486,6 +486,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahi_tblCity">
+    <End Role="tblCity" Type="Self.tblCity" Multiplicity="0..1" />
+    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahi_tblPriceType">
     <End Role="tblPriceType" Type="Self.tblPriceType" Multiplicity="0..1" />
     <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
@@ -495,18 +507,6 @@
       </Principal>
       <Dependent Role="tblAgahi">
         <PropertyRef Name="PriceTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblProvince">
-    <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
-    <End Role="tblAgahi" Type="Self.tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblProvince">
-        <PropertyRef Name="ProvinceID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="ProvinceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -960,7 +960,7 @@
     <Parameter Name="AdminAgreeDate" Type="datetime" Mode="In" />
     <Parameter Name="AgahiStatus" Type="tinyint" Mode="In" />
     <Parameter Name="Location" Type="geography" Mode="In" />
-    <Parameter Name="ProvinceID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
     <Parameter Name="RegionID" Type="int" Mode="In" />
     <Parameter Name="Tell" Type="nvarchar" Mode="In" />
     <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
@@ -1400,12 +1400,12 @@
       <End Role="tblAgahiService" EntitySet="tblAgahiService" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="Self.FK_tblAgahi_tblPriceType">
-      <End Role="tblPriceType" EntitySet="tblPriceType" />
+    <AssociationSet Name="FK_tblAgahi_tblCity" Association="Self.FK_tblAgahi_tblCity">
+      <End Role="tblCity" EntitySet="tblCity" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblProvince" Association="Self.FK_tblAgahi_tblProvince">
-      <End Role="tblProvince" EntitySet="tblProvince" />
+    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="Self.FK_tblAgahi_tblPriceType">
+      <End Role="tblPriceType" EntitySet="tblPriceType" />
       <End Role="tblAgahi" EntitySet="tblAgahi" />
     </AssociationSet>
     <AssociationSet Name="FK_tblAgahi_tblRegions" Association="Self.FK_tblAgahi_tblRegions">

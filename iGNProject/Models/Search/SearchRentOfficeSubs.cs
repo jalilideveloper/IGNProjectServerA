@@ -17,7 +17,7 @@ namespace iGNProject.Models.Search
 
 
         public int RoomNumber { get; set; }
-        public int KindRentPrice { get; set; }
+        public int KindRentPriceID { get; set; }
         public int UntillRentPrice { get; set; }
         public int FromRentPrice { get; set; }
         public int KindDepositPrice { get; set; }
@@ -31,8 +31,8 @@ namespace iGNProject.Models.Search
         public int UntillYear { get; set; }
         public int FromYear { get; set; }
         public int FloorNumber { get; set; }
-        public int KindBottom { get; set; }
-        public int KindHeating { get; set; }
+        public int KindBottomID { get; set; }
+        public int KindHeatingID { get; set; }
 
         public bool HasParking { get; set; }
         public bool HasElevator { get; set; }

@@ -917,67 +917,6 @@
       <Parameter Name="imageThree" Mode="In" Type="String" />
       <Parameter Name="imageFour" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
-    <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
-      <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblAgahiPlans" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans">
-      <End Role="tblAgahiPlans" EntitySet="tblAgahiPlans" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblAgahiService" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService">
-      <End Role="tblAgahiService" EntitySet="tblAgahiService" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
-      <End Role="tblPriceType" EntitySet="tblPriceType" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblProvince" Association="DBEWDiGNModel.FK_tblAgahi_tblProvince">
-      <End Role="tblProvince" EntitySet="tblProvince" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblRegions" Association="DBEWDiGNModel.FK_tblAgahi_tblRegions">
-      <End Role="tblRegions" EntitySet="tblRegions" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblUserAgahiType" Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType">
-      <End Role="tblAgahiType" EntitySet="tblAgahiType" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="DBEWDiGNModel.FK_tblAgahi_tblUsers">
-      <End Role="tblUsers" EntitySet="tblUsers" />
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiGalleries_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiGalleries" EntitySet="tblAgahiGalleries" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahi" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
-    </AssociationSet>
-    <AssociationSet Name="FK_tblVam_tblAgahi" Association="DBEWDiGNModel.FK_tblVam_tblAgahi">
-      <End Role="tblAgahi" EntitySet="tblAgahi" />
-      <End Role="tblVam" EntitySet="tblVam" />
-    </AssociationSet>
     <FunctionImport Name="sp_AddAgahi_AccessoriesAndElectronicAndPerson">
       <Parameter Name="CategoryID" Mode="In" Type="Int32" />
       <Parameter Name="AgahiServiceID" Mode="In" Type="Int32" />
@@ -991,7 +930,7 @@
       <Parameter Name="AdminAgreeDate" Mode="In" Type="DateTime" />
       <Parameter Name="AgahiStatus" Mode="In" Type="Byte" />
       <Parameter Name="Location" Mode="In" Type="Geography" />
-      <Parameter Name="ProvinceID" Mode="In" Type="Int32" />
+      <Parameter Name="CityID" Mode="In" Type="Int32" />
       <Parameter Name="RegionID" Mode="In" Type="Int32" />
       <Parameter Name="Tell" Mode="In" Type="String" />
       <Parameter Name="Mobile" Mode="In" Type="String" />
@@ -1164,6 +1103,67 @@
       <Parameter Name="price" Mode="In" Type="Int32" />
       <Parameter Name="LoanAmount" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="tblAgahi" EntityType="DBEWDiGNModel.tblAgahi" />
+    <AssociationSet Name="FK_tblAgahi_tblAgahiCategories" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories">
+      <End Role="tblAgahiCategories" EntitySet="tblAgahiCategories" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiPlans" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans">
+      <End Role="tblAgahiPlans" EntitySet="tblAgahiPlans" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblAgahiService" Association="DBEWDiGNModel.FK_tblAgahi_tblAgahiService">
+      <End Role="tblAgahiService" EntitySet="tblAgahiService" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblCity" Association="DBEWDiGNModel.FK_tblAgahi_tblCity">
+      <End Role="tblCity" EntitySet="tblCity" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblPriceType" Association="DBEWDiGNModel.FK_tblAgahi_tblPriceType">
+      <End Role="tblPriceType" EntitySet="tblPriceType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblRegions" Association="DBEWDiGNModel.FK_tblAgahi_tblRegions">
+      <End Role="tblRegions" EntitySet="tblRegions" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUserAgahiType" Association="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType">
+      <End Role="tblAgahiType" EntitySet="tblAgahiType" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahi_tblUsers" Association="DBEWDiGNModel.FK_tblAgahi_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiDetailHome_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiDetailHome_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiHomeDetail" EntitySet="tblAgahiHomeDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiFavorite_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiFavorite_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiFavorite" EntitySet="tblAgahiFavorite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiGalleries_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiGalleries_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiGalleries" EntitySet="tblAgahiGalleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAgahiMobCompDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblAgahiMobCompDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiMobCompDetails" EntitySet="tblAgahiMobCompDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCarDetails_tblAgahi" Association="DBEWDiGNModel.FK_tblCarDetails_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblAgahiCarDetails" EntitySet="tblAgahiCarDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserAgahiStatus_tblAgahi" Association="DBEWDiGNModel.FK_tblUserAgahiStatus_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblUserAgahiStatus" EntitySet="tblUserAgahiStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVam_tblAgahi" Association="DBEWDiGNModel.FK_tblVam_tblAgahi">
+      <End Role="tblAgahi" EntitySet="tblAgahi" />
+      <End Role="tblVam" EntitySet="tblVam" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="CheckUserPass_Result">
     <Property Type="Int32" Name="UserID" Nullable="false" />
@@ -2543,6 +2543,7 @@
     <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblCity" ToRole="tblProvince" />
     <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblRegions_tblCity" FromRole="tblCity" ToRole="tblRegions" />
+    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblCity" FromRole="tblCity" ToRole="tblAgahi" />
   </EntityType>
   <EntityType Name="tblCountry">
     <Key>
@@ -2609,7 +2610,6 @@
     <Property Name="CountryID" Type="Int32" />
     <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblCity_tblProvince" FromRole="tblProvince" ToRole="tblCity" />
     <NavigationProperty Name="tblCountry" Relationship="DBEWDiGNModel.FK_tblProvince_tblCountry" FromRole="tblProvince" ToRole="tblCountry" />
-    <NavigationProperty Name="tblAgahi" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblProvince" ToRole="tblAgahi" />
   </EntityType>
   <EntityType Name="tblRegions">
     <Key>
@@ -3027,7 +3027,7 @@
     <Property Name="AdminAgreeDate" Type="DateTime" Precision="3" />
     <Property Name="AgahiStatus" Type="Byte" />
     <Property Name="Location" Type="Geography" />
-    <Property Name="ProvinceID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
     <Property Name="RegionID" Type="Int32" />
     <Property Name="Tell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -3044,8 +3044,8 @@
     <NavigationProperty Name="tblAgahiCategories" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiCategories" FromRole="tblAgahi" ToRole="tblAgahiCategories" />
     <NavigationProperty Name="tblAgahiPlans" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiPlans" FromRole="tblAgahi" ToRole="tblAgahiPlans" />
     <NavigationProperty Name="tblAgahiService" Relationship="DBEWDiGNModel.FK_tblAgahi_tblAgahiService" FromRole="tblAgahi" ToRole="tblAgahiService" />
+    <NavigationProperty Name="tblCity" Relationship="DBEWDiGNModel.FK_tblAgahi_tblCity" FromRole="tblAgahi" ToRole="tblCity" />
     <NavigationProperty Name="tblPriceType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblPriceType" FromRole="tblAgahi" ToRole="tblPriceType" />
-    <NavigationProperty Name="tblProvince" Relationship="DBEWDiGNModel.FK_tblAgahi_tblProvince" FromRole="tblAgahi" ToRole="tblProvince" />
     <NavigationProperty Name="tblRegions" Relationship="DBEWDiGNModel.FK_tblAgahi_tblRegions" FromRole="tblAgahi" ToRole="tblRegions" />
     <NavigationProperty Name="tblAgahiType" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUserAgahiType" FromRole="tblAgahi" ToRole="tblAgahiType" />
     <NavigationProperty Name="tblUsers" Relationship="DBEWDiGNModel.FK_tblAgahi_tblUsers" FromRole="tblAgahi" ToRole="tblUsers" />
@@ -3093,6 +3093,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tblAgahi_tblCity">
+    <End Type="DBEWDiGNModel.tblCity" Role="tblCity" Multiplicity="0..1" />
+    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCity">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="tblAgahi">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_tblAgahi_tblPriceType">
     <End Type="DBEWDiGNModel.tblPriceType" Role="tblPriceType" Multiplicity="0..1" />
     <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
@@ -3102,18 +3114,6 @@
       </Principal>
       <Dependent Role="tblAgahi">
         <PropertyRef Name="PriceTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_tblAgahi_tblProvince">
-    <End Type="DBEWDiGNModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
-    <End Type="DBEWDiGNModel.tblAgahi" Role="tblAgahi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblProvince">
-        <PropertyRef Name="ProvinceID" />
-      </Principal>
-      <Dependent Role="tblAgahi">
-        <PropertyRef Name="ProvinceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

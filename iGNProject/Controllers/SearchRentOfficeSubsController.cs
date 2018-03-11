@@ -80,9 +80,9 @@ namespace iGNProject.Controllers
                 query.AddWhere("tblAgahi.AgahiServiceID", Comparison.Equals, value.Kind);
             }
 
-            if (value.KindRentPrice > 0)
+            if (value.KindRentPriceID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.GharardadTypeID", Comparison.Equals, value.KindRentPrice);
+                query.AddWhere("tblAgahiHomeDetail.GharardadTypeID", Comparison.Equals, value.KindRentPriceID);
                 //KindRentPrice نوع ودیعه
                 //KindDepositPrice نوع اجاره ماهانه
             }
@@ -125,14 +125,14 @@ namespace iGNProject.Controllers
                 query.AddWhere("tblAgahiHomeDetail.Tabaghe", Comparison.Equals, value.RoomNumber);
             }
 
-            if (value.KindBottom > 0)
+            if (value.KindBottomID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.JeneskafID", Comparison.Equals, value.KindBottom);
+                query.AddWhere("tblAgahiHomeDetail.JeneskafID", Comparison.Equals, value.KindBottomID);
             }
 
-            if (value.KindHeating > 0)
+            if (value.KindHeatingID > 0)
             {
-                query.AddWhere("tblAgahiHomeDetail.GarmayeshTypeID", Comparison.Equals, value.KindHeating);
+                query.AddWhere("tblAgahiHomeDetail.GarmayeshTypeID", Comparison.Equals, value.KindHeatingID);
             }
 
             //---------------------------

@@ -131,38 +131,38 @@ namespace iGNProject.Controllers
 
 
 
-            if (value.KindCondition >= 0)
+            if (value.KindConditionID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarConditionID", Comparison.Equals, value.KindCondition);
+                query.AddWhere("tblAgahiCarDetails.CarConditionID", Comparison.Equals, value.KindConditionID);
             }
 
 
           
 
-            if (value.KindColorOut >= 0)
+            if (value.KindColorOutID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.RangeKharegiID", Comparison.Equals, value.KindColorOut);
+                query.AddWhere("tblAgahiCarDetails.RangeKharegiID", Comparison.Equals, value.KindColorOutID);
             }
 
 
 
-            if (value.KindModelTip >= 0)
+            if (value.KindModelTipID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarTipID", Comparison.Equals, value.KindModelTip);
+                query.AddWhere("tblAgahiCarDetails.CarTipID", Comparison.Equals, value.KindModelTipID);
             }
-            if (value.KindFuel >= 0)
+            if (value.KindFuelID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.SokhtID", Comparison.Equals, value.KindFuel);
+                query.AddWhere("tblAgahiCarDetails.SokhtID", Comparison.Equals, value.KindFuelID);
             }
-            if (value.KindCrash >= 0)
+            if (value.KindCrashID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarCrashTypeID", Comparison.Equals, value.KindCrash);
+                query.AddWhere("tblAgahiCarDetails.CarCrashTypeID", Comparison.Equals, value.KindCrashID);
             }
 
 
-            if (value.KindPelak >= 0)
+            if (value.KindPelakID >= 0)
             {
-                query.AddWhere("tblAgahiCarDetails.CarPelakTypeID", Comparison.Equals, value.KindPelak);
+                query.AddWhere("tblAgahiCarDetails.CarPelakTypeID", Comparison.Equals, value.KindPelakID);
             }
             
           
@@ -203,7 +203,7 @@ namespace iGNProject.Controllers
                                       Mobile = p.Mobile,
                                       OnTime = p.OnTime,
                                       PriceTypeID = p.PriceTypeID,
-                                      ProvinceID = p.ProvinceID,
+                                      CityID = p.CityID,
                                       RegionID = p.RegionID,
                                       RegisterDate = p.RegisterDate,
                                       SpecialAgahi = p.SpecialAgahi,
